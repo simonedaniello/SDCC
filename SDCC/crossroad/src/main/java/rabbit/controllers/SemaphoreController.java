@@ -19,6 +19,10 @@ public class SemaphoreController {
         this.semaphore = new Semaphore(ID);
     }
 
+    public void addToCrossRoad(CrossroadController c){
+        c.addSemaphore(this);
+    }
+
     private void start(){
         try {
             semaphore.getReceive().receiveMessage("localhost", semaphore.getCrossroads());
@@ -27,6 +31,9 @@ public class SemaphoreController {
         }
     }
 
+    public String getStreet(){
+        return semaphore.getStreet();
+    }
 
     public void getState() {
         System.out.println("\n------\nID: " + semaphore.getID() + "\nState: " + semaphore.getState()+ "\nBindings: ");
@@ -41,7 +48,6 @@ public class SemaphoreController {
         semaphore.setState(state);
         //do things
     }
-
 
     public void addCrossroad(String crossroad) {
         System.out.println("added crossroad : " + crossroad);

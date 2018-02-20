@@ -12,6 +12,7 @@ public class Semaphore{
 
     private Integer ID;
     private Integer state; // 0: free, 1: requested, 2: in CS
+    private String street;
     private ArrayList<String> crossroads;
     private Message m;
     private Receive r;
@@ -19,7 +20,7 @@ public class Semaphore{
     public Semaphore(Integer ID){
         setID(ID);
         setState(0);
-        ArrayList<String > c= new ArrayList<String>();
+        ArrayList<String > c= new ArrayList<>();
         setCrossroads(c);
         Message message  = new Message(ID);
         setMessage(message);
@@ -45,5 +46,11 @@ public class Semaphore{
     public Receive getReceive() {return this.r; }
 
 
+    public String getStreet() {
+        return street;
+    }
 
+    public void setStreet(String street) {
+        this.street = street;
+    }
 }

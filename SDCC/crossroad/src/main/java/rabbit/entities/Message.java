@@ -9,25 +9,22 @@ import java.util.ArrayList;
  */
 public class Message implements Serializable {
 
+    private int ID;
+    private ArrayList<Integer> vectorClock;
+
     public Message(Integer ID) {
         this.ID = ID;
     }
 
-    private int ID;
-    private ArrayList<Integer> vectorClock;
-
     public int getID() {
         return ID;
     }
-
     public void setID(int ID) {
         this.ID = ID;
     }
-
     public ArrayList<Integer> getVectorClock() {
         return vectorClock;
     }
-
     public void setVectorClock(ArrayList<Integer> vectorClock) {
         this.vectorClock = vectorClock;
     }

@@ -15,13 +15,13 @@ import main.java.rabbit.entities.Message;
  */
 public class Simulation {
     public static void main(String[] args) throws Exception {
-        noFailures(3);
+        noFailures();
     }
 
 
 
 
-    private static void noFailures(Integer num) throws IOException, TimeoutException, InterruptedException {
+    private static void noFailures() throws IOException, TimeoutException, InterruptedException {
 
         SemaphoreController s = new SemaphoreController(101);
         s.addCrossroad("incrocio 1");
@@ -50,6 +50,10 @@ public class Simulation {
 
         TimeUnit.SECONDS.sleep(2);
         System.exit(0);
+
+    }
+
+    private void crossRoadSimulation(){
 
     }
 }
