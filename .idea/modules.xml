@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/SDCC/adapter/adapter.iml" filepath="$PROJECT_DIR$/SDCC/adapter/adapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/crossroad/crossroad.iml" filepath="$PROJECT_DIR$/SDCC/crossroad/crossroad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/db/db.iml" filepath="$PROJECT_DIR$/SDCC/db/db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/dispatcher/dispatcher.iml" filepath="$PROJECT_DIR$/SDCC/dispatcher/dispatcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/monitor/monitor.iml" filepath="$PROJECT_DIR$/SDCC/monitor/monitor.iml" />
     </modules>
   </component>
 </project>
