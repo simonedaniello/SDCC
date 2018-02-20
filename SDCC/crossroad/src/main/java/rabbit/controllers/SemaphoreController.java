@@ -21,6 +21,7 @@ public class SemaphoreController {
 
     public void addToCrossRoad(CrossroadController c){
         c.addSemaphore(this);
+        //addCrossroad(String.valueOf(c.getID()));
     }
 
     private void start(){
@@ -55,7 +56,6 @@ public class SemaphoreController {
         temp = semaphore.getCrossroads();
         temp.add(crossroad);
         semaphore.setCrossroads(temp);
-
         semaphore.getReceive().addBindings(crossroad);
     }
 
@@ -74,9 +74,7 @@ public class SemaphoreController {
         Send s1 = new Send(semaphore.getID());
         try {
             s1.sendMessage("localhost", m, queue, topic);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TimeoutException e) {
+        } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         }
     }

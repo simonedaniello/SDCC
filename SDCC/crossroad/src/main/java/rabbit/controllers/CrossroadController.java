@@ -1,9 +1,10 @@
 package main.java.rabbit.controllers;
 
-import main.java.rabbit.controllers.SemaphoreController;
 import main.java.rabbit.entities.Crossroad;
+import main.java.rabbit.entities.Message;
 
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Author : Simone D'Aniello
@@ -11,24 +12,27 @@ import java.util.ArrayList;
  */
 public class CrossroadController {
 
-    Crossroad crossroad;
+    private Crossroad crossroad;
+
+    public CrossroadController(int ID, String street){
+        crossroad = new Crossroad();
+        crossroad.setID(ID);
+        crossroad.setStreet(street);
+    }
 
     public void addSemaphore(SemaphoreController s) {
+        s.addCrossroad(String.valueOf(crossroad.getID()));
         crossroad.getSemaphoreControllers().add(s);
     }
 
     public void removeSemaphore(Integer x) {
-        for(SemaphoreController s : crossroad.getSemaphoreControllers()){
-            if(s.getID().equals(x)){
-                crossroad.getSemaphoreControllers().remove(s);
-            }
-        }
+        crossroad.getSemaphoreControllers().removeIf(value -> value.getID().equals(x));
     }
 
     public void printState(){
         System.out.println("\nCROSSROAD " + crossroad.getID() + " STATE");
         System.out.println("\tStreet: " + crossroad.getStreet());
-        System.out.println("\t list of semaphores:");
+        System.out.println("\tlist of semaphores:");
         for(SemaphoreController s : crossroad.getSemaphoreControllers()){
             System.out.println("\t\taddress: " + s.getStreet() + ", ID: " + s.getID());
         }
@@ -46,5 +50,19 @@ public class CrossroadController {
 
     private void decision() {
 
+    }
+
+    public void sendMessage(int idmessage) {
+        Message m = new Message(idmessage);
+        Send s1 = new Send(crossroad.getID());
+        try {
+            s1.sendMessage("localhost", m, "traffic", String.valueOf(crossroad.getID()));
+        } catch (IOException | TimeoutException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Integer getID(){
+        return crossroad.getID();
     }
 }

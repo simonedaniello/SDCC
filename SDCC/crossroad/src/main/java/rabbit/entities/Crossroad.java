@@ -15,6 +15,10 @@ public class Crossroad {
     private String street;
     private String dispatcher;
 
+    public  Crossroad(){
+        semaphoreControllers = new ArrayList<>();
+    }
+
     public ArrayList<SemaphoreController> getSemaphoreControllers() {
         return semaphoreControllers;
     }

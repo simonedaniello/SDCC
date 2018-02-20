@@ -1,41 +1,10 @@
 package main.java.rabbit.test;
 
-import org.junit.Test;
-import org.junit.jupiter.api.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
-import static org.junit.Assert.fail;
 
+@RunWith(Suite.class)
+@Suite.SuiteClasses(CrossroadTests.class)
 public class StandardTests {
-
-    @BeforeAll
-    static void initAll() {
-    }
-
-    @BeforeEach
-    void init() {
-    }
-
-    @Test
-    void succeedingTest() {
-    }
-
-    @Test
-    void failingTest() {
-        fail("a failing test");
-    }
-
-    @Test
-    @Disabled("for demonstration purposes")
-    void skippedTest() {
-        // not executed
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
-    @AfterAll
-    static void tearDownAll() {
-    }
-
 }
