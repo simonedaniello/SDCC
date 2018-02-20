@@ -4,6 +4,7 @@ package rabbit.test;
 * KeyEventDemo
 */
 
+import rabbit.controllers.SemaphoreController;
 import rabbit.entities.Semaphore;
 
 import java.awt.BorderLayout;
@@ -16,14 +17,14 @@ public class KeyEventDemo extends JFrame implements KeyListener, ActionListener
 {
 
     private static Integer ID;
-    private static ArrayList<Semaphore> semaphores;
+    private static ArrayList<SemaphoreController> semaphores;
     private JTextArea displayArea;
     private JTextField typingArea;
     private static final String newline = System.getProperty("line.separator");
 
     public static void main(String[] args) {
         ID = 0;
-        semaphores = new ArrayList<Semaphore>();
+        semaphores = new ArrayList<SemaphoreController>();
         /* Use an appropriate Look and Feel */
         try {
             //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -142,21 +143,21 @@ public class KeyEventDemo extends JFrame implements KeyListener, ActionListener
 
         if(keyCode == 97){ //a
             keyString = "adding semaphore with ID: " + ID;
-            Semaphore s = new Semaphore(ID);
+            SemaphoreController s = new SemaphoreController(ID);
             semaphores.add(s);
             s.addCrossroad("incrocio");
             ID++;
         }
         else if(keyCode >= 49 && keyCode <= 57){
             if(keyCode - 49 < ID) {
-                keyString = "sent message by the semaphore with ID: " + ID;
+                keyString = "sent message by the semaphore with ID: " + semaphores.get(keyCode - 49).getID();
                 semaphores.get(keyCode - 49).sendRequest("traffic", "incrocio");
             }
             else
                 keyString = "";
         }
         else if(keyCode == 104){ //h
-            keyString = "help to write";
+            keyString = "letter to press - action \n\t'a' - add semaphore \n\t '0' - send message from the first semaphore \n\t '1' - send message from the second semaphore\n\t ...";
         }
         else {
             keyString = "keycode = " + keyCode;

@@ -1,5 +1,6 @@
 package rabbit.test;
 
+import rabbit.controllers.SemaphoreController;
 import rabbit.controllers.Send;
 import rabbit.entities.Message;
 import rabbit.entities.Semaphore;
@@ -22,7 +23,7 @@ public class Simulation {
 
     private static void noFailures(Integer num) throws IOException, TimeoutException, InterruptedException {
 
-        Semaphore s = new Semaphore(101);
+        SemaphoreController s = new SemaphoreController(101);
         s.addCrossroad("incrocio 1");
         s.getState();
 

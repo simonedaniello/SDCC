@@ -75,4 +75,8 @@ public class SemaphoreController {
         }
     }
 
+    public Integer getID() {
+        return semaphore.getID();
+    }
+
 }
