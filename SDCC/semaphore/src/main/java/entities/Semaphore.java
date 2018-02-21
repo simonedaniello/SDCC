@@ -1,5 +1,4 @@
-package main.java.rabbit.entities;
-
+package main.java.entities;
 
 import java.util.ArrayList;
 

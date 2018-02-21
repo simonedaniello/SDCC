@@ -1,10 +1,10 @@
-package main.java.rabbit.entities;
+package main.java.entities;
 
 import java.util.ArrayList;
 
 /**
  * Author : Simone D'Aniello
- * Date :  20-Feb-18.
+ * Date :  21-Feb-18.
  */
 public class Crossroad {
 
