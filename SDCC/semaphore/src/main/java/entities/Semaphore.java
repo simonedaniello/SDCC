@@ -20,7 +20,6 @@ public class Semaphore {
         this.street = street;
         this.crossroads = new ArrayList<>();
         this.semaphores = new ArrayList<>();
-        semaphores.add(this);
     }
 
     public String getID() {

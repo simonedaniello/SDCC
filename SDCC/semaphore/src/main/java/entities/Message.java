@@ -12,6 +12,7 @@ public class Message implements Serializable {
     private String ID;
     private ArrayList<Integer> vectorClock;
     private ArrayList<Semaphore> listOfSemaphores;
+
     /*
     * code values:
     *   1: semaphore added to crossroad

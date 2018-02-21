@@ -6,14 +6,12 @@ package main.java.rabbit.front;
  */
 import com.rabbitmq.client.*;
 import main.java.rabbit.controllers.CrossroadController;
-import main.java.rabbit.entities.Crossroad;
 import main.java.rabbit.entities.Message;
 import main.java.rabbit.entities.Semaphore;
 import org.apache.commons.lang3.SerializationUtils;
 import org.apache.log4j.BasicConfigurator;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 @SuppressWarnings("ALL")
 public class Receiver {
@@ -54,8 +52,8 @@ public class Receiver {
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
 
-                //doWork(message);
-                Message message = SerializationUtils.deserialize(body);
+                Message message = (Message) SerializationUtils.deserialize(body);
+                System.out.println("sono qui");
                 System.out.println(" [x] Received '" + envelope.getRoutingKey() + "':'" + message.getCode() + "'");
                 if (message.getCode() == 1){
                     crossroad.addSemaphore(new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress()));

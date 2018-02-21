@@ -9,19 +9,19 @@ import java.util.ArrayList;
  */
 public class Message implements Serializable {
 
+
     private String ID;
     private ArrayList<Integer> vectorClock;
-    private String semaphoreCode;
-    private String semaphoreAddress;
     private ArrayList<Semaphore> listOfSemaphores;
+
     /*
     * code values:
     *   1: semaphore added to crossroad
     *   -1: removing semaphore from crossroad
-    *   10: send the list of semaphores
     *   */
     private int code;
-
+    private String semaphoreCode;
+    private String semaphoreAddress;
 
     public Message(String ID, int code){
         setID(ID);
@@ -75,5 +75,4 @@ public class Message implements Serializable {
     public void setListOfSemaphores(ArrayList<Semaphore> listOfSemaphores) {
         this.listOfSemaphores = listOfSemaphores;
     }
-
 }

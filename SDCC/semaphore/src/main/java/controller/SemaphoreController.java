@@ -36,7 +36,7 @@ public class SemaphoreController {
     }
 
     public void addToCrossroad(Crossroad crossroad) {
-        Message m = new Message(semaphore.getID(), 0);
+        Message m = new Message(semaphore.getID(), 1);
         m.setSemaphoreAddress(semaphore.getStreet());
         m.setSemaphoreCode(semaphore.getID());
         try {
@@ -68,12 +68,14 @@ public class SemaphoreController {
             }
             for (Iterator<Semaphore> iter = semaphore.getSemaphores().listIterator(); iter.hasNext(); ) {
                 Semaphore s = iter.next();
+                System.out.println("analyzing " + s.getID());
                 for(Crossroad c: s.getCrossroads()){
                     if(c.getID().equals(crossroad.getID())){
                         k = 1;
                     }
                 }
                 if (k == 1) {
+                    System.out.println("removing semaphore");
                     iter.remove();
                     k = 0;
                 }

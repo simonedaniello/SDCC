@@ -6,6 +6,7 @@ package main.java.front;
  */
 import com.rabbitmq.client.*;
 import main.java.controller.SemaphoreController;
+import main.java.entities.Crossroad;
 import main.java.entities.Message;
 import main.java.entities.Semaphore;
 import org.apache.commons.lang3.SerializationUtils;
@@ -59,7 +60,11 @@ public class Receiver {
                 Message message = SerializationUtils.deserialize(body);
                 System.out.println(" [x] Received '" + envelope.getRoutingKey() + "' with code :'" + message.getCode() + "' sent by : "+ message.getID());
                 if (message.getCode() == 1){
-                    sc.addToSemaphoreList(new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress()));
+                    Semaphore x = new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress());
+                    ArrayList<Crossroad> list = new ArrayList<>();
+                    list.add(new Crossroad(envelope.getRoutingKey(), ""));
+                    x.setCrossroads(list);
+                    sc.addToSemaphoreList(x);
                 }
                 else if (message.getCode() == -1){
                     sc.removeFromSemaphoreList(new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress()));

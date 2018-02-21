@@ -21,7 +21,7 @@ public class CrossroadController {
 
     public CrossroadController(String ID, String address){
         this.crossroad = new Crossroad(ID, address);
-        this.s = new Sender(crossroad.getID());
+        s = new Sender(crossroad.getID());
         r = new Receiver(crossroad.getID(), "traffic", this);
         try {
             r.receiveMessage("localhost", crossroad.getID());
@@ -32,7 +32,7 @@ public class CrossroadController {
 
     public void addSemaphore(Semaphore semaphore){
         crossroad.getSemaphores().add(semaphore);
-        Message m = new Message("0", 10);
+        Message m = new Message(crossroad.getID(), 10);
         m.setListOfSemaphores(crossroad.getSemaphores());
         try {
             s.sendMessage("localhost", m, "traffic", semaphore.getID());
