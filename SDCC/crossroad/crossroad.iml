@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/target/production/crossroad" />
+    <output-test url="file://$MODULE_DIR$/target/test/crossroad" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/lib" type="java-resource" />
-      <excludeFolder url="file://$MODULE_DIR$/src/main/java/rabbit/toIgnore" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/java/toIgnore" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
