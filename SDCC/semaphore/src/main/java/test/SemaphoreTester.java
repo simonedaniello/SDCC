@@ -1,7 +1,10 @@
 package main.java.test;
 
 import main.java.controller.SemaphoreController;
+import main.java.entities.Crossroad;
 import org.junit.Test;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Author : Simone D'Aniello
@@ -11,7 +14,6 @@ public class SemaphoreTester {
 
     @Test
     public void addSemaphores(){
-        SemaphoreController sc1 = new SemaphoreController("0", "via 1");
-        SemaphoreController sc2 = new SemaphoreController("1", "via 1");
+
     }
 }

@@ -1,12 +1,13 @@
 package main.java.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Author : Simone D'Aniello
  * Date :  21-Feb-18.
  */
-public class Semaphore {
+public class Semaphore implements Serializable{
 
     private String ID;
     private Integer state; // 0: free, 1: requested, 2: in CS

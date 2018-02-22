@@ -54,7 +54,6 @@ public class Receiver {
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
 
                 Message message = SerializationUtils.deserialize(body);
-                System.out.println("sono qui");
                 System.out.println(" [x] Received '" + envelope.getRoutingKey() + "':'" + message.getCode() + "'");
                 if (message.getCode() == 1){
                     crossroad.addSemaphore(new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress()));

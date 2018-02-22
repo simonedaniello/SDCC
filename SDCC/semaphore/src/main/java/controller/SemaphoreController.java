@@ -107,6 +107,7 @@ public class SemaphoreController {
     }
 
     public void addToSemaphoreList(Semaphore s){
+        System.out.println("sono " + semaphore.getID() + " e aggiungo " + s.getID());
         semaphore.getSemaphores().add(s);
     }
 
@@ -122,6 +123,7 @@ public class SemaphoreController {
 
     public void setSemaphoreList(ArrayList<Semaphore> s) {
         for(Semaphore sem : s){
+            System.out.println("sono " + semaphore.getID() + " e aggiungo " + sem.getID());
             semaphore.getSemaphores().add(sem);
         }
     }
@@ -140,5 +142,7 @@ public class SemaphoreController {
     }
 
 
-
+    public String getSemaphoreID() {
+        return semaphore.getID();
+    }
 }

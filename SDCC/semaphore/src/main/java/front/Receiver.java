@@ -50,6 +50,7 @@ public class Receiver {
             this.channel.queueBind(queueName, QUEUE_NAME, binding);
         }
 
+        this.channel.queueBind(queueName, QUEUE_NAME, sc.getSemaphoreID());
         System.out.println(" [*] Waiting for messages, ID: " + ID);
 
         consumer = new DefaultConsumer(this.channel) {

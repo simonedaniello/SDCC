@@ -35,6 +35,7 @@ public class CrossroadController {
         Message m = new Message(crossroad.getID(), 10);
         m.setListOfSemaphores(crossroad.getSemaphores());
         try {
+            System.out.println("invio la lista a " + semaphore.getID());
             s.sendMessage("localhost", m, "traffic", semaphore.getID());
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();
