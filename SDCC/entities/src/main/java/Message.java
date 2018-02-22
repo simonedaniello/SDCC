@@ -1,4 +1,4 @@
-package main.java.entities;
+package main.java;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Author : Simone D'Aniello
  * Date :  21-Feb-18.
  */
-public class Message implements Serializable{
+public class Message implements Serializable {
 
     private String ID;
     private ArrayList<Integer> vectorClock;
@@ -23,8 +23,8 @@ public class Message implements Serializable{
     private String semaphoreAddress;
 
     public Message(String ID, int code){
-        setID(ID);
-        setCode(code);
+            setID(ID);
+            setCode(code);
     }
 
     public String getID() {

@@ -1,9 +1,9 @@
 package main.java.front;
 
 import com.rabbitmq.client.*;
+import main.java.Message;
+import main.java.Semaphore;
 import main.java.controllers.CrossroadController;
-import main.java.entities.Message;
-import main.java.entities.Semaphore;
 import org.apache.commons.lang3.SerializationUtils;
 import org.apache.log4j.BasicConfigurator;
 

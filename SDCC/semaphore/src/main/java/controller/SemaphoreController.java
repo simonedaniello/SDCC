@@ -1,9 +1,8 @@
 package main.java.controller;
 
-import akka.remote.transport.ThrottlerTransportAdapter;
-import main.java.entities.Crossroad;
-import main.java.entities.Message;
-import main.java.entities.Semaphore;
+import main.java.Crossroad;
+import main.java.Message;
+import main.java.Semaphore;
 import main.java.front.Receiver;
 import main.java.front.Sender;
 
@@ -17,7 +16,7 @@ import java.util.concurrent.TimeoutException;
  * Author : Simone D'Aniello
  * Date :  19-Feb-18.
  */
-@SuppressWarnings("ALL")
+
 public class SemaphoreController {
 
     private Semaphore semaphore;
@@ -44,9 +43,7 @@ public class SemaphoreController {
             System.out.println("adding to crossroad: " + crossroad.getID());
             semaphore.getCrossroads().add(crossroad);
             getReceive().addBindings(crossroad.getID());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TimeoutException e) {
+        } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         }
     }
@@ -81,9 +78,7 @@ public class SemaphoreController {
                 }
             }
             getReceive().removeBinding(crossroad.getID());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TimeoutException e) {
+        } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         }
     }
@@ -138,11 +133,28 @@ public class SemaphoreController {
         for(Semaphore s : semaphore.getSemaphores()){
             System.out.println("\t" + s.getID());
         }
+        System.out.println("Semaphore correlated (greenTogether): ");
+        for(Semaphore s : semaphore.getGreenTogether()){
+            System.out.println("\t" + s.getID());
+        }
 
     }
 
-
     public String getSemaphoreID() {
         return semaphore.getID();
+    }
+
+    public void addGreenTogether(Semaphore s){
+        semaphore.getGreenTogether().add(s);
+    }
+
+    public void removeGreenTogether(Semaphore s) {
+        for(Semaphore c: semaphore.getGreenTogether()){
+            if(c.getID().equals(s.getID())){
+                semaphore.getGreenTogether().remove(c);
+                System.out.println("sono " + semaphore.getID() + " e rimuovo da green together " + c.getID());
+                return;
+            }
+        }
     }
 }

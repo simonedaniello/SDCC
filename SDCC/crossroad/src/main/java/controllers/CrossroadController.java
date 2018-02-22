@@ -1,8 +1,8 @@
 package main.java.controllers;
 
-import main.java.entities.Crossroad;
-import main.java.entities.Message;
-import main.java.entities.Semaphore;
+import main.java.Crossroad;
+import main.java.Message;
+import main.java.Semaphore;
 import main.java.front.Receiver;
 import main.java.front.Sender;
 
@@ -35,7 +35,6 @@ public class CrossroadController {
         Message m = new Message(crossroad.getID(), 10);
         m.setListOfSemaphores(crossroad.getSemaphores());
         try {
-            System.out.println("invio la lista a " + semaphore.getID());
             s.sendMessage("localhost", m, "traffic", semaphore.getID());
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();

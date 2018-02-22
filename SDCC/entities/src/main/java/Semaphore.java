@@ -1,5 +1,4 @@
-package main.java.entities;
-
+package main.java;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -8,13 +7,14 @@ import java.util.ArrayList;
  * Author : Simone D'Aniello
  * Date :  21-Feb-18.
  */
-public class Semaphore implements Serializable {
+public class Semaphore implements Serializable{
 
     private String ID;
     private Integer state; // 0: free, 1: requested, 2: in CS
     private String street;
     private ArrayList<Crossroad> crossroads;
     private ArrayList<Semaphore> semaphores;
+    private ArrayList<Semaphore> greenTogether;
 
     public Semaphore(String id, String street) {
         this.ID = id;
@@ -22,7 +22,7 @@ public class Semaphore implements Serializable {
         this.street = street;
         this.crossroads = new ArrayList<>();
         this.semaphores = new ArrayList<>();
-        semaphores.add(this);
+        this.greenTogether = new ArrayList<>();
     }
 
     public String getID() {
@@ -65,5 +65,12 @@ public class Semaphore implements Serializable {
         this.semaphores = semaphores;
     }
 
+    public void setGreenTogether(ArrayList<Semaphore> greenTogether) {
+        this.greenTogether = greenTogether;
+    }
+
+    public ArrayList<Semaphore> getGreenTogether() {
+        return greenTogether;
+    }
 }
 

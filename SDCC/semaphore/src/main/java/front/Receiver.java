@@ -5,10 +5,10 @@ package main.java.front;
  * Date :  21-Feb-18.
  */
 import com.rabbitmq.client.*;
+import main.java.Crossroad;
+import main.java.Message;
+import main.java.Semaphore;
 import main.java.controller.SemaphoreController;
-import main.java.entities.Crossroad;
-import main.java.entities.Message;
-import main.java.entities.Semaphore;
 import org.apache.commons.lang3.SerializationUtils;
 import org.apache.log4j.BasicConfigurator;
 
