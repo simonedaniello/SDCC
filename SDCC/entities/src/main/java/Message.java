@@ -14,13 +14,20 @@ public class Message implements Serializable {
     private ArrayList<Semaphore> listOfSemaphores;
 
     /*
+    *
     * code values:
     *   1: semaphore added to crossroad
     *   -1: removing semaphore from crossroad
-    *   */
+    *   400 : monitor message
+    *   401 : request of the crossroad monitor
+    *   10 : get list of semaphores from crossroad
+    *
+    */
     private int code;
+    private int currentCycle;
     private String semaphoreCode;
     private String semaphoreAddress;
+    private Semaphore semaphore;
 
     public Message(String ID, int code){
             setID(ID);
@@ -73,5 +80,21 @@ public class Message implements Serializable {
 
     public void setListOfSemaphores(ArrayList<Semaphore> listOfSemaphores) {
         this.listOfSemaphores = listOfSemaphores;
+    }
+
+    public Semaphore getSemaphore() {
+        return semaphore;
+    }
+
+    public void setSemaphore(Semaphore semaphore) {
+        this.semaphore = semaphore;
+    }
+
+    public int getCurrentCycle() {
+        return currentCycle;
+    }
+
+    public void setCurrentCycle(int currentCycle) {
+        this.currentCycle = currentCycle;
     }
 }

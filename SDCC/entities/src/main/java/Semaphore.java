@@ -12,6 +12,7 @@ public class Semaphore implements Serializable{
     private String ID;
     private Integer state; // 0: free, 1: requested, 2: in CS
     private String street;
+    private int monitorCycle;
     private ArrayList<Crossroad> crossroads;
     private ArrayList<Semaphore> semaphores;
     private ArrayList<Semaphore> greenTogether;
@@ -23,6 +24,7 @@ public class Semaphore implements Serializable{
         this.crossroads = new ArrayList<>();
         this.semaphores = new ArrayList<>();
         this.greenTogether = new ArrayList<>();
+        this.monitorCycle = 0;
     }
 
     public String getID() {
@@ -71,6 +73,14 @@ public class Semaphore implements Serializable{
 
     public ArrayList<Semaphore> getGreenTogether() {
         return greenTogether;
+    }
+
+    public int getMonitorCycle() {
+        return monitorCycle;
+    }
+
+    public void setMonitorCycle(int monitorCycle) {
+        this.monitorCycle = monitorCycle;
     }
 }
 

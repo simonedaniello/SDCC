@@ -59,7 +59,8 @@ public class Receiver {
 
                 //doWork(message);
                 Message message = SerializationUtils.deserialize(body);
-                System.out.println(" [x] Received '" + envelope.getRoutingKey() + "' with code :'" + message.getCode() + "' sent by : "+ message.getID());
+                int code = message.getCode();
+                System.out.println(" [x] Received '" + envelope.getRoutingKey() + "' with code :'" + message.getCode() + "' by '" + sc.getSemaphoreID() + "' sent by : "+ message.getID());
                 if (message.getCode() == 1){
                     Semaphore x = new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress());
                     ArrayList<Crossroad> list = new ArrayList<>();
@@ -72,6 +73,9 @@ public class Receiver {
                 }
                 else if (message.getCode() == 10){
                     sc.setSemaphoreList(message.getListOfSemaphores());
+                }
+                else if (message.getCode() == 401) {
+                    sc.sendStatus(message.getCurrentCycle());
                 }
             }
         };

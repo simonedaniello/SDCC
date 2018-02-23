@@ -16,15 +16,17 @@ import java.util.concurrent.TimeoutException;
 public class CrossroadController {
 
     private Crossroad crossroad;
-    private Receiver r;
     private Sender s;
 
     public CrossroadController(String ID, String address){
         this.crossroad = new Crossroad(ID, address);
         s = new Sender(crossroad.getID());
-        r = new Receiver(crossroad.getID(), "traffic", this);
+        Receiver r = new Receiver(crossroad.getID(), "traffic", this);
+        Monitorer.getInstance().setSender(s);
+        Monitorer.getInstance().setCrossroadID(crossroad.getID());
         try {
             r.receiveMessage("localhost", crossroad.getID());
+            r.addBindings("monitor");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -34,8 +36,10 @@ public class CrossroadController {
         crossroad.getSemaphores().add(semaphore);
         Message m = new Message(crossroad.getID(), 10);
         m.setListOfSemaphores(crossroad.getSemaphores());
+        m.setCurrentCycle(Monitorer.getInstance().getCurrentCycle());
         try {
             s.sendMessage("localhost", m, "traffic", semaphore.getID());
+            Monitorer.getInstance().setNumberOfSemaphores(crossroad.getSemaphores().size());
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         }

@@ -33,7 +33,7 @@ public class Sender {
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
         channel.exchangeDeclare(queue, BuiltinExchangeType.DIRECT);
-        System.out.println(" [x] Sent message with CODE '" + message.getCode() + "' by sender: " + ID);
+        System.out.println(" [x] Sent message with ID '" + message.getID() + "' by sender: " + ID);
 
         byte[] data = SerializationUtils.serialize((Serializable) message);
         channel.basicPublish(queue, topic, null, data);

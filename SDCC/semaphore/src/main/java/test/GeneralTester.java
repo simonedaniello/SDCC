@@ -41,7 +41,7 @@ public class GeneralTester {
 
 
 
-        System.exit(0);
+        //System.exit(0);
     }
 
     private static void fromProperties(){

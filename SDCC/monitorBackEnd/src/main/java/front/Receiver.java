@@ -2,9 +2,7 @@ package main.java.front;
 
 import com.rabbitmq.client.*;
 import main.java.Message;
-import main.java.Semaphore;
-import main.java.controllers.CrossroadController;
-import main.java.controllers.Monitorer;
+import main.java.control.MonitorController;
 import org.apache.commons.lang3.SerializationUtils;
 import org.apache.log4j.BasicConfigurator;
 
@@ -22,12 +20,12 @@ public class Receiver {
     private String QUEUE_NAME;
     private Channel channel;
     private Consumer consumer;
-    private CrossroadController crossroad;
+    private MonitorController monitorController;
 
-    public Receiver(String ID, String queueName, CrossroadController crossroad){
+    public Receiver(String ID, String queueName, MonitorController monitorController){
         this.ID = ID;
         this.QUEUE_NAME = queueName;
-        this.crossroad = crossroad;
+        this.monitorController = monitorController;
     }
 
     public void setQueueName(String queueName){
@@ -56,40 +54,14 @@ public class Receiver {
 
                 Message message = SerializationUtils.deserialize(body);
                 System.out.println(" [x] Received '" + envelope.getRoutingKey() + "':'" + message.getCode() + "'");
-                if (message.getCode() == 1){
-                    crossroad.addSemaphore(new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress()));
-                }
-                else if (message.getCode() == -1){
-                    crossroad.removeSemaphore(new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress()));
-                }
-                else if (message.getCode() == 400) {
-                    Monitorer.getInstance().addSemaphoreToMonitor(message.getSemaphore());
+                if (message.getCode() == 500){
+                    monitorController.setSemaphores(message.getListOfSemaphores());
                 }
             }
         };
         this.channel.basicConsume(queueName, true, consumer);
     }
 
-    public void addBindings(String binding){
-        String queueName;
-        try {
-            queueName = this.channel.queueDeclare().getQueue();
-            this.channel.queueBind(queueName, QUEUE_NAME, binding);
-            this.channel.basicConsume(queueName, true, consumer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public void removeBinding(String binding){
-        String queueName;
-        try {
-            queueName = this.channel.queueDeclare().getQueue();
-            this.channel.queueUnbind(queueName, QUEUE_NAME, binding);
-            this.channel.basicConsume(queueName, true, consumer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 }

@@ -157,4 +157,15 @@ public class SemaphoreController {
             }
         }
     }
+
+    public void sendStatus(int currentCycle) {
+        Message m = new Message(semaphore.getID(), 400);
+        semaphore.setMonitorCycle(currentCycle);
+        m.setSemaphore(semaphore);
+        try {
+            s.sendMessage("localhost", m, "traffic", "monitor");
+        } catch (IOException | TimeoutException e) {
+            e.printStackTrace();
+        }
+    }
 }

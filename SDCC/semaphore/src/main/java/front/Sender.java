@@ -35,9 +35,10 @@ public class Sender {
 
         channel.exchangeDeclare(queue, BuiltinExchangeType.DIRECT);
 
+        System.out.println(" [x] Sent message with CODE '" + message.getCode() + "' by sender: " + ID);
+
         byte[] data = SerializationUtils.serialize(message);
         channel.basicPublish(queue, topic, null, data);
-        System.out.println(" [x] Sent '" + topic + "' by sender: " + ID);
 
         channel.close();
         connection.close();

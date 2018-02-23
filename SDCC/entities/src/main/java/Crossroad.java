@@ -1,12 +1,14 @@
 package main.java;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Author : Simone D'Aniello
  * Date :  21-Feb-18.
  */
-public class Crossroad {
+public class Crossroad implements Serializable
+{
 
     private ArrayList<Semaphore> semaphores;
     private String ID;
