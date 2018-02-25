@@ -2,6 +2,7 @@ package main.java.control;
 
 import main.java.Semaphore;
 import main.java.front.Receiver;
+import main.java.system.Printer;
 
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ public class MonitorController {
 
     public MonitorController(){
         semaphores = new ArrayList<>();
-        ID = "aaaaa";
+        ID = "monitor";
         Receiver r = new Receiver(ID, "traffic", this);
         try {
             r.receiveMessage("localhost", ID);
@@ -35,8 +36,11 @@ public class MonitorController {
     }
 
     private void printState(){
-        System.out.println("list of semaphores");
-        for(Semaphore s : semaphores)
-            System.out.println("\t" + s.getID());
+        System.out.println("list of semaphores with bindings");
+        for(Semaphore s : semaphores) {
+            Printer.getInstance().print("\t" + s.getID(), "blue");
+            for(Semaphore s2 : s.getSemaphores())
+                Printer.getInstance().print("\t\t" + s2.getID(), "cyan");
+        }
     }
 }

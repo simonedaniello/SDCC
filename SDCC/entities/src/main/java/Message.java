@@ -25,8 +25,8 @@ public class Message implements Serializable {
     */
     private int code;
     private int currentCycle;
-    private String semaphoreCode;
-    private String semaphoreAddress;
+//    private String semaphoreCode;
+//    private String semaphoreAddress;
     private Semaphore semaphore;
 
     public Message(String ID, int code){
@@ -58,21 +58,21 @@ public class Message implements Serializable {
         this.code = code;
     }
 
-    public String getSemaphoreCode() {
-        return semaphoreCode;
-    }
-
-    public void setSemaphoreCode(String semaphoreCode) {
-        this.semaphoreCode = semaphoreCode;
-    }
-
-    public String getSemaphoreAddress() {
-        return semaphoreAddress;
-    }
-
-    public void setSemaphoreAddress(String semaphoreAddress) {
-        this.semaphoreAddress = semaphoreAddress;
-    }
+//    public String getSemaphoreCode() {
+//        return semaphoreCode;
+//    }
+//
+//    public void setSemaphoreCode(String semaphoreCode) {
+//        this.semaphoreCode = semaphoreCode;
+//    }
+//
+//    public String getSemaphoreAddress() {
+//        return semaphoreAddress;
+//    }
+//
+//    public void setSemaphoreAddress(String semaphoreAddress) {
+//        this.semaphoreAddress = semaphoreAddress;
+//    }
 
     public ArrayList<Semaphore> getListOfSemaphores() {
         return listOfSemaphores;

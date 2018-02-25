@@ -26,19 +26,19 @@ public class Sender {
         this.ID = ID;
     }
 
-    public void sendMessage(String address, Message message, String queue, String topic) throws java.io.IOException, TimeoutException {
+    public void sendMessage(String address, Message message, String exchange, String topic) throws java.io.IOException, TimeoutException {
 
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost(address);
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
-        channel.exchangeDeclare(queue, BuiltinExchangeType.DIRECT);
+        channel.exchangeDeclare(exchange, BuiltinExchangeType.DIRECT);
 
         System.out.println(" [x] Sent message with CODE '" + message.getCode() + "' by sender: " + ID);
 
         byte[] data = SerializationUtils.serialize(message);
-        channel.basicPublish(queue, topic, null, data);
+        channel.basicPublish(exchange, topic, null, data);
 
         channel.close();
         connection.close();

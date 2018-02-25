@@ -90,6 +90,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="entities" exported="" />
+    <orderEntry type="module" module-name="entities" />
   </component>
 </module>

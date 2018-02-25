@@ -57,10 +57,10 @@ public class Receiver {
                 Message message = SerializationUtils.deserialize(body);
                 System.out.println(" [x] Received '" + envelope.getRoutingKey() + "':'" + message.getCode() + "'");
                 if (message.getCode() == 1){
-                    crossroad.addSemaphore(new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress()));
+                    crossroad.addSemaphore(message.getSemaphore());
                 }
                 else if (message.getCode() == -1){
-                    crossroad.removeSemaphore(new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress()));
+                    crossroad.removeSemaphore(message.getSemaphore());
                 }
                 else if (message.getCode() == 400) {
                     Monitorer.getInstance().addSemaphoreToMonitor(message.getSemaphore());

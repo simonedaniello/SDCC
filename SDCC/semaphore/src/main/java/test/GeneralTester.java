@@ -39,6 +39,9 @@ public class GeneralTester {
         semaphoreController2.printState();
         semaphoreController3.printState();
 
+//        TimeUnit.SECONDS.sleep(10);
+//        semaphoreController1.addToCrossroad(c);
+
 
 
         //System.exit(0);

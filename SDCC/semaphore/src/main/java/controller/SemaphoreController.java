@@ -5,6 +5,7 @@ import main.java.Message;
 import main.java.Semaphore;
 import main.java.front.Receiver;
 import main.java.front.Sender;
+import main.java.system.Printer;
 
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ public class SemaphoreController {
     private Receiver r;
     private Sender s;
 
+
     public SemaphoreController(String ID, String address){
         this.semaphore = new Semaphore(ID, address);
         s = new Sender(semaphore.getID());
@@ -35,9 +37,9 @@ public class SemaphoreController {
     }
 
     public void addToCrossroad(Crossroad crossroad) {
+        semaphore.getCrossroads().add(crossroad);
         Message m = new Message(semaphore.getID(), 1);
-        m.setSemaphoreAddress(semaphore.getStreet());
-        m.setSemaphoreCode(semaphore.getID());
+        m.setSemaphore(semaphore);
         try {
             s.sendMessage("localhost", m, "traffic", crossroad.getID());
             System.out.println("adding to crossroad: " + crossroad.getID());
@@ -51,8 +53,7 @@ public class SemaphoreController {
     public void removeCrossroad(Crossroad crossroad) {
         System.out.println("removing crossroad: " + crossroad.getID());
         Message m = new Message(semaphore.getID(), -1);
-        m.setSemaphoreAddress(semaphore.getStreet());
-        m.setSemaphoreCode(semaphore.getID());
+        m.setSemaphore(semaphore);
         int k = 0;
         //remove the crossroad and every semaphore which binds that crossroad
         try {
@@ -108,23 +109,45 @@ public class SemaphoreController {
 
     public void removeFromSemaphoreList(Semaphore s) {
         for(Semaphore c: semaphore.getSemaphores()){
+            Printer.getInstance().print("analyzing " + c.getID(), "red");
             if(c.getID().equals(s.getID())){
                 semaphore.getSemaphores().remove(c);
-                System.out.println("sono " + semaphore.getID() + " e rimuovo " + c.getID());
+                Printer.getInstance().print("sono " + semaphore.getID() + " e rimuovo " + c.getID(), "red");
                 return;
             }
         }
     }
 
-    public void setSemaphoreList(ArrayList<Semaphore> s) {
-        for(Semaphore sem : s){
+    public void setSemaphoreList(ArrayList<Semaphore> newSem , String crossroad) {
+        int k = 0;
+        Printer.getInstance().print("removing semaphores from crossroad " + crossroad, "cyan");
+        for (Iterator<Semaphore> iter = semaphore.getSemaphores().listIterator(); iter.hasNext(); ) {
+            Semaphore s = iter.next();
+            System.out.println("analyzing " + s.getID());
+            if(s.getCrossroads().size() == 0)
+                Printer.getInstance().print("size = 0", "red");
+            for(Crossroad c: s.getCrossroads()){
+                if(c.getID().equals(crossroad)){
+                    System.out.println("ha quell'incrocio");
+                    k = 1;
+                } else
+                    System.out.println("non aveva quell'incrocio");
+            }
+            if (k == 1) {
+                Printer.getInstance().print("removing semaphore " + s.getID(), "red");
+                iter.remove();
+                k = 0;
+            }
+        }
+        for(Semaphore sem : newSem){
             System.out.println("sono " + semaphore.getID() + " e aggiungo " + sem.getID());
             semaphore.getSemaphores().add(sem);
         }
     }
 
     public void printState(){
-        System.out.println("\nsemaphore id: " + semaphore.getID() + ", street: " + semaphore.getStreet());
+        Printer.getInstance().print("\n semaphore id: " + semaphore.getID(), "blue");
+        System.out.println("street: " + semaphore.getStreet());
         System.out.println("Crossroad list: ");
         for(Crossroad c: semaphore.getCrossroads()){
             System.out.println("\t" + c.getID());

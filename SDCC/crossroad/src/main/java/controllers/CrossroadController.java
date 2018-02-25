@@ -5,8 +5,11 @@ import main.java.Message;
 import main.java.Semaphore;
 import main.java.front.Receiver;
 import main.java.front.Sender;
+import main.java.system.Printer;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeoutException;
 
 /**
@@ -30,27 +33,53 @@ public class CrossroadController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        Timer timer = new Timer();
+        timer.schedule(new TimerClass(), 10000, 30000); // every 15 seconds
     }
 
     public void addSemaphore(Semaphore semaphore){
         crossroad.getSemaphores().add(semaphore);
-        Message m = new Message(crossroad.getID(), 10);
-        m.setListOfSemaphores(crossroad.getSemaphores());
-        m.setCurrentCycle(Monitorer.getInstance().getCurrentCycle());
-        try {
-            s.sendMessage("localhost", m, "traffic", semaphore.getID());
-            Monitorer.getInstance().setNumberOfSemaphores(crossroad.getSemaphores().size());
-        } catch (IOException | TimeoutException e) {
-            e.printStackTrace();
-        }
+        sendCurrentState();
+        Monitorer.getInstance().setNumberOfSemaphores(crossroad.getSemaphores().size());
+        printSemaphores();
     }
 
     public void removeSemaphore(Semaphore semaphore){
         for(Semaphore s : crossroad.getSemaphores()){
             if(s.getID().equals(semaphore.getID())){
+                System.out.println("removing semaphore " + s.getID());
                 crossroad.getSemaphores().remove(s);
-                return;
+                Monitorer.getInstance().setNumberOfSemaphores(crossroad.getSemaphores().size());
+                break;
             }
+        }
+        printSemaphores();
+    }
+
+    private void printSemaphores(){
+        Printer.getInstance().print("semaphores binded: ", "green");
+        for(Semaphore s : crossroad.getSemaphores())
+            Printer.getInstance().print(s.getID(), "green");
+    }
+
+    private void sendCurrentState(){
+        Message m = new Message(crossroad.getID(), 10);
+        m.setListOfSemaphores(crossroad.getSemaphores());
+        m.setCurrentCycle(Monitorer.getInstance().getCurrentCycle());
+        try {
+            for(Semaphore semaphore : crossroad.getSemaphores())
+            s.sendMessage("localhost", m, "traffic", semaphore.getID());
+        } catch (IOException | TimeoutException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private class TimerClass extends TimerTask {
+        @Override
+        public void run() {
+            sendCurrentState();
         }
     }
 }
+
+

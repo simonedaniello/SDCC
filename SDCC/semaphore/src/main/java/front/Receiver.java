@@ -14,8 +14,8 @@ import org.apache.log4j.BasicConfigurator;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeoutException;
 
-@SuppressWarnings("ALL")
 public class Receiver {
 
     private String ID;
@@ -46,13 +46,6 @@ public class Receiver {
         this.channel.exchangeDeclare(QUEUE_NAME, BuiltinExchangeType.DIRECT);
         String queueName = this.channel.queueDeclare().getQueue();
 
-        for (String binding : bindings){
-            this.channel.queueBind(queueName, QUEUE_NAME, binding);
-        }
-
-        this.channel.queueBind(queueName, QUEUE_NAME, sc.getSemaphoreID());
-        System.out.println(" [*] Waiting for messages, ID: " + ID);
-
         consumer = new DefaultConsumer(this.channel) {
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
@@ -60,45 +53,52 @@ public class Receiver {
                 //doWork(message);
                 Message message = SerializationUtils.deserialize(body);
                 int code = message.getCode();
-                System.out.println(" [x] Received '" + envelope.getRoutingKey() + "' with code :'" + message.getCode() + "' by '" + sc.getSemaphoreID() + "' sent by : "+ message.getID());
-                if (message.getCode() == 1){
-                    Semaphore x = new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress());
+                System.out.println(" [x] Received '" + envelope.getRoutingKey() + "' with code :'" + code + "' by '" + sc.getSemaphoreID() + "' sent by : "+ message.getID());
+                if (code == 1){
+                    Semaphore x = message.getSemaphore();
                     ArrayList<Crossroad> list = new ArrayList<>();
                     list.add(new Crossroad(envelope.getRoutingKey(), ""));
                     x.setCrossroads(list);
                     sc.addToSemaphoreList(x);
                 }
-                else if (message.getCode() == -1){
-                    sc.removeFromSemaphoreList(new Semaphore(message.getSemaphoreCode(), message.getSemaphoreAddress()));
+                else if (code == -1){
+                    sc.removeFromSemaphoreList(message.getSemaphore());
                 }
-                else if (message.getCode() == 10){
-                    sc.setSemaphoreList(message.getListOfSemaphores());
+                else if (code == 10){
+                    sc.setSemaphoreList(message.getListOfSemaphores(), message.getID());
                 }
-                else if (message.getCode() == 401) {
+                else if (code == 401) {
                     sc.sendStatus(message.getCurrentCycle());
                 }
             }
         };
-        this.channel.basicConsume(queueName, true, consumer);
+        for (String binding : bindings){
+            this.channel.queueBind(queueName, QUEUE_NAME, binding);
+            this.channel.basicConsume(queueName, true, binding ,consumer);
+        }
+
+        this.channel.queueBind(queueName, QUEUE_NAME, sc.getSemaphoreID());
+        this.channel.basicConsume(queueName, true, sc.getSemaphoreID() ,consumer);
+
+        System.out.println(" [*] Waiting for messages, ID: " + ID);
+
+
     }
 
     public void addBindings(String binding){
         String queueName;
         try {
             queueName = this.channel.queueDeclare().getQueue();
-            this.channel.queueBind(queueName, QUEUE_NAME, binding);
-            this.channel.basicConsume(queueName, true, consumer);
+            channel.queueBind(queueName, QUEUE_NAME, binding);
+            channel.basicConsume(queueName, true, binding , consumer);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void removeBinding(String binding){
-        String queueName;
         try {
-            queueName = this.channel.queueDeclare().getQueue();
-            this.channel.queueUnbind(queueName, QUEUE_NAME, binding);
-            this.channel.basicConsume(queueName, true, consumer);
+            channel.basicCancel(binding);
         } catch (IOException e) {
             e.printStackTrace();
         }

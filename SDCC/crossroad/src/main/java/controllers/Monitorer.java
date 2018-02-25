@@ -3,6 +3,7 @@ package main.java.controllers;
 import main.java.Message;
 import main.java.Semaphore;
 import main.java.front.Sender;
+import main.java.system.Printer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class Monitorer {
         currentCycle = 0;
         numberOfSemaphores = 0;
         Timer timer = new Timer();
-        timer.schedule(new TimerClass(), 10000, 10000); // every 10 seconds
+        timer.schedule(new TimerClass(), 10000, 15000); // every 15 seconds
     }
 
 
@@ -43,6 +44,7 @@ public class Monitorer {
     public void addSemaphoreToMonitor(Semaphore s){
         if(s.getMonitorCycle() == currentCycle) {
             semaphoresArrayList.add(s);
+            System.out.println("semaphore.arraylist.size = " + semaphoresArrayList.size());
             if (semaphoresArrayList.size() == numberOfSemaphores) {
                 sendMessage();
                 semaphoresArrayList.clear();
@@ -55,8 +57,6 @@ public class Monitorer {
         else if (s.getMonitorCycle() > currentCycle){
             System.out.println("> da implementare");
         }
-
-        printStatus();
     }
 
     private void sendRequest(){
@@ -70,19 +70,21 @@ public class Monitorer {
     }
 
     private void sendMessage(){
+        System.out.println("sending message to monitor");
+        printStatus();
         Message m = new Message("400", 500);
         m.setListOfSemaphores(semaphoresArrayList);
         try {
-            s.sendMessage("localhost", m, "traffic",  "aaaaa");
+            s.sendMessage("localhost", m, "traffic",  "monitor");
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         }
     }
 
-    public void printStatus(){
+    private void printStatus(){
         System.out.println("list of semaphores");
         for(Semaphore s : semaphoresArrayList)
-            System.out.println("\t" + s.getID());
+            Printer.getInstance().print("\t" + s.getID(), "green");
     }
 
     void setNumberOfSemaphores(int numberOfSemaphores) {
@@ -104,7 +106,7 @@ public class Monitorer {
             if (semaphoresArrayList.size() == 0 && numberOfSemaphores != 0)
                 sendRequest();
             else
-                System.out.println("monitor message not sent");
+                System.out.println("monitor message not sent, arrayList.size = " + semaphoresArrayList.size() + ", number of semaphores = " + numberOfSemaphores);
         }
     }
 }
