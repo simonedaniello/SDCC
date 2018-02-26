@@ -9,15 +9,46 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', '$http', function($scope, $http) {
-    $scope.parola = "preparazione";
-    $http({
-        method: 'GET',
-        url: '/someUrl'
-    }).then(function successCallback(response) {
-        // this callback will be called asynchronously
-        // when the response is available
-    }, function errorCallback(response) {
-        $scope.parola = "errore voluto";
+.controller('View1Ctrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
+
+    var getData = function() {
+        $scope.parola = "Loading...";
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8080/semaphoreStatus'
+        }).then(function successCallback(response) {
+            nextLoad();
+
+        }, function errorCallback(response) {
+            $scope.parola = "error contacting server";
+            nextLoad();
+        });
+
+    };
+
+    var loadTime = 15000, //Load the data every 5 seconds
+        errorCount = 0, //Counter for the server errors
+        loadPromise; //Pointer to the promise created by the Angular $timeout service
+
+    var cancelNextLoad = function() {
+        $timeout.cancel(loadPromise);
+    };
+
+    var nextLoad = function(mill) {
+        mill = mill || loadTime;
+
+        //Always make sure the last timeout is cleared before starting a new one
+        cancelNextLoad();
+        loadPromise = $timeout(getData, mill);
+    };
+
+
+    //Start polling the data from the server
+    getData();
+
+
+    //Always clear the timeout when the view is destroyed, otherwise it will keep polling
+    $scope.$on('$destroy', function() {
+        cancelNextLoad();
     });
 }]);
