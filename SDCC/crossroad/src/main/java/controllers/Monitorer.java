@@ -1,5 +1,6 @@
 package main.java.controllers;
 
+import main.java.Crossroad;
 import main.java.Message;
 import main.java.Semaphore;
 import main.java.front.Sender;
@@ -23,6 +24,7 @@ public class Monitorer {
     private int currentCycle;
     private String crossroadID;
     private Sender s;
+    private Crossroad crossroad;
 
     private Monitorer() {
 
@@ -81,6 +83,18 @@ public class Monitorer {
         }
     }
 
+    private void sendRequest2(){
+        System.out.println("sending message to monitor");
+        printStatus();
+        Message m = new Message("400", 500);
+        m.setCrossroad(crossroad);
+        try {
+            s.sendMessage("localhost", m, "traffic",  "monitor");
+        } catch (IOException | TimeoutException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void printStatus(){
         System.out.println("list of semaphores");
         for(Semaphore s : semaphoresArrayList)
@@ -99,14 +113,20 @@ public class Monitorer {
         this.crossroadID = crossroadID;
     }
 
+    public void setCrossroad(Crossroad crossroad) {
+        this.crossroad = crossroad;
+    }
+
     private class TimerClass extends TimerTask{
 
         @Override
         public void run() {
-            if (semaphoresArrayList.size() == 0 && numberOfSemaphores != 0)
-                sendRequest();
-            else
-                System.out.println("monitor message not sent, arrayList.size = " + semaphoresArrayList.size() + ", number of semaphores = " + numberOfSemaphores);
+            sendRequest2();
+//            if (semaphoresArrayList.size() == 0 && numberOfSemaphores != 0)
+//                sendRequest();
+//            else
+//                System.out.println("monitor message not sent, arrayList.size = " + semaphoresArrayList.size() + ", number of semaphores = " + numberOfSemaphores);
+
         }
     }
 }

@@ -12,6 +12,7 @@ public class Message implements Serializable {
     private String ID;
     private ArrayList<Integer> vectorClock;
     private ArrayList<Semaphore> listOfSemaphores;
+    private Crossroad crossroad;
 
     /*
     *
@@ -58,22 +59,6 @@ public class Message implements Serializable {
         this.code = code;
     }
 
-//    public String getSemaphoreCode() {
-//        return semaphoreCode;
-//    }
-//
-//    public void setSemaphoreCode(String semaphoreCode) {
-//        this.semaphoreCode = semaphoreCode;
-//    }
-//
-//    public String getSemaphoreAddress() {
-//        return semaphoreAddress;
-//    }
-//
-//    public void setSemaphoreAddress(String semaphoreAddress) {
-//        this.semaphoreAddress = semaphoreAddress;
-//    }
-
     public ArrayList<Semaphore> getListOfSemaphores() {
         return listOfSemaphores;
     }
@@ -96,5 +81,13 @@ public class Message implements Serializable {
 
     public void setCurrentCycle(int currentCycle) {
         this.currentCycle = currentCycle;
+    }
+
+    public Crossroad getCrossroad() {
+        return crossroad;
+    }
+
+    public void setCrossroad(Crossroad crossroad) {
+        this.crossroad = crossroad;
     }
 }

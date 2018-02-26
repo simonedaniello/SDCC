@@ -15,7 +15,7 @@ public class SemaphoreStateEP {
     public String returnSemaphoreState(){
         ObjectMapper mapper = new ObjectMapper();
         try {
-            String toReturn =  mapper.writeValueAsString(MonitorController.getInstance());
+            String toReturn =  mapper.writeValueAsString(MonitorController.getInstance().getCrossroads());
             Printer.getInstance().print(toReturn, "cyan");
             return toReturn;
         } catch (IOException e) {

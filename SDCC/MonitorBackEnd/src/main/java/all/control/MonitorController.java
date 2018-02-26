@@ -1,10 +1,12 @@
 package all.control;
 
+import main.java.Crossroad;
 import main.java.Semaphore;
 import main.java.system.Printer;
 import all.front.Receiver;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Author : Simone D'Aniello
@@ -14,11 +16,11 @@ public class MonitorController {
 
     private static MonitorController instance = new MonitorController();
 
-    private ArrayList<Semaphore> semaphores;
+    private ArrayList<Crossroad> crossroads;
     private String ID;
 
     private MonitorController(){
-        semaphores = new ArrayList<>();
+        crossroads = new ArrayList<>();
         ID = "monitor";
         Receiver r = new Receiver(ID, "traffic", this);
         try {
@@ -28,25 +30,42 @@ public class MonitorController {
         }
     }
 
+    private void printState(){
+        Printer.getInstance().print("current state: ", "cyan");
+        for(Crossroad c: crossroads){
+            Printer.getInstance().print("\t"+ c.getID(), "blue");
+            for(Semaphore s : c.getSemaphores()){
+                Printer.getInstance().print("\t\t"+ s.getID(), "yellow");
+            }
+        }
+    }
+
     public static MonitorController getInstance(){
         return instance;
     }
 
-    public ArrayList<Semaphore> getSemaphores() {
-        return semaphores;
+    public ArrayList<Crossroad> getCrossroads() {
+        return crossroads;
     }
 
-    public void setSemaphores(ArrayList<Semaphore> semaphores) {
-        this.semaphores = semaphores;
-        printState();
+    public void setCrossroads(ArrayList<Crossroad> crossroads) {
+        this.crossroads = crossroads;
     }
 
-    private void printState(){
-        System.out.println("list of semaphores with bindings");
-        for(Semaphore s : semaphores) {
-            Printer.getInstance().print("\t" + s.getID(), "blue");
-            for(Semaphore s2 : s.getSemaphores())
-                Printer.getInstance().print("\t\t" + s2.getID(), "cyan");
+    public void addCrossroadToList(Crossroad cross){
+        int k = 0;
+        for (Iterator<Crossroad> iter = crossroads.listIterator(); iter.hasNext(); ) {
+            Crossroad c = iter.next();
+            if(c.getID().equals(cross.getID())){
+                k = 1;
+            } else
+            if (k == 1) {
+                iter.remove();
+                k = 0;
+            }
         }
+        crossroads.add(cross);
+        printState();
+
     }
 }

@@ -55,7 +55,7 @@ public class Receiver {
                 Message message = SerializationUtils.deserialize(body);
                 System.out.println(" [x] Received '" + envelope.getRoutingKey() + "':'" + message.getCode() + "'");
                 if (message.getCode() == 500){
-                    monitorController.setSemaphores(message.getListOfSemaphores());
+                    monitorController.addCrossroadToList(message.getCrossroad());
                 }
             }
         };

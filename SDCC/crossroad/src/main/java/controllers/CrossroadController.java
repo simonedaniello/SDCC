@@ -26,7 +26,7 @@ public class CrossroadController {
         s = new Sender(crossroad.getID());
         Receiver r = new Receiver(crossroad.getID(), "traffic", this);
         Monitorer.getInstance().setSender(s);
-        Monitorer.getInstance().setCrossroadID(crossroad.getID());
+        Monitorer.getInstance().setCrossroad(crossroad);
         try {
             r.receiveMessage("localhost", crossroad.getID());
             r.addBindings("monitor");

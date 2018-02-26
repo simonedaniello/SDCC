@@ -12,17 +12,17 @@ angular.module('myApp.view1', ['ngRoute'])
 .controller('View1Ctrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
 
     var getData = function() {
-        $scope.semaphores = "Loading...";
+        $scope.crossroads = "Loading...";
         $http({
             method: 'GET',
             url: 'http://localhost:8080/semaphoreStatus'
         }).then(function successCallback(response) {
             console.log(response.data);
-            $scope.semaphores = response.data.semaphores;
+            $scope.crossroads = response.data;
             nextLoad();
 
         }, function errorCallback() {
-            $scope.semaphores = "error contacting server";
+            $scope.crossroads = "error contacting server";
             nextLoad();
         });
 

@@ -1,9 +1,14 @@
 <div ng-controller="View1Ctrl">
 
-    <table>
-        <tr ng-repeat="x in semaphores">
-            <td>Stato semaforo =  {{ x.state }}</td>
-            <td>Strada semaforo = {{ x.street }}</td>
-        </tr>
-    </table>
+    <div ng-repeat="x in crossroads">
+        Crossroad ID: {{x.id}}
+        Crossroad Street: {{x.street}}
+        <table>
+            <tr ng-repeat="y in x.semaphores">
+                <td>Crossroad ID: {{ y.id }}</td>
+                <td>Street = {{ y.street }}</td>
+            </tr>
+        </table>
+    </div>
+
 </div>
