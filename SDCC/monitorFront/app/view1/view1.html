@@ -1,3 +1,9 @@
 <div ng-controller="View1Ctrl">
-    {{parola}}
+
+    <table>
+        <tr ng-repeat="x in semaphores">
+            <td>Stato semaforo =  {{ x.state }}</td>
+            <td>Strada semaforo = {{ x.street }}</td>
+        </tr>
+    </table>
 </div>

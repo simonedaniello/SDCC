@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>uni.copilot</groupId>
-	<artifactId>copilot</artifactId>
+	<groupId>MonitorBackEnd</groupId>
+	<artifactId>monitorBackEnd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>copilot</name>
+	<name>monitorBackEnd</name>
 	<description>no description</description>
 
 	<parent>
@@ -32,6 +32,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->

@@ -12,10 +12,12 @@ import java.util.ArrayList;
  */
 public class MonitorController {
 
+    private static MonitorController instance = new MonitorController();
+
     private ArrayList<Semaphore> semaphores;
     private String ID;
 
-    public MonitorController(){
+    private MonitorController(){
         semaphores = new ArrayList<>();
         ID = "monitor";
         Receiver r = new Receiver(ID, "traffic", this);
@@ -24,6 +26,10 @@ public class MonitorController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static MonitorController getInstance(){
+        return instance;
     }
 
     public ArrayList<Semaphore> getSemaphores() {

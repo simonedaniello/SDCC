@@ -12,21 +12,23 @@ angular.module('myApp.view1', ['ngRoute'])
 .controller('View1Ctrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
 
     var getData = function() {
-        $scope.parola = "Loading...";
+        $scope.semaphores = "Loading...";
         $http({
             method: 'GET',
             url: 'http://localhost:8080/semaphoreStatus'
         }).then(function successCallback(response) {
+            console.log(response.data);
+            $scope.semaphores = response.data.semaphores;
             nextLoad();
 
-        }, function errorCallback(response) {
-            $scope.parola = "error contacting server";
+        }, function errorCallback() {
+            $scope.semaphores = "error contacting server";
             nextLoad();
         });
 
     };
 
-    var loadTime = 15000, //Load the data every 5 seconds
+    var loadTime = 15000, //Load the data every 15 seconds
         errorCount = 0, //Counter for the server errors
         loadPromise; //Pointer to the promise created by the Angular $timeout service
 
