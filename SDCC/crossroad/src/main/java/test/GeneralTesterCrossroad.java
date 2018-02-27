@@ -8,6 +8,6 @@ import main.java.controllers.CrossroadController;
  */
 public class GeneralTesterCrossroad {
     public static void main(String[] args) {
-        new CrossroadController("cross1", "via nulla");
+        new CrossroadController("cr0001", "via ai test");
     }
 }

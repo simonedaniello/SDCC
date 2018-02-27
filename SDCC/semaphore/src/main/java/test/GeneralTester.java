@@ -21,11 +21,11 @@ public class GeneralTester {
     }
 
     private static void generalSelf() throws InterruptedException  {
-        SemaphoreController semaphoreController1 = new SemaphoreController("sem1", "via sem1");
-        SemaphoreController semaphoreController2 = new SemaphoreController("sem2", "via sem2");
-        SemaphoreController semaphoreController3 = new SemaphoreController("sem3", "via sem2");
+        SemaphoreController semaphoreController1 = new SemaphoreController("sem0001", "via libera");
+        SemaphoreController semaphoreController2 = new SemaphoreController("sem0002", "via vai");
+        SemaphoreController semaphoreController3 = new SemaphoreController("sem0003", "via dotto");
 
-        Crossroad c = new Crossroad("cross1", "via nulla");
+        Crossroad c = new Crossroad("cr0001", "via ai test");
         semaphoreController1.addToCrossroad(c);
         //TimeUnit.SECONDS.sleep(1);
         semaphoreController3.addToCrossroad(c);
@@ -39,8 +39,8 @@ public class GeneralTester {
         semaphoreController2.printState();
         semaphoreController3.printState();
 
-//        TimeUnit.SECONDS.sleep(10);
-//        semaphoreController1.addToCrossroad(c);
+        TimeUnit.SECONDS.sleep(20);
+        semaphoreController1.addToCrossroad(c);
 
 
 

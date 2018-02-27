@@ -1,14 +1,33 @@
 <div ng-controller="View1Ctrl">
 
-    <div ng-repeat="x in crossroads">
-        Crossroad ID: {{x.id}}
-        Crossroad Street: {{x.street}}
-        <table>
-            <tr ng-repeat="y in x.semaphores">
-                <td>Crossroad ID: {{ y.id }}</td>
-                <td>Street = {{ y.street }}</td>
-            </tr>
-        </table>
+    <div class="w3-container w3-blue">
+        <h1>ACTIVE CROSSROADS</h1>
     </div>
+
+    <div class="container" ng-repeat="x in crossroads track by x.id" align="center" style="padding:5px">
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#crossroadCollapse" aria-expanded="false" aria-controls="crossroadCollapse" style="padding:5px">
+            {{x.id}} - {{x.street}}
+        </button>
+        <!--<a href="#crossroadCollapse" class="btn btn-success" data-toggle="collapse"></a>-->
+        <div id="crossroadCollapse" class="collapse">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Semaphore ID</th>
+                    <th>Semaphore Street</th>
+                    <th>Semaphore Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="y in x.semaphores">
+                    <td>{{ y.id }}</td>
+                    <td>{{ y.street }}</td>
+                    <td>{{ y.state }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 
 </div>

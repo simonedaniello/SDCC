@@ -56,16 +56,17 @@ public class MonitorController {
         int k = 0;
         for (Iterator<Crossroad> iter = crossroads.listIterator(); iter.hasNext(); ) {
             Crossroad c = iter.next();
+            Printer.getInstance().print("comparo " + c.getID() +" e " + cross.getID(), "red");
             if(c.getID().equals(cross.getID())){
                 k = 1;
-            } else
+            }
             if (k == 1) {
                 iter.remove();
+                Printer.getInstance().print("ho rimosso "+ c.getID(), "red");
                 k = 0;
             }
         }
         crossroads.add(cross);
         printState();
-
     }
 }

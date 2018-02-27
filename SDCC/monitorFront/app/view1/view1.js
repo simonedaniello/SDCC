@@ -22,7 +22,8 @@ angular.module('myApp.view1', ['ngRoute'])
             nextLoad();
 
         }, function errorCallback() {
-            $scope.crossroads = "error contacting server";
+            $scope.crossroads = null;
+            console.log("error contacting server");
             nextLoad();
         });
 

@@ -70,6 +70,8 @@ public class Receiver {
                 else if (code == 401) {
                     sc.sendStatus(message.getCurrentCycle());
                 }
+//                long deliveryTag = envelope.getDeliveryTag();
+//                channel.basicAck(deliveryTag, false);
             }
         };
         for (String binding : bindings){
