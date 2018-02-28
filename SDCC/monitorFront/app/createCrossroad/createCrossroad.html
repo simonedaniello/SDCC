@@ -1,0 +1,53 @@
+<div ng-controller="createCrossroadCtrl">
+
+    <div class="w3-container w3-blue">
+        <h1 align="center">ADD</h1>
+    </div>
+
+    <!--ADD CROSSROAD-->
+    <div style="padding-top:20px">
+        <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#addCrossroadCollapse" aria-expanded="false" aria-controls="addCrossroadCollapse" >
+            Add Crossroad
+        </button>
+        <div id="addCrossroadCollapse" class="collapse container" style="padding-top: 15px">
+            <form>
+                <div class="form-group">
+                    <label for="crossid">Crossroad ID:</label>
+                    <input type="text" class="form-control" id="crossid" ng-model="cross.id">
+                </div>
+                <div class="form-group">
+                    <label for="crossstreet">Crossroad Street:</label>
+                    <input type="text" class="form-control" id="crossstreet" ng-model="cross.street">
+                </div>
+                <div style="text-align: center"><input class="btn btn-success btn-lg" type="submit" id="submitcross" value="Add Crossroad"/></div>
+            </form>
+        </div>
+    </div>
+
+
+    <!--ADD SEMAPHORE-->
+    <div style="padding-top:20px">
+        <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#addSemaphoreCollapse" aria-expanded="false" aria-controls="addSemaphoreCollapse" >
+            Add Semaphore
+        </button>
+        <div id="addSemaphoreCollapse" class="collapse container" style="padding-top: 15px">
+            <form>
+                <div class="form-group">
+                    <label for="semid">Semaphore ID:</label>
+                    <input type="text" class="form-control" id="semid" ng-model="sem.id">
+                </div>
+                <div class="form-group">
+                    <label for="semstreet">Semaphore Street:</label>
+                    <input type="text" class="form-control" id="semstreet" ng-model="sem.street">
+                </div>
+                <label for="multipleSelect">Add to Crossroads: </label><br>
+                <select class="selectpicker" multiple title="Choose one or more " name="multipleSelect" id="multipleSelect" ng-model="data.multipleSelect">
+                    <option ng-repeat="option in cross" value="{{option.id}}">{{option.id}}</option>
+                </select><br>
+                <!--Crossroads = {{data.multipleSelect}}<br/>-->
+                <div style="text-align: center"><input class="btn btn-success btn-lg" type="submit" id="submitsem" value="Add Semaphore"/></div>
+            </form>
+        </div>
+    </div>
+
+</div>

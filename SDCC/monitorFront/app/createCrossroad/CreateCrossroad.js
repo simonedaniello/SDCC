@@ -1,28 +1,29 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.createCrossroad', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+  $routeProvider.when('/createCrossroad', {
+    templateUrl: 'createCrossroad/createCrossroad.html',
+    controller: 'createCrossroadCtrl'
   });
 }])
 
-.controller('View1Ctrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
+.controller('createCrossroadCtrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
 
     var getData = function() {
-        $scope.crossroads = "Loading...";
+        $scope.cross = "Loading...";
         $http({
             method: 'GET',
             url: 'http://localhost:8080/semaphoreStatus'
         }).then(function successCallback(response) {
-            $scope.crossroads = null;
-            $scope.crossroads = response.data;
+            $scope.cross = null;
+            $scope.cross = response.data;
+            console.log(response.data);
             nextLoad();
 
         }, function errorCallback() {
-            $scope.crossroads = null;
+            $scope.cross = null;
             console.log("error contacting server");
             nextLoad();
         });

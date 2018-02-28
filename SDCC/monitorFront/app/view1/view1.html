@@ -1,10 +1,10 @@
 <div ng-controller="View1Ctrl">
 
     <div class="w3-container w3-blue">
-        <h1>ACTIVE CROSSROADS</h1>
+        <h1 align="center">ACTIVE CROSSROADS</h1>
     </div>
 
-    <div class="container" ng-repeat="x in crossroads track by x.id" align="center" style="padding:5px">
+    <div class="container" ng-repeat="x in crossroads" align="center" style="padding:5px">
         <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#crossroadCollapse" aria-expanded="false" aria-controls="crossroadCollapse" style="padding:5px">
             {{x.id}} - {{x.street}}
         </button>
@@ -19,7 +19,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="y in x.semaphores">
+                <tr ng-repeat="y in x.semaphores track by y.id">
                     <td>{{ y.id }}</td>
                     <td>{{ y.street }}</td>
                     <td>{{ y.state }}</td>
