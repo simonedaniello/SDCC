@@ -12,12 +12,10 @@ angular.module('myApp.createCrossroad', ['ngRoute'])
 .controller('createCrossroadCtrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
 
     var getData = function() {
-        $scope.cross = "Loading...";
         $http({
             method: 'GET',
             url: 'http://localhost:8080/semaphoreStatus'
         }).then(function successCallback(response) {
-            $scope.cross = null;
             $scope.cross = response.data;
             console.log(response.data);
             nextLoad();
@@ -46,13 +44,26 @@ angular.module('myApp.createCrossroad', ['ngRoute'])
         loadPromise = $timeout(getData, mill);
     };
 
-
     //Start polling the data from the server
     getData();
-
 
     //Always clear the timeout when the view is destroyed, otherwise it will keep polling
     $scope.$on('$destroy', function() {
         cancelNextLoad();
     });
+
+    $scope.sendSemaphore = function () {
+        $scope.modalMessage = "Loading ...";
+        var parameter = JSON.stringify({id: $scope.semID, street: $scope.semStreet, crossroads:[$scope.dataMultipleSelect]});
+        console.log(parameter);
+        $http.post('http://localhost:8080/addSemaphore', parameter)
+            .success(function () {
+                $scope.modalMessage = "semaphore added with success. Note that input control is not been implemented yet"
+            })
+            .error(function (error, status) {
+                $scope.modalMessage = "Error in adding semaphore, error: " + error + ", status: " + status;
+            });
+        $("#myModal").modal();
+    };
 }]);
+
