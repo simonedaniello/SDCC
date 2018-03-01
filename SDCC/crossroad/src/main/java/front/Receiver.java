@@ -68,6 +68,7 @@ public class Receiver {
             }
         };
         this.channel.basicConsume(queueName, true, consumer);
+
     }
 
     public void addBindings(String binding){

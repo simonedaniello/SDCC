@@ -1,0 +1,26 @@
+<div ng-controller="trafficAnalyticsCtrl">
+
+    <div class="w3-container w3-blue">
+        <h1 align="center">ANALYTICS</h1>
+    </div>
+
+    <div style="text-align: center; padding-top: 50px; width: 80%; margin: auto">
+        <div >
+            <h3 style="padding-top: 30px; width: 100%; text-align: center">All data is simulated. Controllers must be implemented</h3>
+            <form ng-submit="getSemaphoreStatistics()" style="text-align: center">
+                <label for="multipleSelect"> Select a semaphore: </label><br>
+                <select class="form-control" name="multipleSelect" id="multipleSelect" ng-model="dataMultipleSelect">
+                    <option selected="selected">none</option>
+                    <!--<option ng-repeat="x in cross" value="{{x.id}}">{{x.id}}</option>-->
+                </select><br>
+                <!--<label>Crossroads selected: {{dataMultipleSelect}}</label>-->
+                <div style="text-align: center"><input class="btn btn-success btn-lg" type="submit" id="submitsem" value="Retrieve Analytics"/></div>
+            </form>
+            <h3 style="padding-top: 30px; display: none" id="semaphoreTrafficHistoryID">Semaphore traffic history</h3>
+            <canvas id="semaphoreHistory" width="800" height="200"></canvas>
+
+            <h3 style="padding-top: 30px; display: none" id="numberOfFailuresID">Semaphore Failures (minutes in a month)</h3>
+            <canvas id="numberOfFailures" width="800" height="200"></canvas>
+        </div>
+    </div>
+</div>

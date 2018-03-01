@@ -22,6 +22,7 @@ public class Message implements Serializable {
     *   400 : monitor message
     *   401 : request of the crossroad monitor
     *   10 : get list of semaphores from crossroad
+    *   500 : send status to monitorBackEnd
     *
     */
     private int code;

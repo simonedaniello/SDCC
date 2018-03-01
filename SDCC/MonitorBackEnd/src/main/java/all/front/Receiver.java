@@ -18,8 +18,6 @@ public class Receiver {
 
     private String ID;
     private String QUEUE_NAME;
-    private Channel channel;
-    private Consumer consumer;
     private MonitorController monitorController;
 
     public Receiver(String ID, String queueName, MonitorController monitorController){
@@ -39,29 +37,27 @@ public class Receiver {
         factory.setRequestedHeartbeat(2);
         factory.setHost(address);
         Connection connection = factory.newConnection();
-        this.channel = connection.createChannel();
+        Channel channel = connection.createChannel();
 
-        this.channel.exchangeDeclare(QUEUE_NAME, BuiltinExchangeType.DIRECT);
-        String queueName = this.channel.queueDeclare().getQueue();
+        channel.exchangeDeclare(QUEUE_NAME, BuiltinExchangeType.DIRECT);
+        String queueName = channel.queueDeclare().getQueue();
 
-        this.channel.queueBind(queueName, QUEUE_NAME, binding);
+        channel.queueBind(queueName, QUEUE_NAME, binding);
 
         System.out.println(" [*] Waiting for messages, ID: " + ID);
 
-        consumer = new DefaultConsumer(this.channel) {
+        Consumer consumer = new DefaultConsumer(channel) {
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
 
                 Message message = SerializationUtils.deserialize(body);
                 System.out.println(" [x] Received '" + envelope.getRoutingKey() + "':'" + message.getCode() + "'");
-                if (message.getCode() == 500){
+                if (message.getCode() == 500) {
                     monitorController.addCrossroadToList(message.getCrossroad());
                 }
             }
         };
-        this.channel.basicConsume(queueName, true, consumer);
+        channel.basicConsume(queueName, true, consumer);
     }
-
-
 
 }
