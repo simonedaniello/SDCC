@@ -5,13 +5,23 @@
     </div>
 
     <div style="text-align: center; padding-top: 50px; width: 80%; margin: auto">
-        <div >
-            <h3 style="padding-top: 30px; width: 100%; text-align: center">All data is simulated. Controllers must be implemented</h3>
-            <form ng-submit="getSemaphoreStatistics()" style="text-align: center">
-                <label for="multipleSelect"> Select a semaphore: </label><br>
-                <select class="form-control" name="multipleSelect" id="multipleSelect" ng-model="dataMultipleSelect">
+        <div>
+            <form ng-submit="showSecondPanel()">
+                <label for="multipleSelect"> Select a crossroad: </label><br>
+                <select class="form-control" name="multipleSelect" id="multipleSelect" ng-model="dataSelected">
                     <option selected="selected">none</option>
-                    <!--<option ng-repeat="x in cross" value="{{x.id}}">{{x.id}}</option>-->
+                    <option ng-repeat="x in crossroads" value="{{x.id}}">{{x.id}}</option>
+                </select><br>
+                <div style="text-align: center"><input class="btn btn-success btn-lg" type="submit" id="checkCrossroadButton" value="Check Crossroad"/></div>
+            </form>
+
+
+            <form ng-submit="getSemaphoreStatistics()" style="text-align: center; display: none" id="secondForm">
+
+                <label for="multipleSelect"> Select a Semaphore: </label><br>
+                <select class="form-control" name="semaphoreSelect" id="semaphoreSelect" ng-model="semaphoreSelectData">
+                    <option selected="selected">none</option>
+                    <option ng-repeat="x in semaphores" value="{{x.id}}">{{x.id}}</option>
                 </select><br>
                 <!--<label>Crossroads selected: {{dataMultipleSelect}}</label>-->
                 <div style="text-align: center"><input class="btn btn-success btn-lg" type="submit" id="submitsem" value="Retrieve Analytics"/></div>

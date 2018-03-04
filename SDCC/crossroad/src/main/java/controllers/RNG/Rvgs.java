@@ -1,4 +1,4 @@
-package RNG;/* --------------------------------------------------------------------------
+package main.java.controllers.RNG;/* --------------------------------------------------------------------------
  * This is a Java library for generating random variates from six discrete 
  * distributions
  *
@@ -34,9 +34,6 @@ package RNG;/* -----------------------------------------------------------------
  * --------------------------------------------------------------------------
  */
 
-import java.math.*;
-import java.io.*;
-
 public class Rvgs{
     
     /* Barry Lawson 8 Nov 2007 */
@@ -48,13 +45,13 @@ public class Rvgs{
     // Instead, force the Rvgs constructor to have an already-created Rngs
     // object.
 
-    Rngs rngs; 
+    private Rngs rngs;
     
 //    public Rvgs(){
 //   	  rngs = new Rngs();
 //    }
 
-    public Rvgs(Rngs givenRngs)
+    Rvgs(Rngs givenRngs)
     {
       try {
         if (givenRngs == null)
@@ -67,7 +64,7 @@ public class Rvgs{
     }
     /* Barry Lawson 8 Nov 2007 */
     
-    public long bernoulli(double p)
+    private long bernoulli(double p)
 /* ========================================================
  * Returns 1 with probability p or 0 with probability 1 - p. 
  * NOTE: use 0.0 < p < 1.0                                   
@@ -101,7 +98,7 @@ public class Rvgs{
 	return (a + (long) ((b - a + 1) * rngs.random()));
     }
 
-    public long geometric(double p)
+    private long geometric(double p)
 /* ====================================================
  * Returns a geometric distributed non-negative integer.
  * NOTE: use 0.0 < p < 1.0
@@ -177,7 +174,7 @@ public class Rvgs{
 	return (x);
     }
     
-    public double normal(double m, double s)
+    private double normal(double m, double s)
 /* ========================================================================
  * Returns a normal (Gaussian) distributed real number.
  * NOTE: use s > 0.0
@@ -218,7 +215,7 @@ public class Rvgs{
 	return (Math.exp(a + b * normal(0.0, 1.0)));
     }
 
-    public double chiSquare(long n)
+    private double chiSquare(long n)
 /* =====================================================
  * Returns a chi-square distributed positive real number. 
  * NOTE: use n > 0

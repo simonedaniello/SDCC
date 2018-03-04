@@ -1,6 +1,7 @@
-package RNG;
+package main.java.controllers.RNG;
 
-import Model.Car;
+import main.java.Car;
+import main.java.system.Printer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,15 +14,14 @@ public class ListOfArrivals {
     private static ListOfArrivals me;
 
     private ListOfArrivals(){
-
         carArrivalList = new ArrayList<>();
     }
 
     public static ListOfArrivals getMe() {
         if (me == null){
             me = new ListOfArrivals();
-            return me;}
-
+            return me;
+        }
         return  me;
     }
 
@@ -34,16 +34,13 @@ public class ListOfArrivals {
     }
 
     public void PushArrival(Car c){
-
-
         carArrivalList.add(c);
-        Collections.sort(carArrivalList, new Comparator<Car>() {
-        @Override
-       public int compare(Car e1, Car e2) {
+        carArrivalList.sort(new Comparator<Car>() {
+            @Override
+            public int compare(Car e1, Car e2) {
                 return (e2.getTime() < e1.getTime()) ? 1 : -1;
-                 }
- });
-
+            }
+        });
     }
 
 }

@@ -122,11 +122,6 @@ public class Monitorer {
         @Override
         public void run() {
             sendRequest2();
-//            if (semaphoresArrayList.size() == 0 && numberOfSemaphores != 0)
-//                sendRequest();
-//            else
-//                System.out.println("monitor message not sent, arrayList.size = " + semaphoresArrayList.size() + ", number of semaphores = " + numberOfSemaphores);
-
         }
     }
 }

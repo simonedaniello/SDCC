@@ -1,4 +1,4 @@
-package RNG;/* -------------------------------------------------------------------------
+package main.java.controllers.RNG;/* -------------------------------------------------------------------------
  * This is an Java library for random number generation.  The use of this
  * library is recommended as a replacement for the Java class Random,
  * particularly in simulation applications where the statistical

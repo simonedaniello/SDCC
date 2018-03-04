@@ -23,5 +23,4 @@ public class SemaphoreStateEP {
             return "error";
         }
     }
-
 }

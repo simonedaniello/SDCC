@@ -42,7 +42,7 @@ public class SemaphoreController {
         m.setSemaphore(semaphore);
         try {
             s.sendMessage("localhost", m, "traffic", crossroad.getID());
-            System.out.println("adding to crossroad: " + crossroad.getID());
+//            System.out.println("adding to crossroad: " + crossroad.getID());
             semaphore.getCrossroads().add(crossroad);
             getReceive().addBindings(crossroad.getID());
         } catch (IOException | TimeoutException e) {
@@ -51,7 +51,7 @@ public class SemaphoreController {
     }
 
     public void removeCrossroad(Crossroad crossroad) {
-        System.out.println("removing crossroad: " + crossroad.getID());
+//        System.out.println("removing crossroad: " + crossroad.getID());
         Message m = new Message(semaphore.getID(), -1);
         m.setSemaphore(semaphore);
         int k = 0;
@@ -66,14 +66,14 @@ public class SemaphoreController {
             }
             for (Iterator<Semaphore> iter = semaphore.getSemaphores().listIterator(); iter.hasNext(); ) {
                 Semaphore s = iter.next();
-                System.out.println("analyzing " + s.getID());
+//                System.out.println("analyzing " + s.getID());
                 for(Crossroad c: s.getCrossroads()){
                     if(c.getID().equals(crossroad.getID())){
                         k = 1;
                     }
                 }
                 if (k == 1) {
-                    System.out.println("removing semaphore");
+//                    System.out.println("removing semaphore");
                     iter.remove();
                     k = 0;
                 }
@@ -90,10 +90,6 @@ public class SemaphoreController {
         return semaphore.getSemaphores();
     }
 
-    private String generateID(){
-        return "aaaaa";
-    }
-
     private ArrayList<String> getCrossroadsName(){
         ArrayList<String> toReturn = new ArrayList<>();
         for(Crossroad c : semaphore.getCrossroads()){
@@ -103,16 +99,16 @@ public class SemaphoreController {
     }
 
     public void addToSemaphoreList(Semaphore s){
-        System.out.println("sono " + semaphore.getID() + " e aggiungo " + s.getID());
+//        System.out.println("sono " + semaphore.getID() + " e aggiungo " + s.getID());
         semaphore.getSemaphores().add(s);
     }
 
     public void removeFromSemaphoreList(Semaphore s) {
         for(Semaphore c: semaphore.getSemaphores()){
-            Printer.getInstance().print("analyzing " + c.getID(), "red");
+//            Printer.getInstance().print("analyzing " + c.getID(), "red");
             if(c.getID().equals(s.getID())){
                 semaphore.getSemaphores().remove(c);
-                Printer.getInstance().print("sono " + semaphore.getID() + " e rimuovo " + c.getID(), "red");
+//                Printer.getInstance().print("sono " + semaphore.getID() + " e rimuovo " + c.getID(), "red");
                 return;
             }
         }
@@ -120,27 +116,26 @@ public class SemaphoreController {
 
     public void setSemaphoreList(ArrayList<Semaphore> newSem , String crossroad) {
         int k = 0;
-        Printer.getInstance().print("removing semaphores from crossroad " + crossroad, "cyan");
+//        Printer.getInstance().print("removing semaphores from crossroad " + crossroad, "cyan");
         for (Iterator<Semaphore> iter = semaphore.getSemaphores().listIterator(); iter.hasNext(); ) {
             Semaphore s = iter.next();
-            System.out.println("analyzing " + s.getID());
+//            System.out.println("analyzing " + s.getID());
             if(s.getCrossroads().size() == 0)
                 Printer.getInstance().print("size = 0", "red");
             for(Crossroad c: s.getCrossroads()){
                 if(c.getID().equals(crossroad)){
-                    System.out.println("ha quell'incrocio");
+//                    System.out.println("ha quell'incrocio");
                     k = 1;
-                } else
-                    System.out.println("non aveva quell'incrocio");
+                }
             }
             if (k == 1) {
-                Printer.getInstance().print("removing semaphore " + s.getID(), "red");
+//                Printer.getInstance().print("removing semaphore " + s.getID(), "red");
                 iter.remove();
                 k = 0;
             }
         }
         for(Semaphore sem : newSem){
-            System.out.println("sono " + semaphore.getID() + " e aggiungo " + sem.getID());
+//            System.out.println("sono " + semaphore.getID() + " e aggiungo " + sem.getID());
             semaphore.getSemaphores().add(sem);
         }
     }
@@ -175,7 +170,7 @@ public class SemaphoreController {
         for(Semaphore c: semaphore.getGreenTogether()){
             if(c.getID().equals(s.getID())){
                 semaphore.getGreenTogether().remove(c);
-                System.out.println("sono " + semaphore.getID() + " e rimuovo da green together " + c.getID());
+//                System.out.println("sono " + semaphore.getID() + " e rimuovo da green together " + c.getID());
                 return;
             }
         }

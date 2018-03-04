@@ -8,6 +8,7 @@ import main.java.front.Sender;
 import main.java.system.Printer;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeoutException;
@@ -35,6 +36,11 @@ public class CrossroadController {
         }
         Timer timer = new Timer();
         timer.schedule(new TimerClass(), 10000, 30000); // every 15 seconds
+        new Decider(this);
+    }
+
+    public ArrayList<Semaphore> getSemaphoreInCrossroad(){
+        return crossroad.getSemaphores();
     }
 
     public void addSemaphore(Semaphore semaphore){
@@ -72,6 +78,10 @@ public class CrossroadController {
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         }
+    }
+
+    public void sendGreen(Semaphore greenSemaphore) {
+
     }
 
     private class TimerClass extends TimerTask {
