@@ -10,14 +10,14 @@
             Add Crossroad
         </button>
         <div id="addCrossroadCollapse" class="collapse container" style="padding-top: 15px">
-            <form>
+            <form ng-submit="createCrossroadFunction()">
                 <div class="form-group">
                     <label for="crossid">Crossroad ID:</label>
-                    <input type="text" class="form-control" id="crossid" ng-model="cross.id">
+                    <input type="text" class="form-control" id="crossid" ng-model="crossID">
                 </div>
                 <div class="form-group">
                     <label for="crossstreet">Crossroad Street:</label>
-                    <input type="text" class="form-control" id="crossstreet" ng-model="cross.street">
+                    <input type="text" class="form-control" id="crossstreet" ng-model="crossStreet">
                 </div>
                 <div class="form-group">
                     <label for="crossip">Crossroad IP:</label>

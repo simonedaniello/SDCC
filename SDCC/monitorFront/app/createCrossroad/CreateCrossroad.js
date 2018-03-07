@@ -65,5 +65,41 @@ angular.module('myApp.createCrossroad', ['ngRoute'])
             });
         $("#myModal").modal();
     };
+
+    $scope.createCrossroadFunction = function () {
+
+        var parameter = JSON.stringify({id: $scope.crossID, address: $scope.crossStreet});
+
+        function appendTransform(defaults, transform) {
+
+            // We can't guarantee that the default transformation is an array
+            defaults = angular.isArray(defaults) ? defaults : [defaults];
+
+            // Append the new transformation to the defaults
+            return defaults.concat(transform);
+        }
+
+        var req = {
+            method: 'POST',
+            url: 'http://' + $scope.crossIP + ':8097/createCrossroad',
+            data: parameter,
+            transformResponse: appendTransform($http.defaults.transformResponse, function(data) {
+                return data;
+            })
+        };
+
+
+        $scope.modalMessage = "Loading ...";
+        $http(req)
+        // $http.post('http://localhost:8080/createCrossroad', parameter)
+            .success(function (response) {
+                $scope.modalMessage = response
+            })
+            .error(function (error, status) {
+                $scope.modalMessage = "Error in adding crossroad, error: " + error + ", status: " + status;
+            });
+
+        $("#myModal").modal();
+    };
 }]);
 
