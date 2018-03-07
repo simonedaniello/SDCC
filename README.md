@@ -6,7 +6,8 @@
 
 ## Installation
 
-The project is composed by several parts. In order to run each section...
+The project is composed by several parts. In order to run each section download 
+and install [RabbitMQ](https://www.rabbitmq.com/download.html) and...
 * __CrossroadWR__ 
     * open the project as maven file
     * Include the jars in the libs folder
@@ -37,6 +38,25 @@ Code | From | To | Other listening | Meaning
 500 | MonitorController | MonitorBE | / | Message sent to the monitor back end controller by the monitor controller after the retrieving of each semaphore’s status
 
 
+##Technologies
+
+* IDE: 
+    * IntelliJ
+* Messages:
+    * RabbitMQ
+    * Spring
+* Front End:
+    * AngularJS
+* Data Stream: 
+    * Flink
+
+##How it works
+
+>todo
+
+
 ## Authors
 
-> todo
+* Simone D'Aniello - Master student of Computer Science in the University of Rome Tor Vergata
+* Marius Ionita - Master student of Computer Science in the University of Rome Tor Vergata
+* Federico Ronci - Master student of Computer Science in the University of Rome Tor Vergata
