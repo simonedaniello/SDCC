@@ -10,9 +10,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="CrossroadWR" />
+        <module name="monitorBackEnd" />
+        <module name="monitorBackEnd (1)" />
+        <module name="SemaphoreWR" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="CrossroadWR" target="1.8" />
       <module name="Flink" target="1.6" />
       <module name="flink-annotations" target="1.8" />
       <module name="flink-avro" target="1.8" />
@@ -106,6 +111,9 @@
       <module name="flink-yarn-tests_2.11" target="1.8" />
       <module name="flink-yarn_2.11" target="1.8" />
       <module name="force-shading" target="1.6" />
+      <module name="monitorBackEnd" target="1.8" />
+      <module name="monitorBackEnd (1)" target="1.8" />
+      <module name="SemaphoreWR" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

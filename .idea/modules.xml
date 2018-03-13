@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SDCC/adapter/adapter.iml" filepath="$PROJECT_DIR$/SDCC/adapter/adapter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SDCC/crossroad/crossroad.iml" filepath="$PROJECT_DIR$/SDCC/crossroad/crossroad.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SDCC/db/db.iml" filepath="$PROJECT_DIR$/SDCC/db/db.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SDCC/dispatcher/dispatcher.iml" filepath="$PROJECT_DIR$/SDCC/dispatcher/dispatcher.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SDCC/monitor/monitor.iml" filepath="$PROJECT_DIR$/SDCC/monitor/monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/CrossroadWR/CrossroadWR.iml" filepath="$PROJECT_DIR$/SDCC/CrossroadWR/CrossroadWR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/SemaphoreWR/SemaphoreWR.iml" filepath="$PROJECT_DIR$/SDCC/SemaphoreWR/SemaphoreWR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/entities/entities.iml" filepath="$PROJECT_DIR$/SDCC/entities/entities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/monitorBackEnd.iml" filepath="$PROJECT_DIR$/SDCC/MonitorBackEnd/monitorBackEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/monitorFront/monitorFront.iml" filepath="$PROJECT_DIR$/SDCC/monitorFront/monitorFront.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/semaphore/semaphore.iml" filepath="$PROJECT_DIR$/SDCC/semaphore/semaphore.iml" />
     </modules>
   </component>
 </project>

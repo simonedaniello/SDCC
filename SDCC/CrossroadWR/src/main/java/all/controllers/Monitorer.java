@@ -1,6 +1,6 @@
 package all.controllers;
 
-import all.front.Sender;
+import all.front.FirstProducer;
 import main.java.Crossroad;
 import main.java.Message;
 import main.java.Semaphore;
@@ -22,8 +22,8 @@ public class Monitorer {
     private ArrayList<Semaphore> semaphoresArrayList = new ArrayList<>();
     private int numberOfSemaphores;
     private int currentCycle;
-    private String crossroadID;
-    private Sender s;
+//    private Sender s;
+    private FirstProducer s;
     private Crossroad crossroad;
 
     private Monitorer() {
@@ -64,11 +64,8 @@ public class Monitorer {
     private void sendRequest(){
         Message m = new Message("400", 401);
         m.setCurrentCycle(currentCycle);
-        try {
-            s.sendMessage("localhost", m, "traffic",  crossroadID);
-        } catch (IOException | TimeoutException e) {
-        e.printStackTrace();
-        }
+
+        s.sendMessage("address", m, "traffic");
     }
 
     private void sendMessage(){
@@ -76,11 +73,7 @@ public class Monitorer {
         printStatus();
         Message m = new Message("400", 500);
         m.setListOfSemaphores(semaphoresArrayList);
-        try {
-            s.sendMessage("localhost", m, "traffic",  "monitor");
-        } catch (IOException | TimeoutException e) {
-            e.printStackTrace();
-        }
+        s.sendMessage("localhost", m, "monitor");
     }
 
     private void sendRequest2(){
@@ -88,11 +81,7 @@ public class Monitorer {
         printStatus();
         Message m = new Message("400", 500);
         m.setCrossroad(crossroad);
-        try {
-            s.sendMessage("localhost", m, "traffic",  "monitor");
-        } catch (IOException | TimeoutException e) {
-            e.printStackTrace();
-        }
+        s.sendMessage("localhost", m,"monitor");
     }
 
     private void printStatus(){
@@ -105,12 +94,8 @@ public class Monitorer {
         this.numberOfSemaphores = numberOfSemaphores;
     }
 
-    void setSender(Sender s) {
+    void setSender(FirstProducer s) {
         this.s = s;
-    }
-
-    void setCrossroadID(String crossroadID) {
-        this.crossroadID = crossroadID;
     }
 
     public void setCrossroad(Crossroad crossroad) {

@@ -1,9 +1,9 @@
 package all.control;
 
+import all.front.FirstConsumer;
 import main.java.Crossroad;
 import main.java.Semaphore;
 import main.java.system.Printer;
-import all.front.Receiver;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,17 +17,18 @@ public class MonitorController {
     private static MonitorController instance = new MonitorController();
 
     private ArrayList<Crossroad> crossroads;
-    private String ID;
 
     private MonitorController(){
         crossroads = new ArrayList<>();
-        ID = "monitor";
-        Receiver r = new Receiver(ID, "traffic", this);
-        try {
-            r.receiveMessage("localhost", ID);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        String ID = "monitor";
+        FirstConsumer r = new FirstConsumer(this);
+//        try {
+//            r.receiveMessage("localhost", ID);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        r.subscribeToTopic(ID);
+        r.runConsumer();
     }
 
     private void printState(){

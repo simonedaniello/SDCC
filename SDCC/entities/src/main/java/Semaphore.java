@@ -21,6 +21,10 @@ public class Semaphore implements Serializable{
     private List<Car> queue = new ArrayList<>();
     private  ArrayList<Double> times = new ArrayList<>();
 
+
+    public Semaphore(){}
+
+
     public Semaphore(String id, String street) {
         this.ID = id;
         this.light = 0;

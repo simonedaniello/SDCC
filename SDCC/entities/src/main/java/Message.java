@@ -36,6 +36,8 @@ public class Message implements Serializable {
             setCode(code);
     }
 
+    public Message(){}
+
     public String getID() {
         return ID;
     }

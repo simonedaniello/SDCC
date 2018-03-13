@@ -21,6 +21,8 @@ public class Crossroad implements Serializable
         setStreet(address);
     }
 
+    public Crossroad(){}
+
     public ArrayList<Semaphore> getSemaphores() {
         return semaphores;
     }

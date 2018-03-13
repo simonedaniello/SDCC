@@ -6,7 +6,123 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e06beef1-e248-4b27-9934-409f6236b22b" name="Default" comment="" />
+    <list default="true" id="e06beef1-e248-4b27-9934-409f6236b22b" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/FirstConsumer.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/FirstProducer.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstConsumer.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstProducer.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/FirstConsumer.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/FirstProducer.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/monitorFront/app/js/jquery_3.3.1.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_11.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_11.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_3.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_8.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_8.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_195.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_2_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_41.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_2_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_14.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_14.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_14.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jdbc_8_5_14.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_8_5_14.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_10.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_2_6_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_13.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_13.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_0_12_Final.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_0_12_Final.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_5_Final.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_0_Final.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_1_Final.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_1_10_19.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_3.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_4_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_25.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_log4j_over_slf4j_1_7_25.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_websocket_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_1_5_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_13_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_1_11_3_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_4_3_8_RELEASE.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_17.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/CrossroadWR.iml" afterPath="$PROJECT_DIR$/SDCC/CrossroadWR/CrossroadWR.iml" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/pom.xml" afterPath="$PROJECT_DIR$/SDCC/CrossroadWR/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/config/WebSocketConfig.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/Monitorer.java" afterPath="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/Monitorer.java" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/Receiver.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/Sender.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/src/test/java/all/RunnerTests.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/CrossroadController$TimerClass.class" afterPath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/CrossroadController$TimerClass.class" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/CrossroadController.class" afterPath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/CrossroadController.class" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/Monitorer$TimerClass.class" afterPath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/Monitorer$TimerClass.class" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/Monitorer.class" afterPath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/Monitorer.class" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/front/Receiver$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/front/Receiver.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/front/Sender.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/test-classes/all/RunnerTests.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/pom.xml" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/Runner.java" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/Runner.java" />
+      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/config/WebSocketConfig.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java" />
+      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/Receiver.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/Sender.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/Runner.class" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/Runner.class" />
+      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/control/MonitorController.class" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/control/MonitorController.class" />
+      <change beforePath="$PROJECT_DIR$/SDCC/entities/entities.iml" afterPath="$PROJECT_DIR$/SDCC/entities/entities.iml" />
+      <change beforePath="$PROJECT_DIR$/SDCC/entities/src/main/java/Crossroad.java" afterPath="$PROJECT_DIR$/SDCC/entities/src/main/java/Crossroad.java" />
+      <change beforePath="$PROJECT_DIR$/SDCC/entities/src/main/java/Message.java" afterPath="$PROJECT_DIR$/SDCC/entities/src/main/java/Message.java" />
+      <change beforePath="$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java" afterPath="$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java" />
+      <change beforePath="$PROJECT_DIR$/SDCC/monitorFront/app/index.html" afterPath="$PROJECT_DIR$/SDCC/monitorFront/app/index.html" />
+      <change beforePath="$PROJECT_DIR$/SDCC/monitorFront/monitorFront.iml" afterPath="$PROJECT_DIR$/SDCC/monitorFront/monitorFront.iml" />
+      <change beforePath="$PROJECT_DIR$/SDCC/semaphore/semaphore.iml" afterPath="$PROJECT_DIR$/SDCC/semaphore/semaphore.iml" />
+    </list>
     <ignored path="$PROJECT_DIR$/flink/flink-streaming-java/target/" />
     <ignored path="$PROJECT_DIR$/flink/flink-contrib/flink-statebackend-rocksdb/target/" />
     <ignored path="$PROJECT_DIR$/flink/flink-filesystems/flink-hadoop-fs/target/" />
@@ -99,6 +215,9 @@
     <ignored path="$PROJECT_DIR$/flink/flink-shaded-hadoop/flink-shaded-hadoop2-uber/target/" />
     <ignored path="$PROJECT_DIR$/flink/flink-connectors/flink-hcatalog/target/" />
     <ignored path="$PROJECT_DIR$/flink/flink-connectors/flink-connector-rabbitmq/target/" />
+    <ignored path="$PROJECT_DIR$/SDCC/CrossroadWR/target/" />
+    <ignored path="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/" />
+    <ignored path="$PROJECT_DIR$/SDCC/SemaphoreWR/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,110 +234,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Semaphore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/entities/Semaphore.java">
+      <file leaf-file-name="FirstConsumer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/FirstConsumer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="594">
+              <caret line="106" column="39" lean-forward="false" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#FirstConsumer#0;class#FirstConsumer#0" expanded="false" />
+                <element signature="method#createConsumer#0;class#FirstConsumer#0" expanded="false" />
+                <element signature="method#runConsumer#0;class#FirstConsumer#0" expanded="false" />
+                <element signature="e#1711#1730#0" expanded="false" />
+                <element signature="method#DeserializeMessage#0;class#FirstConsumer#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/entities/Message.java">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDCC/monitorFront/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="439">
+              <caret line="102" column="9" lean-forward="true" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ToDelete.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/adapter/src/ToDelete.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ToDelete.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/db/src/ToDelete.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ToDelete.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/dispatcher/src/ToDelete.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ToDelete.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SDCC/monitor/src/ToDelete.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Simulation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/test/Simulation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyEventDemo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/test/KeyEventDemo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="35" column="56" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Receive.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Receive.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-              <folding>
-                <element signature="method#addBindings#0;class#Receive#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Send.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Send.java">
+      <file leaf-file-name="CrossroadController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/CrossroadController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="27" column="47" lean-forward="false" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-              <folding />
+              <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#CrossroadController#0" expanded="false" />
+                <element signature="method#CrossroadController#0;class#CrossroadController#0" expanded="false" />
+                <element signature="method#addSemaphore#0;class#CrossroadController#0" expanded="false" />
+                <element signature="method#removeSemaphore#0;class#CrossroadController#0" expanded="false" />
+                <element signature="method#printSemaphores#0;class#CrossroadController#0" expanded="false" />
+                <element signature="method#sendCurrentState#0;class#CrossroadController#0" expanded="false" />
+                <element signature="method#sendGreen#0;class#CrossroadController#0" expanded="false" />
+                <element signature="class#TimerClass#0;class#CrossroadController#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -228,6 +284,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -235,10 +292,19 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>port</find>
+      <find>jquery</find>
+      <find>logger</find>
+      <find>debug</find>
+      <find>log4j</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -248,26 +314,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/flink/pom.xml" />
-        <option value="$PROJECT_DIR$/Flink/other/notes.txt" />
-        <option value="$PROJECT_DIR$/Flink/pom.xml" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/Starter.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/semaphores/messageAPI/Semaphore.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/semaphores/messageAPI/EmitLog.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/semaphores/messageAPI/ReceiveLogs.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/semaphores/Semaphore.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/semaphores/messageAPI/Send.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/semaphores/messageAPI/ToDelete.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/semaphores/messageAPI/Receive.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/semaphores/test/Simulation.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/rabbit/messageClasses/Message.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/rabbit/messageAPI/Send.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/rabbit/messageAPI/Receive.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/rabbit/test/Simulation.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/rabbit/test/GUIsimulation.form" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/rabbit/test/KeyEventDemo.java" />
-        <option value="$PROJECT_DIR$/Flink/src/main/java/rabbit/semaphores/Semaphore.java" />
-        <option value="$PROJECT_DIR$/SDCC/src/main/java/rabbit/messageAPI/Receive.java" />
         <option value="$PROJECT_DIR$/SDCC/src/main/java/rabbit/entities/Message.java" />
         <option value="$PROJECT_DIR$/SDCC/src/main/java/rabbit/controllers/Send.java" />
         <option value="$PROJECT_DIR$/SDCC/src/main/java/rabbit/entities/Semaphore.java" />
@@ -283,6 +329,42 @@
         <option value="$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Receive.java" />
         <option value="$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/test/KeyEventDemo.java" />
         <option value="$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/SemaphoreController.java" />
+        <option value="$PROJECT_DIR$/SDCC/monitorFront/app/js/jquery_3.3.1.js" />
+        <option value="$PROJECT_DIR$/SDCC/monitorFront/app/index.html" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/Sender.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/Receiver.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/Producer.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/SimpleProducer.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/KafkaCOnsumer.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/KafkaConsumer.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/system/PayloadSerializer.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/Sender.java" />
+        <option value="$PROJECT_DIR$/SDCC/entities/src/main/java/Message.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/firstProducer.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/Receiver.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/FirstProducer.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/Monitorer.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/Runner.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/endPoints/config/WebSocketConfig.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/FirstProducer.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/FirstConsumer.java" />
+        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstConsumer.java" />
+        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java" />
+        <option value="$PROJECT_DIR$/SDCC/entities/src/main/java/Crossroad.java" />
+        <option value="$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java" />
+        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/Runner.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/FirstConsumer.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/endPoints/dao/SemaphoreDao.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/endPoints/SemaphoreStateEP.java" />
+        <option value="$PROJECT_DIR$/SDCC/monitorFront/app/createCrossroad/CreateCrossroad.js" />
+        <option value="$PROJECT_DIR$/SDCC/monitorFront/app/view1/view1.js" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/CrossroadController.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/control/SemaphoreController.java" />
       </list>
     </option>
   </component>
@@ -293,9 +375,30 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="976" />
-    <option name="height" value="1048" />
+    <option name="x" value="-1" />
+    <option name="y" value="-1084" />
+    <option name="width" value="1922" />
+    <option name="height" value="1085" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Usability &gt; Icons</id>
+          </State>
+          <State>
+            <id>UI Form Problems</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -314,6 +417,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -330,94 +435,104 @@
           <expand>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
+              <item name="CrossroadWR" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
-              <item name="other" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
+              <item name="CrossroadWR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
+              <item name="CrossroadWR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
+              <item name="CrossroadWR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
+              <item name="CrossroadWR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
+              <item name="CrossroadWR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rabbit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rabbit" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
+              <item name="CrossroadWR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rabbit" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crossroad" type="462c0819:PsiDirectoryNode" />
+              <item name="SemaphoreWR" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreWR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreWR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreWR" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rabbit" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreWR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreWR" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SDCC/monitor" />
-    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SDCC/libs/opentest4j-1.0.0.jar!/" />
+    <property name="jdk.selected.JAVA_MODULE" value="9.0" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15506329" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -425,6 +540,13 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="show.run.dashboard.notification" value="false" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -432,6 +554,14 @@
       <recent name="C:\Users\Simone\IdeaProjects\SDCC\SDCC\crossroad" />
       <recent name="C:\Users\Simone\IdeaProjects\SDCC\Flink\lib" />
       <recent name="C:\Users\Simone\IdeaProjects\SDCC\todelete" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="all.endPoints.config" />
+      <recent name="all.control" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front" />
+      <recent name="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -446,40 +576,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Simulation">
-    <configuration name="Simulation" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="main.java.rabbit.test.Simulation" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="crossroad" />
-      <envs />
-    </configuration>
-    <configuration name="ToDelete" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="rabbit.messageAPI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="semaphores.messageAPI.ToDelete" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Flink" />
-      <envs />
-    </configuration>
+  <component name="RunManager" selected="Compound.sem-cross-mon">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -499,6 +596,11 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+    </configuration>
+    <configuration name="sem-cross-mon" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
+      <toRun type="SpringBootApplicationConfigurationType" name="crossroad" />
+      <toRun type="SpringBootApplicationConfigurationType" name="monitorBE" />
+      <toRun type="SpringBootApplicationConfigurationType" name="semaphore" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -532,18 +634,33 @@
       <module name="Flink" />
       <envs />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+    </configuration>
+    <configuration name="crossroad" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="all.Runner" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <module name="CrossroadWR" />
+      <envs />
+    </configuration>
+    <configuration name="monitorBE" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="all.Runner" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <module name="monitorBackEnd" />
+      <envs />
+    </configuration>
+    <configuration name="semaphore" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="all.Runner" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <module name="SemaphoreWR" />
+      <envs />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -572,6 +689,18 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Compound.sem-cross-mon" />
+      <item index="1" class="java.lang.String" itemvalue="Spring Boot.crossroad" />
+      <item index="2" class="java.lang.String" itemvalue="Spring Boot.semaphore" />
+      <item index="3" class="java.lang.String" itemvalue="Spring Boot.monitorBE" />
+    </list>
   </component>
   <component name="SbtLocalSettings">
     <option name="externalProjectsViewState">
@@ -580,6 +709,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -608,6 +740,9 @@
       <workItem from="1519052536497" duration="2762000" />
       <workItem from="1519057696644" duration="397000" />
       <workItem from="1519115324208" duration="6777000" />
+      <workItem from="1520756499981" duration="5042000" />
+      <workItem from="1520926632197" duration="7461000" />
+      <workItem from="1520948120807" duration="11724000" />
     </task>
     <task id="LOCAL-00001" summary="Exported settings">
       <created>1518424079250</created>
@@ -634,43 +769,45 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41442000" />
+    <option name="totallyTimeSpent" value="65669000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1058" extended-state="6" />
+    <frame x="-1" y="-1084" width="1922" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27292576" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25655022" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2510917" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16927083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995633" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2712042" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44188482" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17289221" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -705,368 +842,467 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Receive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="52" column="71" lean-forward="true" selection-start-line="52" selection-start-column="71" selection-end-line="52" selection-end-column="71" />
-          <folding>
-            <element signature="method#addBindings#0;class#Receive#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/Starter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Send.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Receive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="32" column="56" lean-forward="true" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
-          <folding>
-            <element signature="method#addBindings#0;class#Receive#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/entities/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/test/Simulation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/Starter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Send.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Receive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="38" column="40" lean-forward="true" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
-          <folding>
-            <element signature="method#addBindings#0;class#Receive#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/test/Simulation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/Starter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Send.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Receive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="37" column="59" lean-forward="true" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
-          <folding>
-            <element signature="method#addBindings#0;class#Receive#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/test/Simulation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/Starter.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/entities/entities.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/Starter.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/Consumer.java" />
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/RNG/ListOfArrivals.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="36">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/Starter.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/SimpleProducer.java" />
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/CrossroadWR.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-2228">
+          <caret line="29" column="49" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/pom.xml">
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/test/java/all/RunnerTests.java" />
+    <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/system/Printer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/other/notes.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="91" lean-forward="false" selection-start-line="2" selection-start-column="91" selection-end-line="2" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/Starter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/Starter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/AbstractPlainSocketImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4011">
-          <caret line="191" column="19" lean-forward="true" selection-start-line="191" selection-start-column="19" selection-end-line="191" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/AbstractPlainSocketImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7427">
-          <caret line="322" column="68" lean-forward="false" selection-start-line="322" selection-start-column="68" selection-end-line="322" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="59" lean-forward="true" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Flink/lib/flink-dist_2.11-1.4.0.jar!/org/apache/flink/runtime/jobmanager/JobManager.class" />
-    <entry file="file://$PROJECT_DIR$/Flink/src/main/java/semaphores/messageAPI/EmitLog.java" />
-    <entry file="file://$PROJECT_DIR$/Flink/src/main/java/semaphores/messageAPI/ReceiveLogs.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/security/AccessController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="651" column="8" lean-forward="false" selection-start-line="651" selection-start-column="8" selection-end-line="651" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/jre/lib/rt.jar!/sun/misc/URLClassPath.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="420" column="0" lean-forward="false" selection-start-line="420" selection-start-column="0" selection-end-line="420" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="380" column="0" lean-forward="false" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1349">
-          <caret line="435" column="0" lean-forward="false" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Flink/src/main/java/semaphores/messageAPI/ToDelete.java" />
-    <entry file="file://$PROJECT_DIR$/Flink/src/main/java/rabbit/test/GUIsimulation.form" />
-    <entry file="file://$PROJECT_DIR$/Flink/src/main/java/rabbit/test/GUIsimulation.java" />
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/other/notes.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="108">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/Starter.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/0.10.0.0/kafka-clients-0.10.0.0.jar!/org/apache/kafka/clients/consumer/KafkaConsumer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="-1545">
+          <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/SemaphoreController.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/system/PayloadSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
-          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="324">
+          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Receive.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/endpoint/SemaphoreStateEP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="108">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/endPoints/SemaphoreStateEP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/Receiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/Sender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/FirstProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
           <folding>
-            <element signature="method#addBindings#0;class#Receive#0" expanded="false" />
+            <element signature="method#createProducer#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#sendMessage#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#configure#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#serialize#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#close#0;class#FirstProducer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/controllers/Send.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/monitorFront/app/createCrossroad/createCrossroad.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/endpoint/Listener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/endpoint/Creator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/endpoint/dao/CrossroadDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/endPoints/config/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/endpoint/config/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/Receiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="56" column="57" lean-forward="true" selection-start-line="56" selection-start-column="57" selection-end-line="56" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/FirstProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <element signature="method#createProducer#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#sendMessage#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#configure#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#serialize#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#close#0;class#FirstProducer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/Receiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="56" column="17" lean-forward="true" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/Monitorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#Monitorer#0" expanded="false" />
+            <element signature="method#Monitorer#0;class#Monitorer#0" expanded="false" />
+            <element signature="method#addSemaphoreToMonitor#0;class#Monitorer#0" expanded="false" />
+            <element signature="method#sendRequest#0;class#Monitorer#0" expanded="false" />
+            <element signature="method#sendMessage#0;class#Monitorer#0" expanded="false" />
+            <element signature="method#sendRequest2#0;class#Monitorer#0" expanded="false" />
+            <element signature="method#printStatus#0;class#Monitorer#0" expanded="false" />
+            <element signature="class#TimerClass#0;class#Monitorer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/Crossroad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/monitorFront/app/view1/view1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="method#createProducer#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#sendMessage#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#configure#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#serialize#0;class#FirstProducer#0" expanded="false" />
+            <element signature="method#close#0;class#FirstProducer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="37" column="49" lean-forward="true" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/monitorFront/app/createCrossroad/CreateCrossroads_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/endPoints/dao/SemaphoreDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/endPoints/SemaphoreStateEP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="105" lean-forward="true" selection-start-line="14" selection-start-column="105" selection-end-line="14" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="68" column="27" lean-forward="false" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+          <folding>
+            <element signature="method#FirstConsumer#0;class#FirstConsumer#0" expanded="false" />
+            <element signature="method#createConsumer#0;class#FirstConsumer#0" expanded="false" />
+            <element signature="e#1654#1673#0" expanded="false" />
+            <element signature="method#workWithMessage#0;class#FirstConsumer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/control/SemaphoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#SemaphoreController#0" expanded="false" />
+            <element signature="method#addToCrossroad#0;class#SemaphoreController#0" expanded="false" />
+            <element signature="method#removeCrossroad#0;class#SemaphoreController#0" expanded="false" />
+            <element signature="e#2511#2546#0" expanded="false" />
+            <element signature="method#getCrossroadsName#0;class#SemaphoreController#0" expanded="false" />
+            <element signature="method#addToSemaphoreList#0;class#SemaphoreController#0" expanded="false" />
+            <element signature="method#removeFromSemaphoreList#0;class#SemaphoreController#0" expanded="false" />
+            <element signature="method#setSemaphoreList#0;class#SemaphoreController#0" expanded="false" />
+            <element signature="method#printState#0;class#SemaphoreController#0" expanded="false" />
+            <element signature="method#removeGreenTogether#0;class#SemaphoreController#0" expanded="false" />
+            <element signature="method#sendStatus#0;class#SemaphoreController#0" expanded="false" />
+            <element signature="e#6150#6165#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/FirstConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#1057#1058#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/monitorFront/app/createCrossroad/CreateCrossroad.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#77#270#0" expanded="false" />
+            <element signature="e#121#269#0" expanded="false" />
+            <element signature="e#165#265#0" expanded="false" />
+            <element signature="e#406#833#0" expanded="false" />
+            <element signature="e#422#517#0" expanded="false" />
+            <element signature="e#559#677#0" expanded="false" />
+            <element signature="e#704#824#0" expanded="false" />
+            <element signature="e#1072#1117#0" expanded="false" />
+            <element signature="e#1154#1349#0" expanded="false" />
+            <element signature="e#1541#1574#0" expanded="false" />
+            <element signature="e#1921#2058#0" expanded="false" />
+            <element signature="e#2104#2227#0" expanded="false" />
+            <element signature="e#2318#3495#0" expanded="false" />
+            <element signature="e#2467#2740#0" expanded="false" />
+            <element signature="e#2760#3041#0" expanded="false" />
+            <element signature="e#2986#3030#0" expanded="false" />
+            <element signature="e#3224#3286#0" expanded="false" />
+            <element signature="e#3332#3455#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/monitorFront/app/view1/view1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="31" column="6" lean-forward="true" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/monitorFront/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="102" column="9" lean-forward="true" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/FirstConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="106" column="39" lean-forward="false" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+          <folding>
+            <element signature="method#FirstConsumer#0;class#FirstConsumer#0" expanded="false" />
+            <element signature="method#createConsumer#0;class#FirstConsumer#0" expanded="false" />
+            <element signature="method#runConsumer#0;class#FirstConsumer#0" expanded="false" />
+            <element signature="e#1711#1730#0" expanded="false" />
+            <element signature="method#DeserializeMessage#0;class#FirstConsumer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/CrossroadController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="27" column="47" lean-forward="false" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/test/Simulation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#CrossroadController#0" expanded="false" />
+            <element signature="method#CrossroadController#0;class#CrossroadController#0" expanded="false" />
+            <element signature="method#addSemaphore#0;class#CrossroadController#0" expanded="false" />
+            <element signature="method#removeSemaphore#0;class#CrossroadController#0" expanded="false" />
+            <element signature="method#printSemaphores#0;class#CrossroadController#0" expanded="false" />
+            <element signature="method#sendCurrentState#0;class#CrossroadController#0" expanded="false" />
+            <element signature="method#sendGreen#0;class#CrossroadController#0" expanded="false" />
+            <element signature="class#TimerClass#0;class#CrossroadController#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/test/KeyEventDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="35" column="56" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/entities/Semaphore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/crossroad/src/main/java/rabbit/entities/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/adapter/src/ToDelete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/db/src/ToDelete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/dispatcher/src/ToDelete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/monitor/src/ToDelete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,7 +1324,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1100,7 +1336,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>bootstrap</last-edited>
+          <last-edited>angular</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1112,7 +1348,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>9.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1124,7 +1360,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>adapter</last-edited>
+          <last-edited>monitorBackEnd</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1148,7 +1384,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>lib</last-edited>
+          <last-edited>Java EE 6-Java EE 6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
