@@ -15,31 +15,25 @@ import java.util.TimerTask;
  * Author : Simone D'Aniello
  * Date :  21-Feb-18.
  */
-public class CrossroadController {
+public class CrossroadController implements Runnable{
 
     private Crossroad crossroad;
-    private FirstProducer s;
 
     public CrossroadController(String ID, String address){
         this.crossroad = new Crossroad(ID, address);
 //        s = new Sender(crossroad.getID());
-        s = new FirstProducer();
 //        Receiver r = new Receiver(crossroad.getID(), "traffic", this);
-        FirstConsumer r = new FirstConsumer(this);
-        Monitorer.getInstance().setSender(s);
+        FirstConsumer.getInstance().setController(this);
         Monitorer.getInstance().setCrossroad(crossroad);
         try {
-//            r.receiveMessage("localhost", crossroad.getID());
-            r.subscribeToTopic("monitor");
-            r.subscribeToTopic(crossroad.getID());
-//            r.addBindings("monitor");
-            r.runConsumer();
-            Printer.getInstance().print("ho superato il receive", "yellow");
+            FirstConsumer.getInstance().subscribeToTopic("monitor");
+            FirstConsumer.getInstance().subscribeToTopic(crossroad.getID());
+            (new Thread(this)).start();
         } catch (Exception e) {
             e.printStackTrace();
         }
         Timer timer = new Timer();
-        timer.schedule(new TimerClass(), 10000, 30000); // every 15 seconds
+        timer.schedule(new TimerClass(), 10000, 30000); // every 30 seconds
         new Decider(this);
     }
 
@@ -76,12 +70,16 @@ public class CrossroadController {
         Message m = new Message(crossroad.getID(), 10);
         m.setListOfSemaphores(crossroad.getSemaphores());
         m.setCurrentCycle(Monitorer.getInstance().getCurrentCycle());
-        s.sendMessage("address", m, "traffic");
-
+        FirstProducer.getInstance().sendMessage("address", m, crossroad.getID());
     }
 
     public void sendGreen(Semaphore greenSemaphore) {
 
+    }
+
+    @Override
+    public void run() {
+        FirstConsumer.getInstance().runConsumer();
     }
 
     private class TimerClass extends TimerTask {

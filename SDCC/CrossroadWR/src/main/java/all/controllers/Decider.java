@@ -51,7 +51,7 @@ public class Decider {
         int quantoDura = 54;
         while (clock < quantoDura) {
             try {
-                Printer.getInstance().print("chiamo car arrival", "red");
+//                Printer.getInstance().print("chiamo car arrival", "red");
                 generator.carArrival();
                 Car car = ListOfArrivals.getMe().getCarArrivalList().remove(0);
                 clock += car.getTime();

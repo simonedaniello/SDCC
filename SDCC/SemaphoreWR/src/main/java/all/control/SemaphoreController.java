@@ -16,24 +16,18 @@ import java.util.Iterator;
  * Date :  19-Feb-18.
  */
 
-public class SemaphoreController {
+public class SemaphoreController implements Runnable{
 
     private Semaphore semaphore;
-//    private Receiver r;
-    private FirstConsumer r;
-//    private Sender s;
-    private FirstProducer s;
-
 
     public SemaphoreController(String ID, String address){
         this.semaphore = new Semaphore(ID, address);
-        s = new FirstProducer();
-        r = new FirstConsumer(this);
+        FirstConsumer.getInstance().setController(this);
         try {
 //            r.receiveMessage("localhost", getCrossroadsName());
             for(String c : getCrossroadsName())
-                r.subscribeToTopic(c);
-            r.runConsumer();
+                FirstConsumer.getInstance().subscribeToTopic(c);
+            (new Thread(this)).start();
             Printer.getInstance().print("ho superato il receive", "yellow");
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,9 +38,9 @@ public class SemaphoreController {
         semaphore.getCrossroads().add(crossroad);
         Message m = new Message(semaphore.getID(), 1);
         m.setSemaphore(semaphore);
-        s.sendMessage("localhost", m, crossroad.getID());
+        FirstProducer.getInstance().sendMessage("localhost", m, crossroad.getID());
         semaphore.getCrossroads().add(crossroad);
-        r.subscribeToTopic(crossroad.getID());
+        FirstConsumer.getInstance().subscribeToTopic(crossroad.getID());
 
     }
 
@@ -56,7 +50,7 @@ public class SemaphoreController {
         m.setSemaphore(semaphore);
         int k = 0;
         //remove the crossroad and every semaphore which binds that crossroad
-        s.sendMessage("localhost", m, crossroad.getID());
+        FirstProducer.getInstance().sendMessage("localhost", m, crossroad.getID());
         for(Crossroad c: semaphore.getCrossroads()){
             if(c.getID().equals(crossroad.getID())){
                 semaphore.getCrossroads().remove(c);
@@ -181,6 +175,11 @@ public class SemaphoreController {
 //        } catch (IOException | TimeoutException e) {
 //            e.printStackTrace();
 //        }
-        s.sendMessage("localhost", m, "monitor");
+        FirstProducer.getInstance().sendMessage("localhost", m, "monitor");
+    }
+
+    @Override
+    public void run() {
+        FirstConsumer.getInstance().runConsumer();
     }
 }

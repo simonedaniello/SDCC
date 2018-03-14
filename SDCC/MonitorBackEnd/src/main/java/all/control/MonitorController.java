@@ -12,7 +12,7 @@ import java.util.Iterator;
  * Author : Simone D'Aniello
  * Date :  23-Feb-18.
  */
-public class MonitorController {
+public class MonitorController implements Runnable{
 
     private static MonitorController instance = new MonitorController();
 
@@ -21,14 +21,9 @@ public class MonitorController {
     private MonitorController(){
         crossroads = new ArrayList<>();
         String ID = "monitor";
-        FirstConsumer r = new FirstConsumer(this);
-//        try {
-//            r.receiveMessage("localhost", ID);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-        r.subscribeToTopic(ID);
-        r.runConsumer();
+        FirstConsumer.getInstance().setController(this);
+        FirstConsumer.getInstance().subscribeToTopic(ID);
+        (new Thread(this)).start();
     }
 
     private void printState(){
@@ -69,5 +64,10 @@ public class MonitorController {
         }
         crossroads.add(cross);
         printState();
+    }
+
+    @Override
+    public void run() {
+        FirstConsumer.getInstance().runConsumer();
     }
 }

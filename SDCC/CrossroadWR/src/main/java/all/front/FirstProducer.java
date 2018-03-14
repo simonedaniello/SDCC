@@ -4,6 +4,7 @@ package all.front;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.Message;
+import main.java.system.Printer;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.LongSerializer;
 import org.apache.kafka.common.serialization.Serializer;
@@ -16,6 +17,17 @@ import java.util.concurrent.ExecutionException;
 
 public class FirstProducer implements Serializer{
 
+    public static FirstProducer instance = new FirstProducer();
+    private final Producer<Long, String> producer;
+
+    private FirstProducer(){
+        producer = createProducer();
+    }
+
+    public static FirstProducer getInstance() {
+        return instance;
+    }
+
     private final String BOOTSTRAP_SERVERS =
 //            "localhost:9092,localhost:9093,localhost:9094";
             "localhost:9092";
@@ -25,7 +37,7 @@ public class FirstProducer implements Serializer{
         Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 BOOTSTRAP_SERVERS);
-        props.put(ProducerConfig.CLIENT_ID_CONFIG, "KafkaExampleProducer");
+        props.put(ProducerConfig.CLIENT_ID_CONFIG, "KafkaCrossroadProducer");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                 LongSerializer.class.getName());
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
@@ -37,7 +49,7 @@ public class FirstProducer implements Serializer{
     //GUARDA COME NON INVIARE SOLO IN LOCALHOST
     public void sendMessage(String address, Message m, String topic) {
 
-        final Producer<Long, String> producer = createProducer();
+
         long time = System.currentTimeMillis();
 
 
@@ -46,16 +58,15 @@ public class FirstProducer implements Serializer{
             ObjectMapper mapper = new ObjectMapper();
 
             String toSend =  mapper.writeValueAsString(m);
-            final ProducerRecord<Long, String> record =
-                    new ProducerRecord<>(topic, time, toSend);
-
+            final ProducerRecord<Long, String> record = new ProducerRecord<>(topic, time, toSend);
             producer.send(record).get();
 
         } catch (JsonProcessingException | InterruptedException | ExecutionException e) {
+            Printer.getInstance().print("\n\n\n\nerror\n\n\n\n", "red");
             e.printStackTrace();
         } finally {
-            producer.flush();
-            producer.close();
+//            producer.flush();
+//            producer.close();
         }
     }
 

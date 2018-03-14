@@ -10,6 +10,8 @@ public class Car implements Serializable{
                           //todo Apply when simulation policies are defined
 
 
+    public Car(){}
+
     public Car(double t, String id){
 
         time = t;

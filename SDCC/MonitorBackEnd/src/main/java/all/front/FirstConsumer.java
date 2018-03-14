@@ -19,6 +19,15 @@ import java.util.Properties;
 
 public class FirstConsumer {
 
+    private static FirstConsumer instance = new FirstConsumer();
+
+    private FirstConsumer(){
+    }
+
+    public static FirstConsumer getInstance() {
+        return instance;
+    }
+
     private Consumer<Long, String> consumer;
     private final String BOOTSTRAP_SERVERS =
 //            "localhost:9092,localhost:9093,localhost:9094";
@@ -27,7 +36,7 @@ public class FirstConsumer {
     private MonitorController monitorController;
 
 
-    public FirstConsumer(MonitorController monitorController){
+    public void setController(MonitorController monitorController){
         createConsumer();
         this.monitorController= monitorController;
     }
@@ -68,17 +77,17 @@ public class FirstConsumer {
             final ConsumerRecords<Long, String> consumerRecords =
                     consumer.poll(1000);
 
-            if (consumerRecords.count()==0) {
-                noRecordsCount++;
-                if (noRecordsCount > giveUp) break;
-                else continue;
-            }
+//            if (consumerRecords.count()==0) {
+//                noRecordsCount++;
+//                if (noRecordsCount > giveUp) break;
+//                else continue;
+//            }
             consumerRecords.forEach(this::DeserializeMessage);
 
             consumer.commitAsync();
         }
-        consumer.close();
-        System.out.println("DONE");
+//        consumer.close();
+//        System.out.println("DONE");
     }
 
 

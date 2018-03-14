@@ -6,24 +6,21 @@ import main.java.Message;
 import main.java.Semaphore;
 import main.java.system.Printer;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.TimeoutException;
 
 /**
  * Author : Simone D'Aniello
  * Date :  23-Feb-18.
  */
+
 public class Monitorer {
 
     private static Monitorer monitorer = new Monitorer();
     private ArrayList<Semaphore> semaphoresArrayList = new ArrayList<>();
     private int numberOfSemaphores;
     private int currentCycle;
-//    private Sender s;
-    private FirstProducer s;
     private Crossroad crossroad;
 
     private Monitorer() {
@@ -33,7 +30,6 @@ public class Monitorer {
         Timer timer = new Timer();
         timer.schedule(new TimerClass(), 10000, 15000); // every 15 seconds
     }
-
 
     public static Monitorer getInstance(){
         return monitorer;
@@ -61,19 +57,12 @@ public class Monitorer {
         }
     }
 
-    private void sendRequest(){
-        Message m = new Message("400", 401);
-        m.setCurrentCycle(currentCycle);
-
-        s.sendMessage("address", m, "traffic");
-    }
-
     private void sendMessage(){
         System.out.println("sending message to monitor");
         printStatus();
         Message m = new Message("400", 500);
         m.setListOfSemaphores(semaphoresArrayList);
-        s.sendMessage("localhost", m, "monitor");
+        FirstProducer.getInstance().sendMessage("localhost", m, "monitor");
     }
 
     private void sendRequest2(){
@@ -81,7 +70,7 @@ public class Monitorer {
         printStatus();
         Message m = new Message("400", 500);
         m.setCrossroad(crossroad);
-        s.sendMessage("localhost", m,"monitor");
+        FirstProducer.getInstance().sendMessage("localhost", m,"monitor");
     }
 
     private void printStatus(){
@@ -92,10 +81,6 @@ public class Monitorer {
 
     void setNumberOfSemaphores(int numberOfSemaphores) {
         this.numberOfSemaphores = numberOfSemaphores;
-    }
-
-    void setSender(FirstProducer s) {
-        this.s = s;
     }
 
     public void setCrossroad(Crossroad crossroad) {

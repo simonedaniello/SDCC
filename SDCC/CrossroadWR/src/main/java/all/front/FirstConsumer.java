@@ -4,7 +4,6 @@ package all.front;
 import all.controllers.CrossroadController;
 import all.controllers.Monitorer;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rabbitmq.client.Channel;
 import main.java.Message;
 import main.java.system.Printer;
 import org.apache.kafka.clients.consumer.*;
@@ -20,6 +19,15 @@ import java.util.Properties;
 
 public class FirstConsumer {
 
+    private static FirstConsumer instance = new FirstConsumer();
+
+    private FirstConsumer(){
+    }
+
+    public static FirstConsumer getInstance() {
+        return instance;
+    }
+
     private Consumer<Long, String> consumer;
     private final String BOOTSTRAP_SERVERS =
 //            "localhost:9092,localhost:9093,localhost:9094";
@@ -28,7 +36,9 @@ public class FirstConsumer {
     private CrossroadController crossroadController;
 
 
-    public FirstConsumer(CrossroadController crossroadController){
+
+
+    public void setController(CrossroadController crossroadController){
         createConsumer();
         this.crossroadController = crossroadController;
     }
@@ -62,24 +72,25 @@ public class FirstConsumer {
 
         //createConsumer();
         //subscribeToTopic("my-example-topic");
+        Printer.getInstance().print("start listening", "yellow");
 
         final int giveUp = 100;   int noRecordsCount = 0;
 
-        while (true) {
+        while(true) {
             final ConsumerRecords<Long, String> consumerRecords =
                     consumer.poll(1000);
 
-            if (consumerRecords.count()==0) {
-                noRecordsCount++;
-                if (noRecordsCount > giveUp) break;
-                else continue;
-            }
+//            if (consumerRecords.count()==0) {
+//                noRecordsCount++;
+//                if (noRecordsCount > giveUp) break;
+//                else continue;
+//            }
             consumerRecords.forEach(this::DeserializeMessage);
 
             consumer.commitAsync();
         }
-        consumer.close();
-        System.out.println("DONE");
+//        consumer.close();
+//        System.out.println("DONE");
     }
 
 

@@ -19,6 +19,18 @@ import java.util.concurrent.ExecutionException;
 
 public class FirstProducer implements Serializer{
 
+
+    public static FirstProducer instance = new FirstProducer();
+    private final Producer<Long, String> producer;
+
+    private FirstProducer(){
+        producer = createProducer();
+    }
+
+    public static FirstProducer getInstance() {
+        return instance;
+    }
+
     private final String BOOTSTRAP_SERVERS =
 //            "localhost:9092,localhost:9093,localhost:9094";
             "localhost:9092";
@@ -28,7 +40,7 @@ public class FirstProducer implements Serializer{
         Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 BOOTSTRAP_SERVERS);
-        props.put(ProducerConfig.CLIENT_ID_CONFIG, "KafkaExampleProducer");
+        props.put(ProducerConfig.CLIENT_ID_CONFIG, "KafkaMonitorProducer");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                 LongSerializer.class.getName());
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
@@ -40,7 +52,7 @@ public class FirstProducer implements Serializer{
     //GUARDA COME NON INVIARE SOLO IN LOCALHOST
     public void sendMessage(String address, Message m, String topic) {
 
-        final Producer<Long, String> producer = createProducer();
+
         long time = System.currentTimeMillis();
 
 

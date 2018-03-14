@@ -17,6 +17,9 @@ public class Runner {
 //            e.printStackTrace();
 //        }
         SpringApplication.run(Runner.class, args);
+		SemaphoreController semaphoreController1 = new SemaphoreController("sem0001", "via libera");
+		Crossroad c = new Crossroad("crossroadexample", "via ai test");
+		semaphoreController1.addToCrossroad(c);
 	}
 
 	private static void generalSelf() throws InterruptedException  {
@@ -24,7 +27,7 @@ public class Runner {
 		SemaphoreController semaphoreController2 = new SemaphoreController("sem0002", "via vai");
 		SemaphoreController semaphoreController3 = new SemaphoreController("sem0003", "via dotto");
 
-		Crossroad c = new Crossroad("cr0001", "via ai test");
+		Crossroad c = new Crossroad("crossroad example", "via ai test");
 		semaphoreController1.addToCrossroad(c);
 		//TimeUnit.SECONDS.sleep(1);
 		semaphoreController3.addToCrossroad(c);

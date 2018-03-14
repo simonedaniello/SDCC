@@ -24,7 +24,6 @@ public class Semaphore implements Serializable{
 
     public Semaphore(){}
 
-
     public Semaphore(String id, String street) {
         this.ID = id;
         this.light = 0;
