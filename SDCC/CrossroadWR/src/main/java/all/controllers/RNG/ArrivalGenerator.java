@@ -3,6 +3,7 @@ package all.controllers.RNG;
 import all.controllers.CrossroadController;
 import main.java.Car;
 import main.java.Semaphore;
+import main.java.system.Printer;
 
 public class ArrivalGenerator {
 
@@ -23,6 +24,7 @@ public class ArrivalGenerator {
 
     public void carArrival() {
 
+        //Printer.getInstance().print("chiamo car arrival", "yellow");
         if(crossroadController.getSemaphoreInCrossroad().size() != 0) {
             for (int k = 0; k < 10; k++) {
                 int semNumber = (int) Math.floor(rvgs.uniform(0, crossroadController.getSemaphoreInCrossroad().size()));
@@ -32,9 +34,10 @@ public class ArrivalGenerator {
                 ListOfArrivals.getMe().PushArrival(car);
                 for (Semaphore s : crossroadController.getSemaphoreInCrossroad()) {
                     if (car.getSemaphoreID().equals(s.getID()))
-                        s.getQueue().add(car);
-//                        Printer.getInstance().print("aggiungo macchina a " + s.getID(), "cyan");
-
+                        if(s.getLight() == 0) {
+                            s.getQueue().add(car);
+                            //Printer.getInstance().print("aggiungo macchina a " + s.getID(), "yellow");
+                        }
                 }
             }
         }

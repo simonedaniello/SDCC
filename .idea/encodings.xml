@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/SDCC/CrossroadWR" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SDCC/FlinkDispatcher" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SDCC/IoTSimulator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SDCC/MonitorBackEnd" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SDCC/SemaphoreWR" charset="UTF-8" />
   </component>

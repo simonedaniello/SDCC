@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/SDCC/CrossroadWR/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/FlinkDispatcher/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

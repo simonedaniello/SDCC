@@ -3,11 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SDCC/CrossroadWR/CrossroadWR.iml" filepath="$PROJECT_DIR$/SDCC/CrossroadWR/CrossroadWR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml" filepath="$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/IoTSimulator/IoTSimulator.iml" filepath="$PROJECT_DIR$/SDCC/IoTSimulator/IoTSimulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/MonitorBackEnd.iml" filepath="$PROJECT_DIR$/SDCC/MonitorBackEnd/MonitorBackEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/SemaphoreWR/SemaphoreWR.iml" filepath="$PROJECT_DIR$/SDCC/SemaphoreWR/SemaphoreWR.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/entities/entities.iml" filepath="$PROJECT_DIR$/SDCC/entities/entities.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/monitorBackEnd.iml" filepath="$PROJECT_DIR$/SDCC/MonitorBackEnd/monitorBackEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/monitorFront/monitorFront.iml" filepath="$PROJECT_DIR$/SDCC/monitorFront/monitorFront.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SDCC/semaphore/semaphore.iml" filepath="$PROJECT_DIR$/SDCC/semaphore/semaphore.iml" />
     </modules>
   </component>
 </project>

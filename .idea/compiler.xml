@@ -11,7 +11,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CrossroadWR" />
+        <module name="FlinkDispatcher" />
+        <module name="iot-traffic-monitor-flink" />
+        <module name="IoTSimulator" />
         <module name="monitorBackEnd" />
+        <module name="MonitorBackEnd" />
         <module name="monitorBackEnd (1)" />
         <module name="SemaphoreWR" />
       </profile>
@@ -110,8 +114,12 @@
       <module name="flink-tests_2.11" target="1.8" />
       <module name="flink-yarn-tests_2.11" target="1.8" />
       <module name="flink-yarn_2.11" target="1.8" />
+      <module name="FlinkDispatcher" target="1.8" />
       <module name="force-shading" target="1.6" />
+      <module name="iot-traffic-monitor-flink" target="1.5" />
+      <module name="IoTSimulator" target="1.8" />
       <module name="monitorBackEnd" target="1.8" />
+      <module name="MonitorBackEnd" target="1.8" />
       <module name="monitorBackEnd (1)" target="1.8" />
       <module name="SemaphoreWR" target="1.8" />
     </bytecodeTargetLevel>

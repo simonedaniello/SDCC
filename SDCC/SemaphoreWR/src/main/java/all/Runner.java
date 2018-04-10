@@ -2,6 +2,7 @@ package all;
 
 import all.control.SemaphoreController;
 import main.java.Crossroad;
+import main.java.system.Printer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -20,6 +21,9 @@ public class Runner {
 		SemaphoreController semaphoreController1 = new SemaphoreController("sem0001", "via libera");
 		Crossroad c = new Crossroad("crossroadexample", "via ai test");
 		semaphoreController1.addToCrossroad(c);
+		Printer.getInstance().print("aggiungo semaforo 2", "yellow");
+		SemaphoreController semaphoreController2 = new SemaphoreController("sem0002", "via libera");
+		semaphoreController2.addToCrossroad(c);
 	}
 
 	private static void generalSelf() throws InterruptedException  {

@@ -17,7 +17,9 @@ public class Decider {
     private int [] semaphores = {0,1,2,3};
     private ArrayList<Semaphore> semList = new ArrayList<>();
     private CrossroadController crossroadController;
+    private ArrivalGenerator generator;
 
+    private double clock = 0;
 
 
     /*
@@ -36,25 +38,25 @@ public class Decider {
 
     Decider(CrossroadController crossroadController) {
         this.crossroadController = crossroadController;
+        generator = new ArrivalGenerator(crossroadController);
         Timer timer = new Timer();
-        timer.schedule(new TimerClass(), 10000, 30000); // every 15 seconds
+        timer.schedule(new TimerClass(), 1000, 3000); // every 3 seconds
+        simulation();
 
     }
 
     private void simulation(){
 
-        ArrivalGenerator generator = new ArrivalGenerator(crossroadController);
-        double clock = 0;
+
+
         double upgradeWindow = 15.0;
         int i = 0;
         int timeToSleep;
-        int quantoDura = 54;
+        int quantoDura = 540;
         while (clock < quantoDura) {
             try {
 //                Printer.getInstance().print("chiamo car arrival", "red");
-                generator.carArrival();
-                Car car = ListOfArrivals.getMe().getCarArrivalList().remove(0);
-                clock += car.getTime();
+
 //            System.out.println("Clock: " + clock);
                 //   System.out.println("Arrival at semaphore " + car.getSemaphoreID());
 
@@ -66,6 +68,7 @@ public class Decider {
                     Semaphore greenSemaphore = decide();
                     crossroadController.sendGreen(greenSemaphore);
                     timeToSleep = greenSemaphore.getTimes().get(0).intValue();
+                    Printer.getInstance().print("il semaforo rimane verde per " + timeToSleep + " secondi", "cyan");
                     TimeUnit.SECONDS.sleep(timeToSleep);
                     i++;
 //                    System.out.println("AGGIORNAMENTO");
@@ -83,6 +86,7 @@ public class Decider {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            clock ++;
         }
 
     }
@@ -109,6 +113,7 @@ public class Decider {
                 Printer.getInstance().print("removed " + s.getQueue().size() + " elements from " + s.getID(), "cyan");
                 s.getQueue().clear();
                 green = s;
+                break;
                 // System.out.println("Cleared queue for semaphore number " + id);
             } else
                 s.setLight(0);
@@ -147,7 +152,14 @@ public class Decider {
     private class TimerClass extends TimerTask {
         @Override
         public void run() {
-            simulation();
+
+            generator.carArrival();
+            if(ListOfArrivals.getMe().getCarArrivalList().size() != 0) {
+                ListOfArrivals.getMe().getCarArrivalList().remove(0);
+            }
+            //clock += car.getTime();
+
+            //simulation();
         }
     }
 }

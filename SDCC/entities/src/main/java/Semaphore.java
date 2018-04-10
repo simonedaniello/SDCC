@@ -31,7 +31,7 @@ public class Semaphore implements Serializable{
         this.crossroads = new ArrayList<>();
         this.semaphores = new ArrayList<>();
         this.greenTogether = new ArrayList<>();
-        times.add(3.0);
+        times.add(8.0);
         times.add(0.0);
         times.add(0.0);
         this.monitorCycle = 0;
