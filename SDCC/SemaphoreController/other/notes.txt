@@ -1,0 +1,21 @@
+link utili:
+
+https://www.linkedin.com/pulse/introduction-apache-flink-quickstart-tutorial-malini-shukla/
+
+Domande:
+    - che tipo di formato devono avere i dati derivanti dalle diverse fonti ?
+    - in che modo li trasformiamo e li standardizziamo ?
+    - in che stati si può trovare il semaforo ?
+    - da cosa è caratterizzato il semaforo ?
+    - come monitorare i semafori ?
+    - come far comunicare i semafori tra loro ?
+    - come crittare i dati ?
+    - che dati possono essere compressi ?
+    - che dati devono essere salvati ?
+
+
+Da ricordare:
+
+    - Reinforcement learning per temporizzazione semafori
+    - crittare i messaggi inviati
+    - comprendere quale tempo dare ad un semaforo verde tramite machine learning

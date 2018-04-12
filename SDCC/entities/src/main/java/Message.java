@@ -13,6 +13,8 @@ public class Message implements Serializable {
     private ArrayList<Integer> vectorClock;
     private ArrayList<Semaphore> listOfSemaphores;
     private Crossroad crossroad;
+    private int currentCycle;
+    private Semaphore semaphore;
 
     /*
     *
@@ -26,10 +28,7 @@ public class Message implements Serializable {
     *
     */
     private int code;
-    private int currentCycle;
-//    private String semaphoreCode;
-//    private String semaphoreAddress;
-    private Semaphore semaphore;
+
 
     public Message(String ID, int code){
             setID(ID);
