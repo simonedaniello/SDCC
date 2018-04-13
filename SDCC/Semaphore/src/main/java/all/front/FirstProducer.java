@@ -1,6 +1,7 @@
 package all.front;
 
 
+import all.model.SemaphoreSensor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.Message;
@@ -92,6 +93,26 @@ public class FirstProducer implements Serializer{
         return retVal;
     }
 
+    public void sendSemaphoreSensorInfo(String address, SemaphoreSensor s, String topic) {
+
+        try {
+
+            ObjectMapper mapper = new ObjectMapper();
+
+            String toSend =  mapper.writeValueAsString(s);
+            System.out.println(toSend);
+            final ProducerRecord<Long, String> record =
+                    new ProducerRecord<>(topic, toSend);
+
+            producer.send(record).get();
+
+        } catch (JsonProcessingException | InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        } finally {
+//            producer.flush();
+//            producer.close();
+        }
+    }
 
     @Override
     public void close() {

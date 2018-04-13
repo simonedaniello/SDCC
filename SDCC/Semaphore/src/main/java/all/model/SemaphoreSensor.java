@@ -116,7 +116,7 @@ public class SemaphoreSensor {
         setPosition();
         //semaphoreID =new String(messageDigest.digest());
         semaphoreID = org.apache.commons.codec.digest.DigestUtils.sha256Hex(latitude+longitude);
-        System.out.println(semaphoreID);
+//        System.out.println(semaphoreID);
         crossroadID = UUID.randomUUID().toString();
         carsInTimeUnit = 0;
         meanSpeed = 0;

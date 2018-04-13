@@ -1,6 +1,7 @@
 package all;
 
 import all.controllers.CrossroadController;
+import all.master.Coordinator;
 import main.java.system.Printer;
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
@@ -18,9 +19,15 @@ public class Runner {
 
 //	    configureLog4j("WARN");
 
+        if(args.length == 0)
+		    SpringApplication.run(Runner.class, args);
+        else if(args.length == 1){
+            Coordinator.getInstance().addCrossroadController(args[0], "address example");
+        }
+        else{
+            Printer.getInstance().print("wrong number of arguments", "red");
+        }
 
-		SpringApplication.run(Runner.class, args);
-		new CrossroadController("crossroadexample", "address example");
 	}
 
     private static void configureLog4j(String level) {

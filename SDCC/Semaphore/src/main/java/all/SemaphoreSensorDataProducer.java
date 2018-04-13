@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class SemaphoreSensorDataProducer {
 
-    public static void main(String[] args) {
-
+    public SemaphoreSensorDataProducer() {
 
         while (true) {
 
@@ -33,6 +33,11 @@ public class SemaphoreSensorDataProducer {
             while (var15.hasNext()) {
                 SemaphoreSensor event = (SemaphoreSensor) var15.next();
                 FirstProducer.getInstance().sendSemaphoreSensorInfo("localhost", event, "semaphoresensor");
+                try {
+                    TimeUnit.MILLISECONDS.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
 
             }
