@@ -10,29 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e06beef1-e248-4b27-9934-409f6236b22b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/MonitorBE.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/SemaphoreWR.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/mvnw" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/mvnw.cmd" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/SimpleCORSFilter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/SemaphoreStateEP.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/config/WebSocketConfig.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/dao/SemaphoreDao.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstProducer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/resources/application.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/test/java/all/RunnerTests.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/SemaphoreSensorDataProducer.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstConsumer.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/model/SemaphoreSensor.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/entities/src/main/java/Message.java" afterPath="$PROJECT_DIR$/SDCC/entities/src/main/java/Message.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java" afterPath="$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java" />
     </list>
     <ignored path="$PROJECT_DIR$/flink/flink-streaming-java/target/" />
     <ignored path="$PROJECT_DIR$/flink/flink-contrib/flink-statebackend-rocksdb/target/" />
@@ -161,11 +144,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Runner.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Runner.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="36" column="48" lean-forward="false" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+            <state relative-caret-position="309">
+              <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,11 +156,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SemaphoreClass.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SemaphoreClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+            <state relative-caret-position="473">
+              <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding>
                 <element signature="docComment;method#registerSemaphore#0;class#SemaphoreClass#0" expanded="false" />
                 <element signature="method#registerSemaphore#0;class#SemaphoreClass#0" expanded="false" />
@@ -201,11 +184,79 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SemaphoreSensor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/model/SemaphoreSensor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#597#598#0" expanded="true" />
+                <element signature="e#631#632#0" expanded="true" />
+                <element signature="e#685#686#0" expanded="true" />
+                <element signature="e#731#732#0" expanded="true" />
+                <element signature="e#769#770#0" expanded="true" />
+                <element signature="e#803#804#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#903#904#0" expanded="true" />
+                <element signature="e#938#939#0" expanded="true" />
+                <element signature="e#969#970#0" expanded="true" />
+                <element signature="e#1017#1018#0" expanded="true" />
+                <element signature="e#1057#1058#0" expanded="true" />
+                <element signature="e#1093#1094#0" expanded="true" />
+                <element signature="e#1125#1126#0" expanded="true" />
+                <element signature="e#1175#1176#0" expanded="true" />
+                <element signature="e#1217#1218#0" expanded="true" />
+                <element signature="e#1253#1254#0" expanded="true" />
+                <element signature="e#1285#1286#0" expanded="true" />
+                <element signature="e#1335#1336#0" expanded="true" />
+                <element signature="e#1377#1378#0" expanded="true" />
+                <element signature="e#1414#1415#0" expanded="true" />
+                <element signature="e#1450#1451#0" expanded="true" />
+                <element signature="e#1505#1506#0" expanded="true" />
+                <element signature="e#1555#1556#0" expanded="true" />
+                <element signature="e#1593#1594#0" expanded="true" />
+                <element signature="e#1630#1631#0" expanded="true" />
+                <element signature="e#1687#1688#0" expanded="true" />
+                <element signature="e#1739#1740#0" expanded="true" />
+                <element signature="e#1775#1776#0" expanded="true" />
+                <element signature="e#1807#1808#0" expanded="true" />
+                <element signature="e#1857#1858#0" expanded="true" />
+                <element signature="e#1899#1900#0" expanded="true" />
+                <element signature="e#1938#1939#0" expanded="true" />
+                <element signature="e#1975#1976#0" expanded="true" />
+                <element signature="e#2032#2033#0" expanded="true" />
+                <element signature="e#2077#2078#0" expanded="true" />
+                <element signature="e#2117#2118#0" expanded="true" />
+                <element signature="e#2155#2156#0" expanded="true" />
+                <element signature="e#2214#2215#0" expanded="true" />
+                <element signature="e#2261#2262#0" expanded="true" />
+                <element signature="e#2298#2299#0" expanded="true" />
+                <element signature="e#2333#2334#0" expanded="true" />
+                <element signature="e#2386#2387#0" expanded="true" />
+                <element signature="e#2427#2428#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SemaphoreSensorDataProducer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/SemaphoreSensorDataProducer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="FirstProducer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstProducer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="43" column="55" lean-forward="false" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+            <state relative-caret-position="203">
+              <caret line="99" column="53" lean-forward="true" selection-start-line="99" selection-start-column="53" selection-end-line="99" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -269,9 +320,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/system/PayloadSerializer.java" />
-        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/Sender.java" />
-        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/firstProducer.java" />
         <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/Receiver.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/endPoints/config/WebSocketConfig.java" />
@@ -320,6 +368,9 @@
         <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstConsumer.java" />
         <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java" />
         <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/model/SemaphoreSensor.java" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/SemaphoreSensorDataProducer.java" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstProducer.java" />
       </list>
     </option>
   </component>
@@ -403,6 +454,45 @@
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
               <item name="Semaphore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Semaphore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Semaphore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Semaphore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Semaphore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Semaphore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -734,7 +824,7 @@
       <workItem from="1523450610408" duration="10406000" />
       <workItem from="1523537037875" duration="581000" />
       <workItem from="1523542380076" duration="8578000" />
-      <workItem from="1523623079906" duration="7633000" />
+      <workItem from="1523623079906" duration="8631000" />
     </task>
     <task id="LOCAL-00001" summary="Exported settings">
       <created>1518424079250</created>
@@ -771,14 +861,22 @@
       <option name="project" value="LOCAL" />
       <updated>1523460958778</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="semaphoer created">
+      <created>1523630749176</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1523630749178</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128730000" />
+    <option name="totallyTimeSpent" value="129728000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25655022" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
@@ -797,10 +895,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20418848" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2052356" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19583778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19583778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -829,7 +927,8 @@
     <MESSAGE value="new test" />
     <MESSAGE value="IoT simulation (kafka) and FlinkDispatcher (flink+kafka) created" />
     <MESSAGE value="redis/influxDB tests (flinkDispatcher)" />
-    <option name="LAST_COMMIT_MESSAGE" value="redis/influxDB tests (flinkDispatcher)" />
+    <MESSAGE value="semaphoer created" />
+    <option name="LAST_COMMIT_MESSAGE" value="semaphoer created" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -849,20 +948,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="61" column="50" lean-forward="true" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/Crossroad.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -955,17 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="28" column="52" lean-forward="false" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-          <folding>
-            <element signature="e#363#378#0" expanded="false" />
-            <element signature="method#generalSelf#0;class#Runner#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1085,6 +1159,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="55" column="75" lean-forward="false" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1268,28 +1343,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstProducer.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/Runner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="43" column="55" lean-forward="false" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="36" column="48" lean-forward="false" selection-start-line="36" selection-start-column="48" selection-end-line="36" selection-end-column="48" />
+        <state relative-caret-position="324">
+          <caret line="28" column="52" lean-forward="false" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#363#378#0" expanded="false" />
+            <element signature="method#generalSelf#0;class#Runner#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+        <state relative-caret-position="473">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#registerSemaphore#0;class#SemaphoreClass#0" expanded="false" />
             <element signature="method#registerSemaphore#0;class#SemaphoreClass#0" expanded="false" />
@@ -1308,6 +1376,88 @@
             <element signature="docComment;method#idGenerator#0;class#SemaphoreClass#0" expanded="false" />
             <element signature="docComment;method#requestOtherSemaphores#0;class#SemaphoreClass#0" expanded="false" />
             <element signature="method#requestOtherSemaphores#0;class#SemaphoreClass#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="99" column="53" lean-forward="true" selection-start-line="99" selection-start-column="53" selection-end-line="99" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/SemaphoreSensorDataProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/model/SemaphoreSensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#969#970#0" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1057#1058#0" expanded="true" />
+            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1125#1126#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1217#1218#0" expanded="true" />
+            <element signature="e#1253#1254#0" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
+            <element signature="e#1377#1378#0" expanded="true" />
+            <element signature="e#1414#1415#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+            <element signature="e#1505#1506#0" expanded="true" />
+            <element signature="e#1555#1556#0" expanded="true" />
+            <element signature="e#1593#1594#0" expanded="true" />
+            <element signature="e#1630#1631#0" expanded="true" />
+            <element signature="e#1687#1688#0" expanded="true" />
+            <element signature="e#1739#1740#0" expanded="true" />
+            <element signature="e#1775#1776#0" expanded="true" />
+            <element signature="e#1807#1808#0" expanded="true" />
+            <element signature="e#1857#1858#0" expanded="true" />
+            <element signature="e#1899#1900#0" expanded="true" />
+            <element signature="e#1938#1939#0" expanded="true" />
+            <element signature="e#1975#1976#0" expanded="true" />
+            <element signature="e#2032#2033#0" expanded="true" />
+            <element signature="e#2077#2078#0" expanded="true" />
+            <element signature="e#2117#2118#0" expanded="true" />
+            <element signature="e#2155#2156#0" expanded="true" />
+            <element signature="e#2214#2215#0" expanded="true" />
+            <element signature="e#2261#2262#0" expanded="true" />
+            <element signature="e#2298#2299#0" expanded="true" />
+            <element signature="e#2333#2334#0" expanded="true" />
+            <element signature="e#2386#2387#0" expanded="true" />
+            <element signature="e#2427#2428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
