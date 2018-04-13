@@ -15,6 +15,7 @@ public class Message implements Serializable {
     private Crossroad crossroad;
     private int currentCycle;
     private Semaphore semaphore;
+    private boolean youAreGreen;
 
     /*
     *
@@ -91,5 +92,13 @@ public class Message implements Serializable {
 
     public void setCrossroad(Crossroad crossroad) {
         this.crossroad = crossroad;
+    }
+
+    public boolean isYouAreGreen() {
+        return youAreGreen;
+    }
+
+    public void setYouAreGreen(boolean youAreGreen) {
+        this.youAreGreen = youAreGreen;
     }
 }

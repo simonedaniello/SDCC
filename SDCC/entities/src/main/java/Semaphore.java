@@ -13,13 +13,17 @@ public class Semaphore implements Serializable{
     private String ID;
     private String street;
     private int monitorCycle;
-    private ArrayList<Crossroad> crossroads;
+    private int kafkaport;
     private ArrayList<Semaphore> semaphores;
     private ArrayList<Semaphore> greenTogether;
+    private String crossroad;
+    private String controllerIP;
     private int light; // 0 for red, 1 for green
     private double trafficIntensity;
     private List<Car> queue = new ArrayList<>();
     private  ArrayList<Double> times = new ArrayList<>();
+    private String latitude;
+    private String longitude;
 
 
     public Semaphore(){}
@@ -28,7 +32,6 @@ public class Semaphore implements Serializable{
         this.ID = id;
         this.light = 0;
         this.street = street;
-        this.crossroads = new ArrayList<>();
         this.semaphores = new ArrayList<>();
         this.greenTogether = new ArrayList<>();
         times.add(8.0);
@@ -51,14 +54,6 @@ public class Semaphore implements Serializable{
 
     public void setStreet(String street) {
         this.street = street;
-    }
-
-    public ArrayList<Crossroad> getCrossroads() {
-        return crossroads;
-    }
-
-    public void setCrossroads(ArrayList<Crossroad> crossroads) {
-        this.crossroads = crossroads;
     }
 
     public ArrayList<Semaphore> getSemaphores() {
@@ -119,6 +114,47 @@ public class Semaphore implements Serializable{
 
     public double maxQ(){
         return Math.max(times.get(1),times.get(2));
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+
+    public String getCrossroad() {
+        return crossroad;
+    }
+
+    public void setCrossroad(String crossroad) {
+        this.crossroad = crossroad;
+    }
+
+    public String getControllerIP() {
+        return controllerIP;
+    }
+
+    public void setControllerIP(String controllerIP) {
+        this.controllerIP = controllerIP;
+    }
+
+    public int getKafkaport() {
+        return kafkaport;
+    }
+
+    public void setKafkaport(int kafkaport) {
+        this.kafkaport = kafkaport;
     }
 }
 
