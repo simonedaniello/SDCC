@@ -1,22 +1,22 @@
 package all.newArchitecture;
 
+import all.SemaphoreSensorDataProducer;
 import all.front.FirstConsumer;
 import all.front.FirstProducer;
 import main.java.Message;
 import main.java.Semaphore;
+import main.java.system.Printer;
 
 import java.util.ArrayList;
 
 public class SemaphoreClass implements Runnable{
 
-    private static SemaphoreClass instance = new SemaphoreClass();
     private Semaphore semaphore;
+    private FirstConsumer fc;
+    private FirstProducer fp;
+    private TwoPCController twopc;
 
-    private SemaphoreClass() {}
-
-    public static SemaphoreClass getInstance(){
-        return instance;
-    }
+    public SemaphoreClass() {}
 
     /**
      * when this class is created it adds a new semaphore in the list.
@@ -34,8 +34,14 @@ public class SemaphoreClass implements Runnable{
     public void registerSemaphore(Semaphore s){
         this.semaphore = s;
         this.semaphore.setID(idGenerator(this.semaphore.getLatitude(), this.semaphore.getLongitude()));
-        (new Thread(this)).start();
+        fc = new FirstConsumer();
+        fp = new FirstProducer();
+        twopc = new TwoPCController(this, fp);
+
+        fc.setAttributes(this, twopc, s.getCrossroad());
+        startListeningKafka();
         requestOtherSemaphores();
+//        sendSensorData();
     }
 
     /**
@@ -43,7 +49,7 @@ public class SemaphoreClass implements Runnable{
      * send the list of cars detected through kafka to flinkDispatcher
      */
     public void sendSensorData(){
-
+        new SemaphoreSensorDataProducer(this.fp);
     }
 
     /**
@@ -60,7 +66,8 @@ public class SemaphoreClass implements Runnable{
      * @param youAreGreen
      */
     public void start2pc(boolean youAreGreen){
-
+        twopc.votingPhase(semaphore.getID(), semaphore.getCrossroad(), youAreGreen);
+        fc.setCrossroad(semaphore.getCrossroad());
     }
 
     /**
@@ -68,7 +75,7 @@ public class SemaphoreClass implements Runnable{
      * enter in emegency mode
      */
     public void emergencyMode(){
-
+        Printer.getInstance().print("entro in emergency mode", "red");
     }
 
     /**
@@ -76,7 +83,7 @@ public class SemaphoreClass implements Runnable{
      * run the kafka consumer
      */
     private void startListeningKafka(){
-
+        (new Thread(this)).start();
     }
 
     /**
@@ -85,6 +92,7 @@ public class SemaphoreClass implements Runnable{
      */
     public void updateSemaphoreList(ArrayList<Semaphore> listOfSemaphores){
         this.semaphore.setSemaphores(listOfSemaphores);
+        Handyman.getInstance().printStatus(this.semaphore);
     }
 
     /**
@@ -95,7 +103,9 @@ public class SemaphoreClass implements Runnable{
      * @return
      */
     private String idGenerator(String latitude, String longitude){
-        return org.apache.commons.codec.digest.DigestUtils.sha256Hex(latitude + longitude);
+        String id = org.apache.commons.codec.digest.DigestUtils.sha256Hex(latitude + longitude);
+        Printer.getInstance().print("{latitude: " + latitude + ", longitude: " + longitude + ", id: " + id + " }", "green");
+        return id;
     }
 
     /**
@@ -105,14 +115,15 @@ public class SemaphoreClass implements Runnable{
      */
     private void requestOtherSemaphores(){
         Message m = new Message();
-        m.setCode(3);
+        m.setCode(1);
         m.setSemaphore(this.semaphore);
-        FirstProducer.getInstance().sendMessage(semaphore.getControllerIP(), m, "fromSemaphoreToControl");
+        Printer.getInstance().print("sending registration with id: " + this.semaphore.getID(), "blue");
+        fp.sendMessage(semaphore.getControllerIP(), m, semaphore.getCrossroad());
     }
 
     @Override
     public void run() {
-        FirstConsumer.getInstance().runConsumer(this.semaphore.getID());
+        fc.runConsumer(this.semaphore.getID(), this.semaphore.getCrossroad());
     }
 
 }

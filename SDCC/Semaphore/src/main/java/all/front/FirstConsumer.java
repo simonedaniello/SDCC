@@ -2,6 +2,7 @@ package all.front;
 
 
 import all.newArchitecture.SemaphoreClass;
+import all.newArchitecture.TwoPCController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.Message;
 import main.java.system.Printer;
@@ -17,14 +18,19 @@ import java.util.Properties;
 public class FirstConsumer {
 
 
-    private static FirstConsumer instance = new FirstConsumer();
+    private String crossroad;
+    private SemaphoreClass semaphoreClass;
+    private TwoPCController twopc;
 
-    private FirstConsumer(){
+    public FirstConsumer(){
     }
 
-    public static FirstConsumer getInstance() {
-        return instance;
+    public void setAttributes(SemaphoreClass s, TwoPCController twopc, String crossroad){
+        this.semaphoreClass = s;
+        this.twopc = twopc;
+        this.crossroad = crossroad;
     }
+
 
 
     private Consumer<Long, String> consumer;
@@ -58,14 +64,15 @@ public class FirstConsumer {
     }
 
 
-    public void runConsumer(String selfTopic) {
+    public void runConsumer(String selfTopic, String crossroadTopic) {
 
         String topicName = "semaphoreKafkaTopic";
         createConsumer();
-        subscribeToTopic(topicName);
+        subscribeToTopic(crossroadTopic);
         subscribeToTopic(selfTopic);
         System.out.println("started listening on kafka on topic:");
-        Printer.getInstance().print(topicName, "blue");
+        Printer.getInstance().print("\t" + crossroadTopic, "blue");
+        Printer.getInstance().print("\t" + topicName, "blue");
 
         final int giveUp = 100;   int noRecordsCount = 0;
 
@@ -94,10 +101,10 @@ public class FirstConsumer {
         try {
             Message message = mapper.readValue(record.value(), Message.class);
 
-            Printer.getInstance().print("Consumer Record:( " + record.key() +
+            Printer.getInstance().print("Consumer Record:(" + record.key() +
                     ", Message: " + message.getID() +
                     ", Code: " + message.getCode() +
-                    " )", "cyan");
+                    ")", "cyan");
             workWithMessage(message);
 
         } catch (IOException e) {
@@ -109,14 +116,30 @@ public class FirstConsumer {
     private void workWithMessage(Message message){
         int code = message.getCode();
         if (code == 1){
-            SemaphoreClass.getInstance().start2pc(message.isYouAreGreen());
+            semaphoreClass.start2pc(message.isYouAreGreen());
         }
         else if (code == -1){
         }
         else if (code == 10){
-            SemaphoreClass.getInstance().updateSemaphoreList(message.getListOfSemaphores());
+            semaphoreClass.updateSemaphoreList(message.getListOfSemaphores());
         }
         else if (code == 401) {
         }
+        //---------------------2PC-----------------------
+        else if (code == 301){
+            semaphoreClass.start2pc(message.isYouAreGreen());
+        }
+        else if (code == 302){
+            twopc.commitPhase(crossroad);
+
+        }
+        else if (code == -302){
+            twopc.rollback(crossroad);
+        }
+        //---------------------2PC-----------------------
+    }
+
+    public void setCrossroad(String crossroad) {
+        this.crossroad = crossroad;
     }
 }

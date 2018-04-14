@@ -46,11 +46,6 @@ public class Runner {
 
 	}
 
-	private static void generateLatitudeLongitude(Semaphore s)  {
-        s.setLatitude("10");
-        s.setLongitude("20");
-	}
-
 	public static class SemaphoreGenerator implements Runnable {
 
 	    private String args1;
@@ -82,7 +77,8 @@ public class Runner {
 //            Printer.getInstance().print("\tcorssroad id: " + s.getCrossroad(), "yellow");
 //            Printer.getInstance().print("\tcontroller ip: " + s.getControllerIP(), "yellow");
 
-            SemaphoreClass.getInstance().registerSemaphore(s);
+            SemaphoreClass sc = new SemaphoreClass();
+            sc.registerSemaphore(s);
         }
     }
 }

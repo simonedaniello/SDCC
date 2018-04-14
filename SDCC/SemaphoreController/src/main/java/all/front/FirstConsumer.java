@@ -3,9 +3,11 @@ package all.front;
 
 import all.controllers.CrossroadController;
 import all.controllers.Monitorer;
+import all.controllers.TwoPCController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.Message;
 import main.java.system.Printer;
+import org.apache.flink.shaded.curator.org.apache.curator.shaded.com.google.common.util.concurrent.Monitor;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.common.serialization.LongDeserializer;
@@ -19,13 +21,12 @@ import java.util.Properties;
 
 public class FirstConsumer {
 
-    private static FirstConsumer instance = new FirstConsumer();
+    private TwoPCController twopc;
+    private Monitorer monitorer;
 
-    private FirstConsumer(){
-    }
-
-    public static FirstConsumer getInstance() {
-        return instance;
+    public FirstConsumer(TwoPCController twopc, Monitorer monitorer){
+        this.twopc = twopc;
+        this.monitorer = monitorer;
     }
 
     private Consumer<Long, String> consumer;
@@ -35,19 +36,14 @@ public class FirstConsumer {
 
     private CrossroadController crossroadController;
 
-
-
-
     public void setController(CrossroadController crossroadController){
         createConsumer();
         this.crossroadController = crossroadController;
     }
 
-
     public void subscribeToTopic(String topic){
         consumer.subscribe(Collections.singletonList(topic));
     }
-
 
     private void createConsumer() {
 
@@ -66,7 +62,6 @@ public class FirstConsumer {
         consumer = new KafkaConsumer<>(props);
 
     }
-
 
     public void runConsumer() {
 
@@ -93,7 +88,6 @@ public class FirstConsumer {
 //        System.out.println("DONE");
     }
 
-
     private void DeserializeMessage(ConsumerRecord<Long, String> record){
         ObjectMapper mapper = new ObjectMapper();
 
@@ -112,18 +106,29 @@ public class FirstConsumer {
         }
     }
 
-
     private void workWithMessage(Message message){
-        if (message.getCode() == 1){
+        int code = message.getCode();
+        if (code == 1){
+            Printer.getInstance().print("arrived semaphore with id: " + message.getSemaphore().getID(), "yellow");
             crossroadController.addSemaphore(message.getSemaphore());
-            Printer.getInstance().print("arrived semaphore", "yellow");
         }
-        else if (message.getCode() == -1){
+        else if (code == -1){
             crossroadController.removeSemaphore(message.getSemaphore());
         }
-        else if (message.getCode() == 400) {
-            Monitorer.getInstance().addSemaphoreToMonitor(message.getSemaphore());
+        else if (code == 400) {
+            monitorer.addSemaphoreToMonitor(message.getSemaphore());
         }
+        //---------------------2PC-----------------------
+        else if (code == 311){
+            twopc.updateVotes(message.getID());
+        }
+        else if (code == 312){
+            Printer.getInstance().print("OK: " + message.getID(), "blue");
+        }
+        else if (code == -312){
+            twopc.rollback();
+        }
+        //---------------------2PC-----------------------
     }
 
 }

@@ -17,15 +17,10 @@ import java.util.concurrent.ExecutionException;
 
 public class FirstProducer implements Serializer{
 
-    public static FirstProducer instance = new FirstProducer();
     private final Producer<Long, String> producer;
 
-    private FirstProducer(){
+    public FirstProducer(){
         producer = createProducer();
-    }
-
-    public static FirstProducer getInstance() {
-        return instance;
     }
 
     private final String BOOTSTRAP_SERVERS =

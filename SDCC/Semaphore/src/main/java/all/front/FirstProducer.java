@@ -5,6 +5,7 @@ import all.model.SemaphoreSensor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.Message;
+import main.java.system.Printer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -21,17 +22,11 @@ import java.util.concurrent.ExecutionException;
 public class FirstProducer implements Serializer{
 
 
-    public static FirstProducer instance = new FirstProducer();
     final Producer<Long, String> producer;
 
-    private FirstProducer(){
+    public FirstProducer(){
         producer = createProducer();
     }
-
-    public static FirstProducer getInstance() {
-        return instance;
-    }
-
 
     private final String BOOTSTRAP_SERVERS =
 //            "localhost:9092,localhost:9093,localhost:9094";
@@ -58,6 +53,7 @@ public class FirstProducer implements Serializer{
 
         try {
 
+            Printer.getInstance().print("sent message with code: " + m.getCode(), "yellow");
             ObjectMapper mapper = new ObjectMapper();
 
             String toSend =  mapper.writeValueAsString(m);

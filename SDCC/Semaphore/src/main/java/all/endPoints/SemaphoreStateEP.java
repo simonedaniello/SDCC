@@ -23,8 +23,9 @@ public class SemaphoreStateEP {
         sem.setCrossroad(s.getCrossroad());
         sem.setLight(0);
 
-        SemaphoreClass.getInstance().registerSemaphore(sem);
+        SemaphoreClass sc = new SemaphoreClass();
+        sc.registerSemaphore(sem);
 
-        return "tutto ok";
+        return "OK";
     }
 }

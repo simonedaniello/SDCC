@@ -17,22 +17,18 @@ import java.util.TimerTask;
 
 public class Monitorer {
 
-    private static Monitorer monitorer = new Monitorer();
     private ArrayList<Semaphore> semaphoresArrayList = new ArrayList<>();
     private int numberOfSemaphores;
     private int currentCycle;
     private Crossroad crossroad;
+    private FirstProducer fp;
 
-    private Monitorer() {
-
+    public  Monitorer(FirstProducer fp) {
+        this.fp = fp;
         currentCycle = 0;
         numberOfSemaphores = 0;
         Timer timer = new Timer();
         timer.schedule(new TimerClass(), 10000, 15000); // every 15 seconds
-    }
-
-    public static Monitorer getInstance(){
-        return monitorer;
     }
 
     int getCurrentCycle() {
@@ -62,7 +58,7 @@ public class Monitorer {
         printStatus();
         Message m = new Message("400", 500);
         m.setListOfSemaphores(semaphoresArrayList);
-        FirstProducer.getInstance().sendMessage("localhost", m, "monitor");
+        fp.sendMessage("localhost", m, "monitor");
     }
 
     private void sendRequest2(){
@@ -70,7 +66,7 @@ public class Monitorer {
         printStatus();
         Message m = new Message("400", 500);
         m.setCrossroad(crossroad);
-        FirstProducer.getInstance().sendMessage("localhost", m,"monitor");
+        fp.sendMessage("localhost", m,"monitor");
     }
 
     private void printStatus(){

@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SemaphoreSensorDataProducer {
 
-    public SemaphoreSensorDataProducer() {
+    public SemaphoreSensorDataProducer(FirstProducer fp) {
 
         while (true) {
 
@@ -32,7 +32,7 @@ public class SemaphoreSensorDataProducer {
 
             while (var15.hasNext()) {
                 SemaphoreSensor event = (SemaphoreSensor) var15.next();
-                FirstProducer.getInstance().sendSemaphoreSensorInfo("localhost", event, "semaphoresensor");
+                fp.sendSemaphoreSensorInfo("localhost", event, "semaphoresensor");
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
                 } catch (InterruptedException e) {
