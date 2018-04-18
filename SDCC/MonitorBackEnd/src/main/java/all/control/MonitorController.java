@@ -1,6 +1,7 @@
 package all.control;
 
 import all.front.FirstConsumer;
+import all.front.FirstProducer;
 import main.java.Crossroad;
 import main.java.Semaphore;
 import main.java.system.Printer;
@@ -17,11 +18,13 @@ public class MonitorController implements Runnable{
     private static MonitorController instance = new MonitorController();
 
     private ArrayList<Crossroad> crossroads;
+    private QuerySolver qs;
 
     private MonitorController(){
+        qs = new QuerySolver();
         crossroads = new ArrayList<>();
         String ID = "monitor";
-        FirstConsumer.getInstance().setController(this);
+        FirstConsumer.getInstance().setAttributes(this, qs);
         FirstConsumer.getInstance().subscribeToTopic(ID);
         (new Thread(this)).start();
     }
@@ -64,6 +67,51 @@ public class MonitorController implements Runnable{
         }
         crossroads.add(cross);
         printState();
+    }
+
+    public Boolean flinkAddCrossroad(Crossroad crossroad){
+        try {
+            qs.addCrossroad(crossroad);
+            return true;
+        } catch(Exception e){
+            Printer.getInstance().print(e.getMessage(), "red");
+            return false;
+        }
+    }
+
+    public Boolean flinkAddSemaphore(Semaphore semaphore){
+        try {
+            qs.addSemaphore(semaphore);
+            return true;
+        } catch(Exception e){
+            Printer.getInstance().print(e.getMessage(), "red");
+            return false;
+        }
+    }
+
+    public String flinkGetGeneralSituation(){
+        try {
+            return qs.getGeneralSituation();
+        } catch(Exception e) {
+            return "problem";
+        }
+
+    }
+
+    public String flinkGetCrossroadSituation(Crossroad crossroad){
+        try {
+            return qs.getCrossroadSituation(crossroad);
+        } catch(Exception e) {
+            return "problem";
+        }
+    }
+
+    public String flinkGetQueries(){
+        try {
+            return qs.getQueries();
+        } catch(Exception e) {
+            return "problem";
+        }
     }
 
     @Override

@@ -24,6 +24,7 @@ public class Semaphore implements Serializable{
     private  ArrayList<Double> times = new ArrayList<>();
     private String latitude;
     private String longitude;
+    private int order;
 
 
     public Semaphore(){}
@@ -155,6 +156,14 @@ public class Semaphore implements Serializable{
 
     public void setKafkaport(int kafkaport) {
         this.kafkaport = kafkaport;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
     }
 }
 

@@ -2,6 +2,8 @@ package all.endPoints;
 
 import all.control.MonitorController;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import main.java.Crossroad;
+import main.java.Semaphore;
 import main.java.system.Printer;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,4 +25,38 @@ public class SemaphoreStateEP {
             return "error";
         }
     }
+
+
+    @RequestMapping(value = "/addCrossroad", method = RequestMethod.GET)
+    public String addCrossroad(Crossroad crossroad){
+        if(MonitorController.getInstance().flinkAddCrossroad(crossroad))
+            return "OK";
+        else
+            return "ERROR";
+    }
+
+    @RequestMapping(value = "/addSemaphore", method = RequestMethod.GET)
+    public String addSemaphore(Semaphore semaphore){
+        if(MonitorController.getInstance().flinkAddSemaphore(semaphore))
+            return "OK";
+        else
+            return "ERROR";
+    }
+
+    @RequestMapping(value = "/getCrossroadInfo", method = RequestMethod.GET)
+    public String getCrossroadInfo(Crossroad crossroad){
+        return MonitorController.getInstance().flinkGetCrossroadSituation(crossroad);
+    }
+
+    @RequestMapping(value = "/getGeneralInfo", method = RequestMethod.GET)
+    public String getGeneralInfo(){
+        return MonitorController.getInstance().flinkGetGeneralSituation();
+
+    }
+
+    @RequestMapping(value = "/getQueries", method = RequestMethod.GET)
+    public String getQueries(){
+        return MonitorController.getInstance().flinkGetQueries();
+    }
+
 }

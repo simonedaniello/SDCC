@@ -7,7 +7,6 @@ import all.controllers.TwoPCController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.Message;
 import main.java.system.Printer;
-import org.apache.flink.shaded.curator.org.apache.curator.shaded.com.google.common.util.concurrent.Monitor;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.common.serialization.LongDeserializer;
@@ -17,6 +16,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Properties;
+import java.util.UUID;
 
 
 public class FirstConsumer {
@@ -52,12 +52,15 @@ public class FirstConsumer {
 
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 BOOTSTRAP_SERVERS);
-        props.put(ConsumerConfig.GROUP_ID_CONFIG,
-                "KafkaExampleConsumer");
+//        props.put(ConsumerConfig.GROUP_ID_CONFIG,
+//                "KafkaExampleConsumer");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, UUID.randomUUID().toString());
+
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
                 LongDeserializer.class.getName());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 StringDeserializer.class.getName());
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
 
         consumer = new KafkaConsumer<>(props);
 

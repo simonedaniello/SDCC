@@ -8,6 +8,8 @@ import main.java.Semaphore;
 import main.java.system.Printer;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 public class SemaphoreClass implements Runnable{
 
@@ -15,6 +17,7 @@ public class SemaphoreClass implements Runnable{
     private FirstConsumer fc;
     private FirstProducer fp;
     private TwoPCController twopc;
+    private Boolean emergencyModeOn = false;
 
     public SemaphoreClass() {}
 
@@ -66,6 +69,7 @@ public class SemaphoreClass implements Runnable{
      * @param youAreGreen
      */
     public void start2pc(boolean youAreGreen){
+        emergencyModeOn = false;
         twopc.votingPhase(semaphore.getID(), semaphore.getCrossroad(), youAreGreen);
         fc.setCrossroad(semaphore.getCrossroad());
     }
@@ -75,7 +79,26 @@ public class SemaphoreClass implements Runnable{
      * enter in emegency mode
      */
     public void emergencyMode(){
-        Printer.getInstance().print("entro in emergency mode", "red");
+        emergencyModeOn = true;
+        Printer.getInstance().print("entro in emergency mode\n ricorda di implementare il caso che i semafori sono diversi da 4\n" +
+                "e di accendere i semafori opposti contemporaneamente", "red");
+        while(emergencyModeOn){
+            Calendar now = Calendar.getInstance();
+            System.out.println("Current Second is : " + now.get(Calendar.SECOND));
+            int start = semaphore.getOrder() * 15;
+            int end = start + 15;
+            System.out.println("start = " + start + ", end = " + end);
+            if(now.get(Calendar.SECOND) < end && now.get(Calendar.SECOND) > start){
+                Printer.getInstance().print("I BECOME GREEN: " + semaphore.getID(), "green");
+            }
+            else
+                Printer.getInstance().print("I BECOME RED: " + semaphore.getID(), "red");
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
@@ -91,8 +114,15 @@ public class SemaphoreClass implements Runnable{
      * @param listOfSemaphores
      */
     public void updateSemaphoreList(ArrayList<Semaphore> listOfSemaphores){
+        Printer.getInstance().print("\n\n\n updating semaphore list \n\n\n", "yellow");
         this.semaphore.setSemaphores(listOfSemaphores);
         Handyman.getInstance().printStatus(this.semaphore);
+        for(Semaphore s: listOfSemaphores){
+            if (s.getID().equals(semaphore.getID())) {
+                Printer.getInstance().print("\n\n\n setto come ordinamento " + s.getOrder() + "\n\n\n", "yellow");
+                semaphore.setOrder(s.getOrder());
+            }
+        }
     }
 
     /**

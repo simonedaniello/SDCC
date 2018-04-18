@@ -48,7 +48,7 @@ public class CrossroadController{
             e.printStackTrace();
         }
         Timer timer = new Timer();
-        timer.schedule(new TimerClass(), 10000, 15000); // every 15 seconds
+        timer.schedule(new TimerClass(), 5000, 5000); // every 5 seconds
         new Decider(this);
     }
 
@@ -58,6 +58,7 @@ public class CrossroadController{
 
     public void addSemaphore(Semaphore semaphore){
         Printer.getInstance().print("adding semapore: " + semaphore.getID(), "green");
+        giveOrderingToSemaphore(semaphore);
         crossroad.getSemaphores().add(semaphore);
         sendCurrentState();
         monitorer.setNumberOfSemaphores(crossroad.getSemaphores().size());
@@ -88,8 +89,10 @@ public class CrossroadController{
         Message m = new Message(crossroad.getID(), 10);
         m.setListOfSemaphores(crossroad.getSemaphores());
         m.setCurrentCycle(monitorer.getCurrentCycle());
-        for(Semaphore s: crossroad.getSemaphores())
+        for(Semaphore s: crossroad.getSemaphores()) {
             fp.sendMessage("address", m, s.getID());
+            Printer.getInstance().print("\n\ncurrent state sent to " + s.getID() +"\n\n", "yellow");
+        }
     }
 
     public void sendGreen(Semaphore greenSemaphore) {
@@ -97,13 +100,26 @@ public class CrossroadController{
     }
 
     private class TimerClass extends TimerTask {
+        private int times = 0;
         @Override
         public void run() {
             sendCurrentState();
             printSemaphores();
-            if(crossroad.getSemaphores().size() != 0)
-                twopc.votingPhase(crossroad.getSemaphores(), crossroad.getSemaphores().get(0).getID());
+            if(crossroad.getSemaphores().size() != 0) {
+                if (times == 2)
+                    twopc.votingPhase(crossroad.getSemaphores(), crossroad.getSemaphores().get(0).getID());
+                else
+                    times++;
+            }
         }
+    }
+
+    private void giveOrderingToSemaphore(Semaphore s){
+        if(crossroad.getSemaphores().size() == 0)
+            s.setOrder(0);
+        else
+            s.setOrder(crossroad.getSemaphores().get(crossroad.getSemaphores().size()-1).getOrder() + 1);
+        System.out.println("imposto ordinamento a " + s.getOrder());
     }
 }
 

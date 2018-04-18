@@ -59,7 +59,9 @@ public class TwoPCController {
 
     public void commitPhase(){
         for (String s : semaphoresFor2pc.keySet()){
-            Message m = new Message("commit", 302);
+//            Message m = new Message("commit", 302);
+            Printer.getInstance().print("ricorda che la commit phase sbaglia appositamente e rimanda al rollback mode", "red");
+            Message m = new Message("wrong commit", -302);
             fp.sendMessage("address", m, s);
         }
     }

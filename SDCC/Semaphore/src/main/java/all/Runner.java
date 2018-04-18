@@ -53,7 +53,7 @@ public class Runner {
 	    private String latitude;
 	    private String longitude;
 
-	    public SemaphoreGenerator(String args1, String args2, String latitude, String longitude){
+	    private SemaphoreGenerator(String args1, String args2, String latitude, String longitude){
 	        this.args1 = args1;
 	        this.args2 = args2;
 	        this.latitude = latitude;

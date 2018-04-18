@@ -2,17 +2,16 @@ package all.front;
 
 
 import all.control.MonitorController;
+import all.control.QuerySolver;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.Crossroad;
 import main.java.Message;
-import main.java.Semaphore;
 import main.java.system.Printer;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Properties;
 
@@ -34,11 +33,13 @@ public class FirstConsumer {
             "localhost:9092";
 
     private MonitorController monitorController;
+    private QuerySolver qs;
 
 
-    public void setController(MonitorController monitorController){
+    public void setAttributes(MonitorController monitorController, QuerySolver querySolver){
         createConsumer();
         this.monitorController= monitorController;
+        this.qs = querySolver;
     }
 
 
@@ -111,8 +112,26 @@ public class FirstConsumer {
 
 
     private void workWithMessage(Message message){
-        if (message.getCode() == 500) {
+        int code = message.getCode();
+
+        if (code == 500) {
             monitorController.addCrossroadToList(message.getCrossroad());
+        }
+        else if(code == 621){
+            //add crossroad response from flinkDispatcher
+            qs.controllerResponse = "OK";
+        }
+        else if(code == 622){
+            //add semaphore response from flinkDispatcher
+            qs.controllerResponse = "OK";
+        }
+        else if(code == 623){
+            ObjectMapper mapper = new ObjectMapper();
+            try {
+                qs.controllerResponse = mapper.writeValueAsString(message.getListOfSemaphores());
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
         }
     }
 

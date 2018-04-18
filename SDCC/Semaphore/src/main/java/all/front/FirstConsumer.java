@@ -1,6 +1,7 @@
 package all.front;
 
 
+
 import all.newArchitecture.SemaphoreClass;
 import all.newArchitecture.TwoPCController;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,6 +14,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Properties;
+import java.util.UUID;
 
 
 public class FirstConsumer {
@@ -51,12 +53,15 @@ public class FirstConsumer {
 
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 BOOTSTRAP_SERVERS);
-        props.put(ConsumerConfig.GROUP_ID_CONFIG,
-                "KafkaExampleConsumer");
+//        props.put(ConsumerConfig.GROUP_ID_CONFIG,
+//                "KafkaExampleConsumer");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, UUID.randomUUID().toString());
+
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
                 LongDeserializer.class.getName());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 StringDeserializer.class.getName());
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
 
 
         consumer = new KafkaConsumer<>(props);
@@ -66,13 +71,12 @@ public class FirstConsumer {
 
     public void runConsumer(String selfTopic, String crossroadTopic) {
 
-        String topicName = "semaphoreKafkaTopic";
         createConsumer();
         subscribeToTopic(crossroadTopic);
         subscribeToTopic(selfTopic);
         System.out.println("started listening on kafka on topic:");
         Printer.getInstance().print("\t" + crossroadTopic, "blue");
-        Printer.getInstance().print("\t" + topicName, "blue");
+        Printer.getInstance().print("\t" + selfTopic, "blue");
 
         final int giveUp = 100;   int noRecordsCount = 0;
 
@@ -112,18 +116,19 @@ public class FirstConsumer {
         }
     }
 
-
+    /**
+     * Message codes:
+     *      10:     get the list of semaphores in the crossroad by the controller
+     *      301:    the controller has started the voting phase of the 2pc
+     *      302:    the controller has started the commit phase of the 2pc
+ *          -302:   the controller has started the rollback phase of the 2pc
+     * @param message
+     */
     private void workWithMessage(Message message){
         int code = message.getCode();
-        if (code == 1){
-            semaphoreClass.start2pc(message.isYouAreGreen());
-        }
-        else if (code == -1){
-        }
-        else if (code == 10){
+        //-------------monitor and control---------------
+        if (code == 10){
             semaphoreClass.updateSemaphoreList(message.getListOfSemaphores());
-        }
-        else if (code == 401) {
         }
         //---------------------2PC-----------------------
         else if (code == 301){

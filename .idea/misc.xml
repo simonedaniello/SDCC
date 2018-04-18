@@ -24,11 +24,13 @@
         <option value="$PROJECT_DIR$/flink/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/CrossroadWR/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/pom.xml" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/FlinkDispatcher/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/Monitor/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" />
+        <option value="$PROJECT_DIR$/entity/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/entities/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

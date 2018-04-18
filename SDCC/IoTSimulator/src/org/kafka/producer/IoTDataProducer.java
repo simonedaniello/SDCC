@@ -55,6 +55,7 @@ public class IoTDataProducer {
                     String latitude = coords.substring(0, coords.indexOf(","));
                     String longitude = coords.substring(coords.indexOf(",") + 1, coords.length());
                     IoTData event = new IoTData(vehicleId, latitude, longitude, timestamp, speed);
+
                     eventList.add(event);
                 }
             }

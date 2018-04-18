@@ -2,17 +2,15 @@ package all.newArchitecture;
 
 import all.front.FirstProducer;
 import main.java.Message;
-import main.java.Semaphore;
 import main.java.system.Printer;
 
 public class TwoPCController {
 
-    private String undolog;
-    private String redolog;
     private Boolean isMe = false;
     private SemaphoreClass sc;
     private FirstProducer fp;
     private String s;
+    private String currentPhase = "idle"; //there is no active 2pc phase
 
 
     public TwoPCController(SemaphoreClass sc, FirstProducer fp){
@@ -24,8 +22,8 @@ public class TwoPCController {
         this.fp = fp;
     }
 
-
     public void votingPhase(String s, String crossroad, Boolean isMe){
+        currentPhase = "voting";
         this.s = s;
         this.isMe = isMe;
         Message m = new Message(s, 311);
@@ -33,6 +31,7 @@ public class TwoPCController {
     }
 
     public void commitPhase(String crossroad){
+        currentPhase = "commit";
         Message m = new Message(s, 312);
         fp.sendMessage("address", m, crossroad);
         if(isMe)
@@ -42,10 +41,13 @@ public class TwoPCController {
     }
 
     public void rollback(String crossroad){
+        currentPhase = "rollback";
         sc.emergencyMode();
         Message m = new Message(s, 312);
         fp.sendMessage("address", m, crossroad);
     }
 
-
+    public String getCurrentPhase() {
+        return currentPhase;
+    }
 }

@@ -16,6 +16,7 @@ public class Message implements Serializable {
     private int currentCycle;
     private Semaphore semaphore;
     private boolean youAreGreen;
+    private String IP;
 
     /*
     *
@@ -100,5 +101,13 @@ public class Message implements Serializable {
 
     public void setYouAreGreen(boolean youAreGreen) {
         this.youAreGreen = youAreGreen;
+    }
+
+    public String getIP() {
+        return IP;
+    }
+
+    public void setIP(String IP) {
+        this.IP = IP;
     }
 }

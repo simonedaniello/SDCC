@@ -6,7 +6,10 @@
     <file url="file://$PROJECT_DIR$/SDCC/Monitor" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SDCC/MonitorBackEnd" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SDCC/Semaphore" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SDCC/Semaphore/entities" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SDCC/SemaphoreController" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SDCC/SemaphoreWR" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SDCC/entities" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/entity" charset="UTF-8" />
   </component>
 </project>
