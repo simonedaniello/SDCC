@@ -1,6 +1,8 @@
 package org.kafka.producer;
 
 import Model.IoTData;
+
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -9,6 +11,9 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 import java.util.UUID;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
@@ -18,6 +23,9 @@ import org.slf4j.LoggerFactory;
 
 public class IoTDataProducer {
     private static final Logger logger = LoggerFactory.getLogger(IoTDataProducer.class);
+
+    private static final String MONGO_HOST = "localhost";
+    private static final int MONGO_PORT = 27017;
 
     public IoTDataProducer() {
     }
@@ -41,6 +49,8 @@ public class IoTDataProducer {
     private void generateIoTEvent(Producer<String, IoTData> producer, String topic) throws InterruptedException {
         Random rand = new Random();
         logger.info("Sending events");
+        ObjectMapper mapper = new ObjectMapper();
+
 
         while(true) {
             List<IoTData> eventList = new ArrayList();
@@ -55,6 +65,14 @@ public class IoTDataProducer {
                     String latitude = coords.substring(0, coords.indexOf(","));
                     String longitude = coords.substring(coords.indexOf(",") + 1, coords.length());
                     IoTData event = new IoTData(vehicleId, latitude, longitude, timestamp, speed);
+
+                    try {
+                        MongoDataStore.getInstance(MONGO_HOST, MONGO_PORT).storeRawEvent(mapper.writeValueAsString(event));
+                    } catch (UnknownHostException e) {
+                        e.printStackTrace();
+                    } catch (JsonProcessingException e) {
+                        e.printStackTrace();
+                    }
 
                     eventList.add(event);
                 }

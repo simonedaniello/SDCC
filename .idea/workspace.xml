@@ -12,111 +12,14 @@
     <bookmark url="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstConsumer.java" line="62" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e06beef1-e248-4b27-9934-409f6236b22b" name="Default" comment="2PC finish base case">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="e06beef1-e248-4b27-9934-409f6236b22b" name="Default" comment="I hope this commit works fine 2">
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/DataStore.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/MongoDataStore.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/ServiceEventRequest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml" afterPath="$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/src/log4j.properties" afterPath="$PROJECT_DIR$/SDCC/FlinkDispatcher/src/log4j.properties" />
-      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/target/classes/Model/GPSJsonReader.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/target/classes/Model/IoTData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/target/classes/db/InfluxWorker.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/target/classes/db/RedisWorker.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/target/classes/log4j.properties" afterPath="$PROJECT_DIR$/SDCC/FlinkDispatcher/target/classes/log4j.properties" />
-      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/target/classes/org/Flink/WindowTrafficData$AverageSpeed.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/target/classes/org/Flink/WindowTrafficData$Json2Tuple.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/target/classes/org/Flink/WindowTrafficData.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml" />
       <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/IoTDataProducer.java" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/IoTDataProducer.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/Model/GPSJsonReader.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/Model/IoTData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/org/Flink/WindowTrafficData$AverageSpeed.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/org/Flink/WindowTrafficData$Json2Tuple.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/org/Flink/WindowTrafficData.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/org/kafka/producer/IoTDataProducer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/org/kafka/utils/IoTDataEncoder.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/org/kafka/utils/PropertyFileReader.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/Monitor.iml" afterPath="$PROJECT_DIR$/SDCC/Monitor/Monitor.iml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/Runner.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/SimpleCORSFilter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/CrossroadController$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/CrossroadController$TimerClass.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/CrossroadController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/Decider$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/Decider$TimerClass.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/Decider.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/Monitorer$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/Monitorer$TimerClass.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/Monitorer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/RNG/ArrivalGenerator.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/RNG/ListOfArrivals$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/RNG/ListOfArrivals.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/RNG/Rng.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/RNG/Rngs.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/controllers/RNG/Rvgs.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/endpoint/Creator.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/endpoint/Listener.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/endpoint/SemaphoreStateEP.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/endpoint/config/WebSocketConfig.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/endpoint/dao/CrossroadDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/front/FirstConsumer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/target/classes/all/front/FirstProducer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/MonitorBackEnd.iml" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/MonitorBackEnd.iml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/DBController.java" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/DBController.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/QuerySolver.java" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/QuerySolver.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/endPoints/SemaphoreStateEP.java" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/endPoints/SemaphoreStateEP.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstConsumer.java" afterPath="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstConsumer.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/Runner.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/SimpleCORSFilter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/config/WebSocketConfig.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/control/MonitorController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/endPoints/SemaphoreStateEP.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/front/FirstConsumer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/front/FirstProducer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/front/Receiver$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/front/Receiver.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/classes/all/front/Sender.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/MonitorBackEnd/target/test-classes/all/RunnerTests.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml" afterPath="$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml" />
       <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" afterPath="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstConsumer.java" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstConsumer.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/TwoPCController.java" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/TwoPCController.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/Runner$SemaphoreGenerator.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/Runner.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/SemaphoreSensorDataProducer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/SimpleCORSFilter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/control/SemaphoreController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/endPoints/SemaphoreStateEP.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/endPoints/config/WebSocketConfig.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/endPoints/dao/SemaphoreDao.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/front/FirstConsumer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/front/FirstProducer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/model/SemaphoreSensor.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/newArchitecture/Handyman.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/newArchitecture/SemaphoreClass.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/all/newArchitecture/TwoPCController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/classes/application.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/target/test-classes/all/RunnerTests.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/SemaphoreController.iml" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/SemaphoreController.iml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/TwoPCController.java" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/TwoPCController.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/db/DBcontroller.java" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/db/DBcontroller.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstConsumer.java" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstConsumer.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/Runner.class" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/Runner.class" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController$TimerClass.class" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController$TimerClass.class" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController.class" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController.class" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/Monitorer$TimerClass.class" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/Monitorer$TimerClass.class" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/Monitorer.class" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/Monitorer.class" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/front/FirstConsumer.class" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/front/FirstConsumer.class" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/front/FirstProducer.class" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/front/FirstProducer.class" />
-      <change beforePath="$PROJECT_DIR$/SDCC/entities/src/main/java/Message.java" afterPath="$PROJECT_DIR$/SDCC/entities/src/main/java/Message.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java" afterPath="$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java" />
     </list>
     <ignored path="$PROJECT_DIR$/flink/flink-streaming-java/target/" />
     <ignored path="$PROJECT_DIR$/flink/flink-contrib/flink-statebackend-rocksdb/target/" />
@@ -254,7 +157,7 @@
         <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/db/DBcontroller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#226#227#0" expanded="true" />
                 <element signature="e#257#258#0" expanded="true" />
@@ -263,11 +166,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Runner.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Runner.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="216">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataStore.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/DataStore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MongoDataStore.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/MongoDataStore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -326,7 +269,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SDCC/monitorFront/app/trafficAnalytics/trafficAnalytics.html" />
         <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/RNG/ArrivalGenerator.java" />
         <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/Decider.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/Runner.java" />
@@ -359,7 +301,6 @@
         <option value="$PROJECT_DIR$/SDCC/entities/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java" />
         <option value="$PROJECT_DIR$/SDCC/entities/src/main/java/system/Printer.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/entities/entity.iml" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstConsumer.java" />
         <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java" />
@@ -377,6 +318,8 @@
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/db/DBcontroller.java" />
         <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java" />
+        <option value="$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" />
       </list>
     </option>
   </component>
@@ -453,117 +396,29 @@
           <expand>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MonitorBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="IoTSimulator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MonitorBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="IoTSimulator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MonitorBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="IoTSimulator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MonitorBackEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="IoTSimulator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka" type="462c0819:PsiDirectoryNode" />
+              <item name="producer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MonitorBackEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="all" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MonitorBackEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="all" type="462c0819:PsiDirectoryNode" />
-              <item name="control" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MonitorBackEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="all" type="462c0819:PsiDirectoryNode" />
-              <item name="endPoints" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MonitorBackEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="all" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="all" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="all" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="all" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="Semaphore" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -595,22 +450,23 @@
     <property name="RequestMappingsPanelOrder2" value="2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer" />
+      <recent name="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java" />
+      <recent name="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all" />
+      <recent name="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front" />
+      <recent name="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="all.endPoints.config" />
+      <recent name="all.control" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/SDCC/entities" />
       <recent name="C:\Users\Simone\IdeaProjects\SDCC\SDCC\crossroad\lib" />
       <recent name="C:\Users\Simone\IdeaProjects\SDCC\SDCC\crossroad" />
       <recent name="C:\Users\Simone\IdeaProjects\SDCC\Flink\lib" />
       <recent name="C:\Users\Simone\IdeaProjects\SDCC\todelete" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="all.endPoints.config" />
-      <recent name="all.control" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java" />
-      <recent name="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all" />
-      <recent name="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front" />
-      <recent name="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -928,7 +784,7 @@
       <workItem from="1523883575836" duration="1060000" />
       <workItem from="1523884693317" duration="1176000" />
       <workItem from="1524037407915" duration="9442000" />
-      <workItem from="1524049210827" duration="3310000" />
+      <workItem from="1524049210827" duration="4642000" />
     </task>
     <task id="LOCAL-00001" summary="Exported settings">
       <created>1518424079250</created>
@@ -986,11 +842,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523640640235</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="I hope this commit works fine">
+      <created>1524053111774</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1524053111774</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181258000" />
+    <option name="totallyTimeSpent" value="182590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
@@ -1083,7 +946,9 @@
     <MESSAGE value="semaphoer created" />
     <MESSAGE value="loplace's code" />
     <MESSAGE value="2PC" />
-    <option name="LAST_COMMIT_MESSAGE" value="2PC" />
+    <MESSAGE value="I hope this commit works fine" />
+    <MESSAGE value="I hope this commit works fine 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="I hope this commit works fine 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1103,20 +968,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/iot-kafka.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="34" lean-forward="true" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/consumer.props">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1265,13 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -1391,13 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6840">
-          <caret line="380" column="21" lean-forward="false" selection-start-line="380" selection-start-column="21" selection-end-line="380" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4086">
@@ -1460,6 +1297,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1468,6 +1306,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1475,6 +1314,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="58" column="41" lean-forward="true" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1540,11 +1382,11 @@
         <state relative-caret-position="489">
           <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#532#533#0" expanded="true" />
-            <element signature="e#2499#2500#0" expanded="true" />
-            <element signature="e#2536#2537#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#479#480#0" expanded="false" />
+            <element signature="e#532#533#0" expanded="false" />
+            <element signature="e#2499#2500#0" expanded="false" />
+            <element signature="e#2536#2537#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1585,7 +1427,7 @@
     <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/db/DBcontroller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#226#227#0" expanded="true" />
             <element signature="e#257#258#0" expanded="true" />
@@ -1595,8 +1437,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/Runner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="216">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/DataStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/MongoDataStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
