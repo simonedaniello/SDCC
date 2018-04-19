@@ -31,6 +31,10 @@ public class IoTDataProducer {
     }
 
     public static void main(String[] args) throws Exception {
+
+
+
+
         Properties prop = PropertyFileReader.readPropertyFile();
         String zookeeper = prop.getProperty("com.iot.app.kafka.zookeeper");
         String brokerList = prop.getProperty("com.iot.app.kafka.brokerlist");

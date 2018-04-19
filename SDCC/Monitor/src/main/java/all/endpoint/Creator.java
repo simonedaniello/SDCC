@@ -1,5 +1,7 @@
 package all.endpoint;
 
+import all.controllers.CrossroadController;
+
 /**
  * Author : Simone D'Aniello
  * Date :  06/03/2018.

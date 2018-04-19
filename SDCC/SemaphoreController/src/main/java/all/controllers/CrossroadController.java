@@ -24,6 +24,7 @@ public class CrossroadController{
     private Monitorer monitorer;
 
     public CrossroadController(String ID, String address){
+
         this.crossroad = new Crossroad(ID, address);
         this.fp = new FirstProducer();
         this.twopc = new TwoPCController(fp);

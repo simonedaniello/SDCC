@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SemaphoreClass implements Runnable{
 
-    private Semaphore semaphore;
+    private main.java.Semaphore semaphore;
     private FirstConsumer fc;
     private FirstProducer fp;
     private TwoPCController twopc;

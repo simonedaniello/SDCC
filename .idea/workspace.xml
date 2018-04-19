@@ -8,18 +8,44 @@
       <artifact name="Flink:jar" />
     </artifacts-to-build>
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstConsumer.java" line="62" mnemonic="9" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e06beef1-e248-4b27-9934-409f6236b22b" name="Default" comment="I hope this commit works fine 2">
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/DataStore.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/MongoDataStore.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/ServiceEventRequest.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/IoTDataProducer.java" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/IoTDataProducer.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" afterPath="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" />
+    <list default="true" id="e06beef1-e248-4b27-9934-409f6236b22b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_2_12_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_log4j_over_slf4j_1_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_6_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_all_5_16_0_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_all_5_16_0_SNAPSHOT.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/RNG/ArrivalGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/RNG/ArrivalGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/RNG/Rng.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/RNG/Rng.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/CrossroadWR/target/classes/all/controllers/RNG/Rngs.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/RNG/Rngs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/IoTDataProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/IoTDataProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/src/main/java/all/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/Monitor/src/main/java/all/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/Monitor/src/main/java/all/endpoint/Creator.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/Monitor/src/main/java/all/endpoint/Creator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/Semaphore/src/test/java/all/RunnerTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/Runner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController$TimerClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController$TimerClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/Decider.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/Decider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/Monitorer.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/Monitorer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/RNG/Rvgs.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/RNG/Rvgs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/front/FirstConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/front/FirstConsumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/front/FirstProducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/front/FirstProducer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDCC/entities/entities.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SDCC/entities/entities.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/flink/flink-streaming-java/target/" />
     <ignored path="$PROJECT_DIR$/flink/flink-contrib/flink-statebackend-rocksdb/target/" />
@@ -120,11 +146,7 @@
     <ignored path="$PROJECT_DIR$/SDCC/FlinkDispatcher/target/" />
     <ignored path="$PROJECT_DIR$/SDCC/Monitor/target/" />
     <ignored path="$PROJECT_DIR$/SDCC/Semaphore/target/" />
-    <ignored path="$PROJECT_DIR$/SDCC/Semaphore/entities/target/" />
-    <ignored path="$PROJECT_DIR$/entity/target/" />
-    <ignored path="$PROJECT_DIR$/SDCC/entities/target/" />
     <ignored path="$PROJECT_DIR$/SDCC/SemaphoreController/target/" />
-    <ignored path="$PROJECT_DIR$/entities/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,65 +175,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="DBcontroller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/db/DBcontroller.java">
+      <file leaf-file-name="Runner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="252">
+              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding>
-                <element signature="e#226#227#0" expanded="true" />
-                <element signature="e#257#258#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FirstProducer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstProducer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="31" column="53" lean-forward="true" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Runner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/Runner.java">
+        <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataStore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/DataStore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MongoDataStore.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/MongoDataStore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="180">
+              <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -241,7 +233,7 @@
       <find>labels</find>
       <find>start</find>
       <find>crossroadtest</find>
-      <find>semaphores binded</find>
+      <find />
       <find>properties</find>
       <find>entitie</find>
       <find>entities</find>
@@ -250,6 +242,14 @@
       <find>log4j</find>
       <find>IoTDataEncoder</find>
       <find>logger</find>
+      <find>4j</find>
+      <find>logg</find>
+      <find>resou</find>
+      <find>reso</find>
+      <find>exclus</find>
+      <find>EXCE</find>
+      <find>EXC</find>
+      <find>log</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -261,14 +261,21 @@
       </map>
     </option>
   </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/FirstProducer.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/FirstProducer.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/Monitorer.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/Runner.java" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/front/FirstConsumer.java" />
+        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstConsumer.java" />
+        <option value="$PROJECT_DIR$/SDCC/entities/src/main/java/Car.java" />
+        <option value="$PROJECT_DIR$/SDCC/monitorFront/app/index.html" />
+        <option value="$PROJECT_DIR$/SDCC/monitorFront/app/trafficAnalytics/trafficAnalytics.js" />
+        <option value="$PROJECT_DIR$/SDCC/monitorFront/app/trafficAnalytics/trafficAnalytics.html" />
         <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/RNG/ArrivalGenerator.java" />
         <option value="$PROJECT_DIR$/SDCC/CrossroadWR/src/main/java/all/controllers/Decider.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/Runner.java" />
@@ -279,47 +286,35 @@
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/controller/Controller.java" />
         <option value="$PROJECT_DIR$/SDCC/Monitor/src/main/java/all/controllers/Monitorer.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/newArchitecture/SemaphoreClass.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/dao/SemaphoreDao.java" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/control/SemaphoreController.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/model/SemaphoreSensor.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/Handyman.java" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/master/Coordinator.java" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/Runner.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/SemaphoreStateEP.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstProducer.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/SemaphoreSensorDataProducer.java" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstProducer.java" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/Monitorer.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/TwoPCController.java" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/FirstConsumer.java" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/TwoPCController.java" />
-        <option value="$PROJECT_DIR$/SDCC/FlinkDispatcher/src/log4j.properties" />
-        <option value="$PROJECT_DIR$/SDCC/FlinkDispatcher/src/org/Flink/WindowTrafficData.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstConsumer.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/entities/pom.xml" />
-        <option value="$PROJECT_DIR$/entity/pom.xml" />
-        <option value="$PROJECT_DIR$/SDCC/entities/pom.xml" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java" />
-        <option value="$PROJECT_DIR$/SDCC/entities/src/main/java/system/Printer.java" />
-        <option value="$PROJECT_DIR$/SDCC/entities/entity.iml" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstConsumer.java" />
-        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java" />
-        <option value="$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/log4j.properties" />
-        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/DBController.java" />
         <option value="$PROJECT_DIR$/SDCC/entities/src/main/java/Message.java" />
-        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/LinkWIthFrontEnd.java" />
-        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/LinkWithFrontEnd.java" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/dao/SemaphoreDao.java" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/SemaphoreStateEP.java" />
+        <option value="$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/control/SemaphoreController.java" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstConsumer.java" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/model/SemaphoreSensor.java" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/SemaphoreSensorDataProducer.java" />
+        <option value="$PROJECT_DIR$/SDCC/Monitor/src/main/java/all/Runner.java" />
+        <option value="$PROJECT_DIR$/SDCC/Monitor/src/main/java/all/endpoint/Creator.java" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/log4j.properties" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/log4j.properties" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/FirstConsumer.java" />
+        <option value="$PROJECT_DIR$/SDCC/FlinkDispatcher/src/org/Flink/WindowTrafficData.java" />
+        <option value="$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/log4j.properties" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/resources/log4j.properties" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/log4j.properties" />
         <option value="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/IoTDataProducer.java" />
-        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/endPoints/SemaphoreStateEP.java" />
-        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstConsumer.java" />
-        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/QuerySolver.java" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/db/DBcontroller.java" />
-        <option value="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java" />
-        <option value="$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/log4j.properties" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/log4j.properties" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/Runner.java" />
+        <option value="$PROJECT_DIR$/SDCC/IoTSimulator/src/log4j.properties" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java" />
+        <option value="$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstProducer.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstProducer.java" />
       </list>
     </option>
   </component>
@@ -335,6 +330,14 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/SDCC/FrontEnd/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/SDCC/FrontEnd/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1" />
@@ -362,22 +365,61 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -389,84 +431,52 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IoTSimulator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IoTSimulator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IoTSimulator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="kafka" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IoTSimulator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="kafka" type="462c0819:PsiDirectoryNode" />
-              <item name="producer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Semaphore" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="nodejs_interpreter_path" value="node" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/SDCC/entities" />
-    <property name="jdk.selected.JAVA_MODULE" value="9.0" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15506329" />
-    <property name="project.structure.side.proportion" value="0.29839703" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="298" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="show.run.dashboard.notification" value="false" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="298" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="9.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/log4jresource" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15506329" />
+    <property name="project.structure.side.proportion" value="0.3131991" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SDCC/SemaphoreController/src" />
+      <recent name="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java" />
+      <recent name="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/log4jresource" />
+      <recent name="$PROJECT_DIR$/SDCC/entities" />
+      <recent name="C:\Users\Simone\IdeaProjects\SDCC\SDCC\crossroad\lib" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="all.endPoints.config" />
+      <recent name="all.control" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer" />
       <recent name="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java" />
       <recent name="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all" />
       <recent name="$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front" />
       <recent name="$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="all.endPoints.config" />
-      <recent name="all.control" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/SDCC/entities" />
-      <recent name="C:\Users\Simone\IdeaProjects\SDCC\SDCC\crossroad\lib" />
-      <recent name="C:\Users\Simone\IdeaProjects\SDCC\SDCC\crossroad" />
-      <recent name="C:\Users\Simone\IdeaProjects\SDCC\Flink\lib" />
-      <recent name="C:\Users\Simone\IdeaProjects\SDCC\todelete" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -481,102 +491,57 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.crossroadNA">
+  <component name="RunManager" selected="Application.Runner">
     <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
-    <configuration name="InfluxWorker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="db.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="db.InfluxWorker" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="FlinkDispatcher" />
-      <envs />
     </configuration>
     <configuration name="IoTDataProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="MAIN_CLASS_NAME" value="org.kafka.producer.IoTDataProducer" />
+      <module name="IoTSimulator" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.kafka.producer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="org.kafka.producer.IoTDataProducer" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="IoTSimulator" />
-      <envs />
     </configuration>
-    <configuration name="RedisWorker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="all.Runner" />
+      <module name="monitorBackEnd" />
+      <option name="PROGRAM_PARAMETERS" value="4 crossroadtest localhost" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="db.*" />
+          <option name="PATTERN" value="all.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="db.RedisWorker" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
+    </configuration>
+    <configuration name="SemaphoreSensorDataProducer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="all.SemaphoreSensorDataProducer" />
+      <module name="SemaphoreWR" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="FlinkDispatcher" />
-      <envs />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="all.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     </configuration>
     <configuration name="WindowTrafficData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="MAIN_CLASS_NAME" value="org.Flink.WindowTrafficData" />
+      <module name="FlinkDispatcher" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.Flink.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="org.Flink.WindowTrafficData" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="FlinkDispatcher" />
-      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
     </configuration>
     <configuration name="sem-cross-mon" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
       <toRun type="SpringBootApplicationConfigurationType" name="crossroad" />
@@ -584,8 +549,6 @@
       <toRun type="SpringBootApplicationConfigurationType" name="semaphore" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" />
@@ -595,84 +558,51 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
       <patterns />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
+      <module name="Flink" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Flink" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
     </configuration>
     <configuration name="Runner" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <module name="SemaphoreController" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="all.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="all.Runner" />
-      <module name="SemaphoreController" />
-      <envs />
+      <option name="PROGRAM_PARAMETERS" value="crossroadtest" />
+      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <configuration name="crossroad" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="all.Runner" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <module name="CrossroadWR" />
-      <envs />
-    </configuration>
-    <configuration name="crossroadNA" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="newArchitecture">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="all.Runner" />
       <option name="PROGRAM_PARAMETERS" value="crossroadtest" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <module name="SemaphoreController" />
-      <envs />
     </configuration>
     <configuration name="monitorBE" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="MonitorBackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="all.Runner" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <module name="MonitorBackEnd" />
-      <envs />
     </configuration>
     <configuration name="semaphore" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="all.Runner" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <module name="SemaphoreWR" />
-      <envs />
-    </configuration>
-    <configuration name="semaphoreNA" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" folderName="newArchitecture">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="all.Runner" />
-      <option name="PROGRAM_PARAMETERS" value="4 crossroadtest localhost" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <module name="Semaphore" />
-      <envs />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
@@ -685,17 +615,21 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -703,36 +637,26 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="11">
-      <item index="0" class="java.lang.String" itemvalue="Spring Boot.crossroadNA" />
-      <item index="1" class="java.lang.String" itemvalue="Spring Boot.semaphoreNA" />
-      <item index="2" class="java.lang.String" itemvalue="Compound.sem-cross-mon" />
-      <item index="3" class="java.lang.String" itemvalue="Spring Boot.crossroad" />
-      <item index="4" class="java.lang.String" itemvalue="Spring Boot.semaphore" />
-      <item index="5" class="java.lang.String" itemvalue="Spring Boot.monitorBE" />
-      <item index="6" class="java.lang.String" itemvalue="Application.IoTDataProducer" />
-      <item index="7" class="java.lang.String" itemvalue="Application.WindowTrafficData" />
-      <item index="8" class="java.lang.String" itemvalue="Application.RedisWorker" />
-      <item index="9" class="java.lang.String" itemvalue="Application.InfluxWorker" />
-      <item index="10" class="java.lang.String" itemvalue="Spring Boot.Runner" />
+    <list>
+      <item itemvalue="Compound.sem-cross-mon" />
+      <item itemvalue="Spring Boot.crossroad" />
+      <item itemvalue="Spring Boot.semaphore" />
+      <item itemvalue="Spring Boot.monitorBE" />
+      <item itemvalue="Application.SemaphoreSensorDataProducer" />
+      <item itemvalue="Application.Runner" />
+      <item itemvalue="Spring Boot.Runner" />
+      <item itemvalue="Application.IoTDataProducer" />
+      <item itemvalue="Application.WindowTrafficData" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.InfluxWorker" />
-        <item index="1" class="java.lang.String" itemvalue="Application.WindowTrafficData" />
-        <item index="2" class="java.lang.String" itemvalue="Spring Boot.Runner" />
-        <item index="3" class="java.lang.String" itemvalue="Application.RedisWorker" />
-        <item index="4" class="java.lang.String" itemvalue="Application.IoTDataProducer" />
+      <list>
+        <item itemvalue="Application.Runner" />
+        <item itemvalue="Spring Boot.Runner" />
+        <item itemvalue="Application.IoTDataProducer" />
+        <item itemvalue="Application.WindowTrafficData" />
+        <item itemvalue="Application.SemaphoreSensorDataProducer" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SbtLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -777,14 +701,15 @@
       <workItem from="1523450610408" duration="10406000" />
       <workItem from="1523537037875" duration="581000" />
       <workItem from="1523542380076" duration="8578000" />
-      <workItem from="1523623079906" duration="17566000" />
-      <workItem from="1523713983014" duration="9125000" />
-      <workItem from="1523774437679" duration="7959000" />
-      <workItem from="1523870910820" duration="10523000" />
-      <workItem from="1523883575836" duration="1060000" />
-      <workItem from="1523884693317" duration="1176000" />
-      <workItem from="1524037407915" duration="9442000" />
-      <workItem from="1524049210827" duration="4642000" />
+      <workItem from="1523623079906" duration="8631000" />
+      <workItem from="1523866036663" duration="566000" />
+      <workItem from="1523866624900" duration="605000" />
+      <workItem from="1523867249524" duration="144000" />
+      <workItem from="1523874094968" duration="3181000" />
+      <workItem from="1523882521468" duration="3901000" />
+      <workItem from="1524058286741" duration="1451000" />
+      <workItem from="1524059833392" duration="10062000" />
+      <workItem from="1524122920372" duration="4916000" />
     </task>
     <task id="LOCAL-00001" summary="Exported settings">
       <created>1518424079250</created>
@@ -828,106 +753,52 @@
       <option name="project" value="LOCAL" />
       <updated>1523630749178</updated>
     </task>
-    <task id="LOCAL-00007" summary="loplace's code">
-      <created>1523631743409</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1523631743409</updated>
-    </task>
-    <task id="LOCAL-00008" summary="2PC">
-      <created>1523640640235</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1523640640235</updated>
-    </task>
-    <task id="LOCAL-00009" summary="I hope this commit works fine">
-      <created>1524053111774</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1524053111774</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182590000" />
+    <option name="totallyTimeSpent" value="155291000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
+    <frame x="0" y="25" width="1920" height="990" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25655022" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25340313" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15848452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995633" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2973822" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5026681" side_tool="true" weight="0.28704783" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="6" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32977587" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.2497332" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4994664" weight="0.3990665" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49626467" weight="0.27071178" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info id="Image Layers" order="4" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49733192" visible="true" weight="0.37689614" />
+      <window_info anchor="bottom" id="Spring" order="15" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4994664" weight="0.32905483" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2769477" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905483" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="CheckStyle" order="13" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Application Servers" order="16" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25655022" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2497332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3995633" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25026178" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10157068" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20010673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -944,11 +815,7 @@
     <MESSAGE value="IoT simulation (kafka) and FlinkDispatcher (flink+kafka) created" />
     <MESSAGE value="redis/influxDB tests (flinkDispatcher)" />
     <MESSAGE value="semaphoer created" />
-    <MESSAGE value="loplace's code" />
-    <MESSAGE value="2PC" />
-    <MESSAGE value="I hope this commit works fine" />
-    <MESSAGE value="I hope this commit works fine 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="I hope this commit works fine 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="semaphoer created" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -965,372 +832,181 @@
       </default-breakpoints>
       <option name="time" value="7" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/consumer.props">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/entities/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/Handyman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/SemaphoreSensorDataProducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MAVEN/Semaphore:Semaphore:0.1">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MAVEN</ID>
-          <OriginalElement>Semaphore:Semaphore:0.1</OriginalElement>
-          <nodes>
-            <node x="" y="">Semaphore:Semaphore:0.1</node>
-            <node x="" y="">entities:entities:jar:0.0.1-SNAPSHOT</node>
-            <node x="" y="">log4j:log4j:jar:1.2.17</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/com.101tec:zkclient:jar:0.8</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/com.101tec:zkclient:jar:0.8/org.slf4j:slf4j-api:jar:1.7.25</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/com.yammer.metrics:metrics-core:jar:2.2.0</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/org.scala-lang:scala-library:jar:2.11.8</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/org.scala-lang.modules:scala-parser-combinators_2.11:jar:1.0.4</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/org.scala-lang.modules:scala-parser-combinators_2.11:jar:1.0.4/org.scala-lang:scala-library:jar:2.11.6</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/org.apache.kafka:kafka-clients:jar:0.10.0.0</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/org.apache.kafka:kafka-clients:jar:0.10.0.0/net.jpountz.lz4:lz4:jar:1.3.0</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/org.apache.kafka:kafka-clients:jar:0.10.0.0/org.xerial.snappy:snappy-java:jar:1.1.2.4</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/net.sf.jopt-simple:jopt-simple:jar:4.9</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/org.apache.zookeeper:zookeeper:jar:3.4.6</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/org.apache.zookeeper:zookeeper:jar:3.4.6/jline:jline:jar:0.9.94</node>
-            <node x="" y="">org.apache.kafka:kafka_2.11:jar:0.10.0.0/org.apache.zookeeper:zookeeper:jar:3.4.6/io.netty:netty:jar:3.7.0.Final</node>
-            <node x="" y="">commons-codec:commons-codec:jar:1.9</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-autoconfigure:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.3.RELEASE/ch.qos.logback:logback-classic:jar:1.1.11</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.3.RELEASE/ch.qos.logback:logback-classic:jar:1.1.11/ch.qos.logback:logback-core:jar:1.1.11</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.3.RELEASE/org.slf4j:jul-to-slf4j:jar:1.7.25</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:1.5.3.RELEASE/org.slf4j:log4j-over-slf4j:jar:1.7.25</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:1.5.3.RELEASE/org.yaml:snakeyaml:jar:1.17</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-aop:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-aop:jar:1.5.3.RELEASE/org.springframework:spring-aop:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-aop:jar:1.5.3.RELEASE/org.aspectj:aspectjweaver:jar:1.8.10</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-jdbc:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-jdbc:jar:1.5.3.RELEASE/org.apache.tomcat:tomcat-jdbc:jar:8.5.14</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-jdbc:jar:1.5.3.RELEASE/org.apache.tomcat:tomcat-jdbc:jar:8.5.14/org.apache.tomcat:tomcat-juli:jar:8.5.14</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-jdbc:jar:1.5.3.RELEASE/org.springframework:spring-jdbc:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.hibernate:hibernate-core:jar:5.0.12.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.hibernate:hibernate-core:jar:5.0.12.Final/org.jboss.logging:jboss-logging:jar:3.3.1.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.hibernate:hibernate-core:jar:5.0.12.Final/org.hibernate.javax.persistence:hibernate-jpa-2.1-api:jar:1.0.0.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.hibernate:hibernate-core:jar:5.0.12.Final/org.javassist:javassist:jar:3.21.0-GA</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.hibernate:hibernate-core:jar:5.0.12.Final/antlr:antlr:jar:2.7.7</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.hibernate:hibernate-core:jar:5.0.12.Final/org.jboss:jandex:jar:2.0.0.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.hibernate:hibernate-core:jar:5.0.12.Final/dom4j:dom4j:jar:1.6.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.hibernate:hibernate-core:jar:5.0.12.Final/org.hibernate.common:hibernate-commons-annotations:jar:5.0.1.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.hibernate:hibernate-entitymanager:jar:5.0.12.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/javax.transaction:javax.transaction-api:jar:1.2</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.data:spring-data-jpa:jar:1.11.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.data:spring-data-jpa:jar:1.11.3.RELEASE/org.springframework.data:spring-data-commons:jar:1.13.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.data:spring-data-jpa:jar:1.11.3.RELEASE/org.springframework:spring-orm:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.data:spring-data-jpa:jar:1.11.3.RELEASE/org.springframework:spring-context:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.data:spring-data-jpa:jar:1.11.3.RELEASE/org.springframework:spring-tx:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.data:spring-data-jpa:jar:1.11.3.RELEASE/org.springframework:spring-beans:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework.data:spring-data-jpa:jar:1.11.3.RELEASE/org.slf4j:jcl-over-slf4j:jar:1.7.25</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-data-jpa:jar:1.5.3.RELEASE/org.springframework:spring-aspects:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.3.RELEASE/org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.14</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.3.RELEASE/org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.14</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.3.RELEASE/org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.14</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/org.hibernate:hibernate-validator:jar:5.3.5.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/org.hibernate:hibernate-validator:jar:5.3.5.Final/javax.validation:validation-api:jar:1.1.0.Final</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/org.hibernate:hibernate-validator:jar:5.3.5.Final/com.fasterxml:classmate:jar:1.3.3</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.8</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.8/com.fasterxml.jackson.core:jackson-annotations:jar:2.8.0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.8.8/com.fasterxml.jackson.core:jackson-core:jar:2.8.8</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/org.springframework:spring-web:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/org.springframework:spring-webmvc:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:1.5.3.RELEASE/org.springframework:spring-webmvc:jar:4.3.8.RELEASE/org.springframework:spring-expression:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.codehaus.jackson:jackson-mapper-asl:jar:1.9.13</node>
-            <node x="" y="">org.codehaus.jackson:jackson-mapper-asl:jar:1.9.13/org.codehaus.jackson:jackson-core-asl:jar:1.9.13</node>
-            <node x="" y="">com.h2database:h2:jar:1.4.195</node>
-            <node x="" y="">mysql:mysql-connector-java:jar:5.1.41</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-test:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.springframework.boot:spring-boot-test-autoconfigure:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0/net.minidev:json-smart:jar:2.2.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0/net.minidev:json-smart:jar:2.2.1/net.minidev:accessors-smart:jar:1.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/com.jayway.jsonpath:json-path:jar:2.2.0/net.minidev:json-smart:jar:2.2.1/net.minidev:accessors-smart:jar:1.1/org.ow2.asm:asm:jar:5.0.3</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/junit:junit:jar:4.12</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.assertj:assertj-core:jar:2.6.0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.mockito:mockito-core:jar:1.10.19</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.mockito:mockito-core:jar:1.10.19/org.objenesis:objenesis:jar:2.1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.hamcrest:hamcrest-core:jar:1.3</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.hamcrest:hamcrest-library:jar:1.3</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.skyscreamer:jsonassert:jar:1.4.0</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.skyscreamer:jsonassert:jar:1.4.0/com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.springframework:spring-core:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:1.5.3.RELEASE/org.springframework:spring-test:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-websocket:jar:1.5.3.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-websocket:jar:1.5.3.RELEASE/org.springframework:spring-messaging:jar:4.3.8.RELEASE</node>
-            <node x="" y="">org.springframework.boot:spring-boot-starter-websocket:jar:1.5.3.RELEASE/org.springframework:spring-websocket:jar:4.3.8.RELEASE</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.25168323180506574" x="3109.0" y="580.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>All</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="61" column="39" lean-forward="true" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/entities/entity.iml" />
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstProducer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="44" column="42" lean-forward="true" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml">
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
-          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/Crossroad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/Car.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/system/Printer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/entities/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/RNG/ArrivalGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/entities/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/SemaphoreController.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="70" column="112" lean-forward="true" selection-start-line="70" selection-start-column="112" selection-end-line="70" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/endpoint/Listener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/FlinkDispatcher/src/db/InfluxWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding>
-            <element signature="e#3491#3492#0" expanded="false" />
-            <element signature="e#3519#3520#0" expanded="false" />
-            <element signature="e#3558#3559#0" expanded="false" />
-            <element signature="e#3592#3593#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/SemaphoreClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="83" column="79" lean-forward="false" selection-start-line="83" selection-start-column="79" selection-end-line="83" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/FlinkDispatcher/src/org/Flink/WindowTrafficData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/entities/entities.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4086">
-          <caret line="227" column="21" lean-forward="false" selection-start-line="227" selection-start-column="21" selection-end-line="227" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/FrontEnd/app/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding>
-            <element signature="e#2276#2277#0" expanded="false" />
-            <element signature="e#2301#2302#0" expanded="false" />
-            <element signature="e#2337#2338#0" expanded="false" />
-            <element signature="e#2365#2366#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="127" column="30" lean-forward="true" selection-start-line="127" selection-start-column="30" selection-end-line="127" selection-end-column="30" />
-          <folding>
-            <element signature="method#setController#0;class#FirstConsumer#0" expanded="false" />
-            <element signature="method#runConsumer#0;class#FirstConsumer#0" expanded="false" />
-            <element signature="e#2105#2124#0" expanded="false" />
-            <element signature="e#2429#2476#0" expanded="false" />
-            <element signature="e#2726#2753#0" expanded="false" />
-            <element signature="method#DeserializeMessage#0;class#FirstConsumer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1257">
-          <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/newArchitecture/TwoPCController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/LinkWithFrontEnd.java" />
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/SemaphoreStateEP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/IoTDataProducer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="58" column="41" lean-forward="true" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+        <state relative-caret-position="414">
+          <caret line="42" column="49" selection-start-line="42" selection-start-column="49" selection-end-line="42" selection-end-column="49" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="32" column="2" selection-start-line="32" selection-start-column="2" selection-end-line="37" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/SemaphoreStateEP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/Model/IoTData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/FrontEnd/app/createCrossroad/CreateCrossroad.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/dao/SemaphoreDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/DBController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/endPoints/SemaphoreStateEP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/QuerySolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="126" column="9" lean-forward="true" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/db/DBcontroller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/entities/src/main/java/Semaphore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="140" column="19" lean-forward="true" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/front/FirstConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="125" column="9" lean-forward="true" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreWR/src/main/java/all/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/ClassLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="116" column="91" selection-start-line="116" selection-start-column="91" selection-end-line="116" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/net/URLClassLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="200" selection-start-line="200" selection-end-line="200" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/sun/misc/URLClassPath.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="420" selection-start-line="420" selection-end-line="420" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/security/AccessController.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="97" column="31" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/master/Coordinator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/utils/PropertyFileReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1341,137 +1017,170 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/FrontEnd/app/createCrossroad/CreateCrossroad.js">
+    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/MongoDataStore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/endPoints/dao/SemaphoreDao.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/FlinkDispatcher/src/Model/GPSJsonReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/DBController.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/ServiceEventRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/endPoints/SemaphoreStateEP.java">
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/zip/ZipFile.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-          <folding>
-            <element signature="e#283#298#0" expanded="false" />
-            <element signature="method#returnSemaphoreState#0;class#SemaphoreStateEP#0" expanded="false" />
-            <element signature="method#addSemaphore#0;class#SemaphoreStateEP#0" expanded="false" />
-            <element signature="method#getCrossroadInfo#0;class#SemaphoreStateEP#0" expanded="false" />
-            <element signature="method#getGeneralInfo#0;class#SemaphoreStateEP#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="162">
+          <caret line="329" column="31" selection-start-line="329" selection-start-column="31" selection-end-line="329" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/QuerySolver.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/FlinkDispatcher/src/org/Flink/WindowTrafficData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#479#480#0" expanded="false" />
-            <element signature="e#532#533#0" expanded="false" />
-            <element signature="e#2499#2500#0" expanded="false" />
-            <element signature="e#2536#2537#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/FlinkDispatcher/src/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="docComment;class#MonitorController#0" expanded="false" />
-            <element signature="method#printState#0;class#MonitorController#0" expanded="false" />
-            <element signature="method#addCrossroadToList#0;class#MonitorController#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-118" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/log4j.properties" />
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/front/FirstConsumer.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="126" column="9" lean-forward="true" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="396">
+          <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/log4j.properties" />
+    <entry file="file://$PROJECT_DIR$/SDCC/FlinkDispatcher/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="393" column="108" selection-start-line="393" selection-start-column="104" selection-end-line="393" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="32" selection-end-column="91" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="50" column="64" lean-forward="false" selection-start-line="50" selection-start-column="64" selection-end-line="50" selection-end-column="64" />
-          <folding>
-            <element signature="docComment;class#CrossroadController#0" expanded="false" />
-            <element signature="method#removeSemaphore#0;class#CrossroadController#0" expanded="false" />
-            <element signature="method#printSemaphores#0;class#CrossroadController#0" expanded="false" />
-            <element signature="method#sendGreen#0;class#CrossroadController#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/db/DBcontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/src/main/java/all/Runner.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/DataStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="80" column="18" selection-start-line="38" selection-start-column="8" selection-end-line="82" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
-          <folding />
+        <state relative-caret-position="-3622">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="39" column="31" lean-forward="true" selection-start-line="18" selection-end-line="43" selection-end-column="94" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="216">
+          <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/MongoDataStore.java">
+    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="129">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/front/FirstProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="40" column="79" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="79" />
+          <folding>
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="e#894#895#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/IoTDataProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/Semaphore/src/main/java/all/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstProducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="31" column="53" lean-forward="true" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -1485,7 +1194,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.29839703" />
+                <option value="0.3131991" />
               </list>
             </option>
           </splitter-proportions>
@@ -1497,7 +1206,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.29839703" />
+                <option value="0.3131991" />
               </list>
             </option>
           </splitter-proportions>
@@ -1509,7 +1218,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.29839703" />
+                <option value="0.3131991" />
               </list>
             </option>
           </splitter-proportions>
@@ -1517,11 +1226,11 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>9.0</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.29839703" />
+                <option value="0.3131991" />
               </list>
             </option>
           </splitter-proportions>
@@ -1529,11 +1238,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>MonitorBackEnd</last-edited>
+          <last-edited>monitorBackEnd</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.29839703" />
+                <option value="0.3131991" />
               </list>
             </option>
           </splitter-proportions>
@@ -1553,11 +1262,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: jline:jline:0.9.94</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.60884356" />
+                <option value="0.3131991" />
               </list>
             </option>
           </splitter-proportions>
