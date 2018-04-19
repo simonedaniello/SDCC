@@ -1,15 +1,16 @@
 /**
  * 
  */
-package org.kafka.producer;
+package db;
 
 import com.mongodb.*;
 import com.mongodb.util.JSON;
+import main.java.system.Printer;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 public class MongoDataStore implements DataStore {
@@ -18,13 +19,13 @@ public class MongoDataStore implements DataStore {
 	private static DBCollection rawEventsColl;
 	public static final String COLLECTION_NAME = "events";
 
+	@Autowired
 	//private MongoTemplate mongoTemplate;
 
 	private MongoDataStore() {
-	};
+	}
 
 	/**
-	 * 
 	 * @param mongoHost
 	 * @param mongoPort
 	 * @return
@@ -45,16 +46,22 @@ public class MongoDataStore implements DataStore {
 		return mongoDataStore;
 	}
 
-	public boolean storeRawEvent(String jsonData) {
+	public Boolean storeRawEvent(String jsonData) {
 		DBObject rawEvent = (DBObject) JSON.parse(jsonData);
 		System.out.println("rawEvent: "+rawEvent);
 		boolean success = false;
-		
+
 		System.out.println(rawEventsColl);
-		
+
 		if (rawEventsColl.insert(rawEvent) != null) {
 			success = true;
 		}
+		else{
+            rawEventsColl.remove(new BasicDBObject());
+            rawEventsColl.insert(rawEvent);
+        }
+
+		printAllDocuments(rawEventsColl);
 		return success;
 	}
 
@@ -76,5 +83,39 @@ public class MongoDataStore implements DataStore {
 		System.out.println("PRINT data after while::" + list);
 		return list;
 	}
+
+	@Override
+	public Boolean updateController(String id, String crossroad) {
+        // find hosting = hostB, and update the clients to 110
+//        BasicDBObject newDocument = new BasicDBObject();
+//        newDocument.put("clients", 110);
+
+//        BasicDBObject searchQuery = new BasicDBObject().append("_id", id);
+
+//        rawEventsColl.update(searchQuery, newDocument);
+
+//        DBObject listItem = new BasicDBObject("crossroads", new BasicDBObject("type","quiz").append("score",99));
+
+        DBObject listItem = new BasicDBObject("crossroads", new BasicDBObject().append("crossroadName",crossroad));
+//        DBObject updateQuery = new BasicDBObject("$push", listItem);
+
+        rawEventsColl.update(new BasicDBObject().append("_id", id), listItem);
+
+        printAllDocuments(rawEventsColl);
+
+
+        return null;
+	}
+
+	public void printAllDocuments(DBCollection collection) {
+		DBCursor cursor = collection.find();
+		while (cursor.hasNext()) {
+			Printer.getInstance().print(cursor.next().toString(), "green");
+		}
+	}
+//    @Override
+//    public Boolean updateController(String json) {
+//
+//    }
 
 }

@@ -18,10 +18,6 @@ package controller;
 
 public class Controller {
 
-    public Controller(){
-
-    }
-
     /**
      * Connection to Kafka channel
      */
