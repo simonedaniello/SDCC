@@ -20,7 +20,7 @@ public class Coordinator {
     private static final String MONGO_HOST = "localhost";
     private static final int MONGO_PORT = 27017;
     private String idInMongo = null;
-    private String id = "CAMBIA ASSOLUTAMENTE";
+    private String id = "cambiaAssolutamente";
 
     private Coordinator(){}
 
@@ -30,23 +30,21 @@ public class Coordinator {
 
     public void addCrossroadController(String crossroadControllerID, String crossroadControllerAddress){
 
-        Thread thread1 = new Thread(() -> {
-            ObjectMapper mapper = new ObjectMapper();
-            CrossroadController cc = new CrossroadController(crossroadControllerID, crossroadControllerAddress);
-        });
+        Thread thread1 = new Thread(() -> new CrossroadController(crossroadControllerID, crossroadControllerAddress));
 
         thread1.start();
 
         try {
             if(idInMongo == null) {
                 idInMongo = id;
-                MongoDataStore.getInstance(MONGO_HOST, MONGO_PORT).storeRawEvent("{'_id' : '" +
-                        id + "', 'controller' : " +
-                        "'testcontroller' , 'crossroads' : { 'crossroadName' : '" + crossroadControllerID + "'}}");
+                MongoDataStore.getInstance(MONGO_HOST, MONGO_PORT).addFirstCrossroadToMongo(id, crossroadControllerID);
             }
             else{
                 System.out.println("faccio l'update");
                 MongoDataStore.getInstance(MONGO_HOST, MONGO_PORT).updateController(id, crossroadControllerID);
+
+                MongoDataStore.getInstance(MONGO_HOST, MONGO_PORT).addSemaphoreToMongo(crossroadControllerID, "test");
+
             }
         } catch (UnknownHostException e1) {
             e1.printStackTrace();

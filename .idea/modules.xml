@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SDCC/Monitor/CrossroadWR.iml" filepath="$PROJECT_DIR$/SDCC/Monitor/CrossroadWR.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml" filepath="$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/FrontEnd/FrontEnd.iml" filepath="$PROJECT_DIR$/SDCC/FrontEnd/FrontEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/IoTSimulator/IoTSimulator.iml" filepath="$PROJECT_DIR$/SDCC/IoTSimulator/IoTSimulator.iml" />
@@ -10,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml" filepath="$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/SemaphoreController/SemaphoreController.iml" filepath="$PROJECT_DIR$/SDCC/SemaphoreController/SemaphoreController.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/entities/entities.iml" filepath="$PROJECT_DIR$/SDCC/entities/entities.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SDCC/Semaphore/monitorBackEnd.iml" filepath="$PROJECT_DIR$/SDCC/Semaphore/monitorBackEnd.iml" />
     </modules>
   </component>
 </project>

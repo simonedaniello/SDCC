@@ -6,6 +6,7 @@ package db;
 import com.mongodb.*;
 import com.mongodb.util.JSON;
 import main.java.system.Printer;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.UnknownHostException;
@@ -18,10 +19,9 @@ public class MongoDataStore implements DataStore {
 	private static DataStore mongoDataStore;
 	private static DBCollection rawEventsColl;
 	public static final String COLLECTION_NAME = "events";
+	private String controllerid = null;
 
 	@Autowired
-	//private MongoTemplate mongoTemplate;
-
 	private MongoDataStore() {
 	}
 
@@ -86,36 +86,57 @@ public class MongoDataStore implements DataStore {
 
 	@Override
 	public Boolean updateController(String id, String crossroad) {
-        // find hosting = hostB, and update the clients to 110
-//        BasicDBObject newDocument = new BasicDBObject();
-//        newDocument.put("clients", 110);
 
-//        BasicDBObject searchQuery = new BasicDBObject().append("_id", id);
+        DBObject listItem = new BasicDBObject("crossroads", new BasicDBObject("crossroadName",crossroad).append("semaphores", new ArrayList<>()));
+        DBObject updateQuery = new BasicDBObject("$push", listItem);
 
-//        rawEventsColl.update(searchQuery, newDocument);
+        DBObject searchById = new BasicDBObject("_id", id);
+        DBObject dbObj = rawEventsColl.findOne(searchById);
 
-//        DBObject listItem = new BasicDBObject("crossroads", new BasicDBObject("type","quiz").append("score",99));
+        rawEventsColl.update(dbObj, updateQuery);
 
-        DBObject listItem = new BasicDBObject("crossroads", new BasicDBObject().append("crossroadName",crossroad));
-//        DBObject updateQuery = new BasicDBObject("$push", listItem);
-
-        rawEventsColl.update(new BasicDBObject().append("_id", id), listItem);
-
-        printAllDocuments(rawEventsColl);
-
-
-        return null;
+//        printAllDocuments(rawEventsColl);
+        return true;
 	}
 
-	public void printAllDocuments(DBCollection collection) {
+    public void printAllDocuments(DBCollection collection) {
 		DBCursor cursor = collection.find();
 		while (cursor.hasNext()) {
 			Printer.getInstance().print(cursor.next().toString(), "green");
 		}
 	}
-//    @Override
-//    public Boolean updateController(String json) {
-//
-//    }
+
+    @Override
+	public void addFirstCrossroadToMongo(String id, String controllername) {
+        controllerid = id;
+        storeRawEvent("{'_id' : '" + id + "', " +
+                "'controller' : '" +  id + "', " +
+                "'crossroads' : [" +
+                    "{ " +
+                      "'crossroadName' : '" + controllername + "', " +
+                      "'semaphores' : [" +
+                        "{}" +
+                       "] " +
+                    "}" +
+                "]}");
+
+    }
+
+    @Override
+    public void addSemaphoreToMongo(String crossroadName, String semaphoreName) {
+
+        DBObject listItem = new BasicDBObject("crossroads", new BasicDBObject("semaphores", new BasicDBObject("semaphore" , new BasicDBObject("semaphoreID", semaphoreName))));
+        DBObject updateQuery = new BasicDBObject("$push", listItem);
+//        DBObject updateQuery = new BasicDBObject("$push", "{ crossroads : [{ semaphores : [{ semaphore : { semaphoreID : test}}]}]}");
+//        System.out.println(listItem);
+
+        DBObject searchByCrossroad = new BasicDBObject("crossroadName", crossroadName);
+        DBObject dbObj = rawEventsColl.findOne(searchByCrossroad);
+
+        rawEventsColl.update(dbObj, updateQuery);
+
+//        printAllDocuments(rawEventsColl);
+    }
+
 
 }
