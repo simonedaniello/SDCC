@@ -50,7 +50,6 @@ public class CrossroadController{
         }
         Timer timer = new Timer();
         timer.schedule(new TimerClass(), 5000, 5000); // every 5 seconds
-        new Decider(this);
     }
 
     public ArrayList<Semaphore> getSemaphoreInCrossroad(){
