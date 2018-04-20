@@ -31,6 +31,7 @@ public class MongoDataStore implements DataStore {
 	 * @return
 	 * @throws UnknownHostException
 	 */
+
 	
 	private static final String MONGO_HOST = "localhost";
 	private static final int MONGO_PORT = 27017;
