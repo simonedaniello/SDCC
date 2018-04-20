@@ -4,7 +4,11 @@ import Model.GPSJsonReader;
 import Model.IoTData;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Properties;
+
+import algorithms.QuantileEstimator;
+import algorithms.Welford;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.tuple.Tuple;
 import org.apache.flink.api.java.tuple.Tuple2;
@@ -31,7 +35,7 @@ public class WindowTrafficData {
 
     public static void main(String[] args) throws Exception {
         INPUT_KAFKA_TOPIC = "test";
-        TIME_WINDOW = 10;
+        TIME_WINDOW = 20;
         Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", "localhost:9092");
         properties.setProperty("zookeeper.connect", "localhost:2181");
@@ -41,31 +45,44 @@ public class WindowTrafficData {
         System.out.println("got sources");
         DataStream<Tuple6<String, String, String, String, String, Double>> streamTuples = stream.flatMap(new WindowTrafficData.Json2Tuple());
         streamTuples.print();
-        DataStream<Tuple2<String, Double>> averageSpeedStream = streamTuples.keyBy(new int[]{0}).timeWindow(Time.seconds((long)TIME_WINDOW), Time.seconds((long)TIME_WINDOW)).apply(new WindowTrafficData.AverageSpeed());
+        DataStream<Tuple2<String, Double>> averageSpeedStream = streamTuples.keyBy(new int[]{0}).timeWindow(Time.seconds((long)TIME_WINDOW), Time.seconds((long)TIME_WINDOW)).apply(new querySolver());
         averageSpeedStream.print();
         env.execute("Window Traffic Data");
+
     }
 
-    public static class AverageSpeed implements WindowFunction<Tuple6<String, String, String, String, String, Double>, Tuple2<String, Double>, Tuple, TimeWindow> {
-        public AverageSpeed() {
+    public static class querySolver implements WindowFunction<Tuple6<String, String, String, String, String, Double>, Tuple2<String, Double>, Tuple, TimeWindow> {
+        public querySolver() {
         }
 
         public void apply(Tuple key, TimeWindow window, Iterable<Tuple6<String, String, String, String, String, Double>> records, Collector<Tuple2<String, Double>> out) throws Exception {
             int count = 0;
-            double speedAccumulator = 0.0D;
+         //   double speedAccumulator = 0.0D;
+            QuantileEstimator qe = new QuantileEstimator(5); //estimates quantiles
+            Welford welford = new Welford();
             Iterator var8 = records.iterator();
 
             while(var8.hasNext()) {
                 Tuple6<String, String, String, String, String, Double> record = (Tuple6)var8.next();
                 double speed = (Double)record.getField(5);
-                System.out.println("speed is: " + speed);
-                ++count;
-                speedAccumulator += speed;
+              //  System.out.println("speed is: " + speed);
+       //         ++count;
+       //         speedAccumulator += speed;
+                welford.addElement(speed);
+                qe.add(speed);
                 System.out.println("accumuling speed");
             }
 
-            double averageSpeed = speedAccumulator / (double)count;
+       //     double averageSpeed = speedAccumulator / (double)count;
+            double averageSpeed = welford.getCurrent_mean();
+            System.out.println("medium speed is:");
             out.collect(new Tuple2(WindowTrafficData.INPUT_KAFKA_TOPIC, averageSpeed));
+            List<Double> quantiles = qe.getQuantiles();
+            System.out.println(qe.getQuantiles());
+            System.out.println("median of speed is:");
+            out.collect(new Tuple2(WindowTrafficData.INPUT_KAFKA_TOPIC, quantiles.get(2)));
+            qe.clear();
+            welford.resetIndexes();
         }
     }
 
