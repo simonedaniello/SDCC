@@ -2,7 +2,11 @@ package all.newArchitecture;
 
 import all.front.FirstProducer;
 import main.java.Message;
+import main.java.Semaphore;
 import main.java.system.Printer;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class TwoPCController {
 
@@ -22,12 +26,13 @@ public class TwoPCController {
         this.fp = fp;
     }
 
-    public void votingPhase(String s, String crossroad, Boolean isMe){
+    public void votingPhase(String s, String crossroad, Boolean isMe, ArrayList<Semaphore> sems){
         currentPhase = "voting";
         this.s = s;
         this.isMe = isMe;
         Message m = new Message(s, 311);
         fp.sendMessage("address", m, crossroad);
+        gossipAll(sems, (float) 25.0);
     }
 
     public void commitPhase(String crossroad){
@@ -50,4 +55,18 @@ public class TwoPCController {
     public String getCurrentPhase() {
         return currentPhase;
     }
+
+    public void gossipAll (ArrayList<Semaphore> sems, float prob){
+        Random rand = new Random();
+        for (Semaphore s : sems) {
+            if (rand.nextInt(100) < prob ) {
+                currentPhase = "commit";
+                Message m = new Message(s.getID(), 301);
+                fp.sendMessage("address", m, s.getID());
+            }
+        }
+
+    }
 }
+
+
