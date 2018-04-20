@@ -13,12 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e06beef1-e248-4b27-9934-409f6236b22b" name="Default" comment="mongodb update and create crossroad">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_all_5_16_0_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_activemq_activemq_all_5_16_0_SNAPSHOT.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/master/Coordinator.java" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/master/Coordinator.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/DataStore.java" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/DataStore.java" />
-      <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/MongoDataStore.java" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/MongoDataStore.java" />
+      <change beforePath="$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml" afterPath="$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml" />
       <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController$TimerClass.class" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController$TimerClass.class" />
       <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController.class" afterPath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/CrossroadController.class" />
       <change beforePath="$PROJECT_DIR$/SDCC/SemaphoreController/target/classes/all/controllers/Decider$1.class" afterPath="" />
@@ -169,23 +166,25 @@
       <file leaf-file-name="Coordinator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/master/Coordinator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+            <state relative-caret-position="684">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MongoDataStore.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MongoDataStore.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/MongoDataStore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+            <state relative-caret-position="142">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="method#MongoDataStore#0;class#MongoDataStore#0" expanded="false" />
-                <element signature="docComment;field#MONGO_HOST#0;class#MongoDataStore#0" expanded="false" />
                 <element signature="method#storeRawEvent#0;class#MongoDataStore#0" expanded="false" />
                 <element signature="method#getAll#0;class#MongoDataStore#0" expanded="false" />
+                <element signature="method#updateController#0;class#MongoDataStore#0" expanded="false" />
+                <element signature="method#addFirstCrossroadToMongo#0;class#MongoDataStore#0" expanded="false" />
+                <element signature="method#addSemaphoreToMongo#0;class#MongoDataStore#0" expanded="false" />
                 <element signature="method#printAllDocuments#0;class#MongoDataStore#0" expanded="false" />
               </folding>
             </state>
@@ -195,9 +194,34 @@
       <file leaf-file-name="DataStore.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/DataStore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="21" column="68" lean-forward="false" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+            <state relative-caret-position="162">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/controller/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrossroadController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="28" column="58" lean-forward="true" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
+              <folding>
+                <element signature="docComment;class#CrossroadController#0" expanded="false" />
+                <element signature="method#removeSemaphore#0;class#CrossroadController#0" expanded="false" />
+                <element signature="method#printSemaphores#0;class#CrossroadController#0" expanded="false" />
+                <element signature="method#sendGreen#0;class#CrossroadController#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -247,7 +271,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="kafka" />
       </map>
     </option>
   </component>
@@ -302,14 +326,14 @@
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/Runner.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/front/FirstProducer.java" />
         <option value="$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/MongoDataStore.java" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/TwoPCController.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/log4j.properties" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/log4j.properties" />
-        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/DataStore.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/master/Coordinator.java" />
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/MongoDataStore.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/DataStore.java" />
+        <option value="$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java" />
       </list>
     </option>
   </component>
@@ -368,22 +392,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SDCC" type="58d84e3e:PackageViewProjectNode" />
-              <item name="crossroad" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FlinkDispatcher" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FlinkDispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FlinkDispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FlinkDispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Flink" type="462c0819:PsiDirectoryNode" />
+            </path>
             <path>
               <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
               <item name="Semaphore" type="462c0819:PsiDirectoryNode" />
@@ -453,35 +485,23 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="all" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
             <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="all" type="462c0819:PsiDirectoryNode" />
-              <item name="master" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDCC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SemaphoreController" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="SDCC" type="58d84e3e:PackageViewProjectNode" />
+              <item name="crossroad" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -530,6 +550,124 @@
       <recent name="C:\Users\Simone\IdeaProjects\SDCC\todelete" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SDCC/FlinkDispatcher/pom.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SDCC/FlinkDispatcher/src/org/Flink/WindowTrafficData.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SDCC/IoTSimulator/src/log4j.properties</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SDCC/IoTSimulator/src/org/kafka/producer/IoTDataProducer.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SDCC/IoTSimulator/target/classes/log4j.properties</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SDCC/FlinkDispatcher/src/algorithms/PSquared.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SDCC/FlinkDispatcher/src/algorithms/QuantileEstimator.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/SDCC/FlinkDispatcher/src/algorithms/Welford.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -542,7 +680,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.crossroadRunner">
+  <component name="RunManager" selected="Spring Boot.semaphoreRunner">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
@@ -736,7 +874,8 @@
       <workItem from="1524037407915" duration="9442000" />
       <workItem from="1524049210827" duration="10926000" />
       <workItem from="1524123254575" duration="5238000" />
-      <workItem from="1524140159763" duration="9297000" />
+      <workItem from="1524140159763" duration="14037000" />
+      <workItem from="1524226461401" duration="2860000" />
     </task>
     <task id="LOCAL-00001" summary="Exported settings">
       <created>1518424079250</created>
@@ -829,11 +968,32 @@
       <option name="project" value="LOCAL" />
       <updated>1524152084073</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="mongodb update and create crossroad">
+      <created>1524152228890</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1524152228890</updated>
+    </task>
+    <task id="LOCAL-00015" summary="mongodb update and create crossroad 2">
+      <created>1524229157961</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1524229157961</updated>
+    </task>
+    <task id="LOCAL-00016" summary="mongodb update and create crossroad 2">
+      <created>1524229593235</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1524229593235</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203409000" />
+    <option name="totallyTimeSpent" value="211009000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1922" height="1092" extended-state="6" />
@@ -856,13 +1016,12 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19476439" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16168623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -873,6 +1032,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -898,12 +1058,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23455498" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19476439" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879582" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15848452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16168623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -931,7 +1092,8 @@
     <MESSAGE value="I hope this commit works fine 2" />
     <MESSAGE value="mongodb Update" />
     <MESSAGE value="mongodb update and create crossroad" />
-    <option name="LAST_COMMIT_MESSAGE" value="mongodb update and create crossroad" />
+    <MESSAGE value="mongodb update and create crossroad 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="mongodb update and create crossroad 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -946,7 +1108,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -972,13 +1134,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/RNG/ArrivalGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/RNG/ArrivalGenerator.java" />
     <entry file="file://$PROJECT_DIR$/SDCC/entities/pom.xml" />
     <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/SemaphoreController.iml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1216,35 +1372,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/Decider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#CrossroadController#0" expanded="false" />
-            <element signature="method#removeSemaphore#0;class#CrossroadController#0" expanded="false" />
-            <element signature="method#printSemaphores#0;class#CrossroadController#0" expanded="false" />
-            <element signature="method#sendGreen#0;class#CrossroadController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/Decider.java" />
     <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/TwoPCController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="907">
@@ -1293,7 +1421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1301,36 +1428,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/DataStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="21" column="68" lean-forward="false" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/master/Coordinator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="47" column="13" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+        <state relative-caret-position="684">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/MongoDataStore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        <state relative-caret-position="142">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="method#MongoDataStore#0;class#MongoDataStore#0" expanded="false" />
-            <element signature="docComment;field#MONGO_HOST#0;class#MongoDataStore#0" expanded="false" />
             <element signature="method#storeRawEvent#0;class#MongoDataStore#0" expanded="false" />
             <element signature="method#getAll#0;class#MongoDataStore#0" expanded="false" />
+            <element signature="method#updateController#0;class#MongoDataStore#0" expanded="false" />
+            <element signature="method#addFirstCrossroadToMongo#0;class#MongoDataStore#0" expanded="false" />
+            <element signature="method#addSemaphoreToMongo#0;class#MongoDataStore#0" expanded="false" />
             <element signature="method#printAllDocuments#0;class#MongoDataStore#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/db/DataStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SDCC/SemaphoreController/src/main/java/all/controllers/CrossroadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="28" column="58" lean-forward="true" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
+          <folding>
+            <element signature="docComment;class#CrossroadController#0" expanded="false" />
+            <element signature="method#removeSemaphore#0;class#CrossroadController#0" expanded="false" />
+            <element signature="method#printSemaphores#0;class#CrossroadController#0" expanded="false" />
+            <element signature="method#sendGreen#0;class#CrossroadController#0" expanded="false" />
           </folding>
         </state>
       </provider>
