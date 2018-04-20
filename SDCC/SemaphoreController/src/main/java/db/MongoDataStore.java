@@ -34,7 +34,7 @@ public class MongoDataStore implements DataStore {
 	
 	private static final String MONGO_HOST = "localhost";
 	private static final int MONGO_PORT = 27017;
-	public static DataStore getInstance(String mongoHost, int mongoPort)
+	public static DataStore getInstance()
 			throws UnknownHostException {
 		synchronized (MongoDataStore.class) {
 			if (mongoDataStore == null) {
@@ -84,10 +84,16 @@ public class MongoDataStore implements DataStore {
 		return list;
 	}
 
+    /**
+     * add a crossroad to a controller and create the crossroad object in the db
+     * @param id
+     * @param crossroad
+     * @return
+     */
 	@Override
 	public Boolean updateController(String id, String crossroad) {
 
-        DBObject listItem = new BasicDBObject("crossroads", new BasicDBObject("crossroadName",crossroad).append("semaphores", new ArrayList<>()));
+        DBObject listItem = new BasicDBObject("crossroads", new BasicDBObject("crossroadName",crossroad));
         DBObject updateQuery = new BasicDBObject("$push", listItem);
 
         DBObject searchById = new BasicDBObject("_id", id);
@@ -95,47 +101,62 @@ public class MongoDataStore implements DataStore {
 
         rawEventsColl.update(dbObj, updateQuery);
 
-//        printAllDocuments(rawEventsColl);
+        storeRawEvent("{'_id' : '" + crossroad + "', " +
+                "'crossroadID' : '" +  crossroad + "', " +
+                "'semaphores' : [" +
+                "]}");
+
+
+        printAllDocuments(rawEventsColl);
         return true;
 	}
 
-    public void printAllDocuments(DBCollection collection) {
-		DBCursor cursor = collection.find();
-		while (cursor.hasNext()) {
-			Printer.getInstance().print(cursor.next().toString(), "green");
-		}
-	}
-
+    /**
+     * create the controller, add the first crossroad to the controller
+     * @param id
+     * @param crossroadName
+     */
     @Override
-	public void addFirstCrossroadToMongo(String id, String controllername) {
+	public void addFirstCrossroadToMongo(String id, String crossroadName) {
         controllerid = id;
         storeRawEvent("{'_id' : '" + id + "', " +
                 "'controller' : '" +  id + "', " +
                 "'crossroads' : [" +
                     "{ " +
-                      "'crossroadName' : '" + controllername + "', " +
-                      "'semaphores' : [" +
-                        "{}" +
-                       "] " +
+                      "'crossroadName' : '" + crossroadName + "', " +
                     "}" +
                 "]}");
+
+		storeRawEvent("{'_id' : '" + crossroadName + "', " +
+				"'crossroadID' : '" +  crossroadName + "', " +
+				"'semaphores' : [" +
+				"]}");
 
     }
 
     @Override
     public void addSemaphoreToMongo(String crossroadName, String semaphoreName) {
 
-        DBObject listItem = new BasicDBObject("crossroads", new BasicDBObject("semaphores", new BasicDBObject("semaphore" , new BasicDBObject("semaphoreID", semaphoreName))));
+        System.out.println("crossroad name : " + crossroadName);
+        System.out.println("semaphore name : " + semaphoreName);
+		DBObject listItem = new BasicDBObject("semaphores", new BasicDBObject("semaphoreID",semaphoreName));
         DBObject updateQuery = new BasicDBObject("$push", listItem);
-//        DBObject updateQuery = new BasicDBObject("$push", "{ crossroads : [{ semaphores : [{ semaphore : { semaphoreID : test}}]}]}");
-//        System.out.println(listItem);
 
-        DBObject searchByCrossroad = new BasicDBObject("crossroadName", crossroadName);
+        DBObject searchByCrossroad = new BasicDBObject("_id", crossroadName);
         DBObject dbObj = rawEventsColl.findOne(searchByCrossroad);
 
-        rawEventsColl.update(dbObj, updateQuery);
+        System.out.println(dbObj);
+
+        rawEventsColl.update( dbObj, updateQuery);
 
 //        printAllDocuments(rawEventsColl);
+    }
+
+    public void printAllDocuments(DBCollection collection) {
+        DBCursor cursor = collection.find();
+        while (cursor.hasNext()) {
+            Printer.getInstance().print(cursor.next().toString(), "green");
+        }
     }
 
 

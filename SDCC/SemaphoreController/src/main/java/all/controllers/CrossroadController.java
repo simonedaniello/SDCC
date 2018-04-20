@@ -2,11 +2,13 @@ package all.controllers;
 
 import all.front.FirstConsumer;
 import all.front.FirstProducer;
+import db.MongoDataStore;
 import main.java.Crossroad;
 import main.java.Message;
 import main.java.Semaphore;
 import main.java.system.Printer;
 
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -62,6 +64,11 @@ public class CrossroadController{
         crossroad.getSemaphores().add(semaphore);
         sendCurrentState();
         monitorer.setNumberOfSemaphores(crossroad.getSemaphores().size());
+        try {
+            MongoDataStore.getInstance().addSemaphoreToMongo(crossroad.getID(), semaphore.getID());
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
         printSemaphores();
     }
 
