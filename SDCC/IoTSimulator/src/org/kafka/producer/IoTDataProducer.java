@@ -70,13 +70,13 @@ public class IoTDataProducer {
                     String longitude = coords.substring(coords.indexOf(",") + 1, coords.length());
                     IoTData event = new IoTData(vehicleId, latitude, longitude, timestamp, speed);
 
-                    try {
+               /*     try {
                         MongoDataStore.getInstance(MONGO_HOST, MONGO_PORT).storeRawEvent(mapper.writeValueAsString(event));
                     } catch (UnknownHostException e) {
                         e.printStackTrace();
                     } catch (JsonProcessingException e) {
                         e.printStackTrace();
-                    }
+                    } */
 
                     eventList.add(event);
                 }
