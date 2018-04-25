@@ -35,14 +35,11 @@ public class Coordinator {
         try {
             if(idInMongo == null) {
                 idInMongo = id;
-                MongoDataStore.getInstance().addFirstCrossroadToMongo(id, crossroadControllerID);
+                MongoDataStore.getInstance().addFirstCrossroadToMongo(id, crossroadControllerID, crossroadControllerAddress);
             }
             else{
                 System.out.println("faccio l'update");
-                MongoDataStore.getInstance().updateController(id, crossroadControllerID);
-
-//                MongoDataStore.getInstance().addSemaphoreToMongo(crossroadControllerID, "test");
-
+                MongoDataStore.getInstance().updateController(id, crossroadControllerID, crossroadControllerAddress);
             }
         } catch (UnknownHostException e1) {
             e1.printStackTrace();

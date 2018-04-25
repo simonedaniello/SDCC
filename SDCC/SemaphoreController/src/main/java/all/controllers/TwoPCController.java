@@ -9,6 +9,7 @@ import main.java.system.Printer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * Commit request phase
@@ -46,20 +47,27 @@ public class TwoPCController {
         this.fp = fp;
     }
 
-    public void votingPhase(ArrayList<Semaphore> semaphoreList, String greenSemaphore){
+    public void votingPhase(ArrayList<Semaphore> semaphoreList, String greenSemaphore, String crossroadID){
+        Random rand = new Random();
+
         Printer.getInstance().print("\n\nSTARTING VOTING PHASE\n\n", "yellow");
         for (Semaphore s : semaphoreList){
-            Message m = new Message("query to commit", 301);
-            if(greenSemaphore.equals(s.getID()))
-                m.setYouAreGreen(true);
-            else
-                m.setYouAreGreen(false);
-            fp.sendMessage("address", m, s.getID());
+            if(rand.nextInt(100) < 50) {
+                Message m = new Message(crossroadID, 301);
+                if (greenSemaphore.equals(s.getID()))
+                    m.setYouAreGreen(true);
+                else
+                    m.setYouAreGreen(false);
+                fp.sendMessage("address", m, s.getID());
+            }
+            else {
+                System.out.println("non invio il messaggio");
+            }
             semaphoresFor2pc.put(s.getID(), false);
         }
     }
 
-    public void commitPhase(){
+    private void commitPhase(){
         for (String s : semaphoresFor2pc.keySet()){
 //            Message m = new Message("commit", 302);
             Printer.getInstance().print("ricorda che la commit phase sbaglia appositamente e rimanda al rollback mode", "red");
@@ -81,7 +89,7 @@ public class TwoPCController {
             commitPhase();
     }
 
-    public Boolean checkVotes(){
+    private Boolean checkVotes(){
         for(String key: semaphoresFor2pc.keySet()){
             if(!semaphoresFor2pc.get(key))
                 return false;

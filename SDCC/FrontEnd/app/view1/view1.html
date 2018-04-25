@@ -5,8 +5,10 @@
     </div>
 
     <div class="container" ng-repeat="x in crossroads" align="center" style="padding:5px">
+        <!--{{x}}-->
         <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#crossroadCollapse" aria-expanded="false" aria-controls="crossroadCollapse" style="padding:5px">
-            {{x.id}} - {{x.street}}
+            {{x.crossroadID}} - {{x.street}}
+            <!--{{x}}-->
         </button>
         <!--<a href="#crossroadCollapse" class="btn btn-success" data-toggle="collapse"></a>-->
         <div id="crossroadCollapse" class="collapse">
@@ -14,15 +16,15 @@
                 <thead>
                 <tr>
                     <th>Semaphore ID</th>
-                    <th>Semaphore Street</th>
-                    <th>Semaphore Status</th>
+                    <!--<th>Semaphore Street</th>-->
+                    <!--<th>Semaphore Status</th>-->
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="y in x.semaphores track by y.id">
-                    <td>{{ y.id }}</td>
-                    <td>{{ y.street }}</td>
-                    <td>{{ y.state }}</td>
+                <tr ng-repeat="y in x.semaphores track by y.semaphoreID">
+                    <td>{{ y.semaphoreID }}</td>
+                    <!--<td>{{ y.street }}</td>-->
+                    <!--<td>{{ y.state }}</td>-->
                 </tr>
                 </tbody>
             </table>

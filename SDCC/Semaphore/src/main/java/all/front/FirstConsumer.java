@@ -132,7 +132,7 @@ public class FirstConsumer {
         }
         //---------------------2PC-----------------------
         else if (code == 301){
-            semaphoreClass.start2pc(message.isYouAreGreen());
+            semaphoreClass.start2pc(message.isYouAreGreen(), message.getID());
         }
         else if (code == 302){
             twopc.commitPhase(crossroad);

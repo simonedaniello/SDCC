@@ -5,6 +5,7 @@ package db;
 
 import com.mongodb.*;
 import com.mongodb.util.JSON;
+import main.java.Semaphore;
 import main.java.system.Printer;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,7 +93,8 @@ public class MongoDataStore implements DataStore {
      * @return
      */
 	@Override
-	public Boolean updateController(String id, String crossroad) {
+	public Boolean updateController(String id, String crossroad, String street) {
+		checkIfItExists(crossroad);
 
         DBObject listItem = new BasicDBObject("crossroads", new BasicDBObject("crossroadName",crossroad));
         DBObject updateQuery = new BasicDBObject("$push", listItem);
@@ -104,6 +106,7 @@ public class MongoDataStore implements DataStore {
 
         storeRawEvent("{'_id' : '" + crossroad + "', " +
                 "'crossroadID' : '" +  crossroad + "', " +
+                "'street' : '" + street +"', " +
                 "'semaphores' : [" +
                 "]}");
 
@@ -118,10 +121,13 @@ public class MongoDataStore implements DataStore {
      * @param crossroadName
      */
     @Override
-	public void addFirstCrossroadToMongo(String id, String crossroadName) {
+	public void addFirstCrossroadToMongo(String id, String crossroadName, String street) {
+    	checkIfItExists(id);
+    	checkIfItExists(crossroadName);
         controllerid = id;
         storeRawEvent("{'_id' : '" + id + "', " +
                 "'controller' : '" +  id + "', " +
+				"'type' : 'controller', " +
                 "'crossroads' : [" +
                     "{ " +
                       "'crossroadName' : '" + crossroadName + "', " +
@@ -130,17 +136,20 @@ public class MongoDataStore implements DataStore {
 
 		storeRawEvent("{'_id' : '" + crossroadName + "', " +
 				"'crossroadID' : '" +  crossroadName + "', " +
+                "'street' : '" + street +"', " +
+                "'type': 'crossroad', " +
 				"'semaphores' : [" +
 				"]}");
 
     }
 
     @Override
-    public void addSemaphoreToMongo(String crossroadName, String semaphoreName) {
+    public void addSemaphoreToMongo(String crossroadName, Semaphore semaphore) {
 
-        System.out.println("crossroad name : " + crossroadName);
-        System.out.println("semaphore name : " + semaphoreName);
-		DBObject listItem = new BasicDBObject("semaphores", new BasicDBObject("semaphoreID",semaphoreName));
+        BasicDBObject o = new BasicDBObject("semaphoreID", semaphore.getID());
+        o.append("semaphoreStreet", semaphore.getStreet());
+        o.append("malfunctions", semaphore.getMalfunctions());
+		DBObject listItem = new BasicDBObject("semaphores", o);
         DBObject updateQuery = new BasicDBObject("$push", listItem);
 
         DBObject searchByCrossroad = new BasicDBObject("_id", crossroadName);
@@ -150,7 +159,6 @@ public class MongoDataStore implements DataStore {
 
         rawEventsColl.update( dbObj, updateQuery);
 
-//        printAllDocuments(rawEventsColl);
     }
 
     public void printAllDocuments(DBCollection collection) {
@@ -160,5 +168,11 @@ public class MongoDataStore implements DataStore {
         }
     }
 
+    private void checkIfItExists(String objectName){
+		DBObject searchById = new BasicDBObject("_id", objectName);
+		DBObject dbObj = rawEventsColl.findOne(searchById);
+		if (dbObj != null)
+			rawEventsColl.remove(dbObj);
+	}
 
 }

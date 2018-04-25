@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="http://github.hubspot.com/odometer/themes/odometer-theme-car.css" />
+<script src="http://github.hubspot.com/odometer/odometer.js"></script>
+
+<script>
+    setTimeout(function(){
+        document.getElementById("odometer").innerHTML = 456;
+    }, 1000);
+</script>
+
+<div ng-controller="generalInfoPageCtrl">
+
+    <div class="w3-container w3-blue">
+        <h1 align="center">GENERAL INFO PAGE</h1>
+    </div>
+
+    number of controllers : {{generalInfo.nOfControllers}} <br>
+
+    <div id="odometer" class="odometer">123</div>
+
+
+    number of semaphores : {{generalInfo.nOfSemaphores}} <br>
+    number of crossroads : {{generalInfo.nOfCrossroads}} <br>
+    number of malfunctions: to implement <br>
+    query 1: to implement <br>
+    query 2: to implement <br>
+    query 3: to implement <br>
+
+
+</div>
+
+

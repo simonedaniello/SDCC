@@ -18,7 +18,7 @@ public class Runner {
 		    SpringApplication.run(Runner.class, args);
         else if(args.length == 1){
             Coordinator.getInstance().addCrossroadController(args[0], "address example");
-            Coordinator.getInstance().addCrossroadController("crossroadTest2", "address example");
+//            Coordinator.getInstance().addCrossroadController("crossroadTest2", "address example");
         }
         else{
             Printer.getInstance().print("wrong number of arguments", "red");

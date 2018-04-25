@@ -4,6 +4,7 @@
 package db;
 
 import com.mongodb.DBCollection;
+import main.java.Semaphore;
 
 /**
  * @author amitesh
@@ -16,9 +17,9 @@ public interface DataStore<T> {
 
 	T getAll();
 
-	Boolean updateController(String id, String json);
+	Boolean updateController(String id, String json, String street);
 
-    void addFirstCrossroadToMongo(String id, String crossroadName);
+    void addFirstCrossroadToMongo(String id, String crossroadName, String street);
 
-    void addSemaphoreToMongo(String crossroadName, String semaphoreName);
+    void addSemaphoreToMongo(String crossroadName, Semaphore semaphore);
 }

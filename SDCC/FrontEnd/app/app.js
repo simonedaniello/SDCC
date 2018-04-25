@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.createCrossroad',
   'myApp.trafficAnalytics',
   'myApp.workInProgress',
+  'myApp.generalInfoPage',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

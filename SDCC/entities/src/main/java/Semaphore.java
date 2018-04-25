@@ -25,6 +25,7 @@ public class Semaphore implements Serializable{
     private String latitude;
     private String longitude;
     private int order;
+    private int malfunctions = 0;
 
 
     public Semaphore(){}
@@ -164,6 +165,14 @@ public class Semaphore implements Serializable{
 
     public void setOrder(int order) {
         this.order = order;
+    }
+
+    public int getMalfunctions() {
+        return malfunctions;
+    }
+
+    public void setMalfunctions(int malfunctions) {
+        this.malfunctions = malfunctions;
     }
 }
 

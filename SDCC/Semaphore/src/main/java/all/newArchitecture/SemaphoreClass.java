@@ -18,6 +18,7 @@ public class SemaphoreClass implements Runnable{
     private FirstProducer fp;
     private TwoPCController twopc;
     private Boolean emergencyModeOn = false;
+    private Boolean isGossiping = false;
 
     public SemaphoreClass() {}
 
@@ -67,11 +68,15 @@ public class SemaphoreClass implements Runnable{
      * TODO
      * start 2PC for decide green light
      * @param youAreGreen
+     * @param id
      */
-    public void start2pc(boolean youAreGreen){
-        emergencyModeOn = false;
-        twopc.votingPhase(semaphore.getID(), semaphore.getCrossroad(), youAreGreen);
-        fc.setCrossroad(semaphore.getCrossroad());
+    public void start2pc(boolean youAreGreen, String id){
+        if(!isGossiping || id.equals(semaphore.getCrossroad())) {
+            emergencyModeOn = false;
+            twopc.votingPhase(semaphore.getID(), semaphore.getCrossroad(), youAreGreen, semaphore.getSemaphores());
+            fc.setCrossroad(semaphore.getCrossroad());
+            isGossiping = true;
+        }
     }
 
     /**
@@ -114,12 +119,12 @@ public class SemaphoreClass implements Runnable{
      * @param listOfSemaphores
      */
     public void updateSemaphoreList(ArrayList<Semaphore> listOfSemaphores){
-        Printer.getInstance().print("\n\n\n updating semaphore list \n\n\n", "yellow");
+//        Printer.getInstance().print("\n\n\n updating semaphore list \n\n\n", "yellow");
         this.semaphore.setSemaphores(listOfSemaphores);
         Handyman.getInstance().printStatus(this.semaphore);
         for(Semaphore s: listOfSemaphores){
             if (s.getID().equals(semaphore.getID())) {
-                Printer.getInstance().print("\n\n\n setto come ordinamento " + s.getOrder() + "\n\n\n", "yellow");
+                Printer.getInstance().print(semaphore.getID() + ": setto come ordinamento --- " + s.getOrder(), "yellow");
                 semaphore.setOrder(s.getOrder());
             }
         }
