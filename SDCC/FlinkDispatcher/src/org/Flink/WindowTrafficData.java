@@ -1,5 +1,6 @@
 package org.Flink;
 
+import Model.FlinkResult;
 import Model.GPSJsonReader;
 import Model.IoTData;
 import java.util.ArrayList;
@@ -9,7 +10,9 @@ import java.util.Properties;
 
 import algorithms.QuantileEstimator;
 import algorithms.Welford;
+import com.google.gson.Gson;
 import org.apache.flink.api.common.functions.FlatMapFunction;
+import org.apache.flink.api.common.serialization.SerializationSchema;
 import org.apache.flink.api.java.tuple.Tuple;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.api.java.tuple.Tuple6;
@@ -19,7 +22,8 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.windowing.WindowFunction;
 import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
-import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer09;
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011;
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer011;
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema;
 import org.apache.flink.util.Collector;
 import org.slf4j.Logger;
@@ -41,11 +45,25 @@ public class WindowTrafficData {
         properties.setProperty("zookeeper.connect", "localhost:2181");
         properties.setProperty("group.id", "test");
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        DataStreamSource<String> stream = env.addSource(new FlinkKafkaConsumer09("test", new SimpleStringSchema(), properties));
+        DataStreamSource<String> stream = env.addSource(new FlinkKafkaConsumer011("test", new SimpleStringSchema(), properties));
+
+
         System.out.println("got sources");
         DataStream<Tuple6<String, String, String, String, String, Double>> streamTuples = stream.flatMap(new WindowTrafficData.Json2Tuple());
         streamTuples.print();
-        DataStream<Tuple2<String, Double>> averageSpeedStream = streamTuples.keyBy(new int[]{0}).timeWindow(Time.seconds((long)TIME_WINDOW), Time.seconds((long)TIME_WINDOW)).apply(new querySolver());
+        DataStream<Tuple2<String, Double>> averageSpeedStream = streamTuples.keyBy(new int[]{0}).timeWindow(Time.seconds((long)TIME_WINDOW),Time.seconds((long)TIME_WINDOW)).apply(new querySolver()).setParallelism(1);
+        averageSpeedStream.addSink(new FlinkKafkaProducer011<Tuple2<String, Double>>("localhost:9092", "test2", new SerializationSchema<Tuple2<String, Double>>() {
+            @Override
+            public byte[] serialize(Tuple2<String, Double> stringDoubleTuple2) {
+                Gson gson = new Gson();
+                String key = stringDoubleTuple2.f0;
+                double value = stringDoubleTuple2.f1;
+                FlinkResult flinkResult = new FlinkResult(key,value);
+
+                String result = gson.toJson(flinkResult);
+                return result.getBytes();
+            }
+        }));
         averageSpeedStream.print();
         env.execute("Window Traffic Data");
 
@@ -55,11 +73,12 @@ public class WindowTrafficData {
         public querySolver() {
         }
 
+        @Override
         public void apply(Tuple key, TimeWindow window, Iterable<Tuple6<String, String, String, String, String, Double>> records, Collector<Tuple2<String, Double>> out) throws Exception {
             int count = 0;
          //   double speedAccumulator = 0.0D;
             QuantileEstimator qe = new QuantileEstimator(5); //estimates quantiles
-            Welford welford = new Welford();
+            Welford welford = new Welford(); //calculate mean value
             Iterator var8 = records.iterator();
 
             while(var8.hasNext()) {
