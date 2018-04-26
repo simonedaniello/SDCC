@@ -1,11 +1,15 @@
 package all.control;
 
+import all.db.MongoDataStore;
 import all.front.FirstConsumer;
 import all.front.FirstProducer;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.Crossroad;
 import main.java.Semaphore;
 import main.java.system.Printer;
 
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -91,14 +95,15 @@ public class MonitorController implements Runnable{
 
     public String flinkGetGeneralSituation(){
         try {
-            return qs.getGeneralSituation();
+            String toReturn = qs.getGeneralSituation();
+            return toReturn;
         } catch(Exception e) {
             return "problem";
         }
 
     }
 
-    public String flinkGetCrossroadSituation(Crossroad crossroad){
+    public String flinkGetCrossroadSituation(String crossroad){
         try {
             return qs.getCrossroadSituation(crossroad);
         } catch(Exception e) {
@@ -118,4 +123,21 @@ public class MonitorController implements Runnable{
     public void run() {
         FirstConsumer.getInstance().runConsumer();
     }
+
+    public String getMongoCrossroads() {
+        ObjectMapper m = new ObjectMapper();
+        try {
+            String toReturn = MongoDataStore.getInstance().getAllCrossroads().toString();
+            Printer.getInstance().print(toReturn, "green");
+            return toReturn;
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+            return "NULL";
+        }
+    }
+
+    public String getMongoControllers() {
+        return null;
+    }
+
 }

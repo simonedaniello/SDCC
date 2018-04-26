@@ -119,6 +119,8 @@ public class FirstConsumer {
         }
         else if(code == 621){
             //add crossroad response from flinkDispatcher
+            Printer.getInstance().print("arrivata response dal crossroad", "yellow");
+            qs.sems = message.getListOfSemaphores();
             qs.controllerResponse = "OK";
         }
         else if(code == 622){

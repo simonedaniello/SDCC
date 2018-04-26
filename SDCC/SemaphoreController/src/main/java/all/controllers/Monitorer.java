@@ -36,21 +36,7 @@ public class Monitorer {
     }
 
     public void addSemaphoreToMonitor(Semaphore s){
-        if(s.getMonitorCycle() == currentCycle) {
             semaphoresArrayList.add(s);
-            System.out.println("semaphore.arraylist.size = " + semaphoresArrayList.size());
-            if (semaphoresArrayList.size() == numberOfSemaphores) {
-                sendMessage();
-                semaphoresArrayList.clear();
-                currentCycle ++;
-            }
-        }
-        else if (s.getMonitorCycle() < currentCycle){
-            System.out.println("< da implementare, arrivato messaggio con ciclo : " + s.getMonitorCycle());
-        }
-        else if (s.getMonitorCycle() > currentCycle){
-            System.out.println("> da implementare");
-        }
     }
 
     private void sendMessage(){
@@ -81,6 +67,13 @@ public class Monitorer {
 
     public void setCrossroad(Crossroad crossroad) {
         this.crossroad = crossroad;
+    }
+
+    public void sendCrossroadSituation(String ip, String id) {
+        Printer.getInstance().print("invio le informazioni", "green");
+        Message m = new Message("400", 621);
+        m.setListOfSemaphores(crossroad.getSemaphores());
+        fp.sendMessage("localhost", m, id);
     }
 
     private class TimerClass extends TimerTask{

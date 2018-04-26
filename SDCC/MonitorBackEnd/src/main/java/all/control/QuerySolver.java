@@ -1,21 +1,29 @@
 package all.control;
 
+import akka.dispatch.Mapper;
+import all.db.MongoDataStore;
+import all.entity.GeneralInfo;
 import all.front.FirstProducer;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.Crossroad;
 import main.java.Message;
 import main.java.Semaphore;
+import main.java.system.Printer;
 
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 public class QuerySolver {
 
-    public String controllerResponse = null;
+    public volatile String controllerResponse = null;
 
     private FirstProducer fp;
     private final String myIP = "localhost";
-    private final int codeAddCrossroadd = 601;
+    private final int codeAddCrossroad = 603;
     private final int codeAddSemaphore = 602;
-    private final int codeGetSituation = 603;
+    private final int codeGetSituation = 601;
+    public ArrayList<Semaphore> sems;
 
     public QuerySolver(){
         this.fp = FirstProducer.getInstance();
@@ -28,7 +36,7 @@ public class QuerySolver {
      */
     public void addCrossroad(Crossroad crossroad){
         ArrayList<String> data = retrieveControllerFromMongo();
-        Message m = new Message("monitorBE", codeAddCrossroadd);
+        Message m = new Message("monitor", codeAddCrossroad);
         m.setIP(myIP);
         m.setCrossroad(crossroad);
         fp.sendMessage(data.get(0), m, data.get(1));
@@ -52,8 +60,6 @@ public class QuerySolver {
         controllerResponse = null;
     }
 
-
-
     /**
      * from: monitorBE
      * to: DBController
@@ -61,7 +67,14 @@ public class QuerySolver {
      */
     public String getGeneralSituation(){
 
-        return "to implement";
+        try {
+            GeneralInfo gi = MongoDataStore.getInstance().getGeneralInfo();
+            ObjectMapper mapper = new ObjectMapper();
+            return mapper.writeValueAsString(gi);
+        } catch (UnknownHostException | JsonProcessingException e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 
     /**
@@ -69,19 +82,26 @@ public class QuerySolver {
      * to: flinkDispatcher
      * aim: the flinkDispatcher tells the correct controller to send informations to the monitorBE
      */
-    public String getCrossroadSituation(Crossroad crossroad){
-        ArrayList<String> data = retrieveCrossroadFromMongo(crossroad);
+    public String getCrossroadSituation(String crossroad){
 
-        Message m = new Message("monitorBE", codeGetSituation);
+//        ArrayList<String> data = retrieveCrossroadFromMongo(crossroad);
+        Printer.getInstance().print("mi accingo a inviare il messaggio", "green");
+        Message m = new Message("monitor", codeGetSituation);
         m.setIP(myIP);
-        m.setCrossroad(crossroad);
-        fp.sendMessage(data.get(0), m, data.get(1));
+        fp.sendMessage("address", m, crossroad);
+        Printer.getInstance().print("messaggio inviato a " + crossroad + ", attendo la risposta", "yellow");
         String toReturn = waitForResponse();
         controllerResponse = null;
-        return toReturn;
+        ObjectMapper mapper = new ObjectMapper();
+        String ritornare = null;
+        try {
+            ritornare = mapper.writeValueAsString(sems);
+            Printer.getInstance().print(ritornare, "blue");
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return ritornare;
     }
-
-
 
     /**
      * from: monitorBE
@@ -117,5 +137,7 @@ public class QuerySolver {
         //data[1] = controller topic
         return null;
     }
+
+
 
 }

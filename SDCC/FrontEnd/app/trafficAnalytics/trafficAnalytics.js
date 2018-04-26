@@ -4,14 +4,22 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/trafficAnalytics', {
-            templateUrl: 'trafficAnalytics/trafficAnalytics.html',
-            controller: 'trafficAnalyticsCtrl'
+            templateUrl: 'trafficAnalytics/trafficAnalytics.html'
+            // controller: 'trafficAnalyticsCtrl'
         });
     }])
 
     .controller('trafficAnalyticsCtrl', ['$scope', '$http','$timeout',  function($scope, $http,$timeout) {
 
-        var intensity = [0,0,0,0,0,0,0,0,0,0];
+        var intensity  = [0,0,0,0,0,0,0,0,0,0];
+        var intensity1 = [0,0,0,0,0,0,0,0,0,0];
+        var intensity2 = [0,0,0,0,0,0,0,0,0,0];
+        var intensity3 = [0,0,0,0,0,0,0,0,0,0];
+        var intensity4 = [0,0,0,0,0,0,0,0,0,0];
+        var intensity5 = [0,0,0,0,0,0,0,0,0,0];
+        var intensity6 = [0,0,0,0,0,0,0,0,0,0];
+        var intensity7 = [0,0,0,0,0,0,0,0,0,0];
+        var intensity8 = [0,0,0,0,0,0,0,0,0,0];
         var labels = [1,2,3,4,5,6,7,8,9,10];
         var chartSem;
         var chartBar;
@@ -22,16 +30,34 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
         var green = 0;
 
 
-        var getData = function(){
 
+        var getData = function(){
             $http({
                 method: 'GET',
-                url: 'http://localhost:8080/semaphoreStatus'
+                url: 'http://localhost:8080/getCrossroadNames'
             }).then(function successCallback(response) {
-                $scope.crossroads = null;
-                $scope.crossroads = response.data;
+                $scope.general = null;
+                console.log(response.data);
+                $scope.general = response.data;
             }, function errorCallback() {
-                $scope.crossroads = null;
+                $scope.general = null;
+                console.log("error contacting server");
+                nextLoad();
+            });
+        };
+
+
+        $scope.getCrossroadInfo = function(){
+            console.log("chiamo getCrossroadInfo");
+            $http({
+                method: 'GET',
+                url: 'http://localhost:8080/getCrossroadInfo/' + $scope.dataSelected
+            }).then(function successCallback(response) {
+                $scope.semaphores = null;
+                console.log(response.data);
+                $scope.semaphores = response.data;
+            }, function errorCallback() {
+                $scope.semaphores = null;
                 console.log("error contacting server");
                 nextLoad();
             });
@@ -47,7 +73,14 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
         });
 
         document.getElementById("secondForm").style.display = "block";
-    };
+        };
+
+        var showCanvasses = function(semName){
+            var crossroads = null;
+            intensity = [0,0,0,0,0,0,0,0,0,0];
+        };
+
+
 
         $scope.getSemaphoreStatistics = function() {
             var crossroads = null;
@@ -202,7 +235,11 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
             cancelNextLoad();
         });
 
+
+
         getData();
+
+
 
         //scopri come si chiama a funzione che effettua la rotazione
         var rotateArray = function(newValue){

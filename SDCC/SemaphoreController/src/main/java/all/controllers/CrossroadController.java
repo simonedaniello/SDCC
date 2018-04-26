@@ -66,7 +66,7 @@ public class CrossroadController{
         sendCurrentState();
         monitorer.setNumberOfSemaphores(crossroad.getSemaphores().size());
         try {
-            MongoDataStore.getInstance().addSemaphoreToMongo(crossroad.getID(), semaphore.getID());
+            MongoDataStore.getInstance().addSemaphoreToMongo(crossroad.getID(), semaphore);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
@@ -99,7 +99,7 @@ public class CrossroadController{
         m.setCurrentCycle(monitorer.getCurrentCycle());
         for(Semaphore s: crossroad.getSemaphores()) {
             fp.sendMessage("address", m, s.getID());
-            Printer.getInstance().print("\n\ncurrent state sent to " + s.getID() +"\n\n", "yellow");
+            Printer.getInstance().print("current state sent to " + s.getID(), "yellow");
         }
     }
 
@@ -113,12 +113,12 @@ public class CrossroadController{
         public void run() {
             sendCurrentState();
             printSemaphores();
-            if(crossroad.getSemaphores().size() != 0) {
-                if (times == 2)
-                    twopc.votingPhase(crossroad.getSemaphores(), crossroad.getSemaphores().get(0).getID());
-                else
-                    times++;
-            }
+//            if(crossroad.getSemaphores().size() != 0) {
+//                if (times == 2)
+//                    twopc.votingPhase(crossroad.getSemaphores(), crossroad.getSemaphores().get(0).getID(), crossroad.getID());
+//                else
+//                    times++;
+//            }
         }
     }
 
@@ -128,6 +128,12 @@ public class CrossroadController{
         else
             s.setOrder(crossroad.getSemaphores().get(crossroad.getSemaphores().size()-1).getOrder() + 1);
         System.out.println("imposto ordinamento a " + s.getOrder());
+    }
+
+    public void tellMonitorerToSendInfos(String ip, String id){
+        Printer.getInstance().print("dico al monitorer di mandare le info: ip = " + ip + ", id = " + id, "yellow");
+        monitorer.setCrossroad(crossroad);
+        monitorer.sendCrossroadSituation(ip, id);
     }
 }
 

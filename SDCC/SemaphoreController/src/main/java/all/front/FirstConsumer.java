@@ -131,6 +131,10 @@ public class FirstConsumer {
         else if (code == -312){
             twopc.rollback();
         }
+        else if (code == 601){
+            Printer.getInstance().print("\n\n\nmesaggio arrivato con codice 601\n\n\n", "green");
+            crossroadController.tellMonitorerToSendInfos(message.getIP(), message.getID());
+        }
         //---------------------2PC-----------------------
     }
 

@@ -6,14 +6,22 @@
 
     <div style="text-align: center; padding-top: 50px; width: 80%; margin: auto">
         <div>
-            <form ng-submit="showSecondPanel()">
+            <form ng-submit="getCrossroadInfo()">
                 <label for="multipleSelect"> Select a crossroad: </label><br>
                 <select class="form-control" name="multipleSelect" id="multipleSelect" ng-model="dataSelected">
                     <option selected="selected">none</option>
-                    <option ng-repeat="x in crossroads" value="{{x.id}}">{{x.id}}</option>
+                    <option ng-repeat="x in general" value="{{x.crossroadID}}">{{x.crossroadID}}</option>
                 </select><br>
                 <div style="text-align: center"><input class="btn btn-success btn-lg" type="submit" id="checkCrossroadButton" value="Check Crossroad"/></div>
             </form>
+
+
+            <div ng-repeat="sem in semaphores" >
+                <h3 style="padding-top: 30px; display: none" id="test_{{sem.id}}">Semaphore traffic history</h3>
+                <canvas id="camvas_{{sem.id}}" width="800" height="200"></canvas>
+            </div>
+
+
 
 
             <form ng-submit="getSemaphoreStatistics()" style="text-align: center; display: none" id="secondForm">

@@ -26,7 +26,6 @@ public class SemaphoreStateEP {
         }
     }
 
-
     @RequestMapping(value = "/addCrossroad", method = RequestMethod.GET)
     public String addCrossroad(Crossroad crossroad){
         if(MonitorController.getInstance().flinkAddCrossroad(crossroad))
@@ -43,20 +42,35 @@ public class SemaphoreStateEP {
             return "ERROR";
     }
 
-    @RequestMapping(value = "/getCrossroadInfo", method = RequestMethod.GET)
-    public String getCrossroadInfo(Crossroad crossroad){
+    @RequestMapping(value = "/getCrossroadInfo/{crossroad}", method = RequestMethod.GET)
+    public String getCrossroadInfo(@PathVariable String crossroad){
+        Printer.getInstance().print("richieste le informazioni per " + crossroad, "green");
         return MonitorController.getInstance().flinkGetCrossroadSituation(crossroad);
     }
 
     @RequestMapping(value = "/getGeneralInfo", method = RequestMethod.GET)
     public String getGeneralInfo(){
         return MonitorController.getInstance().flinkGetGeneralSituation();
-
     }
 
     @RequestMapping(value = "/getQueries", method = RequestMethod.GET)
     public String getQueries(){
         return MonitorController.getInstance().flinkGetQueries();
+    }
+
+    @RequestMapping(value = "/getAllCrossroads", method = RequestMethod.GET)
+    public String getCrossroads(){
+        return MonitorController.getInstance().getMongoCrossroads();
+    }
+
+    @RequestMapping(value = "/getAllControllers", method = RequestMethod.GET)
+    public String getControllers(){
+        return MonitorController.getInstance().getMongoControllers();
+    }
+
+    @RequestMapping(value = "/getCrossroadNames", method = RequestMethod.GET)
+    public String getCrossroadNames(){
+        return MonitorController.getInstance().getMongoCrossroads();
     }
 
 }
