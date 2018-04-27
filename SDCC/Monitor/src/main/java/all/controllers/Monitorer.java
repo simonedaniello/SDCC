@@ -7,6 +7,12 @@ package all.controllers;
 // TODO e facciamo comunicare il front direttamente con il semaforo in questione per sapere la situazione sul traffico
 
 
+import all.front.FirstProducer;
+import main.java.FlinkResult;
+import main.java.Message;
+
+import java.util.*;
+
 /**
  * Author : Simone D'Aniello
  * Date :  23-Feb-18.
@@ -30,7 +36,11 @@ package all.controllers;
  */
 public class Monitorer {
 
+    private ArrayList<FlinkResult> results = new ArrayList<>();
+
     public Monitorer(){
+        Timer timer = new Timer();
+        timer.schedule(new TimerClass(), 20000, 20000); // every 20 seconds, after 20 seconds
 
     }
 
@@ -38,11 +48,11 @@ public class Monitorer {
      * Retrieving data from kafka channel.
      * With this function the monitor listens on every topic and call the correct function
      */
-    public void retrieveDataFromKafka(){
-
+    public void retrieveDataFromKafka(FlinkResult f){
+        results.add(f);
     }
 
-    /**
+     /**
      * Work with data from query1
      */
     public void receivedQuery1(){
@@ -78,31 +88,24 @@ public class Monitorer {
 
     }
 
+    private void calculateRanking(){
+        Collections.sort(results, (e1, e2) -> (e2.getValue() < e1.getValue()) ? 1 : -1);
+    }
 
+    private class TimerClass extends TimerTask {
+        @Override
+        public void run() {
+            calculateRanking();
+            sendRanking();
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-//    private Monitorer() {
-//
-//        Timer timer = new Timer();
-//        timer.schedule(new TimerClass(), 10000, 15000); // every 15 seconds
-//    }
-
-
-//    private class TimerClass extends TimerTask{
-//
-//        @Override
-//        public void run() {
-//
-//        }
-//    }
+    private void sendRanking() {
+        System.out.println(results);
+        Message m = new Message("monitorer", 702);
+        m.setPartialRanking(results);
+        FirstProducer.getInstance().sendMessage("address", m, "ranking");
+    }
 
 
 }

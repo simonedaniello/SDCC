@@ -114,25 +114,12 @@ public class FirstConsumer {
 
 
     private void workWithMessage(Message message){
-        if (message.getCode() == 1){
-            monitorer.receivedQuery1();
-            Printer.getInstance().print("message Query1", "yellow");
-        }
-        if (message.getCode() == 2){
-            monitorer.receivedQuery2();
-            Printer.getInstance().print("message Query2", "yellow");
-        }
-        if (message.getCode() == 3){
-            monitorer.receivedQuery3();
-            Printer.getInstance().print("message Query3", "yellow");
-        }
-        else if (message.getCode() == -1){
-            monitorer.receivedSemaphoresMalfunction();
-            Printer.getInstance().print("semaphore malfunction", "yellow");
-        }
-        else {
-            Printer.getInstance().print("Received message with wrong code", "red");
+        int code = message.getCode();
+        if (code == 701) {
+            monitorer.retrieveDataFromKafka(message.getFlinkResult());
         }
     }
+
+
 
 }
