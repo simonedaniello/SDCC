@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SemaphoreSensorDataProducer {
 
-    public SemaphoreSensorDataProducer(FirstProducer fp) {
+    public SemaphoreSensorDataProducer(FirstProducer fp, String semID) {
 
         while (true) {
 
@@ -22,7 +22,7 @@ public class SemaphoreSensorDataProducer {
             for (i = 0; i < 100; i++) {
 
                 SemaphoreSensor s = new SemaphoreSensor();
-                s.initializeSensor();
+                s.initializeSensor(semID);
 
                 eventList.add(s);
             }

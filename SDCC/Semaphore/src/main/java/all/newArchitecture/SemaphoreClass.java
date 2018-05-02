@@ -45,7 +45,7 @@ public class SemaphoreClass implements Runnable{
         fc.setAttributes(this, twopc, s.getCrossroad());
         startListeningKafka();
         requestOtherSemaphores();
-//        sendSensorData();
+        sendSensorData();
     }
 
     /**
@@ -53,7 +53,7 @@ public class SemaphoreClass implements Runnable{
      * send the list of cars detected through kafka to flinkDispatcher
      */
     public void sendSensorData(){
-        new SemaphoreSensorDataProducer(this.fp);
+        new SemaphoreSensorDataProducer(this.fp, semaphore.getID());
     }
 
     /**

@@ -8,6 +8,7 @@ import all.model.SemaphoreSensor;
 import com.google.gson.Gson;
 import main.java.FlinkResult;
 import main.java.Message;
+import main.java.system.Printer;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.serialization.SerializationSchema;
 import org.apache.flink.api.java.tuple.*;
@@ -58,6 +59,7 @@ public class AverageKafkaSender {
         streamTuples.print();
         DataStream<Tuple2<String, Double>> averageSpeedStream = streamTuples.keyBy(new int[]{0}).timeWindow(Time.seconds((long)TIME_WINDOW),Time.seconds((long)TIME_WINDOW)).apply(new querySolver()).setParallelism(1);
         averageSpeedStream.addSink(new FlinkKafkaProducer011<>("localhost:9092", topicname, (SerializationSchema<Tuple2<String, Double>>) stringDoubleTuple2 -> {
+            System.out.println("entroh");
             Gson gson = new Gson();
             String key = stringDoubleTuple2.f0;
             double value = stringDoubleTuple2.f1;
@@ -88,7 +90,7 @@ public class AverageKafkaSender {
         System.out.println("got sources");
         DataStream<Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean>> streamTuples = stream.flatMap(new SemaphoreJson2Tuple());
         streamTuples.print();
-        DataStream<Tuple2<String, Double>> averageSpeedStream = streamTuples.keyBy(new int[]{0})
+        DataStream<Tuple2<String, Double>> averageSpeedStream = streamTuples.keyBy(new int[]{1})
                 .timeWindow(Time.seconds((long)TIME_WINDOW),Time.seconds((long)TIME_WINDOW))
                 .apply(new SemaphoreQuerySolver());
 
@@ -125,15 +127,18 @@ public class AverageKafkaSender {
         while(var8.hasNext()) {
             Tuple6<String, String, String, String, String, Double> record = (Tuple6)var8.next();
             double speed = record.getField(5);
-            welford.addElement(speed);
+            welford.addElement(speed, record.getField(0));
             count++;
             System.out.println("accumuling speed");
         }
 
-        double averageSpeed = welford.getCurrent_mean();
-        System.out.println("medium speed is:");
-        out.collect(new Tuple2(INPUT_KAFKA_TOPIC, averageSpeed));
-        welford.resetIndexes();
+        Printer.getInstance().print(welford.getCurrent_mean().toString(),"yellow");
+        for (FlinkResult f: welford.getCurrent_mean()){
+            System.out.println("SemaphoreID: " + f.getKey() + ", medium speed is: " + f.getCurrent_mean());
+            out.collect(new Tuple2(f.getKey(), f.getCurrent_mean()));
+            //welford.resetIndexes(f);
+        }
+
     }
 } */
 
@@ -148,8 +153,9 @@ public class AverageKafkaSender {
 
         @Override
         public void apply(Tuple key, TimeWindow window, Iterable<Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean>> records, Collector<Tuple2<String, Double>> out) throws Exception {
-            Welford welford = new Welford(); //calculate mean value
             Iterator var8 = records.iterator();
+            Welford welford = new Welford(key.getField(0)); //calculate mean value
+            //Printer.getInstance().print(key.toString().substring(1,key.toString().length() - 1),"blue");
 
             while(var8.hasNext()) {
                 Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean> record = (Tuple11<String, String, String, String, String, Int, Double, Double, Boolean, Boolean, Boolean>) var8.next();
@@ -159,10 +165,10 @@ public class AverageKafkaSender {
                 System.out.println("accumuling speed");
             }
 
-            double averageSpeed = welford.getCurrent_mean();
-            System.out.println("medium speed is:");
-            out.collect(new Tuple2("mannaggiallamadonna", averageSpeed));
-            welford.resetIndexes();
+            FlinkResult f = welford.getCurrent_mean();
+            System.out.println("SemaphoreID: " + f.getKey() + ", medium speed is: " + f.getValue());
+            out.collect(new Tuple2(f.getKey(), f.getValue()));
+
         }
     }
 

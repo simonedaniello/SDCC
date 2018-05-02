@@ -146,10 +146,10 @@ public class Monitorer {
         for(FlinkResult f : averageSpeedList){
             Printer.getInstance().print("\tkey: " + f.getKey() + ", value: " + f.getValue() + ", count: " + f.getNumberOfCars(), "blue");
         }
-        Printer.getInstance().print("QUANTILE RANKING", "yellow");
-        for(FlinkResult f : quantileList){
-            Printer.getInstance().print("\tkey: " + f.getKey() + ", value: " + f.getValue() + ", count: " + f.getNumberOfCars(), "blue");
-        }
+//        Printer.getInstance().print("QUANTILE RANKING", "yellow");
+  //      for(FlinkResult f : quantileList){
+    //        Printer.getInstance().print("\tkey: " + f.getKey() + ", value: " + f.getValue() + ", count: " + f.getNumberOfCars(), "blue");
+      //  }
     }
 
 

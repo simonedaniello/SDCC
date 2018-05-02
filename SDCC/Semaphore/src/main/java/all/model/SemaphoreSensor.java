@@ -1,5 +1,7 @@
 package all.model;
 
+import main.java.Semaphore;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
@@ -110,12 +112,12 @@ public class SemaphoreSensor {
     }
 
 
-    public void initializeSensor(){
-
+    public void initializeSensor(String semID){
 
         setPosition();
+        semaphoreID = semID;
         //semaphoreID =new String(messageDigest.digest());
-        semaphoreID = org.apache.commons.codec.digest.DigestUtils.sha256Hex(latitude+longitude);
+        //semaphoreID = org.apache.commons.codec.digest.DigestUtils.sha256Hex(latitude+longitude);
 //        System.out.println(semaphoreID);
         crossroadID = UUID.randomUUID().toString();
         carsInTimeUnit = 0;

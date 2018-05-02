@@ -1,14 +1,17 @@
 package algorithms;
 
+import main.java.FlinkResult;
+
 public class Welford {
 
     private double current_mean;
     private double current_var;
     private double current_index;
+    private String semaphoreID;
 
 
-    public double getCurrent_mean() {
-        return current_mean;
+    public FlinkResult getCurrent_mean() {
+        return new FlinkResult(semaphoreID, current_mean, (long) current_index);
     }
 
     public void setCurrent_mean(double current_mean) {
@@ -23,11 +26,12 @@ public class Welford {
         this.current_var = current_var;
     }
 
-    public Welford() {
+    public Welford(String semaphoreID) {
 
         current_mean = 0.0;
         current_var = 0.0;
         current_index = 0.0;
+        this.semaphoreID = semaphoreID;
 
 
     }
