@@ -7,9 +7,11 @@ package all.controllers;
 // TODO e facciamo comunicare il front direttamente con il semaforo in questione per sapere la situazione sul traffico
 
 
+import all.front.FirstConsumer;
 import all.front.FirstProducer;
 import main.java.FlinkResult;
 import main.java.Message;
+import main.java.system.Printer;
 
 import java.util.*;
 
@@ -36,9 +38,27 @@ import java.util.*;
  */
 public class Monitorer {
 
-    private ArrayList<FlinkResult> results = new ArrayList<>();
+    private ArrayList<FlinkResult> averageSpeedList = new ArrayList<>();
+    private ArrayList<FlinkResult> quantileList = new ArrayList<>();
 
     public Monitorer(){
+
+        FirstConsumer fc = FirstConsumer.getInstance();
+        fc.setMonitorer(this);
+        try {
+            fc.subscribeToTopic("monitorer");
+
+            Thread thread1 = new Thread(() -> {
+                System.out.println("starting kafka consumer...");
+                fc.runConsumer();
+            });
+
+            thread1.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
         Timer timer = new Timer();
         timer.schedule(new TimerClass(), 20000, 20000); // every 20 seconds, after 20 seconds
 
@@ -48,13 +68,17 @@ public class Monitorer {
      * Retrieving data from kafka channel.
      * With this function the monitor listens on every topic and call the correct function
      */
-    public void retrieveDataFromKafka(FlinkResult f){
-        results.add(f);
+    public void addAvgFromKafka(FlinkResult f){
+        averageSpeedList.add(f);
     }
 
-     /**
-     * Work with data from query1
-     */
+    public void addQuantilFromKafka(FlinkResult f){
+        quantileList.add(f);
+    }
+
+    /**
+    * Work with data from query1
+    */
     public void receivedQuery1(){
 
     }
@@ -89,10 +113,11 @@ public class Monitorer {
     }
 
     private void calculateRanking(){
-        Collections.sort(results, (e1, e2) -> (e2.getValue() < e1.getValue()) ? 1 : -1);
+        averageSpeedList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
+        quantileList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
     }
 
-    private class TimerClass extends TimerTask {
+    private class TimerClass extends TimerTask{
         @Override
         public void run() {
             calculateRanking();
@@ -100,11 +125,31 @@ public class Monitorer {
         }
     }
 
-    private void sendRanking() {
-        System.out.println(results);
-        Message m = new Message("monitorer", 702);
-        m.setPartialRanking(results);
-        FirstProducer.getInstance().sendMessage("address", m, "ranking");
+    private void sendRanking(){
+
+        printRankings();
+
+        Message m1 = new Message("monitorer", 711);
+        m1.setPartialRanking(averageSpeedList);
+        FirstProducer.getInstance().sendMessage("address", m1, "ranking");
+        averageSpeedList.clear();
+
+
+        Message m2 = new Message("monitorer", 712);
+        m2.setPartialRanking(quantileList);
+        FirstProducer.getInstance().sendMessage("address", m2, "ranking");
+        quantileList.clear();
+    }
+
+    private void printRankings(){
+        Printer.getInstance().print("AVERAGE SPEED RANKING", "yellow");
+        for(FlinkResult f : averageSpeedList){
+            Printer.getInstance().print("\tkey: " + f.getKey() + ", value: " + f.getValue() + ", count: " + f.getNumberOfCars(), "blue");
+        }
+        Printer.getInstance().print("QUANTILE RANKING", "yellow");
+        for(FlinkResult f : quantileList){
+            Printer.getInstance().print("\tkey: " + f.getKey() + ", value: " + f.getValue() + ", count: " + f.getNumberOfCars(), "blue");
+        }
     }
 
 

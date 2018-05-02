@@ -2,8 +2,9 @@ package main.java;
 
 public class FlinkResult {
 
-    String key;
-    double value;
+    private String key;
+    private double value;
+    private long numberOfCars;
 
     public String getKey() {
         return key;
@@ -21,11 +22,17 @@ public class FlinkResult {
         this.value = value;
     }
 
-    public FlinkResult(String key, double value){
+    public FlinkResult(String key, double value, long numberOfCars){
         this.key = key;
         this.value = value;
-
+        this.numberOfCars = numberOfCars;
     }
 
+    public long getNumberOfCars() {
+        return numberOfCars;
+    }
 
+    public void setNumberOfCars(long numberOfCars) {
+        this.numberOfCars = numberOfCars;
+    }
 }

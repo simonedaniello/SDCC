@@ -2,7 +2,7 @@ package all.front;
 
 
 import all.controllers.Monitorer;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import main.java.Message;
 import main.java.system.Printer;
 import org.apache.kafka.clients.consumer.*;
@@ -11,7 +11,6 @@ import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.Properties;
 
@@ -38,13 +37,14 @@ public class FirstConsumer {
 
 
 
-    public void setController(Monitorer monitorer){
+    public void setMonitorer(Monitorer monitorer){
         createConsumer();
         this.monitorer = monitorer;
     }
 
 
     public void subscribeToTopic(String topic){
+//        createConsumer();
         consumer.subscribe(Collections.singletonList(topic));
     }
 
@@ -95,28 +95,33 @@ public class FirstConsumer {
 
 
     private void DeserializeMessage(ConsumerRecord<Long, String> record){
-        ObjectMapper mapper = new ObjectMapper();
+//        ObjectMapper mapper = new ObjectMapper();
 
         //JSON from String to Object
-        try {
-            Message message = mapper.readValue(record.value(), Message.class);
+        Gson gson = new Gson();
+        System.out.println(record.value());
+        Message message = gson.fromJson(record.value(), Message.class);
 
-            Printer.getInstance().print("Consumer Record:( " + record.key() +
-                    ", Message: " + message.getID() +
-                    ", Code: " + message.getCode() +
-                    " )", "cyan");
-            workWithMessage(message);
+        Printer.getInstance().print("Consumer Record:( " + record.key() +
+                ", Message: " + message.getID() +
+                ", Code: " + message.getCode() +
+                " )", "cyan");
+        workWithMessage(message);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 
     private void workWithMessage(Message message){
         int code = message.getCode();
+        //average speed
         if (code == 701) {
-            monitorer.retrieveDataFromKafka(message.getFlinkResult());
+            Printer.getInstance().print("arrivato un messaggio 701", "yellow");
+            monitorer.addAvgFromKafka(message.getFlinkResult());
+        }
+        //quantile speed
+        else if (code == 702){
+            Printer.getInstance().print("arrivato un messaggio 702", "yellow");
+            monitorer.addQuantilFromKafka(message.getFlinkResult());
         }
     }
 
