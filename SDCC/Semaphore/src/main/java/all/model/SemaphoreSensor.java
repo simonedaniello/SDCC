@@ -14,7 +14,7 @@ public class SemaphoreSensor {
     private String longitude;
     private String timestamp;
     private int greenDuration;
-    private int carsInTimeUnit;
+    private double carsInTimeUnit;
     private double meanSpeed;
     private boolean isGreenWorking;
     private boolean isYellowWorking;
@@ -69,11 +69,11 @@ public class SemaphoreSensor {
         this.greenDuration = greenDuration;
     }
 
-    public int getCarsInTimeUnit() {
+    public double getCarsInTimeUnit() {
         return carsInTimeUnit;
     }
 
-    public void setCarsInTimeUnit(int carsInTimeUnit) {
+    public void setCarsInTimeUnit(double carsInTimeUnit) {
         this.carsInTimeUnit = carsInTimeUnit;
     }
 

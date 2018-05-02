@@ -4,8 +4,19 @@ package all;
 import all.newArchitecture.SemaphoreClass;
 import main.java.Semaphore;
 import main.java.system.Printer;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.PropertyConfigurator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.logging.Filter;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
 
 
 @SpringBootApplication
@@ -19,9 +30,20 @@ public class Runner {
      *
      * @param args
      */
-	public static void main(String[] args) {
+
+    private static final Logger logger = LoggerFactory.getLogger(Runner.class);
+
+
+    public static void main(String[] args) {
+
+
+
 
         System.out.println("args.length = " + args.length);
+       // BasicConfigurator.configure();
+      //  PropertyConfigurator.configure("/home/federico/IdeaProjects/SDCC/SDCC/Semaphore/src/main/java/log4j.properties");
+
+
 
         if(args.length == 0) {
             SpringApplication.run(Runner.class, args);
