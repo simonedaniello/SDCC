@@ -69,7 +69,23 @@ public class Monitorer {
      * With this function the monitor listens on every topic and call the correct function
      */
     public void addAvgFromKafka(FlinkResult f){
-        averageSpeedList.add(f);
+        if(f.getNumberOfCars() != 0) {
+            boolean IhaveDoneSomething = false;
+            String idToAdd = f.getKey();
+            for (FlinkResult inList : averageSpeedList) {
+                if (inList.getKey().equals(idToAdd)) {
+                    long total = f.getNumberOfCars() + inList.getNumberOfCars();
+                    inList.setValue(inList.getValue() * (inList.getNumberOfCars() / total) + f.getValue() * (f.getNumberOfCars() / total));
+                    inList.setNumberOfCars(total);
+                    IhaveDoneSomething = true;
+                    break;
+                }
+            }
+            if (!IhaveDoneSomething)
+                averageSpeedList.add(f);
+        }
+        else
+            Printer.getInstance().print("stavo per aggiungere uno 0", "red");
     }
 
     public void addQuantilFromKafka(FlinkResult f){

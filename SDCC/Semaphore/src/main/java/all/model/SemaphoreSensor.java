@@ -121,7 +121,7 @@ public class SemaphoreSensor {
 //        System.out.println(semaphoreID);
         crossroadID = UUID.randomUUID().toString();
         carsInTimeUnit = 0;
-        meanSpeed = 0;
+        meanSpeed = (double) (new Random().nextInt(80) + 20);
         timestamp = (new Date()).toString();
         greenDuration = 60;
         isGreenWorking = true;
