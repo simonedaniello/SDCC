@@ -96,7 +96,8 @@ public class QuantileKafkaSender {
             List<Double> quantiles = qe.getQuantiles();
             System.out.println(qe.getQuantiles());
             System.out.println("median of speed is:");
-            out.collect(new Tuple2(INPUT_KAFKA_TOPIC, quantiles.get(2)));
+
+            //out.collect(new Tuple2(INPUT_KAFKA_TOPIC, quantiles.get(2)));
             qe.clear();
         }
     }
