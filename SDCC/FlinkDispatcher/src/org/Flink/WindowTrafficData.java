@@ -14,29 +14,29 @@ public class WindowTrafficData {
 
     public static void main(String[] args) {
 
-        try {
-            Thread thread1 = new Thread(() -> {
-                AverageKafkaSender avg = new AverageKafkaSender();
+       try {
+     /*       Thread thread1 = new Thread(() -> {
+                NewAverageKafkaSender avg = new NewAverageKafkaSender();
                 try {
                     avg.calculateAvg();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            });
+            }); */
 
             Thread thread2 = new Thread(() -> {
-                QuantileKafkaSender qkafka = new QuantileKafkaSender();
+                NewMedianKafkaSender qkafka = new NewMedianKafkaSender();
                 try {
-                    qkafka.calculateQuantiles();
+                    qkafka.calculateMedian();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
 
-            thread1.start();
+          //  thread1.start();
             thread2.start();
 
-            thread1.join();
+        //    thread1.join();
             thread2.join();
 
         } catch (Exception e) {
@@ -56,7 +56,7 @@ public class WindowTrafficData {
 //
 //
 //        System.out.println("got sources");
-//        DataStream<Tuple6<String, String, String, String, String, Double>> streamTuples = stream.flatMap(new WindowTrafficData.Json2Tuple());
+//        DataStream<Tuple6<String, String, String, String, String, Double>> streamTuples = stream.flatMap(new WindowTrafficData.IoTJson2Tuple());
 //        streamTuples.print();
 //        DataStream<Tuple2<String, Double>> averageSpeedStream = streamTuples.keyBy(new int[]{0}).timeWindow(Time.seconds((long)TIME_WINDOW),Time.seconds((long)TIME_WINDOW)).apply(new querySolver()).setParallelism(1);
 //        averageSpeedStream.addSink(new FlinkKafkaProducer011<>("localhost:9092", topicname, (SerializationSchema<Tuple2<String, Double>>) stringDoubleTuple2 -> {
@@ -110,8 +110,8 @@ public class WindowTrafficData {
 //        }
 //    }
 //
-//    public static class Json2Tuple implements FlatMapFunction<String, Tuple6<String, String, String, String, String, Double>> {
-//        public Json2Tuple() {
+//    public static class IoTJson2Tuple implements FlatMapFunction<String, Tuple6<String, String, String, String, String, Double>> {
+//        public IoTJson2Tuple() {
 //        }
 //
 //        public void flatMap(String jsonString, Collector<Tuple6<String, String, String, String, String, Double>> out) throws Exception {
