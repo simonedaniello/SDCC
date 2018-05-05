@@ -2,6 +2,7 @@ package all;
 
 import all.model.SemaphoreSensor;
 import all.front.FirstProducer;
+import main.java.Semaphore;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SemaphoreSensorDataProducer {
 
-    public SemaphoreSensorDataProducer(FirstProducer fp, String semID) {
+    public SemaphoreSensorDataProducer(FirstProducer fp, Semaphore sem) {
 
         while (true) {
 
@@ -22,7 +23,7 @@ public class SemaphoreSensorDataProducer {
             for (i = 0; i < 100; i++) {
 
                 SemaphoreSensor s = new SemaphoreSensor();
-                s.initializeSensor(semID);
+                s.initializeSensor(sem);
 
                 eventList.add(s);
             }

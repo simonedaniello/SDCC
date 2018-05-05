@@ -36,8 +36,7 @@ public class MongoDataStore implements DataStore {
 	
 	private static final String MONGO_HOST = "localhost";
 	private static final int MONGO_PORT = 27017;
-	public static DataStore getInstance()
-			throws UnknownHostException {
+	public static DataStore getInstance() throws UnknownHostException {
 		synchronized (MongoDataStore.class) {
 			if (mongoDataStore == null) {
 				DB db = new MongoClient(MONGO_HOST,MONGO_PORT).getDB("stream");

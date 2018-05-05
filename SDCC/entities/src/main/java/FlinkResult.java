@@ -1,6 +1,8 @@
 package main.java;
 
-public class FlinkResult {
+import java.io.Serializable;
+
+public class FlinkResult implements Serializable{
 
     private String key;
     private double value;

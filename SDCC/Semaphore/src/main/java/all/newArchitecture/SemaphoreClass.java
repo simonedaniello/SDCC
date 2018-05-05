@@ -48,12 +48,13 @@ public class SemaphoreClass implements Runnable{
         sendSensorData();
     }
 
+
     /**
      * TODO
      * send the list of cars detected through kafka to flinkDispatcher
      */
-    public void sendSensorData(){
-        new SemaphoreSensorDataProducer(this.fp, semaphore.getID());
+    private void sendSensorData(){
+        new SemaphoreSensorDataProducer(this.fp, semaphore);
     }
 
     /**

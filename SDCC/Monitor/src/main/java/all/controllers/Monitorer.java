@@ -7,12 +7,14 @@ package all.controllers;
 // TODO e facciamo comunicare il front direttamente con il semaforo in questione per sapere la situazione sul traffico
 
 
+import all.db.MongoDataStore;
 import all.front.FirstConsumer;
 import all.front.FirstProducer;
 import main.java.FlinkResult;
 import main.java.Message;
 import main.java.system.Printer;
 
+import java.net.UnknownHostException;
 import java.util.*;
 
 /**
@@ -39,7 +41,10 @@ import java.util.*;
 public class Monitorer {
 
     private ArrayList<FlinkResult> averageSpeedList = new ArrayList<>();
+    private ArrayList<FlinkResult> oldAverageSpeedList= new ArrayList<>();
+
     private ArrayList<FlinkResult> quantileList = new ArrayList<>();
+    private ArrayList<FlinkResult> oldQuantileList = new ArrayList<>();
 
     public Monitorer(){
 
@@ -74,22 +79,42 @@ public class Monitorer {
             String idToAdd = f.getKey();
             for (FlinkResult inList : averageSpeedList) {
                 if (inList.getKey().equals(idToAdd)) {
-                    long total = f.getNumberOfCars() + inList.getNumberOfCars();
+                    double total = f.getNumberOfCars() + inList.getNumberOfCars();
+                    double inListMultiplier = inList.getNumberOfCars() / total;
+                    double fmultiplier = f.getNumberOfCars()/total;
+                    inList.setValue(inList.getValue() * inListMultiplier + f.getValue() * fmultiplier);
+                    inList.setNumberOfCars((int) total);
+//                    Printer.getInstance().print("ho settato value a " + inList.getValue() + " e numero macchine a " + inList.getNumberOfCars(), "yellow");
+                    IhaveDoneSomething = true;
+                    break;
+                }
+            }
+            if (!IhaveDoneSomething) {
+                averageSpeedList.add(f);
+//                Printer.getInstance().print("\n\naggiungo il semaforo "+ f.getKey() + " con valore " + f.getValue(), "yellow");
+            }
+
+        }
+        else
+            Printer.getInstance().print("Non aggiungo perchè 0", "red");
+    }
+
+    public void addQuantilFromKafka(FlinkResult f){
+        if(f.getNumberOfCars() != 0) {
+            boolean IhaveDoneSomething = false;
+            String idToAdd = f.getKey();
+            for (FlinkResult inList : quantileList) {
+                if (inList.getKey().equals(idToAdd)) {
+                    double total = f.getNumberOfCars() + inList.getNumberOfCars();
                     inList.setValue(inList.getValue() * (inList.getNumberOfCars() / total) + f.getValue() * (f.getNumberOfCars() / total));
-                    inList.setNumberOfCars(total);
+                    inList.setNumberOfCars((int) total);
                     IhaveDoneSomething = true;
                     break;
                 }
             }
             if (!IhaveDoneSomething)
-                averageSpeedList.add(f);
+                quantileList.add(f);
         }
-        else
-            Printer.getInstance().print("stavo per aggiungere uno 0", "red");
-    }
-
-    public void addQuantilFromKafka(FlinkResult f){
-        quantileList.add(f);
     }
 
     /**
@@ -121,16 +146,34 @@ public class Monitorer {
     }
 
     /**
-     * Saving data to MongoDB,
-     * Is not important the function the data come from.
+     * 0 : mode 15 minutes average speed list
+     * 1: mode 1 hour average average speed list
+     * 2: mode 24 hours average speed list
      */
-    public void saveDataOnMongo(){
+    public void saveDataOnMongo15min(){
+        if(averageSpeedList.size() < 40)
+            oldAverageSpeedList = averageSpeedList;
+        else
+            oldAverageSpeedList = (ArrayList<FlinkResult>) averageSpeedList.subList(0, 39);
+
+        if(quantileList.size()<40)
+            oldQuantileList = quantileList;
+        else
+            oldQuantileList = (ArrayList<FlinkResult>) quantileList.subList(0, 39);
+
+        try {
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("15averageSpeed", oldAverageSpeedList);
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("15quantileSpeed", oldQuantileList);
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
 
     }
 
     private void calculateRanking(){
         averageSpeedList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
         quantileList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
+        saveDataOnMongo15min();
     }
 
     private class TimerClass extends TimerTask{
@@ -162,10 +205,10 @@ public class Monitorer {
         for(FlinkResult f : averageSpeedList){
             Printer.getInstance().print("\tkey: " + f.getKey() + ", value: " + f.getValue() + ", count: " + f.getNumberOfCars(), "blue");
         }
-//        Printer.getInstance().print("QUANTILE RANKING", "yellow");
-  //      for(FlinkResult f : quantileList){
-    //        Printer.getInstance().print("\tkey: " + f.getKey() + ", value: " + f.getValue() + ", count: " + f.getNumberOfCars(), "blue");
-      //  }
+        Printer.getInstance().print("QUANTILE RANKING", "yellow");
+        for(FlinkResult f : quantileList){
+            Printer.getInstance().print("\tkey: " + f.getKey() + ", value: " + f.getValue() + ", count: " + f.getNumberOfCars(), "blue");
+        }
     }
 
 

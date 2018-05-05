@@ -112,14 +112,14 @@ public class SemaphoreSensor {
     }
 
 
-    public void initializeSensor(String semID){
+    public void initializeSensor(Semaphore sem){
 
-        setPosition();
-        semaphoreID = semID;
+        setPosition(sem);
+        semaphoreID = sem.getID();
         //semaphoreID =new String(messageDigest.digest());
         //semaphoreID = org.apache.commons.codec.digest.DigestUtils.sha256Hex(latitude+longitude);
 //        System.out.println(semaphoreID);
-        crossroadID = UUID.randomUUID().toString();
+        crossroadID = sem.getCrossroad();
         carsInTimeUnit = 0;
         meanSpeed = (double) (new Random().nextInt(80) + 20);
         timestamp = (new Date()).toString();
@@ -133,15 +133,16 @@ public class SemaphoreSensor {
 
     }
 
-    private void setPosition() {
+    private void setPosition(Semaphore sem) {
 
-        Random rand = new Random();
+//        Random rand = new Random();
+//        int latPrefix = 33;
+//        int longPrefix = -96;
+//        latitude = String.valueOf((float)latPrefix + rand.nextFloat());
+//        longitude = String.valueOf((float)longPrefix + rand.nextFloat());
 
-        int latPrefix = 33;
-        int longPrefix = -96;
-        latitude = String.valueOf((float)latPrefix + rand.nextFloat());
-        longitude = String.valueOf((float)longPrefix + rand.nextFloat());
-
+        latitude = sem.getLatitude();
+        longitude = sem.getLongitude();
     }
 
 

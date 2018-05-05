@@ -1,14 +1,12 @@
 package org.Flink;
 
-import Model.GPSJsonReader;
-import Model.IoTData;
+
 import Model.SemaphoreJsonReader;
 import algorithms.Welford;
 import all.model.SemaphoreSensor;
 import com.google.gson.Gson;
 import main.java.FlinkResult;
 import main.java.Message;
-import main.java.system.Printer;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.serialization.SerializationSchema;
 import org.apache.flink.api.java.tuple.*;

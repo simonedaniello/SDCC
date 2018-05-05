@@ -116,6 +116,7 @@ public class FirstConsumer {
         //average speed
         if (code == 701) {
             Printer.getInstance().print("arrivato un messaggio 701", "yellow");
+            System.out.println(message.getFlinkResult().toString());
             monitorer.addAvgFromKafka(message.getFlinkResult());
         }
         //quantile speed

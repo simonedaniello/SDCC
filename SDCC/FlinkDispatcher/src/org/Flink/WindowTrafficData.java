@@ -15,14 +15,14 @@ public class WindowTrafficData {
     public static void main(String[] args) {
 
        try {
-     /*       Thread thread1 = new Thread(() -> {
+            Thread thread1 = new Thread(() -> {
                 NewAverageKafkaSender avg = new NewAverageKafkaSender();
                 try {
                     avg.calculateAvg();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }); */
+            });
 
             Thread thread2 = new Thread(() -> {
                 NewMedianKafkaSender qkafka = new NewMedianKafkaSender();
@@ -33,10 +33,10 @@ public class WindowTrafficData {
                 }
             });
 
-          //  thread1.start();
+            thread1.start();
             thread2.start();
 
-        //    thread1.join();
+            thread1.join();
             thread2.join();
 
         } catch (Exception e) {
