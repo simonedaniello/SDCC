@@ -20,6 +20,7 @@
     number of semaphores : {{generalInfo.nOfSemaphores}} <br>
     number of crossroads : {{generalInfo.nOfCrossroads}} <br>
     number of malfunctions: to implement <br>
+    Query 1 <br>
         <div class="container" align="center" style="padding:5px">
             <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query115collapse" aria-expanded="false" aria-controls="query115collapse" style="padding:5px">
                 Get speed average ranking (15 minutes)
@@ -43,7 +44,127 @@
                 </table>
             </div>
         </div>
-    query 2: to implement <br>
+
+        <div class="container" align="center" style="padding:5px">
+            <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query11collapse" aria-expanded="false" aria-controls="query11collapse" style="padding:5px">
+                Get speed average ranking (1 hour)
+            </button>
+            <div id="query11collapse" class="collapse">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Semaphore ID</th>
+                        <th>Average speed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="y in generalInfo.query11hour">
+                        <td>{{$index +1 }}</td>
+                        <td>{{ y.semId }}</td>
+                        <td>{{ y.value }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="container" align="center" style="padding:5px">
+            <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query124collapse" aria-expanded="false" aria-controls="query124collapse" style="padding:5px">
+                Get speed average ranking (24 hours)
+            </button>
+            <div id="query124collapse" class="collapse">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Semaphore ID</th>
+                        <th>Average speed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="y in generalInfo.query124hours">
+                        <td>{{$index +1 }}</td>
+                        <td>{{ y.semId }}</td>
+                        <td>{{ y.value }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    Query 2 <br>
+
+        <div class="container" align="center" style="padding:5px">
+            <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query215collapse" aria-expanded="false" aria-controls="query215collapse" style="padding:5px">
+                Get speed median ranking (15 minutes)
+            </button>
+            <div id="query215collapse" class="collapse">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Semaphore ID</th>
+                        <th>Average speed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="y in generalInfo.query2">
+                        <td>{{$index +1 }}</td>
+                        <td>{{ y.semId }}</td>
+                        <td>{{ y.value }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="container" align="center" style="padding:5px">
+            <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query21collapse" aria-expanded="false" aria-controls="query21collapse" style="padding:5px">
+                Get speed median ranking (1 hour)
+            </button>
+            <div id="query21collapse" class="collapse">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Semaphore ID</th>
+                        <th>Average speed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="y in generalInfo.query21hour">
+                        <td>{{$index +1 }}</td>
+                        <td>{{ y.semId }}</td>
+                        <td>{{ y.value }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="container" align="center" style="padding:5px">
+            <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query224collapse" aria-expanded="false" aria-controls="query224collapse" style="padding:5px">
+                Get speed median ranking (24 hours)
+            </button>
+            <div id="query224collapse" class="collapse">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Semaphore ID</th>
+                        <th>Average speed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="y in generalInfo.query224hours">
+                        <td>{{$index +1 }}</td>
+                        <td>{{ y.semId }}</td>
+                        <td>{{ y.value }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     query 3: to implement <br>
 
 
