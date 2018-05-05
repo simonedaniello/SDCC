@@ -17,11 +17,32 @@
 
     <div id="odometer" class="odometer">123</div>
 
-
     number of semaphores : {{generalInfo.nOfSemaphores}} <br>
     number of crossroads : {{generalInfo.nOfCrossroads}} <br>
     number of malfunctions: to implement <br>
-    query 1: to implement <br>
+        <div class="container" align="center" style="padding:5px">
+            <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query115collapse" aria-expanded="false" aria-controls="query115collapse" style="padding:5px">
+                Get speed average ranking (15 minutes)
+            </button>
+            <div id="query115collapse" class="collapse">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Semaphore ID</th>
+                        <th>Average speed</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="y in generalInfo.query1">
+                        <td>{{$index +1 }}</td>
+                        <td>{{ y.semId }}</td>
+                        <td>{{ y.value }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     query 2: to implement <br>
     query 3: to implement <br>
 

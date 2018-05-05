@@ -114,15 +114,33 @@ public class FirstConsumer {
     private void workWithMessage(Message message){
         int code = message.getCode();
         //average speed
-        if (code == 701) {
-            Printer.getInstance().print("arrivato un messaggio 701", "yellow");
+        if (code == 70115) {
+            Printer.getInstance().print("arrivato un messaggio 701 - 15 minuti", "yellow");
             System.out.println(message.getFlinkResult().toString());
-            monitorer.addAvgFromKafka(message.getFlinkResult());
+            monitorer.addAvgFromKafka15(message.getFlinkResult());
+        }
+        else if (code == 7011) {
+            Printer.getInstance().print("arrivato un messaggio 701 - 1 ora", "yellow");
+            System.out.println(message.getFlinkResult().toString());
+            monitorer.addAvgFromKafka1(message.getFlinkResult());
+        }
+        else if (code == 70124) {
+            Printer.getInstance().print("arrivato un messaggio 701 - 24 ore", "yellow");
+            System.out.println(message.getFlinkResult().toString());
+            monitorer.addAvgFromKafka24(message.getFlinkResult());
         }
         //quantile speed
-        else if (code == 702){
-            Printer.getInstance().print("arrivato un messaggio 702", "yellow");
-            monitorer.addQuantilFromKafka(message.getFlinkResult());
+        else if (code == 70215){
+            Printer.getInstance().print("arrivato un messaggio 702 - 15 minuti", "yellow");
+            monitorer.addQuantilFromKafka15(message.getFlinkResult());
+        }
+        else if (code == 7021){
+            Printer.getInstance().print("arrivato un messaggio 702 - 1 ora", "yellow");
+            monitorer.addQuantilFromKafka1(message.getFlinkResult());
+        }
+        else if (code == 70224){
+            Printer.getInstance().print("arrivato un messaggio 702 - 24 ore", "yellow");
+            monitorer.addQuantilFromKafka24(message.getFlinkResult());
         }
     }
 

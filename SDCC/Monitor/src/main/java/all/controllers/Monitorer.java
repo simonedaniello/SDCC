@@ -40,11 +40,20 @@ import java.util.*;
  */
 public class Monitorer {
 
+
     private ArrayList<FlinkResult> averageSpeedList = new ArrayList<>();
+    private ArrayList<FlinkResult> averageSpeedList1hour = new ArrayList<>();
+    private ArrayList<FlinkResult> averageSpeedList24hours = new ArrayList<>();
     private ArrayList<FlinkResult> oldAverageSpeedList= new ArrayList<>();
+    private ArrayList<FlinkResult> oldAverageSpeedList1hour= new ArrayList<>();
+    private ArrayList<FlinkResult> oldAverageSpeedList24hours= new ArrayList<>();
 
     private ArrayList<FlinkResult> quantileList = new ArrayList<>();
+    private ArrayList<FlinkResult> quantileList1hour = new ArrayList<>();
+    private ArrayList<FlinkResult> quantileList24hours = new ArrayList<>();
     private ArrayList<FlinkResult> oldQuantileList = new ArrayList<>();
+    private ArrayList<FlinkResult> oldQuantileList1hour = new ArrayList<>();
+    private ArrayList<FlinkResult> oldQuantileList24hours = new ArrayList<>();
 
     public Monitorer(){
 
@@ -73,7 +82,7 @@ public class Monitorer {
      * Retrieving data from kafka channel.
      * With this function the monitor listens on every topic and call the correct function
      */
-    public void addAvgFromKafka(FlinkResult f){
+    public void addAvgFromKafka15(FlinkResult f){
         if(f.getNumberOfCars() != 0) {
             boolean IhaveDoneSomething = false;
             String idToAdd = f.getKey();
@@ -99,7 +108,59 @@ public class Monitorer {
             Printer.getInstance().print("Non aggiungo perchè 0", "red");
     }
 
-    public void addQuantilFromKafka(FlinkResult f){
+    public void addAvgFromKafka1(FlinkResult f){
+        if(f.getNumberOfCars() != 0) {
+            boolean IhaveDoneSomething = false;
+            String idToAdd = f.getKey();
+            for (FlinkResult inList : averageSpeedList1hour) {
+                if (inList.getKey().equals(idToAdd)) {
+                    double total = f.getNumberOfCars() + inList.getNumberOfCars();
+                    double inListMultiplier = inList.getNumberOfCars() / total;
+                    double fmultiplier = f.getNumberOfCars()/total;
+                    inList.setValue(inList.getValue() * inListMultiplier + f.getValue() * fmultiplier);
+                    inList.setNumberOfCars((int) total);
+//                    Printer.getInstance().print("ho settato value a " + inList.getValue() + " e numero macchine a " + inList.getNumberOfCars(), "yellow");
+                    IhaveDoneSomething = true;
+                    break;
+                }
+            }
+            if (!IhaveDoneSomething) {
+                averageSpeedList1hour.add(f);
+//                Printer.getInstance().print("\n\naggiungo il semaforo "+ f.getKey() + " con valore " + f.getValue(), "yellow");
+            }
+
+        }
+        else
+            Printer.getInstance().print("Non aggiungo perchè 0", "red");
+    }
+
+    public void addAvgFromKafka24(FlinkResult f){
+        if(f.getNumberOfCars() != 0) {
+            boolean IhaveDoneSomething = false;
+            String idToAdd = f.getKey();
+            for (FlinkResult inList : averageSpeedList24hours) {
+                if (inList.getKey().equals(idToAdd)) {
+                    double total = f.getNumberOfCars() + inList.getNumberOfCars();
+                    double inListMultiplier = inList.getNumberOfCars() / total;
+                    double fmultiplier = f.getNumberOfCars()/total;
+                    inList.setValue(inList.getValue() * inListMultiplier + f.getValue() * fmultiplier);
+                    inList.setNumberOfCars((int) total);
+//                    Printer.getInstance().print("ho settato value a " + inList.getValue() + " e numero macchine a " + inList.getNumberOfCars(), "yellow");
+                    IhaveDoneSomething = true;
+                    break;
+                }
+            }
+            if (!IhaveDoneSomething) {
+                averageSpeedList24hours.add(f);
+//                Printer.getInstance().print("\n\naggiungo il semaforo "+ f.getKey() + " con valore " + f.getValue(), "yellow");
+            }
+
+        }
+        else
+            Printer.getInstance().print("Non aggiungo perchè 0", "red");
+    }
+
+    public void addQuantilFromKafka15(FlinkResult f){
         if(f.getNumberOfCars() != 0) {
             boolean IhaveDoneSomething = false;
             String idToAdd = f.getKey();
@@ -114,6 +175,42 @@ public class Monitorer {
             }
             if (!IhaveDoneSomething)
                 quantileList.add(f);
+        }
+    }
+
+    public void addQuantilFromKafka1(FlinkResult f){
+        if(f.getNumberOfCars() != 0) {
+            boolean IhaveDoneSomething = false;
+            String idToAdd = f.getKey();
+            for (FlinkResult inList : quantileList1hour) {
+                if (inList.getKey().equals(idToAdd)) {
+                    double total = f.getNumberOfCars() + inList.getNumberOfCars();
+                    inList.setValue(inList.getValue() * (inList.getNumberOfCars() / total) + f.getValue() * (f.getNumberOfCars() / total));
+                    inList.setNumberOfCars((int) total);
+                    IhaveDoneSomething = true;
+                    break;
+                }
+            }
+            if (!IhaveDoneSomething)
+                quantileList1hour.add(f);
+        }
+    }
+
+    public void addQuantilFromKafka24(FlinkResult f){
+        if(f.getNumberOfCars() != 0) {
+            boolean IhaveDoneSomething = false;
+            String idToAdd = f.getKey();
+            for (FlinkResult inList : quantileList24hours) {
+                if (inList.getKey().equals(idToAdd)) {
+                    double total = f.getNumberOfCars() + inList.getNumberOfCars();
+                    inList.setValue(inList.getValue() * (inList.getNumberOfCars() / total) + f.getValue() * (f.getNumberOfCars() / total));
+                    inList.setNumberOfCars((int) total);
+                    IhaveDoneSomething = true;
+                    break;
+                }
+            }
+            if (!IhaveDoneSomething)
+                quantileList24hours.add(f);
         }
     }
 
@@ -150,7 +247,7 @@ public class Monitorer {
      * 1: mode 1 hour average average speed list
      * 2: mode 24 hours average speed list
      */
-    public void saveDataOnMongo15min(){
+    private void saveDataOnMongo15min(){
         if(averageSpeedList.size() < 40)
             oldAverageSpeedList = averageSpeedList;
         else
@@ -162,18 +259,58 @@ public class Monitorer {
             oldQuantileList = (ArrayList<FlinkResult>) quantileList.subList(0, 39);
 
         try {
-            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("15averageSpeed", oldAverageSpeedList);
-            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("15quantileSpeed", oldQuantileList);
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15averageSpeed", oldAverageSpeedList);
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15quantileSpeed", oldQuantileList);
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
 
     }
 
+    private void saveDataOnMongo1hour(){
+        if(averageSpeedList1hour.size() < 40)
+            oldAverageSpeedList1hour = averageSpeedList1hour;
+        else
+            oldAverageSpeedList1hour = (ArrayList<FlinkResult>) averageSpeedList1hour.subList(0, 39);
+
+        if(quantileList1hour.size()<40)
+            oldQuantileList1hour = quantileList1hour;
+        else
+            oldQuantileList1hour = (ArrayList<FlinkResult>) quantileList1hour.subList(0, 39);
+
+        try {
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query1averageSpeed", oldAverageSpeedList1hour);
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query1quantileSpeed", oldQuantileList1hour);
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void saveDataOnMongo24hours(){
+        if(averageSpeedList24hours.size() < 40)
+            oldAverageSpeedList24hours = averageSpeedList24hours;
+        else
+            oldAverageSpeedList24hours = (ArrayList<FlinkResult>) averageSpeedList24hours.subList(0, 39);
+
+        if(quantileList24hours.size()<40)
+            oldQuantileList24hours = quantileList24hours;
+        else
+            oldQuantileList24hours = (ArrayList<FlinkResult>) quantileList24hours.subList(0, 39);
+
+        try {
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query24averageSpeed", oldAverageSpeedList24hours);
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query24quantileSpeed", oldQuantileList24hours);
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void calculateRanking(){
         averageSpeedList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
         quantileList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
         saveDataOnMongo15min();
+        saveDataOnMongo1hour();
+        saveDataOnMongo24hours();
     }
 
     private class TimerClass extends TimerTask{
@@ -188,16 +325,20 @@ public class Monitorer {
 
         printRankings();
 
-        Message m1 = new Message("monitorer", 711);
-        m1.setPartialRanking(averageSpeedList);
-        FirstProducer.getInstance().sendMessage("address", m1, "ranking");
+//        Message m1 = new Message("monitorer", 711);
+//        m1.setPartialRanking(averageSpeedList);
+//        FirstProducer.getInstance().sendMessage("address", m1, "ranking");
         averageSpeedList.clear();
+        averageSpeedList1hour.clear();
+        averageSpeedList24hours.clear();
 
 
-        Message m2 = new Message("monitorer", 712);
-        m2.setPartialRanking(quantileList);
-        FirstProducer.getInstance().sendMessage("address", m2, "ranking");
+//        Message m2 = new Message("monitorer", 712);
+//        m2.setPartialRanking(quantileList);
+//        FirstProducer.getInstance().sendMessage("address", m2, "ranking");
         quantileList.clear();
+        quantileList1hour.clear();
+        quantileList24hours.clear();
     }
 
     private void printRankings(){

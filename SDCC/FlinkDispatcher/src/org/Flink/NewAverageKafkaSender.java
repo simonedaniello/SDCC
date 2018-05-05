@@ -64,7 +64,7 @@ public class NewAverageKafkaSender {
             double value = stringDoubleTuple3.f1;
             int count = stringDoubleTuple3.f2;
             FlinkResult flinkResult = new FlinkResult(key, value, count);
-            Message m = new Message("flinkDispatcher", 701);
+            Message m = new Message("flinkDispatcher", 70115);
             m.setFlinkResult(flinkResult);
             String result = gson.toJson(m);
             return result.getBytes();

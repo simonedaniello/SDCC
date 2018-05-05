@@ -71,7 +71,7 @@ public class NewMedianKafkaSender {
             double value = stringDoubleTuple3.f1;
             int count = stringDoubleTuple3.f2;
             FlinkResult flinkResult = new FlinkResult(key, value, count);
-            Message m = new Message("flinkDispatcher", 702);
+            Message m = new Message("flinkDispatcher", 70215);
             m.setFlinkResult(flinkResult);
             String result = gson.toJson(m);
             return result.getBytes();
@@ -92,7 +92,6 @@ public class NewMedianKafkaSender {
 
     private static class MedianAggregate implements AggregateFunction<Tuple2<String, Double>, Tuple3<String, PSquared, Integer>, Tuple3<String, Double, Integer>> {
 
-        Integer count = 0;
         @Override
         public Tuple3<String, PSquared, Integer> createAccumulator() {
             return new Tuple3<>("initializer", new PSquared(0.5f), 0);
@@ -106,7 +105,7 @@ public class NewMedianKafkaSender {
 
         @Override
         public Tuple3<String, Double, Integer> getResult(Tuple3<String,PSquared,Integer> accumulator) {
-            System.out.println("Median is: ");
+//            System.out.println("Median is: ");
             return new Tuple3<>(accumulator.f0 + "mediana", (double) accumulator.f1.getPValue(), accumulator.f2);        }
 
         @Override

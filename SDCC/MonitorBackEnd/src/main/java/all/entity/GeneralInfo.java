@@ -1,5 +1,7 @@
 package all.entity;
 
+import main.java.FlinkResult;
+
 import java.util.ArrayList;
 
 public class GeneralInfo {
@@ -8,9 +10,13 @@ public class GeneralInfo {
     private int nOfCrossroads;
     private int nOfSemaphores;
     private int nOfMalfunctions;
-    private ArrayList<String> query1;
-    private ArrayList<String> query2;
-    private ArrayList<String> query3;
+    private ArrayList<FlinkResult> query1;
+    private ArrayList<FlinkResult> query11hour;
+    private ArrayList<FlinkResult> query124hours;
+    private ArrayList<FlinkResult> query2;
+    private ArrayList<FlinkResult> query21hour;
+    private ArrayList<FlinkResult> query224hours;
+    private ArrayList<FlinkResult> query3;
 
     public int getnOfControllers() {
         return nOfControllers;
@@ -36,27 +42,27 @@ public class GeneralInfo {
         this.nOfSemaphores = nOfSemaphores;
     }
 
-    public ArrayList<String> getQuery1() {
+    public ArrayList<FlinkResult> getQuery1() {
         return query1;
     }
 
-    public void setQuery1(ArrayList<String> query1) {
+    public void setQuery1(ArrayList<FlinkResult> query1) {
         this.query1 = query1;
     }
 
-    public ArrayList<String> getQuery2() {
+    public ArrayList<FlinkResult> getQuery2() {
         return query2;
     }
 
-    public void setQuery2(ArrayList<String> query2) {
+    public void setQuery2(ArrayList<FlinkResult> query2) {
         this.query2 = query2;
     }
 
-    public ArrayList<String> getQuery3() {
+    public ArrayList<FlinkResult> getQuery3() {
         return query3;
     }
 
-    public void setQuery3(ArrayList<String> query3) {
+    public void setQuery3(ArrayList<FlinkResult> query3) {
         this.query3 = query3;
     }
 
@@ -66,5 +72,37 @@ public class GeneralInfo {
 
     public void setnOfMalfunctions(int nOfMalfunctions) {
         this.nOfMalfunctions = nOfMalfunctions;
+    }
+
+    public ArrayList<FlinkResult> getQuery11hour() {
+        return query11hour;
+    }
+
+    public void setQuery11hour(ArrayList<FlinkResult> query11hour) {
+        this.query11hour = query11hour;
+    }
+
+    public ArrayList<FlinkResult> getQuery124hours() {
+        return query124hours;
+    }
+
+    public void setQuery124hours(ArrayList<FlinkResult> query124hours) {
+        this.query124hours = query124hours;
+    }
+
+    public ArrayList<FlinkResult> getQuery21hour() {
+        return query21hour;
+    }
+
+    public void setQuery21hour(ArrayList<FlinkResult> query21hour) {
+        this.query21hour = query21hour;
+    }
+
+    public ArrayList<FlinkResult> getQuery224hours() {
+        return query224hours;
+    }
+
+    public void setQuery224hours(ArrayList<FlinkResult> query224hours) {
+        this.query224hours = query224hours;
     }
 }
