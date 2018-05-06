@@ -21,6 +21,8 @@ import org.apache.flink.util.Collector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Properties;
@@ -30,18 +32,31 @@ public class NewAverageKafkaSender {
 
     private static String INPUT_KAFKA_TOPIC = null;
     private static int TIME_WINDOW = 0;
-    private static final String topicname = "monitorer";
     private static final Logger log = LoggerFactory.getLogger(org.Flink.WindowTrafficData.class);
-    private static final String flinkDispatcherID = "IDtoChangeAndRandomize";
 
     public void calculateAvg() throws Exception {
 
-        INPUT_KAFKA_TOPIC = "semaphoresensor";
-        TIME_WINDOW = 10;
         Properties properties = new Properties();
-        properties.setProperty("bootstrap.servers", "localhost:9092");
-        properties.setProperty("zookeeper.connect", "localhost:2181");
-        properties.setProperty("group.id", INPUT_KAFKA_TOPIC);
+        String filename = "consumer.props";
+        InputStream input = NewAverageKafkaSender.class.getClassLoader().getResourceAsStream(filename);
+        if(input==null){
+            System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
+            return;
+        }
+        properties.load(input);
+
+
+        TIME_WINDOW = 10;
+        INPUT_KAFKA_TOPIC = properties.getProperty("INPUT_KAFKA_TOPIC");
+        String flinkDispatcherID = properties.getProperty("flinkDispatcherID");
+        String topicname = properties.getProperty("topic_name");
+
+//        INPUT_KAFKA_TOPIC = "semaphoresensor";
+//        properties.setProperty("bootstrap.servers", "localhost:9092");
+//        properties.setProperty("zookeeper.connect", "localhost:2181");
+//        properties.setProperty("group.id", INPUT_KAFKA_TOPIC);
+
+
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         DataStreamSource<String> stream = env.addSource(new FlinkKafkaConsumer011(INPUT_KAFKA_TOPIC, new SimpleStringSchema(), properties));
 

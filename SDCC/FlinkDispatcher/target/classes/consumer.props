@@ -13,3 +13,10 @@ session.timeout.ms=10000
 fetch.min.bytes=50000
 receive.buffer.bytes=262144
 max.partition.fetch.bytes=2097152
+
+
+flinkDispatcherID=IDtoChangeAndRandomize
+TIME_CYCLE=60000
+topic_name=monitorer
+INPUT_KAFKA_TOPIC=semaphoresensor
+
