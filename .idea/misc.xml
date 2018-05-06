@@ -30,12 +30,8 @@
         <option value="$PROJECT_DIR$/SDCC/SemaphoreController/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/entities/pom.xml" />
         <option value="$PROJECT_DIR$/SDCC/Semaphore/pom.xml" />
+        <option value="$PROJECT_DIR$/SDCC/Monitor/pom.xml" />
       </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/flink/pom.xml" />
-      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="9.0" project-jdk-type="JavaSDK">

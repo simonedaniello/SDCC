@@ -16,6 +16,7 @@
         <module name="FlinkDispatcher" />
         <module name="iot-traffic-monitor-flink" />
         <module name="IoTSimulator" />
+        <module name="Monitor" />
         <module name="monitorBackEnd" />
         <module name="MonitorBackEnd" />
         <module name="monitorBackEnd (1)" />
@@ -24,6 +25,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="CrossroadWR" target="1.8" />
       <module name="entities" target="1.8" />
       <module name="FlinkDispatcher" target="1.8" />
       <module name="IoTSimulator" target="1.8" />

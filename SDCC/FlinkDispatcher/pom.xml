@@ -88,6 +88,14 @@ under the License.
             <version>3.2</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-streams -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-streams</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+
 
         <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
         <dependency>
@@ -194,6 +202,16 @@ under the License.
             <artifactId>activemq-all</artifactId>
             <version>5.16.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-kafka-0.11_2.11</artifactId>
+            <version>1.6-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>Semaphore</groupId>
+            <artifactId>Semaphore</artifactId>
+            <version>0.1</version>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -229,9 +247,9 @@ under the License.
 
 
                 <!--<dependency>-->
-                    <!--<groupId>org.apache.flink</groupId>-->
-                    <!--<artifactId>flink-streaming-scala_2.11</artifactId>-->
-                    <!--<version>1.1.2</version>-->
+                <!--<groupId>org.apache.flink</groupId>-->
+                <!--<artifactId>flink-streaming-scala_2.11</artifactId>-->
+                <!--<version>1.1.2</version>-->
                 <!--</dependency>-->
                 <dependency>
                     <groupId>org.apache.flink</groupId>

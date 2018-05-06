@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml" filepath="$PROJECT_DIR$/SDCC/FlinkDispatcher/FlinkDispatcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/FrontEnd/FrontEnd.iml" filepath="$PROJECT_DIR$/SDCC/FrontEnd/FrontEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/IoTSimulator/IoTSimulator.iml" filepath="$PROJECT_DIR$/SDCC/IoTSimulator/IoTSimulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/Monitor/Monitor.iml" filepath="$PROJECT_DIR$/SDCC/Monitor/Monitor.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/MonitorBackEnd.iml" filepath="$PROJECT_DIR$/SDCC/MonitorBackEnd/MonitorBackEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml" filepath="$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/SemaphoreController/SemaphoreController.iml" filepath="$PROJECT_DIR$/SDCC/SemaphoreController/SemaphoreController.iml" />
