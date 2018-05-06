@@ -32,8 +32,7 @@ public class NewAverageKafkaSender {
     private static int TIME_WINDOW = 0;
     private static final String topicname = "monitorer";
     private static final Logger log = LoggerFactory.getLogger(org.Flink.WindowTrafficData.class);
-
-
+    private static final String flinkDispatcherID = "IDtoChangeAndRandomize";
 
     public void calculateAvg() throws Exception {
 
@@ -64,7 +63,7 @@ public class NewAverageKafkaSender {
             double value = stringDoubleTuple3.f1;
             int count = stringDoubleTuple3.f2;
             FlinkResult flinkResult = new FlinkResult(key, value, count);
-            Message m = new Message("flinkDispatcher", 70115);
+            Message m = new Message(flinkDispatcherID, 70115);
             m.setFlinkResult(flinkResult);
             String result = gson.toJson(m);
             return result.getBytes();

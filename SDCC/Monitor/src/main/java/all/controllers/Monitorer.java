@@ -58,7 +58,7 @@ public class Monitorer {
     public Monitorer(){
 
         FirstConsumer fc = FirstConsumer.getInstance();
-        fc.setMonitorer(this);
+        fc.setMonitorer(this, new FlinkStatusMonitorer());
         try {
             fc.subscribeToTopic("monitorer");
 

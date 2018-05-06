@@ -39,7 +39,7 @@ public class NewMedianKafkaSender {
     private static int TIME_WINDOW = 0;
     private static final String topicname = "monitorer";
     private static final Logger log = LoggerFactory.getLogger(org.Flink.WindowTrafficData.class);
-
+    private static final String flinkDispatcherID = "IDtoChangeAndRandomize";
 
 
     public void calculateMedian() throws Exception {
@@ -71,7 +71,7 @@ public class NewMedianKafkaSender {
             double value = stringDoubleTuple3.f1;
             int count = stringDoubleTuple3.f2;
             FlinkResult flinkResult = new FlinkResult(key, value, count);
-            Message m = new Message("flinkDispatcher", 70215);
+            Message m = new Message(flinkDispatcherID, 70215);
             m.setFlinkResult(flinkResult);
             String result = gson.toJson(m);
             return result.getBytes();

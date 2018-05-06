@@ -1,6 +1,7 @@
 package all.front;
 
 
+import all.controllers.FlinkStatusMonitorer;
 import all.controllers.Monitorer;
 import com.google.gson.Gson;
 import main.java.Message;
@@ -19,6 +20,7 @@ public class FirstConsumer {
 
     private static FirstConsumer instance = new FirstConsumer();
     private Monitorer monitorer;
+    private FlinkStatusMonitorer flinkStatusMonitorer;
 
 
     private FirstConsumer(){
@@ -37,9 +39,10 @@ public class FirstConsumer {
 
 
 
-    public void setMonitorer(Monitorer monitorer){
+    public void setMonitorer(Monitorer monitorer, FlinkStatusMonitorer flinkStatusMonitorer){
         createConsumer();
         this.monitorer = monitorer;
+        this.flinkStatusMonitorer = flinkStatusMonitorer;
     }
 
 
@@ -115,32 +118,39 @@ public class FirstConsumer {
         int code = message.getCode();
         //average speed
         if (code == 70115) {
-            Printer.getInstance().print("arrivato un messaggio 701 - 15 minuti", "yellow");
-            System.out.println(message.getFlinkResult().toString());
+//            Printer.getInstance().print("arrivato un messaggio 701 - 15 minuti", "yellow");
+            flinkStatusMonitorer.updateTimeout(message.getID());
             monitorer.addAvgFromKafka15(message.getFlinkResult());
         }
         else if (code == 7011) {
-            Printer.getInstance().print("arrivato un messaggio 701 - 1 ora", "yellow");
-            System.out.println(message.getFlinkResult().toString());
+//            Printer.getInstance().print("arrivato un messaggio 701 - 1 ora", "yellow");
+            flinkStatusMonitorer.updateTimeout(message.getID());
             monitorer.addAvgFromKafka1(message.getFlinkResult());
         }
         else if (code == 70124) {
-            Printer.getInstance().print("arrivato un messaggio 701 - 24 ore", "yellow");
-            System.out.println(message.getFlinkResult().toString());
+//            Printer.getInstance().print("arrivato un messaggio 701 - 24 ore", "yellow");
+            flinkStatusMonitorer.updateTimeout(message.getID());
             monitorer.addAvgFromKafka24(message.getFlinkResult());
         }
         //quantile speed
         else if (code == 70215){
-            Printer.getInstance().print("arrivato un messaggio 702 - 15 minuti", "yellow");
+//            Printer.getInstance().print("arrivato un messaggio 702 - 15 minuti", "yellow");
+            flinkStatusMonitorer.updateTimeout(message.getID());
             monitorer.addQuantilFromKafka15(message.getFlinkResult());
         }
         else if (code == 7021){
-            Printer.getInstance().print("arrivato un messaggio 702 - 1 ora", "yellow");
+//            Printer.getInstance().print("arrivato un messaggio 702 - 1 ora", "yellow");
+            flinkStatusMonitorer.updateTimeout(message.getID());
             monitorer.addQuantilFromKafka1(message.getFlinkResult());
         }
         else if (code == 70224){
-            Printer.getInstance().print("arrivato un messaggio 702 - 24 ore", "yellow");
+//            Printer.getInstance().print("arrivato un messaggio 702 - 24 ore", "yellow");
+            flinkStatusMonitorer.updateTimeout(message.getID());
             monitorer.addQuantilFromKafka24(message.getFlinkResult());
+        }
+        //monitoring status message
+        else if (code == 2001){
+            flinkStatusMonitorer.updateTimeout(message.getID());
         }
     }
 
