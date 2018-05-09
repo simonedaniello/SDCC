@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.*;
 import com.mongodb.util.JSON;
 import main.java.FlinkResult;
+import main.java.Semaphore;
 import main.java.system.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -134,8 +135,7 @@ public class MongoDataStore implements DataStore {
 		while (cursor.hasNext()) {
             crossroadsCount ++;
             data = cursor.next();
-
-            List<ServiceEventRequest> aaa = (List<ServiceEventRequest>) data.get("semaphores");
+            List<Semaphore> aaa = (List<Semaphore>) data.get("semaphores");
             semaphoresCont += aaa.size();
         }
 
@@ -217,6 +217,7 @@ public class MongoDataStore implements DataStore {
         gi.setQuery2(query215);
         gi.setQuery21hour(query21);
         gi.setQuery224hours(query224);
+
 
         Printer.getInstance().print(gi.getQuery1().toString(), "yellow");
 		return gi;

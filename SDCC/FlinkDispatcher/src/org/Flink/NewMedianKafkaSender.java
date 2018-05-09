@@ -124,7 +124,7 @@ public class NewMedianKafkaSender {
         @Override
         public Tuple3<String, Double, Integer> getResult(Tuple3<String,PSquared,Integer> accumulator) {
 //            System.out.println("Median is: ");
-            return new Tuple3<>(accumulator.f0 + "mediana", (double) accumulator.f1.getPValue(), accumulator.f2);        }
+            return new Tuple3<>(accumulator.f0, (double) accumulator.f1.getPValue(), accumulator.f2);        }
 
         @Override
         public Tuple3<String,PSquared,Integer> merge(Tuple3<String,PSquared,Integer> a, Tuple3<String,PSquared,Integer> b) {

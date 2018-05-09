@@ -33,6 +33,14 @@ angular.module('myApp.generalInfoPage', ['ngRoute'])
     getGeneralInfos();
     // $interval(getGeneralInfos(), 1000);
 
+    $scope.getSemaphoreInfo = function(item){
+        console.log("vengo chiamato");
+        $scope.semaphoreinfoaddress = item.address;
+        $scope.semaphoreinfoid = item.semId;
+        $scope.semaphoreinfolatitude = item.latitude;
+        $scope.semaphoreinfolongitude =   item.longitude;
+    };
+
 
 
     $scope.$on('$destroy', function() {

@@ -13,6 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Properties;
 import java.util.logging.Filter;
 import java.util.logging.Level;
@@ -34,35 +36,35 @@ public class Runner {
     private static final Logger logger = LoggerFactory.getLogger(Runner.class);
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 
 
 
-        System.out.println("args.length = " + args.length);
-       // BasicConfigurator.configure();
-      //  PropertyConfigurator.configure("/home/federico/IdeaProjects/SDCC/SDCC/Semaphore/src/main/java/log4j.properties");
-
-
-
-        if(args.length == 0) {
-            SpringApplication.run(Runner.class, args);
+        Properties properties = new Properties();
+        String filename = "semaphoresConfig.props";
+        InputStream input = Semaphore.class.getClassLoader().getResourceAsStream(filename);
+        if(input==null){
+            System.out.println("\n\nSorry, unable to find " + filename);
+            return;
         }
-        else if (args.length == 3){
-            int currentLat = 10;
-            int currentLong = 20;
-            for(int i = 0; i<Integer.valueOf(args[0]); i++) {
-                new SemaphoreGenerator(args[1], args[2], String.valueOf(currentLat), String.valueOf(currentLong));
-                currentLat += 10;
-                currentLong += 10;
+        properties.load(input);
+
+
+        String[] latitudes = properties.getProperty("latitude").split(",");
+        String[] longitudes = properties.getProperty("longitude").split(",");
+        String[] addresses = properties.getProperty("address").split(",");
+        String[] crossroads = properties.getProperty("crossroad").split(",");
+        String[] flinkDispatchers = properties.getProperty("flinkDispatcher").split(",");
+        String[] controllerips = properties.getProperty("controllerip").split(",");
+
+        for(int i = 0; i < latitudes.length; i++){
+            try {
+                new SemaphoreGenerator(crossroads[i], controllerips[i], latitudes[i], longitudes[i], flinkDispatchers[i], addresses[i]);
+            } catch (IndexOutOfBoundsException e){
+                Printer.getInstance().print("\n\n\nERROR IN PROPERTIES FILE (CHECK NUMBER OF INPUTS)\n\n\n", "red");
             }
         }
-        else {
-            Printer.getInstance().print("error\nwrong number of arguments\nremember to use " +
-                    "the next codes:\n args[0] = kafka port\nargs[1] = " +
-                    "crossroadID\nargs[2] = controller ip", "red");
-        }
-
 
 	}
 
@@ -72,12 +74,16 @@ public class Runner {
 	    private String args2;
 	    private String latitude;
 	    private String longitude;
+	    private String address;
+	    private String flinkDispatcher;
 
-	    private SemaphoreGenerator(String args1, String args2, String latitude, String longitude){
-	        this.args1 = args1;
-	        this.args2 = args2;
+	    private SemaphoreGenerator(String controllerName, String controllerIP, String latitude, String longitude, String flinkDispatcher, String address){
+	        this.args1 = controllerName;
+	        this.args2 = controllerIP;
 	        this.latitude = latitude;
 	        this.longitude = longitude;
+	        this.address=address;
+	        this.flinkDispatcher=flinkDispatcher;
 
             (new Thread(this)).start();
         }
@@ -89,13 +95,7 @@ public class Runner {
             s.setControllerIP(args2);
             s.setLatitude(latitude);
             s.setLongitude(longitude);
-
-//            Printer.getInstance().print("started test mode", "yellow");
-//            Printer.getInstance().print("\tlatitude: " + s.getLatitude(), "yellow");
-//            Printer.getInstance().print("\tlongitude: " + s.getLongitude(), "yellow");
-//            Printer.getInstance().print("\tkafka port: " + s.getKafkaport(), "yellow");
-//            Printer.getInstance().print("\tcorssroad id: " + s.getCrossroad(), "yellow");
-//            Printer.getInstance().print("\tcontroller ip: " + s.getControllerIP(), "yellow");
+            s.setStreet(address);
 
             SemaphoreClass sc = new SemaphoreClass();
             sc.registerSemaphore(s);

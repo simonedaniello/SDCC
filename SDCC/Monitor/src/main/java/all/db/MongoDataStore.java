@@ -91,12 +91,39 @@ public class MongoDataStore implements DataStore {
 		DBObject newEntry = new BasicDBObject();
 
         newEntry.put("_id", entryType);
+        DBObject data;
 
         BasicDBList ranks = new BasicDBList();
         for(Object fr : resultList){
-            BasicDBObject entry = new BasicDBObject("semId", ((FlinkResult) fr).getKey()).append("value", ((FlinkResult) fr).getValue());
+            BasicDBObject entry = new BasicDBObject("semId", ((FlinkResult) fr).getKey());
+            entry.append("value", ((FlinkResult) fr).getValue());
+
+            //{"semaphores.semaphoreID": "28e7234668777f9ed7a63b82eac501322fa9ac707238d8a3e9e89c599458ab13"}, {_id: 0, 'semaphores.$': 1}
+
+			DBObject clause1 = new BasicDBObject("semaphores.semaphoreID", ((FlinkResult) fr).getKey());
+//			DBObject clause2 = new BasicDBObject("_id", 0);
+			DBObject clause3 = new BasicDBObject("semaphores.$", 1);
+			BasicDBList and = new BasicDBList();
+			and.add(clause1);
+//			and.add(clause2);
+			and.add(clause3);
+			DBObject query = new BasicDBObject("$and", and);
+			Printer.getInstance().print(and.toString() + "\n\n\n", "yellow");
+
+            DBCursor cursor = rawEventsColl.find(clause1, clause3);
+            while (cursor.hasNext()) {
+                data = cursor.next();
+                BasicDBList dblist = (BasicDBList) data.get("semaphores");
+                BasicDBObject value = (BasicDBObject) dblist.get(0);
+                Printer.getInstance().print(value.toString(), "cyan");
+                entry.append("latitude", value.get("latitude"));
+                entry.append("longitude", value.get("longitude"));
+                entry.append("address", value.get("semaphoreStreet"));
+            }
+
             ranks.add(entry);
         }
+//        Printer.getInstance().print("fine aggiunta \n\n", "yellow");
         newEntry.put("ranking", ranks);
 
 

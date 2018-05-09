@@ -62,7 +62,7 @@ public class MongoDataStore implements DataStore {
             rawEventsColl.insert(rawEvent);
         }
 
-		printAllDocuments(rawEventsColl);
+//		printAllDocuments(rawEventsColl);
 		return success;
 	}
 
@@ -81,7 +81,7 @@ public class MongoDataStore implements DataStore {
 			request.setName((String) data.get("name"));
 			list.add(request);
 		}
-		System.out.println("PRINT data after while::" + list);
+//		System.out.println("PRINT data after while::" + list);
 		return list;
 	}
 
@@ -105,12 +105,13 @@ public class MongoDataStore implements DataStore {
 
         storeRawEvent("{'_id' : '" + crossroad + "', " +
                 "'crossroadID' : '" +  crossroad + "', " +
+				"'type': 'crossroad', " +
                 "'street' : '" + street +"', " +
                 "'semaphores' : [" +
                 "]}");
 
 
-        printAllDocuments(rawEventsColl);
+//        printAllDocuments(rawEventsColl);
         return true;
 	}
 
@@ -148,13 +149,15 @@ public class MongoDataStore implements DataStore {
         BasicDBObject o = new BasicDBObject("semaphoreID", semaphore.getID());
         o.append("semaphoreStreet", semaphore.getStreet());
         o.append("malfunctions", semaphore.getMalfunctions());
+        o.append("latitude", semaphore.getLatitude());
+        o.append("longitude", semaphore.getLongitude());
 		DBObject listItem = new BasicDBObject("semaphores", o);
         DBObject updateQuery = new BasicDBObject("$push", listItem);
 
         DBObject searchByCrossroad = new BasicDBObject("_id", crossroadName);
         DBObject dbObj = rawEventsColl.findOne(searchByCrossroad);
 
-        System.out.println(dbObj);
+//        System.out.println(dbObj);
 
         rawEventsColl.update( dbObj, updateQuery);
 

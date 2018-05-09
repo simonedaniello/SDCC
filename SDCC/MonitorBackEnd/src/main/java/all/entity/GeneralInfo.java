@@ -1,6 +1,7 @@
 package all.entity;
 
 import main.java.FlinkResult;
+import main.java.Semaphore;
 
 import java.util.ArrayList;
 
@@ -105,4 +106,5 @@ public class GeneralInfo {
     public void setQuery224hours(ArrayList<FlinkResult> query224hours) {
         this.query224hours = query224hours;
     }
+
 }

@@ -1,0 +1,6 @@
+latitude=10,20,30,40,90,91
+longitude=50,60,70,80,92,93
+address=via polibio,via seneca,via tacito,via platone,via lucrezio,via cesare
+controllerip=localhost,localhost,localhost,localhost,localhost,localhost
+crossroad=crossroadtest,crossroadtest,crossroadtest,crossroadtest,crossroadtest2,crossroadtest2
+flinkDispatcher=semaphoresensor,semaphoresensor,semaphoresensor,semaphoresensor,semaphoresensor,semaphoresensor
