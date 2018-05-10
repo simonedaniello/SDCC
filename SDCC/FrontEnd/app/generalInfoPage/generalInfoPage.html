@@ -9,14 +9,25 @@
     </div>
 
     <div class="modal-body row">
-        <div class="col-md-7" style="border-right: 6px black; border-right-style: solid">
-                number of controllers : {{generalInfo.nOfControllers}} <br>
-                number of semaphores : {{generalInfo.nOfSemaphores}} <br>
-                number of crossroads : {{generalInfo.nOfCrossroads}} <br>
-                number of malfunctions: to implement <br>
-                Query 1 <br>
+        <div class="col-md-7" style="border-right: 6px black; border-right-style: solid; text-align: center">
+                number of controllers:<br>
+                <div class="wrapper">
+                    <div id="targetncontrollers"></div>
+                </div>
+                number of semaphores:<br>
+                <div class="wrapper">
+                    <div id="targetnsemaphores"></div>
+                </div>
+                number of crossroads:<br>
+                <div class="wrapper">
+                    <div id="targetncrossroads"></div>
+                </div>
+                number of malfunctions:<br> to implement <br>
+                <div class="wrapper">
+                    <div id="targetquery1"></div>
+                </div>
                 <div class="container" align="center" style="padding:5px">
-                    <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query115collapse" aria-expanded="false" aria-controls="query115collapse" style="padding:5px">
+                    <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#query115collapse" aria-expanded="false" aria-controls="query115collapse" style="padding:5px">
                         Get speed average ranking (15 minutes)
                     </button>
                     <div id="query115collapse" class="collapse">
@@ -42,7 +53,7 @@
                 </div>
 
                 <div class="container" align="center" style="padding:5px">
-                    <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query11collapse" aria-expanded="false" aria-controls="query11collapse" style="padding:5px">
+                    <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#query11collapse" aria-expanded="false" aria-controls="query11collapse" style="padding:5px">
                         Get speed average ranking (1 hour)
                     </button>
                     <div id="query11collapse" class="collapse">
@@ -52,6 +63,7 @@
                                 <th>Position</th>
                                 <th>Semaphore ID</th>
                                 <th>Average speed</th>
+                                <th>Get Info</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -59,6 +71,7 @@
                                 <td>{{$index +1 }}</td>
                                 <td>{{ y.address }}</td>
                                 <td>{{ y.value }}</td>
+                                <td><button ng-click="getSemaphoreInfo(y)">getInfo</button></td>
                             </tr>
                             </tbody>
                         </table>
@@ -66,7 +79,7 @@
                 </div>
 
                 <div class="container" align="center" style="padding:5px">
-                    <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query124collapse" aria-expanded="false" aria-controls="query124collapse" style="padding:5px">
+                    <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#query124collapse" aria-expanded="false" aria-controls="query124collapse" style="padding:5px">
                         Get speed average ranking (24 hours)
                     </button>
                     <div id="query124collapse" class="collapse">
@@ -76,6 +89,7 @@
                                 <th>Position</th>
                                 <th>Semaphore ID</th>
                                 <th>Average speed</th>
+                                <th>Get Info</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -83,15 +97,18 @@
                                 <td>{{$index +1 }}</td>
                                 <td>{{ y.address }}</td>
                                 <td>{{ y.value }}</td>
+                                <td><button ng-click="getSemaphoreInfo(y)">getInfo</button></td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                Query 2 <br>
+            <div class="wrapper">
+                <div id="targetquery2"></div>
+            </div>
 
                 <div class="container" align="center" style="padding:5px">
-                    <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query215collapse" aria-expanded="false" aria-controls="query215collapse" style="padding:5px">
+                    <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#query215collapse" aria-expanded="false" aria-controls="query215collapse" style="padding:5px">
                         Get speed median ranking (15 minutes)
                     </button>
                     <div id="query215collapse" class="collapse">
@@ -101,6 +118,7 @@
                                 <th>Position</th>
                                 <th>Semaphore ID</th>
                                 <th>Average speed</th>
+                                <th>Get Info</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -108,6 +126,7 @@
                                 <td>{{$index +1 }}</td>
                                 <td>{{ y.address }}</td>
                                 <td>{{ y.value }}</td>
+                                <td><button ng-click="getSemaphoreInfo(y)">getInfo</button></td>
                             </tr>
                             </tbody>
                         </table>
@@ -115,7 +134,7 @@
                 </div>
 
                 <div class="container" align="center" style="padding:5px">
-                    <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query21collapse" aria-expanded="false" aria-controls="query21collapse" style="padding:5px">
+                    <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#query21collapse" aria-expanded="false" aria-controls="query21collapse" style="padding:5px">
                         Get speed median ranking (1 hour)
                     </button>
                     <div id="query21collapse" class="collapse">
@@ -125,6 +144,7 @@
                                 <th>Position</th>
                                 <th>Semaphore ID</th>
                                 <th>Average speed</th>
+                                <th>Get Info</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -132,6 +152,7 @@
                                 <td>{{$index +1 }}</td>
                                 <td>{{ y.address }}</td>
                                 <td>{{ y.value }}</td>
+                                <td><button ng-click="getSemaphoreInfo(y)">getInfo</button></td>
                             </tr>
                             </tbody>
                         </table>
@@ -139,7 +160,7 @@
                 </div>
 
                 <div class="container" align="center" style="padding:5px">
-                    <button class="btn btn-default btn-block" type="button" data-toggle="collapse" data-target="#query224collapse" aria-expanded="false" aria-controls="query224collapse" style="padding:5px">
+                    <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#query224collapse" aria-expanded="false" aria-controls="query224collapse" style="padding:5px">
                         Get speed median ranking (24 hours)
                     </button>
                     <div id="query224collapse" class="collapse">
@@ -149,6 +170,7 @@
                                 <th>Position</th>
                                 <th>Semaphore ID</th>
                                 <th>Average speed</th>
+                                <th>Get Info</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -156,24 +178,30 @@
                                 <td>{{$index +1 }}</td>
                                 <td>{{ y.address }}</td>
                                 <td>{{ y.value }}</td>
+                                <td><button ng-click="getSemaphoreInfo(y)">getInfo</button></td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                query 3: to implement <br>
+            <div class="wrapper">
+                <div id="targetquery3"></div>
+            </div>
+            to implement <br>
         </div>
 
-        <div class="col-md-5">
+        <div class="col-md-5" style="text-align: center">
             <h2>Semaphore Info</h2>
             Semaphore ID:<br>
-            {{semaphoreinfoid}}<br>
+            <span style="font-weight:bold">{{semaphoreinfoid}}</span><br>
             Semaphore address:<br>
-            {{semaphoreinfoaddress}}<br>
+            <span style="font-weight:bold">{{semaphoreinfoaddress}}</span><br>
             Semaphore latitude:<br>
-            {{semaphoreinfolatitude}}<br>
+            <span style="font-weight:bold">{{semaphoreinfolatitude}}</span><br>
             Semaphore longitude:<br>
-            {{semaphoreinfolongitude}}<br>
+            <span style="font-weight:bold">{{semaphoreinfolongitude}}</span><br>
+
+            <div id="mapid"></div>
         </div>
     </div>
 

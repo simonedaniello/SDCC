@@ -6,12 +6,12 @@
 
     <div class="container" ng-repeat="x in crossroads" align="center" style="padding:5px">
         <!--{{x}}-->
-        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#crossroadCollapse" aria-expanded="false" aria-controls="crossroadCollapse" style="padding:5px">
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#crossroadCollapse.{{x.crossroadID}}" aria-expanded="false" aria-controls="crossroadCollapse.{{x.crossroadID}}" style="padding:5px">
             {{x.crossroadID}} - {{x.street}}
             <!--{{x}}-->
         </button>
         <!--<a href="#crossroadCollapse" class="btn btn-success" data-toggle="collapse"></a>-->
-        <div id="crossroadCollapse" class="collapse">
+        <div id="crossroadCollapse.{{x.crossroadID}}" class="collapse">
             <table class="table table-striped">
                 <thead>
                 <tr>
