@@ -56,6 +56,7 @@ angular.module('myApp.generalInfoPage', ['ngRoute'])
         $scope.semaphoreinfoid = item.semId;
         $scope.semaphoreinfolatitude = item.latitude;
         $scope.semaphoreinfolongitude =   item.longitude;
+        $scope.malfunctions = item.malfunctions;
         initializeMap(item.latitude, item.longitude)
         // initializeMap(47.31, 5.38)
     };

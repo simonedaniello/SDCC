@@ -33,9 +33,17 @@
 
 	<dependencies>
 
+        <!-- https://mvnrepository.com/artifact/org.telegram/telegrambots -->
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots</artifactId>
+            <version>3.6.1</version>
+        </dependency>
 
 
-		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
+
+
+        <!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>kafka_2.11</artifactId>

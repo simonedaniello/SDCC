@@ -5,9 +5,11 @@ package db;
 
 import com.mongodb.*;
 import com.mongodb.util.JSON;
+import main.java.FlinkResult;
 import main.java.Semaphore;
 import main.java.system.Printer;
 import org.bson.types.ObjectId;
+import org.h2.engine.DbObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.UnknownHostException;
@@ -151,6 +153,7 @@ public class MongoDataStore implements DataStore {
         o.append("malfunctions", semaphore.getMalfunctions());
         o.append("latitude", semaphore.getLatitude());
         o.append("longitude", semaphore.getLongitude());
+        o.append("malfunctions", 0);
 		DBObject listItem = new BasicDBObject("semaphores", o);
         DBObject updateQuery = new BasicDBObject("$push", listItem);
 
@@ -163,7 +166,38 @@ public class MongoDataStore implements DataStore {
 
     }
 
-    public void printAllDocuments(DBCollection collection) {
+	@Override
+	public void addMalfunctionToDB(String semaphoreid) {
+		int currentMalfunction;
+
+		//searching for the object containing the semaphoreID
+        DBObject clause1 = new BasicDBObject("semaphores.semaphoreID", semaphoreid);
+		DBObject clause3 = new BasicDBObject("semaphores.$", 1);
+		DBCursor cursor = rawEventsColl.find(clause1, clause3);
+        while (cursor.hasNext()) {
+            DBObject data = cursor.next();
+
+            //getting the semaphore
+            BasicDBList dblist = (BasicDBList) data.get("semaphores");
+            BasicDBObject value = (BasicDBObject) dblist.get(0);
+
+            //modifying the number of malfunctions
+			currentMalfunction = (int) value.get("malfunctions");
+
+			//querying for the update
+			BasicDBObject query = new BasicDBObject();
+			query.put("_id", data.get("_id"));
+			query.put("semaphores.semaphoreID", value.get("semaphoreID"));
+			BasicDBObject d = new BasicDBObject();
+			d.put("semaphores.$.malfunctions", currentMalfunction + 1);
+			BasicDBObject command = new BasicDBObject();
+			command.put("$set", d);
+			rawEventsColl.update(query, command);
+        }
+
+	}
+
+	public void printAllDocuments(DBCollection collection) {
         DBCursor cursor = collection.find();
         while (cursor.hasNext()) {
             Printer.getInstance().print(cursor.next().toString(), "green");

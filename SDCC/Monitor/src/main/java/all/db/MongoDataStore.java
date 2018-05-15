@@ -116,6 +116,7 @@ public class MongoDataStore implements DataStore {
                 entry.append("latitude", value.get("latitude"));
                 entry.append("longitude", value.get("longitude"));
                 entry.append("address", value.get("semaphoreStreet"));
+                entry.append("malfunctions", value.get("malfunctions"));
             }
 
             ranks.add(entry);

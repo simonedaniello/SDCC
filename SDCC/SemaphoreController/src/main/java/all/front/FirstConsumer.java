@@ -121,6 +121,10 @@ public class FirstConsumer {
         else if (code == 400) {
             monitorer.addSemaphoreToMonitor(message.getSemaphore());
         }
+        else if (code == 404) {
+            Printer.getInstance().print("\n\n\nARRIVATO MALFUNCTION dal semaforo " + message.getID() + "\n\n\n", "yellow");
+            crossroadController.sendMalfunctionToSemaphores(message.getID());
+        }
         //---------------------2PC-----------------------
         else if (code == 311){
             twopc.updateVotes(message.getID());
