@@ -18,9 +18,9 @@ public class SemaphoreSensor {
     private int greenDuration;
     private double carsInTimeUnit;
     private double meanSpeed;
-    private boolean isGreenWorking;
-    private boolean isYellowWorking;
-    private boolean isRedWorking;
+    private boolean isGreenWorking = true;
+    private boolean isYellowWorking = true;
+    private boolean isRedWorking = true;
 
 
     public String getCrossroadID() {
@@ -124,9 +124,18 @@ public class SemaphoreSensor {
         meanSpeed = (double) (new Random().nextInt(80) + 20);
         timestamp = (new Date()).toString();
         greenDuration = 60;
-        isGreenWorking = true;
-        isRedWorking = true;
-        isYellowWorking = true;
+
+        //Randomize broken bulb
+        double g = Math.random();
+        double y = Math.random();
+        double r = Math.random();
+
+        if (g>=0.9)
+            isGreenWorking = false;
+        if (y>=0.9)
+            isRedWorking = false;
+        if (r>=0.9)
+        isYellowWorking = false;
 
 
 

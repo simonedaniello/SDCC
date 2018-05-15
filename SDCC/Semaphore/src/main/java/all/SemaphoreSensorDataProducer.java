@@ -33,6 +33,8 @@ public class SemaphoreSensorDataProducer {
 
             while (var15.hasNext()) {
                 SemaphoreSensor event = (SemaphoreSensor) var15.next();
+                if (event.isGreenWorking() == false || event.isYellowWorking() == false || event.isRedWorking() == false)
+                        fp.sendSemaphoreSensorInfo("localhost",event, "bulbmalfunctions");
                 fp.sendSemaphoreSensorInfo("localhost", event, "semaphoresensor");
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
