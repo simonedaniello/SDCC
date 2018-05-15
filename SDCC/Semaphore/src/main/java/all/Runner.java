@@ -39,8 +39,6 @@ public class Runner {
     public static void main(String[] args) throws IOException {
 
 
-
-
         Properties properties = new Properties();
         String filename = "semaphoresConfig.props";
         InputStream input = Semaphore.class.getClassLoader().getResourceAsStream(filename);

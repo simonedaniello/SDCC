@@ -3,6 +3,7 @@ package all.newArchitecture;
 import all.SemaphoreSensorDataProducer;
 import all.front.FirstConsumer;
 import all.front.FirstProducer;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import main.java.Message;
 import main.java.Semaphore;
 import main.java.system.Printer;
@@ -54,7 +55,11 @@ public class SemaphoreClass implements Runnable{
      * send the list of cars detected through kafka to flinkDispatcher
      */
     private void sendSensorData(){
-        new SemaphoreSensorDataProducer(this.fp, semaphore);
+        try {
+            new SemaphoreSensorDataProducer(this.fp, semaphore);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

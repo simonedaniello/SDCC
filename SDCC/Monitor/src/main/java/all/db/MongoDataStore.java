@@ -101,13 +101,10 @@ public class MongoDataStore implements DataStore {
             //{"semaphores.semaphoreID": "28e7234668777f9ed7a63b82eac501322fa9ac707238d8a3e9e89c599458ab13"}, {_id: 0, 'semaphores.$': 1}
 
 			DBObject clause1 = new BasicDBObject("semaphores.semaphoreID", ((FlinkResult) fr).getKey());
-//			DBObject clause2 = new BasicDBObject("_id", 0);
 			DBObject clause3 = new BasicDBObject("semaphores.$", 1);
 			BasicDBList and = new BasicDBList();
 			and.add(clause1);
-//			and.add(clause2);
 			and.add(clause3);
-			DBObject query = new BasicDBObject("$and", and);
 			Printer.getInstance().print(and.toString() + "\n\n\n", "yellow");
 
             DBCursor cursor = rawEventsColl.find(clause1, clause3);
@@ -123,7 +120,6 @@ public class MongoDataStore implements DataStore {
 
             ranks.add(entry);
         }
-//        Printer.getInstance().print("fine aggiunta \n\n", "yellow");
         newEntry.put("ranking", ranks);
 
 

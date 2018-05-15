@@ -22,4 +22,6 @@ public interface DataStore<T> {
     void addFirstCrossroadToMongo(String id, String crossroadName, String street);
 
     void addSemaphoreToMongo(String crossroadName, Semaphore semaphore);
+
+    void addMalfunctionToDB(String semaphoreid);
 }

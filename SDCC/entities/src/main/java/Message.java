@@ -19,6 +19,7 @@ public class Message implements Serializable {
     private String IP;
     private FlinkResult flinkResult;
     private ArrayList<FlinkResult> partialRanking;
+    private String semaphoreTuple;
 
     /*
     *
@@ -127,5 +128,13 @@ public class Message implements Serializable {
 
     public void setPartialRanking(ArrayList<FlinkResult> partialRanking) {
         this.partialRanking = partialRanking;
+    }
+
+    public String getSemaphoreTuple() {
+        return semaphoreTuple;
+    }
+
+    public void setSemaphoreTuple(String semaphoreTuple) {
+        this.semaphoreTuple = semaphoreTuple;
     }
 }

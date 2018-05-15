@@ -90,7 +90,7 @@ public class FirstProducer implements Serializer{
         return retVal;
     }
 
-    public void sendSemaphoreSensorInfo(String address, SemaphoreSensor s, String topic) {
+    public void sendSemaphoreSensorInfo(String address, Object s, String topic) {
 
         try {
 
@@ -110,6 +110,8 @@ public class FirstProducer implements Serializer{
 //            producer.close();
         }
     }
+
+
 
     @Override
     public void close() {
