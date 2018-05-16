@@ -58,8 +58,12 @@ public class SemaphoreSensorDataProducer {
                 if (!event.isGreenWorking() || !event.isYellowWorking() || !event.isRedWorking()){
                     ObjectMapper mapper = new ObjectMapper();
                     Printer.getInstance().print("messaggio di malfunction con id: " + sem.getID(), "yellow");
+
+                    //Messaggio creato quando c'è un malfunzionamento
                     Message m = new Message(sem.getID(), 404);
                     m.setSemaphoreTuple(mapper.writeValueAsString(event));
+                    m.setBrokenBulbs(event.getBrokenbulbs());
+
                     fp.sendSemaphoreSensorInfo("localhost", m , sem.getCrossroad());
                 }
                 fp.sendSemaphoreSensorInfo("localhost", event, "semaphoresensor");

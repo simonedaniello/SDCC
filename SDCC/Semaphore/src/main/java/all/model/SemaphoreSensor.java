@@ -21,6 +21,7 @@ public class SemaphoreSensor {
     private boolean isGreenWorking = true;
     private boolean isYellowWorking = true;
     private boolean isRedWorking = true;
+    private String brokenbulbs = "Broken Bulbs: ";
 
 
     public String getCrossroadID() {
@@ -111,6 +112,10 @@ public class SemaphoreSensor {
         isRedWorking = redWorking;
     }
 
+    public String getBrokenbulbs() {
+        return brokenbulbs;
+    }
+
     public void initializeSensor(Semaphore sem, long ratefrattomille){
 
         setPosition(sem);
@@ -126,16 +131,22 @@ public class SemaphoreSensor {
 
         //Randomize broken bulb
         Random rand = new Random();
+        rand.setSeed(System.currentTimeMillis());
         double g = rand.nextInt(10000);
         double y = rand.nextInt(10000);
         double r = rand.nextInt(10000);
 
-        if (g>=ratefrattomille)
+        if (g>=ratefrattomille){
             isGreenWorking = false;
-        if (y>=ratefrattomille)
-            isRedWorking = false;
-        if (r>=ratefrattomille)
+            brokenbulbs = brokenbulbs + "Green, ";}
+
+        if (y>=ratefrattomille){
             isYellowWorking = false;
+            brokenbulbs = brokenbulbs + "Yellow, ";}
+
+        if (r>=ratefrattomille){
+            isRedWorking = false;
+            brokenbulbs = brokenbulbs + "Red, ";}
 
 
 

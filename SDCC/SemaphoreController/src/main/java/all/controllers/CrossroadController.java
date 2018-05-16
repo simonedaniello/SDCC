@@ -149,12 +149,12 @@ public class CrossroadController{
         monitorer.sendCrossroadSituation(ip, id);
     }
 
-    public void sendMalfunctionToSemaphores(String semaphoreid){
-        for(long l: chatids){
-            telegramBot.sendMessage("malfunction at semaphore: " + semaphoreid, l);
-        }
+    public void sendMalfunctionToSemaphores(Message mex){
+
+        telegramBot.sendMessage("malfunction at semaphore: " +mex.getID() + "\n" +
+                mex.getBrokenBulbs(), "@SDCChannel");
         thereIsaMalfunction = true;
-        Printer.getInstance().print("\n\n\n è arrivato un malfunzionamento su "+ semaphoreid + "\n\n\n", "yellow");
+        Printer.getInstance().print("\n\n\n è arrivato un malfunzionamento su "+ mex.getID() + "\n\n\n", "yellow");
         try {
             //send malfunction message to semaphores
             Message m = new Message(crossroad.getID(), 404);
@@ -162,7 +162,7 @@ public class CrossroadController{
                 fp.sendMessage("address", m, s.getID());
                 Printer.getInstance().print("current state sent to " + s.getID(), "yellow");
             }
-            MongoDataStore.getInstance().addMalfunctionToDB(semaphoreid);
+            MongoDataStore.getInstance().addMalfunctionToDB(mex.getID());
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
