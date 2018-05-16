@@ -45,7 +45,7 @@ public class TelegramBotClass extends TelegramLongPollingBot {
         return "570502022:AAEjGx-4lcN-4PxYMbA3NPTwmF1KvfIjgTk";
     }
 
-    public void sendMessage(String m, long chat_id){
+    public void sendMessage(String m, String chat_id){
         Printer.getInstance().print("%%%%%%%%%invio il messaggio%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%\n", "yellow");
         SendMessage message = new SendMessage() // Create a message object object
                 .setChatId(chat_id)

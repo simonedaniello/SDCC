@@ -151,7 +151,7 @@ public class CrossroadController{
 
     public void sendMalfunctionToSemaphores(Message mex){
 
-        telegramBot.sendMessage("malfunction at semaphore: " +mex.getID() + "\n" +
+        telegramBot.sendMessage("🚦" + "malfunction at semaphore: " +mex.getID() + "\n" +
                 mex.getBrokenBulbs(), "@SDCChannel");
         thereIsaMalfunction = true;
         Printer.getInstance().print("\n\n\n è arrivato un malfunzionamento su "+ mex.getID() + "\n\n\n", "yellow");

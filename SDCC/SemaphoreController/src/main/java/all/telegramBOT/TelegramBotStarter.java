@@ -27,8 +27,8 @@ public class TelegramBotStarter {
         }
     }
 
-    public void sendMessage(String message, long l){
-        this.telegramBotClass.sendMessage(message, l);
+    public void sendMessage(String message, String id){
+        this.telegramBotClass.sendMessage(message, id);
     }
 }
 

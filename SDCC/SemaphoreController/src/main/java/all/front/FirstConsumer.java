@@ -111,7 +111,7 @@ public class FirstConsumer {
         }
         else if (code == 404) {
             Printer.getInstance().print("\n\n\nARRIVATO MALFUNCTION dal semaforo " + message.getID() + "\n\n\n", "yellow");
-            crossroadController.sendMalfunctionToSemaphores(message.getID());
+            crossroadController.sendMalfunctionToSemaphores(message);
         }
         //---------------------2PC-----------------------
         else if (code == 311){

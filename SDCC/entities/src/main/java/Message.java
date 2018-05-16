@@ -20,7 +20,7 @@ public class Message implements Serializable {
     private FlinkResult flinkResult;
     private ArrayList<FlinkResult> partialRanking;
     private String semaphoreTuple;
-
+    private String brokenBulbs;
     /*
     *
     * code values:
@@ -136,5 +136,13 @@ public class Message implements Serializable {
 
     public void setSemaphoreTuple(String semaphoreTuple) {
         this.semaphoreTuple = semaphoreTuple;
+    }
+
+    public String getBrokenBulbs() {
+        return brokenBulbs;
+    }
+
+    public void setBrokenBulbs(String brokenBulbs) {
+        this.brokenBulbs = brokenBulbs;
     }
 }
