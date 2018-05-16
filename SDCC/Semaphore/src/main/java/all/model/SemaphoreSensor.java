@@ -112,7 +112,7 @@ public class SemaphoreSensor {
     }
 
 
-    public void initializeSensor(Semaphore sem){
+    public void initializeSensor(Semaphore sem, long ratefrattomille){
 
         setPosition(sem);
         semaphoreID = sem.getID();
@@ -126,16 +126,17 @@ public class SemaphoreSensor {
         greenDuration = 60;
 
         //Randomize broken bulb
-        double g = Math.random();
-        double y = Math.random();
-        double r = Math.random();
+        Random rand = new Random();
+        double g = rand.nextInt(10000);
+        double y = rand.nextInt(10000);
+        double r = rand.nextInt(10000);
 
-        if (g>=0.9)
+        if (g>=ratefrattomille)
             isGreenWorking = false;
-        if (y>=0.9)
+        if (y>=ratefrattomille)
             isRedWorking = false;
-        if (r>=0.9)
-        isYellowWorking = false;
+        if (r>=ratefrattomille)
+            isYellowWorking = false;
 
 
 
@@ -143,12 +144,6 @@ public class SemaphoreSensor {
     }
 
     private void setPosition(Semaphore sem) {
-
-//        Random rand = new Random();
-//        int latPrefix = 33;
-//        int longPrefix = -96;
-//        latitude = String.valueOf((float)latPrefix + rand.nextFloat());
-//        longitude = String.valueOf((float)longPrefix + rand.nextFloat());
 
         latitude = sem.getLatitude();
         longitude = sem.getLongitude();

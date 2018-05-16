@@ -9,15 +9,32 @@ import main.java.Semaphore;
 import main.java.system.Printer;
 import org.springframework.boot.json.GsonJsonParser;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class SemaphoreSensorDataProducer {
 
     public SemaphoreSensorDataProducer(FirstProducer fp, Semaphore sem) throws JsonProcessingException {
+
+        Properties properties = new Properties();
+        String filename = "semaphoresConfig.props";
+        InputStream input = Semaphore.class.getClassLoader().getResourceAsStream(filename);
+        if(input==null){
+            System.out.println("\n\nSorry, unable to find " + filename);
+            return;
+        }
+        try {
+            properties.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        String messageRateMillis= properties.getProperty("messageRateMillis");
+        String malfunctionRateInMillis= properties.getProperty("malfunctionRateInTenMill");
+
 
         while (true) {
 
@@ -28,7 +45,7 @@ public class SemaphoreSensorDataProducer {
             for (i = 0; i < 100; i++) {
 
                 SemaphoreSensor s = new SemaphoreSensor();
-                s.initializeSensor(sem);
+                s.initializeSensor(sem, Long.parseLong(malfunctionRateInMillis));
 
                 eventList.add(s);
             }
@@ -47,7 +64,7 @@ public class SemaphoreSensorDataProducer {
                 }
                 fp.sendSemaphoreSensorInfo("localhost", event, "semaphoresensor");
                 try {
-                    TimeUnit.MILLISECONDS.sleep(500);
+                    TimeUnit.MILLISECONDS.sleep(Long.parseLong(messageRateMillis));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
