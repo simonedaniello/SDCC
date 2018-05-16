@@ -1,6 +1,7 @@
 package all.endpoint;
 
 import all.controllers.CrossroadController;
+import all.telegramBOT.TelegramBotStarter;
 
 /**
  * Author : Simone D'Aniello
@@ -16,6 +17,6 @@ public class Creator {
     }
 
     void createCrossroad(String id, String street){
-        new CrossroadController(id, street);
+        new CrossroadController(id, street, new TelegramBotStarter());
     }
 }

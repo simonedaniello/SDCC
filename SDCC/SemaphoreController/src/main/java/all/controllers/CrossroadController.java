@@ -2,6 +2,7 @@ package all.controllers;
 
 import all.front.FirstConsumer;
 import all.front.FirstProducer;
+import all.telegramBOT.TelegramBotStarter;
 import db.MongoDataStore;
 import main.java.Crossroad;
 import main.java.Message;
@@ -25,9 +26,12 @@ public class CrossroadController{
     private FirstConsumer fc;
     private FirstProducer fp;
     private Monitorer monitorer;
+    private TelegramBotStarter telegramBot;
+    private ArrayList<Long> chatids = new ArrayList<>();
 
-    public CrossroadController(String ID, String address){
+    public CrossroadController(String ID, String address, TelegramBotStarter bot){
 
+        this.telegramBot = bot;
         this.crossroad = new Crossroad(ID, address);
         this.fp = new FirstProducer();
         this.twopc = new TwoPCController(fp);
@@ -107,6 +111,10 @@ public class CrossroadController{
 
     }
 
+    public void addChatID(long chat_id) {
+        this.chatids.add(chat_id);
+    }
+
     private class TimerClass extends TimerTask {
         private int times = 0;
         @Override
@@ -134,6 +142,24 @@ public class CrossroadController{
         Printer.getInstance().print("dico al monitorer di mandare le info: ip = " + ip + ", id = " + id, "yellow");
         monitorer.setCrossroad(crossroad);
         monitorer.sendCrossroadSituation(ip, id);
+    }
+
+    public void sendMalfunctionToSemaphores(String semaphoreid){
+        for(long l: chatids){
+            telegramBot.sendMessage("malfunction at semaphore: " + semaphoreid, l);
+        }
+        Printer.getInstance().print("\n\n\n è arrivato un malfunzionamento su "+ semaphoreid + "\n\n\n", "yellow");
+        try {
+            //send malfunction message to semaphores
+            Message m = new Message(crossroad.getID(), 404);
+            for(Semaphore s: crossroad.getSemaphores()) {
+                fp.sendMessage("address", m, s.getID());
+                Printer.getInstance().print("current state sent to " + s.getID(), "yellow");
+            }
+            MongoDataStore.getInstance().addMalfunctionToDB(semaphoreid);
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
     }
 }
 

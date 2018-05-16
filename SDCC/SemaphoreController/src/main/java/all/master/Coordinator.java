@@ -2,8 +2,10 @@ package all.master;
 
 
 import all.controllers.CrossroadController;
+import all.telegramBOT.TelegramBotStarter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import db.MongoDataStore;
+import main.java.Crossroad;
 import main.java.Semaphore;
 import main.java.system.Printer;
 import org.codehaus.jackson.JsonGenerationException;
@@ -19,9 +21,10 @@ import java.util.Properties;
 public class Coordinator {
 
     private static Coordinator instance = new Coordinator();
-    private ArrayList<String> crossroadControllerlist = new ArrayList<>();
+    private ArrayList<CrossroadController> crossroadControllerlist = new ArrayList<>();
     private String idInMongo = null;
     private String id;
+    TelegramBotStarter bot;
 
     private Coordinator(){
         Properties properties = new Properties();
@@ -37,6 +40,8 @@ public class Coordinator {
             e.printStackTrace();
         }
         id = properties.getProperty("coordinatorid");
+
+        bot = new TelegramBotStarter();
     }
 
     public static Coordinator getInstance() {
@@ -45,7 +50,7 @@ public class Coordinator {
 
     public void addCrossroadController(String crossroadControllerID, String crossroadControllerAddress){
 
-        Thread thread1 = new Thread(() -> new CrossroadController(crossroadControllerID, crossroadControllerAddress));
+        Thread thread1 = new Thread(() -> crossroadControllerlist.add(new CrossroadController(crossroadControllerID, crossroadControllerAddress, bot)));
 
         thread1.start();
 
@@ -64,4 +69,9 @@ public class Coordinator {
     }
 
 
+    public void updateChatIdList(long chat_id) {
+        for(CrossroadController c : crossroadControllerlist){
+            c.addChatID(chat_id);
+        }
+    }
 }
