@@ -8,8 +8,11 @@ import main.java.Message;
 import main.java.Semaphore;
 import main.java.system.Printer;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class SemaphoreClass implements Runnable{
@@ -20,6 +23,7 @@ public class SemaphoreClass implements Runnable{
     private TwoPCController twopc;
     private Boolean emergencyModeOn = false;
     private Boolean isGossiping = false;
+    private int emergencymodetimeseconds;
 
     public SemaphoreClass() {}
 
@@ -44,11 +48,26 @@ public class SemaphoreClass implements Runnable{
         twopc = new TwoPCController(this, fp);
 
         fc.setAttributes(this, twopc, s.getCrossroad());
+
+        //getting emergency mode time cycle
+        Properties properties = new Properties();
+        String filename = "semaphoresConfig.props";
+        InputStream input = Semaphore.class.getClassLoader().getResourceAsStream(filename);
+        if(input==null){
+            System.out.println("\n\nSorry, unable to find " + filename);
+            return;
+        }
+        try {
+            properties.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        emergencymodetimeseconds = Integer.parseInt(properties.getProperty("periodtimeforsinglesemaphore"));
+
         startListeningKafka();
         requestOtherSemaphores();
         sendSensorData();
     }
-
 
     /**
      * TODO
@@ -60,14 +79,6 @@ public class SemaphoreClass implements Runnable{
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * TODO
-     * send a malfunction warning to flinkDispatcher using kafka
-     */
-    public void sendMalfunction(){
-
     }
 
     /**
@@ -91,19 +102,21 @@ public class SemaphoreClass implements Runnable{
      */
     public void emergencyMode(){
         emergencyModeOn = true;
-        Printer.getInstance().print("entro in emergency mode\n ricorda di implementare il caso che i semafori sono diversi da 4\n" +
-                "e di accendere i semafori opposti contemporaneamente", "red");
+
         while(emergencyModeOn){
-            Calendar now = Calendar.getInstance();
-            System.out.println("Current Second is : " + now.get(Calendar.SECOND));
-            int start = semaphore.getOrder() * 15;
-            int end = start + 15;
+
+            int start = semaphore.getOrder() * emergencymodetimeseconds;
+            int end = start + emergencymodetimeseconds;
             System.out.println("start = " + start + ", end = " + end);
-            if(now.get(Calendar.SECOND) < end && now.get(Calendar.SECOND) > start){
+            long currentTimeCycle = (Calendar.getInstance().getTimeInMillis()/1000)%(emergencymodetimeseconds*semaphore.getSemaphores().size());
+            if(currentTimeCycle < end && currentTimeCycle > start){
+                semaphore.setLight(1);
                 Printer.getInstance().print("I BECOME GREEN: " + semaphore.getID(), "green");
             }
-            else
+            else {
+                semaphore.setLight(0);
                 Printer.getInstance().print("I BECOME RED: " + semaphore.getID(), "red");
+            }
             try {
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
@@ -162,9 +175,19 @@ public class SemaphoreClass implements Runnable{
         fp.sendMessage(semaphore.getControllerIP(), m, semaphore.getCrossroad());
     }
 
+    public void crossroadMalfunction() {
+        emergencyModeOn = false;
+        Printer.getInstance().print("entering in loop yellow mode (due to malfunction)", "yellow");
+        semaphore.setLight(2);
+    }
+
+    public void changeSemaphoreLight(int i) {
+        emergencyModeOn = false;
+        semaphore.setLight(i);
+    }
+
     @Override
     public void run() {
         fc.runConsumer(this.semaphore.getID(), this.semaphore.getCrossroad());
     }
-
 }

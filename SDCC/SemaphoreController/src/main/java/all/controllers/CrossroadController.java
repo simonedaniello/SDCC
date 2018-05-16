@@ -9,10 +9,14 @@ import main.java.Message;
 import main.java.Semaphore;
 import main.java.system.Printer;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Author : Simone D'Aniello
@@ -28,8 +32,24 @@ public class CrossroadController{
     private Monitorer monitorer;
     private TelegramBotStarter telegramBot;
     private ArrayList<Long> chatids = new ArrayList<>();
+    private boolean thereIsaMalfunction = false;
+
 
     public CrossroadController(String ID, String address, TelegramBotStarter bot){
+
+        Properties properties = new Properties();
+        String filename = "controllerConfiguration.props";
+        InputStream input = Semaphore.class.getClassLoader().getResourceAsStream(filename);
+        if(input==null){
+            System.out.println("\n\nSorry, unable to find " + filename);
+            return;
+        }
+        try {
+            properties.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        int slottimeinseconds = Integer.parseInt(properties.getProperty("slottimeinseconds"));
 
         this.telegramBot = bot;
         this.crossroad = new Crossroad(ID, address);
@@ -56,7 +76,7 @@ public class CrossroadController{
             e.printStackTrace();
         }
         Timer timer = new Timer();
-        timer.schedule(new TimerClass(), 5000, 5000); // every 5 seconds
+        timer.schedule(new TimerClass(), 5000, slottimeinseconds*1000);
     }
 
     public ArrayList<Semaphore> getSemaphoreInCrossroad(){
@@ -115,21 +135,6 @@ public class CrossroadController{
         this.chatids.add(chat_id);
     }
 
-    private class TimerClass extends TimerTask {
-        private int times = 0;
-        @Override
-        public void run() {
-            sendCurrentState();
-            printSemaphores();
-//            if(crossroad.getSemaphores().size() != 0) {
-//                if (times == 2)
-//                    twopc.votingPhase(crossroad.getSemaphores(), crossroad.getSemaphores().get(0).getID(), crossroad.getID());
-//                else
-//                    times++;
-//            }
-        }
-    }
-
     private void giveOrderingToSemaphore(Semaphore s){
         if(crossroad.getSemaphores().size() == 0)
             s.setOrder(0);
@@ -148,6 +153,7 @@ public class CrossroadController{
         for(long l: chatids){
             telegramBot.sendMessage("malfunction at semaphore: " + semaphoreid, l);
         }
+        thereIsaMalfunction = true;
         Printer.getInstance().print("\n\n\n è arrivato un malfunzionamento su "+ semaphoreid + "\n\n\n", "yellow");
         try {
             //send malfunction message to semaphores
@@ -159,6 +165,24 @@ public class CrossroadController{
             MongoDataStore.getInstance().addMalfunctionToDB(semaphoreid);
         } catch (UnknownHostException e) {
             e.printStackTrace();
+        }
+    }
+
+    private class TimerClass extends TimerTask {
+        @Override
+        public void run() {
+            sendCurrentState();
+            printSemaphores();
+            while(crossroad.getSemaphores().size() == 0){
+                try {
+                    System.out.println("non invio in quanto zero");
+                    TimeUnit.SECONDS.sleep(5);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            if(!thereIsaMalfunction)
+                twopc.votingPhase(crossroad.getSemaphores(), crossroad.getSemaphores().get(0).getID(), crossroad.getID());
         }
     }
 }

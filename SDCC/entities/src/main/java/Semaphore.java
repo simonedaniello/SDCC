@@ -18,7 +18,7 @@ public class Semaphore implements Serializable{
     private ArrayList<Semaphore> greenTogether;
     private String crossroad;
     private String controllerIP;
-    private int light; // 0 for red, 1 for green
+    private int light; // 0 for red, 1 for green, 2 for yellow
     private double trafficIntensity;
     private List<Car> queue = new ArrayList<>();
     private  ArrayList<Double> times = new ArrayList<>();

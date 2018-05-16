@@ -52,8 +52,6 @@ public class FirstConsumer {
 
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 BOOTSTRAP_SERVERS);
-//        props.put(ConsumerConfig.GROUP_ID_CONFIG,
-//                "KafkaExampleConsumer");
         props.put(ConsumerConfig.GROUP_ID_CONFIG, UUID.randomUUID().toString());
 
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
@@ -68,21 +66,11 @@ public class FirstConsumer {
 
     public void runConsumer() {
 
-        //createConsumer();
-        //subscribeToTopic("my-example-topic");
         Printer.getInstance().print("start listening", "yellow");
-
-        final int giveUp = 100;   int noRecordsCount = 0;
 
         while(true) {
             final ConsumerRecords<Long, String> consumerRecords =
                     consumer.poll(1000);
-
-//            if (consumerRecords.count()==0) {
-//                noRecordsCount++;
-//                if (noRecordsCount > giveUp) break;
-//                else continue;
-//            }
             consumerRecords.forEach(this::DeserializeMessage);
 
             consumer.commitAsync();
@@ -98,10 +86,10 @@ public class FirstConsumer {
         try {
             Message message = mapper.readValue(record.value(), Message.class);
 
-            Printer.getInstance().print("Consumer Record:( " + record.key() +
-                    ", Message: " + message.getID() +
-                    ", Code: " + message.getCode() +
-                    " )", "cyan");
+//            Printer.getInstance().print("Consumer Record:( " + record.key() +
+//                    ", Message: " + message.getID() +
+//                    ", Code: " + message.getCode() +
+//                    " )", "cyan");
             workWithMessage(message);
 
         } catch (IOException e) {
@@ -136,7 +124,6 @@ public class FirstConsumer {
             twopc.rollback();
         }
         else if (code == 601){
-            Printer.getInstance().print("\n\n\nmesaggio arrivato con codice 601\n\n\n", "green");
             crossroadController.tellMonitorerToSendInfos(message.getIP(), message.getID());
         }
         //---------------------2PC-----------------------

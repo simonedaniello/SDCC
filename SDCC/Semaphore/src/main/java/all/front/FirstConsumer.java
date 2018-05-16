@@ -105,10 +105,10 @@ public class FirstConsumer {
         try {
             Message message = mapper.readValue(record.value(), Message.class);
 
-            Printer.getInstance().print("Consumer Record:(" + record.key() +
-                    ", Message: " + message.getID() +
-                    ", Code: " + message.getCode() +
-                    ")", "cyan");
+//            Printer.getInstance().print("Consumer Record:(" + record.key() +
+//                    ", Message: " + message.getID() +
+//                    ", Code: " + message.getCode() +
+//                    ")", "cyan");
             workWithMessage(message);
 
         } catch (IOException e) {
@@ -141,7 +141,11 @@ public class FirstConsumer {
         else if (code == -302){
             twopc.rollback(crossroad);
         }
-        //---------------------2PC-----------------------
+        //---------------------Malfunction----------------
+        else if(code == 404){
+            semaphoreClass.crossroadMalfunction();
+        }
+
     }
 
     public void setCrossroad(String crossroad) {

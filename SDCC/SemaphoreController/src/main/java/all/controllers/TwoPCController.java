@@ -52,7 +52,7 @@ public class TwoPCController {
 
         Printer.getInstance().print("\n\nSTARTING VOTING PHASE\n\n", "yellow");
         for (Semaphore s : semaphoreList){
-            if(rand.nextInt(100) < 50) {
+            if(rand.nextInt(100) < 90) {
                 Message m = new Message(crossroadID, 301);
                 if (greenSemaphore.equals(s.getID()))
                     m.setYouAreGreen(true);
@@ -69,9 +69,9 @@ public class TwoPCController {
 
     private void commitPhase(){
         for (String s : semaphoresFor2pc.keySet()){
-//            Message m = new Message("commit", 302);
-            Printer.getInstance().print("ricorda che la commit phase sbaglia appositamente e rimanda al rollback mode", "red");
-            Message m = new Message("wrong commit", -302);
+            Message m = new Message("commit", 302);
+//            Printer.getInstance().print("ricorda che la commit phase sbaglia appositamente e rimanda al rollback mode", "red");
+//            Message m = new Message("wrong commit", -302);
             fp.sendMessage("address", m, s);
         }
     }

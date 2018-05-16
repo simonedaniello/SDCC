@@ -54,7 +54,7 @@ public class FirstProducer implements Serializer{
 
         try {
 
-            Printer.getInstance().print("sent message with code: " + m.getCode(), "yellow");
+//            Printer.getInstance().print("sent message with code: " + m.getCode(), "yellow");
             ObjectMapper mapper = new ObjectMapper();
 
             String toSend =  mapper.writeValueAsString(m);

@@ -111,7 +111,6 @@ public class SemaphoreSensor {
         isRedWorking = redWorking;
     }
 
-
     public void initializeSensor(Semaphore sem, long ratefrattomille){
 
         setPosition(sem);
