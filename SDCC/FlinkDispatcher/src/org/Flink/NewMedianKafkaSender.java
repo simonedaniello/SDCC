@@ -1,26 +1,20 @@
 package org.Flink;
 
-import Model.GPSJsonReader;
-import Model.IoTData;
+
 import Model.SemaphoreJsonReader;
 import algorithms.PSquared;
-import algorithms.Welford;
 import all.model.SemaphoreSensor;
 import com.google.gson.Gson;
 import main.java.FlinkResult;
 import main.java.Message;
-import main.java.system.Printer;
 import org.apache.flink.api.common.functions.AggregateFunction;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.serialization.SerializationSchema;
 import org.apache.flink.api.java.tuple.*;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
-import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.streaming.api.functions.windowing.WindowFunction;
 import org.apache.flink.streaming.api.windowing.time.Time;
-import org.apache.flink.streaming.api.windowing.windows.TimeWindow;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer011;
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema;
@@ -52,7 +46,7 @@ public class NewMedianKafkaSender {
 
 
         Properties properties = new Properties();
-        String filename = "consumer.props";
+        String filename = "org/Flink/consumer.props";
         InputStream input = NewAverageKafkaSender.class.getClassLoader().getResourceAsStream(filename);
         if(input==null){
             System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
@@ -72,7 +66,7 @@ public class NewMedianKafkaSender {
         DataStreamSource<String> stream = env.addSource(new FlinkKafkaConsumer011(INPUT_KAFKA_TOPIC, new SimpleStringSchema(), properties));
 
         System.out.println("got sources");
-        // DataStream<Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean>> streamTuples = stream.flatMap(new SemaphoreJson2Tuple());
+        // DataStream<Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean>> streamTuples = stream.flatMap(new semaphoreAssigner());
         DataStream<Tuple2<String, Double>> streamTuples = stream.flatMap(new SemaphoreJson2Tuple());
 
         streamTuples.print();

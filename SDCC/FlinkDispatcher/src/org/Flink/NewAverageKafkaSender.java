@@ -21,7 +21,6 @@ import org.apache.flink.util.Collector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -37,7 +36,7 @@ public class NewAverageKafkaSender {
     public void calculateAvg() throws Exception {
 
         Properties properties = new Properties();
-        String filename = "consumer.props";
+        String filename = "org/Flink/consumer.props";
         InputStream input = NewAverageKafkaSender.class.getClassLoader().getResourceAsStream(filename);
         if(input==null){
             System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
@@ -61,7 +60,7 @@ public class NewAverageKafkaSender {
         DataStreamSource<String> stream = env.addSource(new FlinkKafkaConsumer011(INPUT_KAFKA_TOPIC, new SimpleStringSchema(), properties));
 
         System.out.println("got sources");
-       // DataStream<Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean>> streamTuples = stream.flatMap(new SemaphoreJson2Tuple());
+       // DataStream<Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean>> streamTuples = stream.flatMap(new semaphoreAssigner());
         DataStream<Tuple2<String, Double>> streamTuples = stream.flatMap(new SemaphoreJson2Tuple());
 
         streamTuples.print();

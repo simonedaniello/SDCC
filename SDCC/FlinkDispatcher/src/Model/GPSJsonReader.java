@@ -41,6 +41,34 @@ public class GPSJsonReader {
         return IoTDatas;
     }
 
+
+
+
+
+    public static IoTData getIoTData(String jsonString) {
+        System.out.println(jsonString);
+        JsonParser parser = new JsonParser();
+        JsonElement element = parser.parse(jsonString);
+        IoTData newcar = new IoTData();
+
+        if (element.isJsonObject()) {
+            JsonObject jsonRecord = element.getAsJsonObject();
+            newcar.setJsonString(jsonString);
+            newcar.setTimestamp(jsonRecord.get("timestamp").getAsString());
+            newcar.setVehicleId(jsonRecord.get("vehicleId").getAsString());
+            newcar.setLatitude(jsonRecord.get("latitude").getAsString());
+            newcar.setLongitude(jsonRecord.get("longitude").getAsString());
+            newcar.setSpeed(jsonRecord.get("speed").getAsDouble());
+        } else {
+            System.out.println("Not a valid Json Element");
+            return null;
+        }
+
+        return newcar;
+    }
+
+
+
     public static List<Tuple8<String, String, String, String, String, String, String, String>> getGpsTuples(String jsonString) {
         ArrayList<Tuple8<String, String, String, String, String, String, String, String>> IoTDatas = new ArrayList();
         JsonParser parser = new JsonParser();
