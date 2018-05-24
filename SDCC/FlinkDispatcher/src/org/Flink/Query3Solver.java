@@ -3,13 +3,20 @@ package org.Flink;
 import Model.GPSJsonReader;
 import Model.IoTData;
 import algorithms.Harvesine;
+import com.google.gson.Gson;
+import main.java.FlinkResult;
+import main.java.Message;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.flink.api.common.functions.AggregateFunction;
 import org.apache.flink.api.common.functions.FlatMapFunction;
+import org.apache.flink.api.common.serialization.SerializationSchema;
 import org.apache.flink.api.java.tuple.*;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer011;
+import org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducer011;
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema;
 import org.apache.flink.util.Collector;
 import org.slf4j.Logger;
@@ -18,7 +25,7 @@ import org.slf4j.LoggerFactory;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class WhichSemaphoreFlink {
+public class Query3Solver {
 
 
     private static String INPUT_KAFKA_TOPIC = null;
@@ -47,9 +54,8 @@ public class WhichSemaphoreFlink {
 
 
         TIME_WINDOW = 10;
-/*        INPUT_KAFKA_TOPIC = properties.getProperty("INPUT_KAFKA_TOPIC");
         String flinkDispatcherID = properties.getProperty("flinkDispatcherID");
-        String topicname = properties.getProperty("topic_name");*/
+        String topicname = properties.getProperty("topic_name");
 
         INPUT_KAFKA_TOPIC = "test";
 
@@ -64,23 +70,27 @@ public class WhichSemaphoreFlink {
         DataStream<Tuple2<String, Double>> streamTuples = stream.flatMap(new semaphoreAssigner());
         streamTuples.print();
 
+        DataStream<Tuple3<String, Double,Integer>> result = streamTuples
+                .keyBy(new int[]{0})
+                .timeWindow(Time.seconds((long)TIME_WINDOW))
+                .aggregate(new mobileSensorAggregate());
 
-        //write to another kafka topic
- /*       averageSpeedStream.addSink(new FlinkKafkaProducer011<>("localhost:9092", topicname, (SerializationSchema<Tuple3<String,Double>>) stringDoubleTuple3 -> {
+        result.addSink(new FlinkKafkaProducer011<>("localhost:9092", "test2", (SerializationSchema<Tuple3<String, Double, Integer>>) stringDoubleTuple3 -> {
             Gson gson = new Gson();
             String key = stringDoubleTuple3.f0;
             double value = stringDoubleTuple3.f1;
             int count = stringDoubleTuple3.f2;
             FlinkResult flinkResult = new FlinkResult(key, value, count);
-            Message m = new Message(flinkDispatcherID, 70215);
+            Message m = new Message(flinkDispatcherID, 70115);
             m.setFlinkResult(flinkResult);
-            String result = gson.toJson(m);
-            return result.getBytes();
-        }));*/
+            String results = gson.toJson(m);
+            return results.getBytes();
+        }));
 
         env.execute("Window Traffic Data");
 
     }
+
 
     //Read Mobile sensors' Json and create Tuples
 
@@ -102,11 +112,12 @@ public class WhichSemaphoreFlink {
 
             IoTData car = GPSJsonReader.getIoTData(jsonString);
 
-            boolean found = true;
+            boolean found = false;
             int i = 0;
             double threshold = semaphoreActionRange;  //for each new car, reset threshold to action range
             String semaphoreID = "";                  //String that will contain ID of associated semaphore
 
+            assert car != null;
             double carLat = Double.parseDouble(car.getLatitude());
             double carLon = Double.parseDouble(car.getLongitude());
 
@@ -116,13 +127,14 @@ public class WhichSemaphoreFlink {
 
                 double dist = harvesine.calculateApproximatedDistanceInKilometer(carLat,carLon,semaphoreLat,semaphoreLon);
                 if (dist <= threshold){
+                    found = true;
                     threshold = dist;
                     semaphoreID = DigestUtils.sha256Hex(String.valueOf(semaphoreLat) + String.valueOf(semaphoreLon));
                     }
 
                 }
 
-                if (found == true){
+                if (found){
 
                     Tuple2<String,Double> tp2 = new Tuple2<>();
                     tp2.setField(semaphoreID,0);
@@ -131,5 +143,34 @@ public class WhichSemaphoreFlink {
                     System.out.println(out);                }
         }
     }
+
+    private static class mobileSensorAggregate implements
+            AggregateFunction<Tuple2<String, Double>, Tuple3<String,Double, Double>, Tuple3<String, Double, Integer>> {
+
+        @Override
+        public Tuple3<String, Double, Double> createAccumulator() {
+            return new Tuple3<>("initializer", 0.0, 0.0);
+        }
+
+        @Override
+        public Tuple3<String,Double, Double> add(Tuple2<String, Double> value, Tuple3 <String, Double, Double> accumulator) {
+//            double x = accumulator.f1 + value.f1;
+//            System.out.println("accumulator più value is: " + x);
+//            System.out.println("Index is: " + accumulator.f2);
+            return new Tuple3<>(value.f0, accumulator.f1 + value.f1, accumulator.f2 + 1.0);
+        }
+
+        @Override
+        public Tuple3<String, Double, Integer> getResult(Tuple3 <String, Double, Double> accumulator) {
+            System.out.println("get result");
+            return new Tuple3<>(accumulator.f0, accumulator.f1 / accumulator.f2, accumulator.f2.intValue());        }
+
+        @Override
+        public Tuple3 <String, Double, Double> merge(Tuple3 <String, Double, Double> a, Tuple3 <String, Double, Double> b ) {
+            return new Tuple3 <String, Double, Double>(a.f0, a.f1 + b.f1, a.f2 + b.f2);
+        }
+    }
+
+
 }
 
