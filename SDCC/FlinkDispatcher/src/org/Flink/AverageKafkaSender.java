@@ -2,14 +2,16 @@ package org.Flink;
 
 
 import Model.SemaphoreJsonReader;
+import Model.SemaphoreSensor;
 import algorithms.Welford;
-import all.model.SemaphoreSensor;
 import com.google.gson.Gson;
 import main.java.FlinkResult;
 import main.java.Message;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.serialization.SerializationSchema;
-import org.apache.flink.api.java.tuple.*;
+import org.apache.flink.api.java.tuple.Tuple;
+import org.apache.flink.api.java.tuple.Tuple11;
+import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;

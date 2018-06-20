@@ -1,12 +1,11 @@
 package org.Flink;
 
-import main.java.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-//import producer.FirstProducer;
 
-import java.util.Timer;
 import java.util.TimerTask;
+
+//import producer.FirstProducer;
 
 public class WindowTrafficData {
     private static String INPUT_KAFKA_TOPIC = null;
@@ -19,39 +18,44 @@ public class WindowTrafficData {
     public WindowTrafficData() {
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-       try {
-  /*          Thread thread1 = new Thread(() -> {
+        NewAverageKafkaSender avg = new NewAverageKafkaSender();
+        avg.calculateAvg();
+
+
+
+      /* try {
+            Thread thread1 = new Thread(() -> {
                 NewAverageKafkaSender avg = new NewAverageKafkaSender();
                 try {
                     avg.calculateAvg();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            });*/
+            });
 
             Thread thread2 = new Thread(() -> {
-                WhichSemaphoreFlink qkafka = new WhichSemaphoreFlink();
+                Query3Solver kafka = new Query3Solver();
                 try {
-                    qkafka.calculateMedian();
+                    kafka.calculateMedian();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
 
-         //   thread1.start();
+            thread1.start();
             thread2.start();
 
         //   Timer timer = new Timer();
         //   timer.schedule(new WindowTrafficData.TimerClass(), 0, TIME_CYCLE);
 
-           // thread1.join();
+            thread1.join();
             thread2.join();
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
 
 
     }

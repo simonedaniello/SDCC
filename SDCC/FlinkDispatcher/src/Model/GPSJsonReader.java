@@ -4,9 +4,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.apache.flink.api.java.tuple.Tuple8;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.flink.api.java.tuple.Tuple8;
 
 public class GPSJsonReader {
     public static final int KEY = 0;

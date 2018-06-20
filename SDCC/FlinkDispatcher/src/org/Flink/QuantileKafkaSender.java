@@ -3,7 +3,6 @@ package org.Flink;
 import Model.GPSJsonReader;
 import Model.IoTData;
 import algorithms.QuantileEstimator;
-import algorithms.Welford;
 import com.google.gson.Gson;
 import main.java.FlinkResult;
 import main.java.Message;

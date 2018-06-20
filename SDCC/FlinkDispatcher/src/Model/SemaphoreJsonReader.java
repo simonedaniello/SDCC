@@ -1,10 +1,8 @@
 package Model;
 
-import all.model.SemaphoreSensor;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import main.java.Semaphore;
 
 import java.util.ArrayList;
 

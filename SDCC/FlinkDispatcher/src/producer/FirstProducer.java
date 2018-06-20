@@ -20,14 +20,14 @@ import java.util.concurrent.ExecutionException;
 
 public class FirstProducer implements Serializer{
 
-    public static all.front.FirstProducer instance = new all.front.FirstProducer();
+    public static FirstProducer instance = new FirstProducer();
     private final Producer<Long, String> producer;
 
     private FirstProducer(){
         producer = createProducer();
     }
 
-    public static all.front.FirstProducer getInstance() {
+    public static FirstProducer getInstance() {
         return instance;
     }
 

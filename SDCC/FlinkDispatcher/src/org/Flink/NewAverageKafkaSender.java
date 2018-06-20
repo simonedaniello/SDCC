@@ -1,10 +1,10 @@
 package org.Flink;
 
+import Model.FlinkResult;
+import Model.Message;
 import Model.SemaphoreJsonReader;
-import all.model.SemaphoreSensor;
+import Model.SemaphoreSensor;
 import com.google.gson.Gson;
-import main.java.FlinkResult;
-import main.java.Message;
 import org.apache.flink.api.common.functions.AggregateFunction;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.serialization.SerializationSchema;
@@ -60,7 +60,6 @@ public class NewAverageKafkaSender {
         DataStreamSource<String> stream = env.addSource(new FlinkKafkaConsumer011(INPUT_KAFKA_TOPIC, new SimpleStringSchema(), properties));
 
         System.out.println("got sources");
-       // DataStream<Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean>> streamTuples = stream.flatMap(new semaphoreAssigner());
         DataStream<Tuple2<String, Double>> streamTuples = stream.flatMap(new SemaphoreJson2Tuple());
 
         streamTuples.print();
