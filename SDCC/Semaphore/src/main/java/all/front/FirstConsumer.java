@@ -1,12 +1,10 @@
 package all.front;
 
-
-
 import all.newArchitecture.SemaphoreClass;
 import all.newArchitecture.TwoPCController;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.Message;
-import main.java.system.Printer;
+import entities.Message;
+import entities.system.Printer;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;

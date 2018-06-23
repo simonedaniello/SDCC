@@ -4,14 +4,10 @@
 package all.db;
 
 import all.entity.GeneralInfo;
-import all.front.FirstConsumer;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.*;
-import com.mongodb.util.JSON;
-import main.java.FlinkResult;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.FlinkResult;
+import entities.Semaphore;
+import entities.system.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;

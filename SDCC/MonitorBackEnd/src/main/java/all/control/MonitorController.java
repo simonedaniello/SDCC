@@ -2,12 +2,11 @@ package all.control;
 
 import all.db.MongoDataStore;
 import all.front.FirstConsumer;
-import all.front.FirstProducer;
-import com.fasterxml.jackson.core.JsonProcessingException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.Crossroad;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.Crossroad;
+import entities.Semaphore;
+import entities.system.Printer;
 
 import java.io.IOException;
 import java.io.InputStream;

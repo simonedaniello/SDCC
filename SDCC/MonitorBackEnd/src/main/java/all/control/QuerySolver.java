@@ -6,10 +6,11 @@ import all.entity.GeneralInfo;
 import all.front.FirstProducer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.Crossroad;
-import main.java.Message;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.Crossroad;
+import entities.Message;
+import entities.Semaphore;
+
+import entities.system.Printer;
 
 import java.io.IOException;
 import java.io.InputStream;

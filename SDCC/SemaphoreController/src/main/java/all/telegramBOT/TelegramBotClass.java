@@ -1,8 +1,7 @@
 package all.telegramBOT;
 
 import all.master.Coordinator;
-import controller.Controller;
-import main.java.system.Printer;
+import entities.system.Printer;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;

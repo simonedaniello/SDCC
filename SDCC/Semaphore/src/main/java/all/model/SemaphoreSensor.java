@@ -1,6 +1,6 @@
 package all.model;
 
-import main.java.Semaphore;
+import entities.Semaphore;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

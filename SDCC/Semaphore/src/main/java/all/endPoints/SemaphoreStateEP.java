@@ -2,9 +2,8 @@ package all.endPoints;
 
 import all.endPoints.dao.SemaphoreDao;
 import all.newArchitecture.SemaphoreClass;
-import main.java.Crossroad;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.Semaphore;
+import entities.system.Printer;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

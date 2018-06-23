@@ -1,7 +1,7 @@
 package all.entity;
 
-import main.java.FlinkResult;
-import main.java.Semaphore;
+import entities.FlinkResult;
+import entities.Semaphore;
 
 import java.util.ArrayList;
 

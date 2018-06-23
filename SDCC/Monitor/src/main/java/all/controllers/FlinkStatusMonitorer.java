@@ -1,10 +1,6 @@
 package all.controllers;
 
-
-import main.java.Message;
-import main.java.Semaphore;
-import main.java.system.Printer;
-
+import entities.system.Printer;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;

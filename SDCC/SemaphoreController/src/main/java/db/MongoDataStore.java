@@ -3,14 +3,10 @@
  */
 package db;
 
-import all.front.FirstProducer;
 import com.mongodb.*;
 import com.mongodb.util.JSON;
-import main.java.FlinkResult;
-import main.java.Semaphore;
-import main.java.system.Printer;
-import org.bson.types.ObjectId;
-import org.h2.engine.DbObject;
+import entities.Semaphore;
+import entities.system.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;

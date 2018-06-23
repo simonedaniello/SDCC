@@ -1,15 +1,6 @@
-/**
- * 
- */
 package db;
 
-import com.mongodb.DBCollection;
-import main.java.Semaphore;
-
-/**
- * @author amitesh
- *
- */
+import entities.Semaphore;
 
 public interface DataStore<T> {
 

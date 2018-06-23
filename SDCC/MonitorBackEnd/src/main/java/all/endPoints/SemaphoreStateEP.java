@@ -2,9 +2,9 @@ package all.endPoints;
 
 import all.control.MonitorController;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.Crossroad;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.Crossroad;
+import entities.Semaphore;
+import entities.system.Printer;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;

@@ -4,9 +4,9 @@ package all.db;
 import all.front.FirstConsumer;
 import com.mongodb.*;
 import com.mongodb.util.JSON;
-import main.java.FlinkResult;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.FlinkResult;
+import entities.Semaphore;
+import entities.system.Printer;
 import org.bson.BasicBSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 

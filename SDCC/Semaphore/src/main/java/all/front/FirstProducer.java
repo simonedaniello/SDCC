@@ -1,11 +1,8 @@
 package all.front;
 
-
-import all.model.SemaphoreSensor;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.Message;
-import main.java.system.Printer;
+import entities.Message;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;

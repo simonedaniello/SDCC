@@ -4,10 +4,10 @@ import all.front.FirstConsumer;
 import all.front.FirstProducer;
 import all.telegramBOT.TelegramBotStarter;
 import db.MongoDataStore;
-import main.java.Crossroad;
-import main.java.Message;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.Crossroad;
+import entities.Message;
+import entities.Semaphore;
+import entities.system.Printer;
 
 import java.io.IOException;
 import java.io.InputStream;

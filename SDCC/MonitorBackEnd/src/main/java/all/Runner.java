@@ -3,7 +3,7 @@ package all;
 import all.control.MonitorController;
 import all.db.MongoDataStore;
 import com.mongodb.Mongo;
-import main.java.system.Printer;
+import entities.system.Printer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

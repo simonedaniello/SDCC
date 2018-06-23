@@ -2,8 +2,8 @@ package all;
 
 
 import all.newArchitecture.SemaphoreClass;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.Semaphore;
+import entities.system.Printer;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.PropertyConfigurator;
 import org.slf4j.Logger;

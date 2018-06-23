@@ -4,9 +4,9 @@ import all.SemaphoreSensorDataProducer;
 import all.front.FirstConsumer;
 import all.front.FirstProducer;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import main.java.Message;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.Message;
+import entities.Semaphore;
+import entities.system.Printer;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SemaphoreClass implements Runnable{
 
-    private main.java.Semaphore semaphore;
+    private Semaphore semaphore;
     private FirstConsumer fc;
     private FirstProducer fp;
     private TwoPCController twopc;

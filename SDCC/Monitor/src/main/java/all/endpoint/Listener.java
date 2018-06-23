@@ -1,8 +1,7 @@
 package all.endpoint;
 
 import all.endpoint.dao.CrossroadDao;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.system.Printer;
+import entities.system.Printer;
 import org.springframework.web.bind.annotation.*;
 
 /**

@@ -3,14 +3,8 @@ package all.master;
 
 import all.controllers.CrossroadController;
 import all.telegramBOT.TelegramBotStarter;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import db.MongoDataStore;
-import main.java.Crossroad;
-import main.java.Semaphore;
-import main.java.system.Printer;
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
+import entities.Semaphore;
 
 import java.io.IOException;
 import java.io.InputStream;

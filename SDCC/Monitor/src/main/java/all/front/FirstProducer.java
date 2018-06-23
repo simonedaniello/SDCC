@@ -3,8 +3,8 @@ package all.front;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.Message;
-import main.java.system.Printer;
+import entities.Message;
+import entities.system.Printer;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.LongSerializer;
 import org.apache.kafka.common.serialization.Serializer;

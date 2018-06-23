@@ -4,9 +4,9 @@ import all.model.SemaphoreSensor;
 import all.front.FirstProducer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import main.java.Message;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.Message;
+import entities.Semaphore;
+import entities.system.Printer;
 import org.springframework.boot.json.GsonJsonParser;
 
 import java.io.IOException;

@@ -1,7 +1,7 @@
 package all;
 
 import all.controllers.Monitorer;
-import main.java.system.Printer;
+import entities.system.Printer;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.PropertyConfigurator;
 import org.springframework.boot.SpringApplication;

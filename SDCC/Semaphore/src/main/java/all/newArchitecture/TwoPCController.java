@@ -1,9 +1,9 @@
 package all.newArchitecture;
 
 import all.front.FirstProducer;
-import main.java.Message;
-import main.java.Semaphore;
-import main.java.system.Printer;
+import entities.Message;
+import entities.Semaphore;
+import entities.system.Printer;
 
 import java.util.ArrayList;
 import java.util.Random;

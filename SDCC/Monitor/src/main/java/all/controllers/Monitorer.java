@@ -10,9 +10,9 @@ package all.controllers;
 import all.db.MongoDataStore;
 import all.front.FirstConsumer;
 import all.front.FirstProducer;
-import main.java.FlinkResult;
-import main.java.Message;
-import main.java.system.Printer;
+import entities.FlinkResult;
+import entities.Message;
+import entities.system.Printer;
 
 import java.net.UnknownHostException;
 import java.util.*;
