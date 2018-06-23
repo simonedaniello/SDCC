@@ -1,6 +1,6 @@
 package Model;
 
-import main.java.Semaphore;
+import entities.Semaphore;
 
 import java.util.Date;
 import java.util.Random;

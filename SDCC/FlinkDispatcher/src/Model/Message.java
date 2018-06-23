@@ -1,7 +1,7 @@
 package Model;
 
-import main.java.Crossroad;
-import main.java.Semaphore;
+import entities.Crossroad;
+import entities.Semaphore;
 
 import java.io.Serializable;
 import java.util.ArrayList;
