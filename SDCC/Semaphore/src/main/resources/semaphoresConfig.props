@@ -7,3 +7,7 @@ flinkDispatcher=semaphoresensor,semaphoresensor,semaphoresensor,semaphoresensor
 messageRateMillis=1000
 malfunctionRateInTenMill=9997
 periodtimeforsinglesemaphore=60
+
+OUTPUT_KAFKA_TOPIC=semaphoresensor
+
+BOOTSTRAP_SERVERS=localhost:9092

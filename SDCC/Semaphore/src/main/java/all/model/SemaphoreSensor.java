@@ -148,9 +148,6 @@ public class SemaphoreSensor {
             isRedWorking = false;
             brokenbulbs = brokenbulbs + "Red, ";}
 
-
-
-
     }
 
     private void setPosition(Semaphore sem) {

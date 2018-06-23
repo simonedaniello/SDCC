@@ -11,21 +11,44 @@ import main.java.Message;
 import main.java.Semaphore;
 import main.java.system.Printer;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Properties;
 
 public class QuerySolver {
 
     public volatile String controllerResponse = null;
 
     private FirstProducer fp;
-    private final String myIP = "localhost";
     private final int codeAddCrossroad = 603;
     private final int codeAddSemaphore = 602;
     private final int codeGetSituation = 601;
     public ArrayList<Semaphore> sems;
 
+    private String myIP;
+    private String input_ID;
+
     public QuerySolver(){
+
+        Properties properties = new Properties();
+        String filename = "monitorBackend.props";
+        InputStream input = QuerySolver.class.getClassLoader().getResourceAsStream(filename);
+        if (input == null){
+            System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
+            return;
+        }
+        try {
+            properties.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        myIP = properties.getProperty("INPUT_IP");
+        input_ID = properties.getProperty("INPUT_PORT");
+
+
+
         this.fp = FirstProducer.getInstance();
     }
 
@@ -36,7 +59,7 @@ public class QuerySolver {
      */
     public void addCrossroad(Crossroad crossroad){
         ArrayList<String> data = retrieveControllerFromMongo();
-        Message m = new Message("monitor", codeAddCrossroad);
+        Message m = new Message(input_ID, codeAddCrossroad);
         m.setIP(myIP);
         m.setCrossroad(crossroad);
         fp.sendMessage(data.get(0), m, data.get(1));

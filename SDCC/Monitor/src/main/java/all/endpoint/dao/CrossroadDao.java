@@ -1,9 +1,5 @@
 package all.endpoint.dao;
 
-import org.hibernate.annotations.Entity;
-import org.springframework.data.annotation.Id;
-
-
 /**
  * Author : Simone D'Aniello
  * Date :  06/03/2018.

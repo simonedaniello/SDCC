@@ -3,3 +3,8 @@ crossroadid=crossroadtest,crossroadtest2
 crossroadaddress=via del crossroad,via del crossroadtest2
 coordinatorid=idDelCoordinatore
 slottimeinseconds=30
+
+OUTPUT_KAFKA_TOPIC=monitor
+
+MONGO_HOST=localhost
+MONGO_PORT=27107

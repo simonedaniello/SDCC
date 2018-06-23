@@ -5,16 +5,34 @@ import main.java.Message;
 import main.java.Semaphore;
 import main.java.system.Printer;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 
 public class FlinkStatusMonitorer {
 
     Map<String, Integer> flinkTopicsActive;
-    private final int TIME_CORRELATED = 300000;
-    private final int TIME_CYCLE = TIME_CORRELATED/4;
+    private int TIME_CORRELATED;
+    private int TIME_CYCLE;
 
 
     public FlinkStatusMonitorer(){
+
+        Properties properties = new Properties();
+        String filename = "consumer.props";
+        InputStream input = FlinkStatusMonitorer.class.getClassLoader().getResourceAsStream(filename);
+        if (input == null){
+            System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
+            return;
+        }
+        try {
+            properties.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        TIME_CORRELATED = Integer.valueOf(properties.getProperty("TIME_CORRELATED"));
+        TIME_CYCLE = TIME_CORRELATED/4;
+
         this.flinkTopicsActive = new HashMap<>();
         Timer timer = new Timer();
         timer.schedule(new FlinkStatusMonitorer.TimerClass(), TIME_CYCLE, TIME_CYCLE);

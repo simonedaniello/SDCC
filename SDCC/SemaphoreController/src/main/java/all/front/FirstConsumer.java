@@ -14,6 +14,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Collections;
 import java.util.Properties;
 import java.util.UUID;
@@ -23,16 +24,29 @@ public class FirstConsumer {
 
     private TwoPCController twopc;
     private Monitorer monitorer;
+    private  String BOOTSTRAP_SERVERS;
+
 
     public FirstConsumer(TwoPCController twopc, Monitorer monitorer){
+
+        Properties properties = new Properties();
+        String filename = "controllerConfiguration.props";
+        InputStream input = FirstConsumer.class.getClassLoader().getResourceAsStream(filename);
+        if (input == null){
+            System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
+            return;
+        }
+        try {
+            properties.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        BOOTSTRAP_SERVERS = properties.getProperty("BOOTSTRAP_SERVERS");
         this.twopc = twopc;
         this.monitorer = monitorer;
     }
-
     private Consumer<Long, String> consumer;
-    private final String BOOTSTRAP_SERVERS =
-//            "localhost:9092,localhost:9093,localhost:9094";
-            "localhost:9092";
 
     private CrossroadController crossroadController;
 
@@ -47,13 +61,10 @@ public class FirstConsumer {
 
     private void createConsumer() {
 
-
         final Properties props = new Properties();
-
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 BOOTSTRAP_SERVERS);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, UUID.randomUUID().toString());
-
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
                 LongDeserializer.class.getName());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,

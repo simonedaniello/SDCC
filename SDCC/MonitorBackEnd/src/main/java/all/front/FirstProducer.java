@@ -1,6 +1,7 @@
 package all.front;
 
 
+import all.db.MongoDataStore;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.Message;
@@ -12,6 +13,8 @@ import org.apache.kafka.common.serialization.LongSerializer;
 import org.apache.kafka.common.serialization.Serializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
@@ -21,19 +24,33 @@ public class FirstProducer implements Serializer{
 
 
     public static FirstProducer instance = new FirstProducer();
-    private final Producer<Long, String> producer;
+    private Producer<Long, String> producer;
+
+    private String BOOTSTRAP_SERVERS;
 
     private FirstProducer(){
+
+        Properties properties = new Properties();
+        String filename = "monitorBackend.props";
+        InputStream input = FirstProducer.class.getClassLoader().getResourceAsStream(filename);
+        if (input == null){
+            System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
+            return;
+        }
+        try {
+            properties.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        BOOTSTRAP_SERVERS = properties.getProperty("BOOTSTRAP_SERVERS");
         producer = createProducer();
+
     }
 
     public static FirstProducer getInstance() {
         return instance;
     }
-
-    private final String BOOTSTRAP_SERVERS =
-//            "localhost:9092,localhost:9093,localhost:9094";
-            "localhost:9092";
 
 
     private Producer<Long, String> createProducer() {

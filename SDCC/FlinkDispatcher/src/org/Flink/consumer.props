@@ -1,4 +1,4 @@
-bootstrap.servers=localhost:9092
+bootstrap.servers=10.202.31.134:9092
 group.id=test
 enable.auto.commit=true
 key.deserializer=org.apache.kafka.common.serialization.StringDeserializer
@@ -19,4 +19,8 @@ flinkDispatcherID=IDtoChangeAndRandomize
 TIME_CYCLE=60000
 topic_name=monitorer
 INPUT_KAFKA_TOPIC=semaphoresensor
+broker_name=localhost:9092
+SENSOR_INPUT=sensor_input
+
+QUERY3_TIME_WINDOW=10
 

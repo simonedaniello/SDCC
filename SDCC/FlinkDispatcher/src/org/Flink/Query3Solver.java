@@ -28,8 +28,7 @@ import java.util.Properties;
 public class Query3Solver {
 
 
-    private static String INPUT_KAFKA_TOPIC = null;
-    private static int TIME_WINDOW = 0;
+    private static int TIME_WINDOW;
     private static final Logger log = LoggerFactory.getLogger(org.Flink.WindowTrafficData.class);
 
 
@@ -53,11 +52,11 @@ public class Query3Solver {
         properties.load(input);
 
 
-        TIME_WINDOW = 10;
+        TIME_WINDOW = Integer.valueOf(properties.getProperty("QUERY3_TIME_WINDOW"));
         String flinkDispatcherID = properties.getProperty("flinkDispatcherID");
         String topicname = properties.getProperty("topic_name");
-
-        INPUT_KAFKA_TOPIC = "test";
+        String INPUT_KAFKA_TOPIC = properties.getProperty("SENSOR_INPUT");
+        String BROKER_NAME = properties.getProperty("broker_name");
 
 
 
@@ -75,7 +74,7 @@ public class Query3Solver {
                 .timeWindow(Time.seconds((long)TIME_WINDOW))
                 .aggregate(new mobileSensorAggregate());
 
-        result.addSink(new FlinkKafkaProducer011<>("localhost:9092", "test2", (SerializationSchema<Tuple3<String, Double, Integer>>) stringDoubleTuple3 -> {
+        result.addSink(new FlinkKafkaProducer011<>(BROKER_NAME, topicname, (SerializationSchema<Tuple3<String, Double, Integer>>) stringDoubleTuple3 -> {
             Gson gson = new Gson();
             String key = stringDoubleTuple3.f0;
             double value = stringDoubleTuple3.f1;
@@ -87,7 +86,7 @@ public class Query3Solver {
             return results.getBytes();
         }));
 
-        env.execute("Window Traffic Data");
+        env.execute("Query 3");
 
     }
 

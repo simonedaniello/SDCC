@@ -1,13 +1,6 @@
-/**
- * 
- */
 package db;
 
-/**
- * @author amitesh
- *
- */
-//@Document
+
 public class ServiceEventRequest {
 	private static final long serialVersionUID = -8650616886390531568L;
 	private String name;

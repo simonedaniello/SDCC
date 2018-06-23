@@ -49,6 +49,7 @@ public class NewAverageKafkaSender {
         INPUT_KAFKA_TOPIC = properties.getProperty("INPUT_KAFKA_TOPIC");
         String flinkDispatcherID = properties.getProperty("flinkDispatcherID");
         String topicname = properties.getProperty("topic_name");
+        String BROKER_NAME = properties.getProperty("broker_name");
 
 //        INPUT_KAFKA_TOPIC = "semaphoresensor";
 //        properties.setProperty("bootstrap.servers", "localhost:9092");
@@ -70,7 +71,7 @@ public class NewAverageKafkaSender {
 
 
         //write to another kafka topic
-       averageSpeedStream.addSink(new FlinkKafkaProducer011<>("localhost:9092", topicname, (SerializationSchema<Tuple3<String, Double, Integer>>) stringDoubleTuple3 -> {
+       averageSpeedStream.addSink(new FlinkKafkaProducer011<>(BROKER_NAME, topicname, (SerializationSchema<Tuple3<String, Double, Integer>>) stringDoubleTuple3 -> {
             Gson gson = new Gson();
             String key = stringDoubleTuple3.f0;
             double value = stringDoubleTuple3.f1;
@@ -83,7 +84,7 @@ public class NewAverageKafkaSender {
         }));
 
         averageSpeedStream.print();
-        env.execute("Window Traffic Data");
+        env.execute("Query 1");
 
     }
 

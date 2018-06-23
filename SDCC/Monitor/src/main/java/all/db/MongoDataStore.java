@@ -1,6 +1,7 @@
 
 package all.db;
 
+import all.front.FirstConsumer;
 import com.mongodb.*;
 import com.mongodb.util.JSON;
 import main.java.FlinkResult;
@@ -9,9 +10,12 @@ import main.java.system.Printer;
 import org.bson.BasicBSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 
 public class MongoDataStore implements DataStore {
@@ -19,22 +23,29 @@ public class MongoDataStore implements DataStore {
 	private static DataStore mongoDataStore;
 	private static DBCollection rawEventsColl;
 	public static final String COLLECTION_NAME = "events";
-	private String controllerid = null;
+    private String controllerid = null;
+
+    private static String MONGO_HOST;
+    private static int MONGO_PORT;
 
 	@Autowired
 	private MongoDataStore() {
+        Properties properties = new Properties();
+        String filename = "consumer.props";
+        InputStream input = MongoDataStore.class.getClassLoader().getResourceAsStream(filename);
+        if (input == null){
+            System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
+            return;
+        }
+        try {
+            properties.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        MONGO_HOST = properties.getProperty("MONGO_HOST");
+        MONGO_PORT = Integer.valueOf(properties.getProperty("MONGO_PORT"));
 	}
 
-	/**
-	 * @param mongoHost
-	 * @param mongoPort
-	 * @return
-	 * @throws UnknownHostException
-	 */
-
-	
-	private static final String MONGO_HOST = "localhost";
-	private static final int MONGO_PORT = 27017;
 	public static DataStore getInstance() throws UnknownHostException {
 		synchronized (MongoDataStore.class) {
 			if (mongoDataStore == null) {

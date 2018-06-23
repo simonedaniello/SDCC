@@ -9,9 +9,12 @@ import main.java.Crossroad;
 import main.java.Semaphore;
 import main.java.system.Printer;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Properties;
 
 /**
  * Author : Simone D'Aniello
@@ -25,9 +28,25 @@ public class MonitorController implements Runnable{
     private QuerySolver qs;
 
     private MonitorController(){
+
+
+        Properties properties = new Properties();
+        String filename = "monitorBackend.props";
+        InputStream input = MonitorController.class.getClassLoader().getResourceAsStream(filename);
+        if (input == null){
+            System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
+            return;
+        }
+        try {
+            properties.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String ID = properties.getProperty("INPUT_PORT");
+
         qs = new QuerySolver();
         crossroads = new ArrayList<>();
-        String ID = "monitor";
         FirstConsumer.getInstance().setAttributes(this, qs);
         FirstConsumer.getInstance().subscribeToTopic(ID);
         (new Thread(this)).start();

@@ -1,14 +1,6 @@
-/**
- * 
- */
 package org.kafka.producer;
 
-import scala.text.Document;
 
-/**
- * @author amitesh
- *
- */
 //@Document
 public class ServiceEventRequest {
 	private static final long serialVersionUID = -8650616886390531568L;

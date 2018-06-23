@@ -16,7 +16,10 @@ import java.util.concurrent.TimeUnit;
 
 public class SemaphoreSensorDataProducer {
 
+    private String OUTPUT_KAFKA_TOPIC;
+
     public SemaphoreSensorDataProducer(FirstProducer fp, Semaphore sem) throws JsonProcessingException {
+
 
         Properties properties = new Properties();
         String filename = "semaphoresConfig.props";
@@ -31,18 +34,16 @@ public class SemaphoreSensorDataProducer {
             e.printStackTrace();
         }
 
-
+        OUTPUT_KAFKA_TOPIC = properties.getProperty("OUTPUT_KAFKA_TOPIC");
         String messageRateMillis= properties.getProperty("messageRateMillis");
         String malfunctionRateInMillis= properties.getProperty("malfunctionRateInTenMill");
 
 
         while (true) {
-
-            int i = 0;
             List<SemaphoreSensor> eventList = new ArrayList();
 
 
-            for (i = 0; i < 100; i++) {
+            for (int i = 0; i < 100; i++) {
 
                 SemaphoreSensor s = new SemaphoreSensor();
                 s.initializeSensor(sem, Long.parseLong(malfunctionRateInMillis));
@@ -66,7 +67,7 @@ public class SemaphoreSensorDataProducer {
 
                     fp.sendSemaphoreSensorInfo("localhost", m , sem.getCrossroad());
                 }
-                fp.sendSemaphoreSensorInfo("localhost", event, "semaphoresensor");
+                fp.sendSemaphoreSensorInfo("localhost", event, OUTPUT_KAFKA_TOPIC);
                 try {
                     TimeUnit.MILLISECONDS.sleep(Long.parseLong(messageRateMillis));
                 } catch (InterruptedException e) {

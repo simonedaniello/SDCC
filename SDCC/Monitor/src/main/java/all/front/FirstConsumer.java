@@ -12,6 +12,8 @@ import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Collections;
 import java.util.Properties;
 
@@ -22,22 +24,29 @@ public class FirstConsumer {
     private Monitorer monitorer;
     private FlinkStatusMonitorer flinkStatusMonitorer;
 
+    private Consumer<Long, String> consumer;
+    private String BOOTSTRAP_SERVERS;
+
 
     private FirstConsumer(){
+        Properties properties = new Properties();
+        String filename = "consumer.props";
+        InputStream input = FirstConsumer.class.getClassLoader().getResourceAsStream(filename);
+        if (input == null){
+            System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
+            return;
+        }
+        try {
+            properties.load(input);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        BOOTSTRAP_SERVERS = properties.getProperty("BOOTSTRAP_SERVERS");
     }
 
     public static FirstConsumer getInstance() {
         return instance;
     }
-
-    private Consumer<Long, String> consumer;
-    private final String BOOTSTRAP_SERVERS =
-//            "localhost:9092,localhost:9093,localhost:9094";
-            "localhost:9092";
-
-
-
-
 
     public void setMonitorer(Monitorer monitorer, FlinkStatusMonitorer flinkStatusMonitorer){
         createConsumer();
