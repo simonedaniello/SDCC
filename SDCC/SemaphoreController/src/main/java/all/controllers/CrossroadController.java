@@ -33,6 +33,7 @@ public class CrossroadController{
     private TelegramBotStarter telegramBot;
     private ArrayList<Long> chatids = new ArrayList<>();
     private boolean thereIsaMalfunction = false;
+    private ReinforcementLearningController reinforcementLearningController;
 
 
     public CrossroadController(String ID, String address, TelegramBotStarter bot){
@@ -51,6 +52,7 @@ public class CrossroadController{
         }
         int slottimeinseconds = Integer.parseInt(properties.getProperty("slottimeinseconds"));
 
+        reinforcementLearningController = new ReinforcementLearningController();
         this.telegramBot = bot;
         this.crossroad = new Crossroad(ID, address);
         this.fp = new FirstProducer();
@@ -86,6 +88,7 @@ public class CrossroadController{
     public void addSemaphore(Semaphore semaphore){
         Printer.getInstance().print("adding semapore: " + semaphore.getID(), "green");
         giveOrderingToSemaphore(semaphore);
+        reinforcementLearningController.addSemaphore(semaphore);
         crossroad.getSemaphores().add(semaphore);
         sendCurrentState();
         monitorer.setNumberOfSemaphores(crossroad.getSemaphores().size());
@@ -95,6 +98,15 @@ public class CrossroadController{
             e.printStackTrace();
         }
         printSemaphores();
+    }
+
+    public void addCarsInQueue(String Id, double carsInTimeUnit, double meanSpeed){
+
+        for (Semaphore s: reinforcementLearningController.getSemaphoreList()) {
+            if (s.getID().equals(Id))
+                s.setQueueSize(carsInTimeUnit/meanSpeed);
+        }
+
     }
 
     public void removeSemaphore(Semaphore semaphore){

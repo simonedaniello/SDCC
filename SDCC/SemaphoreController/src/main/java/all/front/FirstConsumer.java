@@ -5,6 +5,10 @@ import all.controllers.CrossroadController;
 import all.controllers.Monitorer;
 import all.controllers.TwoPCController;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import entities.Message;
 import entities.system.Printer;
 import org.apache.kafka.clients.consumer.*;
@@ -137,7 +141,28 @@ public class FirstConsumer {
         else if (code == 601){
             crossroadController.tellMonitorerToSendInfos(message.getIP(), message.getID());
         }
+
+
         //---------------------2PC-----------------------
+
+        else if (code == 200) {
+            String talpa = message.getSemaphoreTuple();
+            JsonParser parser = new JsonParser();
+            JsonElement element = parser.parse(talpa);
+            if (element.isJsonObject()){
+                JsonObject record = element.getAsJsonObject();
+                crossroadController.addCarsInQueue(message.getID(),
+                        record.get("carsInTimeUnit").getAsDouble(),
+                        record.get("meanSpeed").getAsDouble());
+
+            }
+
+
+        }
+
+
     }
+
+
 
 }

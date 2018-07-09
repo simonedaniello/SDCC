@@ -2,7 +2,6 @@ package entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Author : Simone D'Aniello
@@ -20,13 +19,21 @@ public class Semaphore implements Serializable{
     private String controllerIP;
     private int light; // 0 for red, 1 for green, 2 for yellow
     private double trafficIntensity;
-    private List<Car> queue = new ArrayList<>();
-    private  ArrayList<Double> times = new ArrayList<>();
+    private ArrayList<Double> times = new ArrayList<>();
+    private Double queueSize;
+    private Double[] values = new Double[2];
     private String latitude;
     private String longitude;
     private int order;
     private int malfunctions = 0;
 
+    public Double[] getValues() {
+        return values;
+    }
+
+    public void setValues(int position, Double value) {
+        this.values[position] = value;
+    }
 
     public Semaphore(){}
 
@@ -36,6 +43,8 @@ public class Semaphore implements Serializable{
         this.street = street;
         this.semaphores = new ArrayList<>();
         this.greenTogether = new ArrayList<>();
+        this.setValues(0, 0.0);
+        this.setValues(1, 0.0);
         times.add(8.0);
         times.add(0.0);
         times.add(0.0);
@@ -98,14 +107,6 @@ public class Semaphore implements Serializable{
         this.trafficIntensity = trafficIntensity;
     }
 
-    public List<Car> getQueue() {
-        return queue;
-    }
-
-    public void setQueue(List<Car> queue) {
-        this.queue = queue;
-    }
-
     public ArrayList<Double> getTimes() {
         return times;
     }
@@ -115,7 +116,7 @@ public class Semaphore implements Serializable{
     }
 
     public double maxQ(){
-        return Math.max(times.get(1),times.get(2));
+        return (getValues()[0] - getValues()[1]);
     }
 
     public String getLatitude() {
@@ -173,6 +174,14 @@ public class Semaphore implements Serializable{
 
     public void setMalfunctions(int malfunctions) {
         this.malfunctions = malfunctions;
+    }
+
+    public Double getQueueSize() {
+        return queueSize;
+    }
+
+    public void setQueueSize(double queueSize) {
+        this.queueSize = queueSize;
     }
 }
 

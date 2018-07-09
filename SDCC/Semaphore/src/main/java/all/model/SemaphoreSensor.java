@@ -132,19 +132,22 @@ public class SemaphoreSensor {
         //Randomize broken bulb
         Random rand = new Random();
         rand.setSeed(System.currentTimeMillis());
-        double g = rand.nextInt(10000);
-        double y = rand.nextInt(10000);
-        double r = rand.nextInt(10000);
+        double g = rand.nextInt(1000);
+        double y = rand.nextInt(1000);
+        double r = rand.nextInt(1000);
 
         if (g>=ratefrattomille){
+            System.out.println("lampadina rotta");
             isGreenWorking = false;
             brokenbulbs = brokenbulbs + "Green, ";}
 
         if (y>=ratefrattomille){
+            System.out.println("lampadina rotta");
             isYellowWorking = false;
             brokenbulbs = brokenbulbs + "Yellow, ";}
 
         if (r>=ratefrattomille){
+            System.out.println("lampadina rotta");
             isRedWorking = false;
             brokenbulbs = brokenbulbs + "Red, ";}
 

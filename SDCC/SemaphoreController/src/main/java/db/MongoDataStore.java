@@ -44,15 +44,17 @@ public class MongoDataStore implements DataStore {
 		}
 		MONGO_HOST = properties.getProperty("MONGO_HOST");
 		MONGO_PORT = Integer.valueOf(properties.getProperty("MONGO_PORT"));
+		System.out.println(MONGO_HOST);
+		System.out.println(MONGO_PORT);
 
 	}
 
 	public static DataStore getInstance() throws UnknownHostException {
 		synchronized (MongoDataStore.class) {
 			if (mongoDataStore == null) {
-				DB db = new MongoClient(MONGO_HOST,MONGO_PORT).getDB("stream");
+                mongoDataStore = new MongoDataStore();
+                DB db = new MongoClient(MONGO_HOST,MONGO_PORT).getDB("stream");
 				rawEventsColl = db.getCollection("events");
-				mongoDataStore = new MongoDataStore();
 			}
 		}
 		return mongoDataStore;

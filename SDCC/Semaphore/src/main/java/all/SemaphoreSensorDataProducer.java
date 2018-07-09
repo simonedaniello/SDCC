@@ -53,11 +53,12 @@ public class SemaphoreSensorDataProducer {
 
             Collections.shuffle(eventList);
             Iterator var15 = eventList.iterator();
+            ObjectMapper mapper = new ObjectMapper();
+
 
             while (var15.hasNext()) {
                 SemaphoreSensor event = (SemaphoreSensor) var15.next();
                 if (!event.isGreenWorking() || !event.isYellowWorking() || !event.isRedWorking()){
-                    ObjectMapper mapper = new ObjectMapper();
                     Printer.getInstance().print("messaggio di malfunction con id: " + sem.getID(), "yellow");
 
                     //Messaggio creato quando c'è un malfunzionamento
@@ -67,7 +68,18 @@ public class SemaphoreSensorDataProducer {
 
                     fp.sendSemaphoreSensorInfo("localhost", m , sem.getCrossroad());
                 }
+
+                else{
+                Message message = new Message(sem.getID(),200);
+                message.setSemaphoreTuple(mapper.writeValueAsString(event));
+
+
+                fp.sendSemaphoreSensorInfo("localhost", message, sem.getCrossroad());
+
+                }
+
                 fp.sendSemaphoreSensorInfo("localhost", event, OUTPUT_KAFKA_TOPIC);
+
                 try {
                     TimeUnit.MILLISECONDS.sleep(Long.parseLong(messageRateMillis));
                 } catch (InterruptedException e) {
