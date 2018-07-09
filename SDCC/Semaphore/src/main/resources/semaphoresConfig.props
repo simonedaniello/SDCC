@@ -4,8 +4,8 @@ address=via polibio,via seneca,via tacito,via platone
 controllerip=localhost,localhost,localhost,localhost
 crossroad=crossroadtest,crossroadtest,crossroadtest,crossroadtest
 flinkDispatcher=semaphoresensor,semaphoresensor,semaphoresensor,semaphoresensor
-messageRateMillis=1000
-malfunctionRateInTenMill=9997
+messageRateMillis=60000
+malfunctionRateInTenMill=5000
 periodtimeforsinglesemaphore=60
 
 OUTPUT_KAFKA_TOPIC=semaphoresensor
