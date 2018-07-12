@@ -49,7 +49,7 @@ public class Query3Solver {
         properties.load(input);
 
         Properties semaphores = new Properties();
-        String semaphoresConfig = "semaphoresConfig.props";
+        String semaphoresConfig = "org/Flink/semaphoresConfig.props";
         InputStream semaphoreInput = NewAverageKafkaSender.class.getClassLoader().getResourceAsStream(semaphoresConfig);
         if(input==null){
             System.out.println("\n\nSorry, unable to find " + filename);
@@ -57,9 +57,9 @@ public class Query3Solver {
         }
         semaphores.load(semaphoreInput);
 
+        longitudes = semaphores.getProperty("longitude").split(",");
+        latitudes = semaphores.getProperty("latitude").split(",");
 
-        latitudes = properties.getProperty("latitude").split(",");
-        longitudes = properties.getProperty("longitude").split(",");
 
         double[] doubleLatitudes = Arrays.stream(latitudes)
                 .mapToDouble(Double::parseDouble)
@@ -69,7 +69,13 @@ public class Query3Solver {
                 .mapToDouble(Double::parseDouble)
                 .toArray();
 
-
+   /*     int i =0;
+        for (i=0; i<doubleLatitudes.length; i++){
+            System.out.println("*****************************************************");
+            System.out.println("LATITUDINE " + doubleLatitudes[i]);
+            System.out.println("LONGITUDINE " + doubleLongitudes[i]);
+        }
+*/
 
 
 
@@ -119,7 +125,7 @@ public class Query3Solver {
 
         private double[] latitudes;
         private double[] longitudes;
-        private double semaphoreActionRange = 0.2; //range of action of semaphore in kilometres
+        private double semaphoreActionRange = 0.02; //range of action of semaphore in kilometres
         private Harvesine harvesine = new Harvesine();
 
 
@@ -136,7 +142,7 @@ public class Query3Solver {
             IoTData car = GPSJsonReader.getIoTData(jsonString);
 
             boolean found = false;
-            int i = 0;
+            int i;
             double threshold = semaphoreActionRange;  //for each new car, reset threshold to action range
             String semaphoreID = "";                  //String that will contain ID of associated semaphore
 
@@ -144,11 +150,17 @@ public class Query3Solver {
             double carLat = Double.parseDouble(car.getLatitude());
             double carLon = Double.parseDouble(car.getLongitude());
 
-            for (i=0;i<= latitudes.length -1 ;i++){
+/*            System.out.println("latitudine macchina" + carLat);
+            System.out.println("longitudine macchina" + carLon);*/
+
+            for (i=0; i< latitudes.length ; i++){
                 double semaphoreLat = latitudes[i];
                 double semaphoreLon = longitudes[i];
 
-                double dist = harvesine.calculateApproximatedDistanceInKilometer(carLat,carLon,semaphoreLat,semaphoreLon);
+                Double dist = harvesine.calculateApproximatedDistanceInKilometer(carLat,carLon,semaphoreLat,semaphoreLon);
+/*
+                Printer.getInstance().print(dist.toString(),"yellow");
+*/
                 if (dist <= threshold){
                     found = true;
                     threshold = dist;
@@ -163,9 +175,9 @@ public class Query3Solver {
                     tp2.setField(semaphoreID,0);
                     tp2.setField(car.getSpeed(),1);
                     out.collect(tp2);
-/*
+
                     System.out.println(out);
-*/
+
             }
         }
     }
@@ -180,17 +192,15 @@ public class Query3Solver {
 
         @Override
         public Tuple3<String,Double, Double> add(Tuple2<String, Double> value, Tuple3 <String, Double, Double> accumulator) {
-//            double x = accumulator.f1 + value.f1;
-//            System.out.println("accumulator più value is: " + x);
-//            System.out.println("Index is: " + accumulator.f2);
+
             return new Tuple3<>(value.f0, accumulator.f1 + value.f1, accumulator.f2 + 1.0);
         }
 
         @Override
         public Tuple3<String, Double, Integer> getResult(Tuple3 <String, Double, Double> accumulator) {
-/*
+
             System.out.println("get result");
-*/
+
             return new Tuple3<>(accumulator.f0, accumulator.f1 / accumulator.f2, accumulator.f2.intValue());        }
 
         @Override
