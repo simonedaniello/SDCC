@@ -10,10 +10,12 @@ public class ReinforcementLearningController {
     private List<Semaphore> semaphoreList;
     private static double alpha = 0.1;
     private static double gamma = 0.8;
+    private CrossroadController crossroadController;
 
 
-    public ReinforcementLearningController() {
+    public ReinforcementLearningController(CrossroadController crossroadController) {
 
+        this.crossroadController = crossroadController;
         semaphoreList = new ArrayList<>();
         Thread thread = new Thread(this::lightUpSemaphore);
 
@@ -24,8 +26,10 @@ public class ReinforcementLearningController {
         boolean found = false;
 
         for (Semaphore s: semaphoreList) {
-            if (s.getID().equals(semaphore.getID()))
+            if (s.getID().equals(semaphore.getID())) {
+                //s.setQueueSize(semaphore.getQueueSize());
                 found = true;
+            }
         }
 
         if (!found)
@@ -51,14 +55,8 @@ public class ReinforcementLearningController {
                 e.printStackTrace();
             }
 
-            //generator.carArrival();
-
-            //TODO Dovremo leggere da semaphoreRepository
-
             learn();
             decide();
-            System.out.println("AGGIORNAMENTO");
-            System.out.println("********************************************************************************");
 
         }
 
@@ -70,10 +68,11 @@ public class ReinforcementLearningController {
 
         for (Semaphore s:semaphoreList) {
 
-            System.out.println(s.getValues().get(0));
-            System.out.println(s.getValues().get(1));
-            System.out.println(s.getQueueSize());
-            System.out.println(s.maxQ());
+
+/*            System.out.println("value 0: " + s.getValues().get(0));
+            System.out.println("value 1: " + s.getValues().get(1));
+            System.out.println("queue size: " + s.getQueueSize());
+            System.out.println("max Q: " + s.maxQ());*/
 
             //quanto conviene che il semaforo venga acceso
             s.getValues().set(0, (1-alpha) * (s.getValues().get(0)) + alpha* (s.getQueueSize() + gamma + s.maxQ()));
@@ -94,11 +93,11 @@ public class ReinforcementLearningController {
         Semaphore green = null;
         for (Semaphore s:semaphoreList) {
 
-            System.out.println("Semaphore:" + s.getID());
-            System.out.println(s.getTimes().get(0));
-            System.out.println(s.getTimes().get(1));
-
-            temp = s.getTimes().get(0) - s.getTimes().get(1);
+            /*System.out.println("Semaphore:" + s.getID());
+            System.out.println(s.getValues().get(0));
+            System.out.println(s.getValues().get(1));
+*/
+            temp = s.getValues().get(0) - s.getValues().get(1);
 
             if (temp > bestQ){
                 id = s.getID();
@@ -112,12 +111,13 @@ public class ReinforcementLearningController {
                 s.setLight(1);
                 s.setQueueSize(0);
                 green = s;
-                System.out.println("Cleared queue for semaphore number " + id);
+                //System.out.println("Cleared queue for semaphore number " + id);
             } else
                 s.setLight(0);
         }
 
         System.out.println("Turned on semaphore " + id);
+        crossroadController.setIdToTurnOn(id);
         return green;
 
     }

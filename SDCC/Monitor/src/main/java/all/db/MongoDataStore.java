@@ -1,14 +1,10 @@
 
 package all.db;
 
-import all.front.FirstConsumer;
 import com.mongodb.*;
 import com.mongodb.util.JSON;
 import entities.FlinkResult;
-import entities.Semaphore;
 import entities.system.Printer;
-import org.bson.BasicBSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
@@ -100,9 +96,51 @@ public class MongoDataStore implements DataStore {
 		return list;
 	}
 
-	@Override
-    @Transactional
-	public void writeListOfFlinkResultsOnDB(String entryType, ArrayList resultList) {
+    @Override
+    public void writeListOfFlinkResultsOnDB(String entryType, List list) {
+        checkIfItExists(entryType);
+
+        DBObject newEntry = new BasicDBObject();
+
+        newEntry.put("_id", entryType);
+        DBObject data;
+
+        BasicDBList ranks = new BasicDBList();
+        for(Object fr : list){
+            BasicDBObject entry = new BasicDBObject("semId", ((FlinkResult) fr).getKey());
+            entry.append("value", ((FlinkResult) fr).getValue());
+
+            //{"semaphores.semaphoreID": "28e7234668777f9ed7a63b82eac501322fa9ac707238d8a3e9e89c599458ab13"}, {_id: 0, 'semaphores.$': 1}
+
+            DBObject clause1 = new BasicDBObject("semaphores.semaphoreID", ((FlinkResult) fr).getKey());
+            DBObject clause3 = new BasicDBObject("semaphores.$", 1);
+            BasicDBList and = new BasicDBList();
+            and.add(clause1);
+            and.add(clause3);
+            Printer.getInstance().print(and.toString() + "\n\n\n", "yellow");
+
+            DBCursor cursor = rawEventsColl.find(clause1, clause3);
+            while (cursor.hasNext()) {
+                data = cursor.next();
+                BasicDBList dblist = (BasicDBList) data.get("semaphores");
+                BasicDBObject value = (BasicDBObject) dblist.get(0);
+                Printer.getInstance().print(value.toString(), "cyan");
+                entry.append("latitude", value.get("latitude"));
+                entry.append("longitude", value.get("longitude"));
+                entry.append("address", value.get("semaphoreStreet"));
+                entry.append("malfunctions", value.get("malfunctions"));
+            }
+
+            ranks.add(entry);
+        }
+        newEntry.put("ranking", ranks);
+
+
+        rawEventsColl.insert(newEntry);
+    }
+
+/*
+	public void writeListOfFlinkResultsOnDB(String entryType, List<FlinkResult> resultList) {
 
 	    checkIfItExists(entryType);
 
@@ -145,6 +183,7 @@ public class MongoDataStore implements DataStore {
         rawEventsColl.insert(newEntry);
 
 	}
+*/
 
 	private void checkIfItExists(String objectName){
 		DBObject searchById = new BasicDBObject("_id", objectName);

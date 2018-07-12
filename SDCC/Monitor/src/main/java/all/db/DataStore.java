@@ -6,7 +6,7 @@ package all.db;
 
 import entities.FlinkResult;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author amitesh
@@ -19,5 +19,5 @@ public interface DataStore<T> {
 
 	T getAll();
 
-	void writeListOfFlinkResultsOnDB(String entryType, ArrayList<FlinkResult> resultList);
+	void writeListOfFlinkResultsOnDB(String entryType, List<FlinkResult> resultList);
 }

@@ -1,0 +1,13 @@
+latitude=30,40,90,91
+longitude=70,80,92,93
+address=via polibio,via seneca,via tacito,via platone
+controllerip=localhost,localhost,localhost,localhost
+crossroad=crossroadtest,crossroadtest,crossroadtest,crossroadtest
+flinkDispatcher=semaphoresensor,semaphoresensor,semaphoresensor,semaphoresensor
+messageRateMillis=5000
+malfunctionRateInTenMill=5000
+periodtimeforsinglesemaphore=60
+
+OUTPUT_KAFKA_TOPIC=semaphoresensor
+
+BOOTSTRAP_SERVERS=localhost:9092

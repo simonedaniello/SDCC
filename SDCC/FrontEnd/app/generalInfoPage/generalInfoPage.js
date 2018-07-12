@@ -34,9 +34,9 @@ angular.module('myApp.generalInfoPage', ['ngRoute'])
             $scope.generalInfo= (response.data);
             console.log($scope.generalInfo);
 
-            colorWords(elemcontrollers, $scope.generalInfo.nOfControllers, 0);
-            colorWords(elemcrossroads, $scope.generalInfo.nOfCrossroads, 0);
-            colorWords(elemsemaphores, $scope.generalInfo.nOfSemaphores, 0);
+            colorWords(elemcontrollers, ($scope.generalInfo.nOfControllers).toString(), 0);
+            colorWords(elemcrossroads, ($scope.generalInfo.nOfCrossroads).toString(), 0);
+            colorWords(elemsemaphores, ($scope.generalInfo.nOfSemaphores).toString(), 0);
             colorWords(elemquery1, "Query 1:", 0);
             colorWords(elemquery2, "Query 2:", 0);
             colorWords(elemquery3, "Query 3:", 0);
@@ -103,7 +103,7 @@ angular.module('myApp.generalInfoPage', ['ngRoute'])
 
         idname.appendChild(randomChars);
 
-        if (curr < (number).length)
+        if (curr <= (number).length)
             setTimeout(function() { colorWords(idname, number, curr+1) },100)
     }
 

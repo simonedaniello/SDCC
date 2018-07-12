@@ -44,14 +44,14 @@ public class Monitorer {
     private ArrayList<FlinkResult> averageSpeedList = new ArrayList<>();
     private ArrayList<FlinkResult> averageSpeedList1hour = new ArrayList<>();
     private ArrayList<FlinkResult> averageSpeedList24hours = new ArrayList<>();
-    private ArrayList<FlinkResult> oldAverageSpeedList= new ArrayList<>();
+    private List<FlinkResult> oldAverageSpeedList= new ArrayList<>();
     private ArrayList<FlinkResult> oldAverageSpeedList1hour= new ArrayList<>();
     private ArrayList<FlinkResult> oldAverageSpeedList24hours= new ArrayList<>();
 
     private ArrayList<FlinkResult> quantileList = new ArrayList<>();
     private ArrayList<FlinkResult> quantileList1hour = new ArrayList<>();
     private ArrayList<FlinkResult> quantileList24hours = new ArrayList<>();
-    private ArrayList<FlinkResult> oldQuantileList = new ArrayList<>();
+    private List<FlinkResult> oldQuantileList = new ArrayList<>();
     private ArrayList<FlinkResult> oldQuantileList1hour = new ArrayList<>();
     private ArrayList<FlinkResult> oldQuantileList24hours = new ArrayList<>();
 
@@ -251,12 +251,12 @@ public class Monitorer {
         if(averageSpeedList.size() < 40)
             oldAverageSpeedList = averageSpeedList;
         else
-            oldAverageSpeedList = (ArrayList<FlinkResult>) averageSpeedList.subList(0, 39);
+            oldAverageSpeedList =  averageSpeedList.subList(0, 39);
 
         if(quantileList.size()<40)
             oldQuantileList = quantileList;
         else
-            oldQuantileList = (ArrayList<FlinkResult>) quantileList.subList(0, 39);
+            oldQuantileList = quantileList.subList(0, 39);
 
         MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15averageSpeed", oldAverageSpeedList);
         MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15quantileSpeed", oldQuantileList);

@@ -36,7 +36,7 @@ public class Runner {
         InputStream input = Semaphore.class.getClassLoader().getResourceAsStream(filename);
         if(input==null){
             System.out.println("\n\nSorry, unable to find " + filename);
-            return;
+            System.exit(-1);
         }
         properties.load(input);
 
@@ -48,7 +48,7 @@ public class Runner {
         String[] flinkDispatchers = properties.getProperty("flinkDispatcher").split(",");
         String[] controllerips = properties.getProperty("controllerip").split(",");
 
-        for(int i = 0; i < latitudes.length; i++){
+        for(int i = 0; i < 40; i++){
             try {
                 new SemaphoreGenerator(crossroads[i], controllerips[i], latitudes[i], longitudes[i], flinkDispatchers[i], addresses[i]);
             } catch (IndexOutOfBoundsException e){
@@ -81,7 +81,7 @@ public class Runner {
         @Override
         public void run() {
             Semaphore s = new Semaphore();
-            s.setCrossroad(args1);
+            s.setCrossroad(args1.replace(" ", ""));
             s.setControllerIP(args2);
             s.setLatitude(latitude);
             s.setLongitude(longitude);

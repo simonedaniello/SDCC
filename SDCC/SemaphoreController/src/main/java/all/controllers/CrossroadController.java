@@ -105,7 +105,6 @@ public class CrossroadController{
 
         for (Semaphore s: reinforcementLearningController.getSemaphoreList()) {
             if (s.getID().equals(Id)) {
-                Printer.getInstance().print("cars in time unit: " + carsInTimeUnit + ", meanSpeed: " + meanSpeed + ", id: " + s.getID() + "\n\n", "blue");
                 s.setQueueSize(s.getQueueSize() + (meanSpeed / carsInTimeUnit));
             }
         }
@@ -195,7 +194,6 @@ public class CrossroadController{
             printSemaphores();
             while(crossroad.getSemaphores().size() == 0){
                 try {
-                    System.out.println("non invio in quanto zero");
                     TimeUnit.SECONDS.sleep(5);
                 } catch (InterruptedException e) {
                     e.printStackTrace();

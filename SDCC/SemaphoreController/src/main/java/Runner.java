@@ -27,8 +27,9 @@ public class Runner {
 
         String[] crossroads = properties.getProperty("crossroadid").split(",");
         String[] addresses = properties.getProperty("crossroadaddress").split(",");
-        for(int i = 0; i<crossroads.length; i++){
-            Coordinator.getInstance().addCrossroadController(crossroads[i], addresses[i]);
+        //for(int i = 0; i<crossroads.length; i++){
+        for(int i = 0; i<10; i++){
+            Coordinator.getInstance().addCrossroadController(crossroads[i].replace(" ", "").replace("/", ""), addresses[i]);
         }
 
 

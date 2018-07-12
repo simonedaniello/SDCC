@@ -173,7 +173,7 @@ public class SemaphoreClass implements Runnable{
         Message m = new Message();
         m.setCode(1);
         m.setSemaphore(this.semaphore);
-        Printer.getInstance().print("sending registration with id: " + this.semaphore.getID(), "blue");
+        Printer.getInstance().print("sending registration with id: " + this.semaphore.getID() + " to " + semaphore.getCrossroad(), "blue");
         fp.sendMessage(semaphore.getControllerIP(), m, semaphore.getCrossroad());
     }
 
