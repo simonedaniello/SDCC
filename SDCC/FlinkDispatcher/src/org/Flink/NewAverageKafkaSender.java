@@ -28,10 +28,15 @@ import java.util.Properties;
 
 public class NewAverageKafkaSender {
 
+    public NewAverageKafkaSender() {
+
+       // this.configuration = conf;
+    }
 
     private static String INPUT_KAFKA_TOPIC = null;
     private static int TIME_WINDOW = 0;
     private static final Logger log = LoggerFactory.getLogger(org.Flink.WindowTrafficData.class);
+    private String configuration;
 
     public void calculateAvg() throws Exception {
 
@@ -51,15 +56,15 @@ public class NewAverageKafkaSender {
         String topicname = properties.getProperty("topic_name");
         String BROKER_NAME = properties.getProperty("broker_name");
 
-//        INPUT_KAFKA_TOPIC = "semaphoresensor";
-//        properties.setProperty("bootstrap.servers", "localhost:9092");
-//        properties.setProperty("zookeeper.connect", "localhost:2181");
-//        properties.setProperty("group.id", INPUT_KAFKA_TOPIC);
+        System.out.println(INPUT_KAFKA_TOPIC);
+        System.out.println(topicname);
+        System.out.println(BROKER_NAME);
 
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         DataStreamSource<String> stream = env.addSource(new FlinkKafkaConsumer011(INPUT_KAFKA_TOPIC, new SimpleStringSchema(), properties));
 
+        stream.print();
         System.out.println("got sources");
         DataStream<Tuple2<String, Double>> streamTuples = stream.flatMap(new SemaphoreJson2Tuple());
 

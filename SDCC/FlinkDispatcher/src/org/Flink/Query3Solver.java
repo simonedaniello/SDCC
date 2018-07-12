@@ -6,6 +6,8 @@ import algorithms.Harvesine;
 import com.google.gson.Gson;
 import Model.FlinkResult;
 import Model.Message;
+import entities.Semaphore;
+import entities.system.Printer;
 import org.apache.flink.api.common.functions.AggregateFunction;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.serialization.SerializationSchema;
@@ -23,6 +25,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class Query3Solver {
@@ -30,17 +33,11 @@ public class Query3Solver {
 
     private static int TIME_WINDOW;
     private static final Logger log = LoggerFactory.getLogger(org.Flink.WindowTrafficData.class);
+    String[] latitudes;
+    String[] longitudes;
 
 
     public void calculateMedian() throws Exception {
-
-//        INPUT_KAFKA_TOPIC = "semaphoresensor";
-//        TIME_WINDOW = 10;
-//        Properties properties = new Properties();
-//        properties.setProperty("bootstrap.servers", "localhost:9092");
-//        properties.setProperty("zookeeper.connect", "localhost:2181");
-//        properties.setProperty("group.id", INPUT_KAFKA_TOPIC);
-
 
         Properties properties = new Properties();
         String filename = "org/Flink/consumer.props";
@@ -50,6 +47,30 @@ public class Query3Solver {
             return;
         }
         properties.load(input);
+
+        Properties semaphores = new Properties();
+        String semaphoresConfig = "semaphoresConfig.props";
+        InputStream semaphoreInput = NewAverageKafkaSender.class.getClassLoader().getResourceAsStream(semaphoresConfig);
+        if(input==null){
+            System.out.println("\n\nSorry, unable to find " + filename);
+            return;
+        }
+        semaphores.load(semaphoreInput);
+
+
+        latitudes = properties.getProperty("latitude").split(",");
+        longitudes = properties.getProperty("longitude").split(",");
+
+        double[] doubleLatitudes = Arrays.stream(latitudes)
+                .mapToDouble(Double::parseDouble)
+                .toArray();
+
+        double[] doubleLongitudes = Arrays.stream(longitudes)
+                .mapToDouble(Double::parseDouble)
+                .toArray();
+
+
+
 
 
         TIME_WINDOW = Integer.valueOf(properties.getProperty("QUERY3_TIME_WINDOW"));
@@ -66,7 +87,7 @@ public class Query3Solver {
 
         System.out.println("got sources");
         // DataStream<Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean>> streamTuples = stream.flatMap(new semaphoreAssigner());
-        DataStream<Tuple2<String, Double>> streamTuples = stream.flatMap(new semaphoreAssigner());
+        DataStream<Tuple2<String, Double>> streamTuples = stream.flatMap(new semaphoreAssigner(doubleLatitudes,doubleLongitudes));
         streamTuples.print();
 
         DataStream<Tuple3<String, Double,Integer>> result = streamTuples
@@ -92,17 +113,18 @@ public class Query3Solver {
 
 
     //Read Mobile sensors' Json and create Tuples
-
     public static class semaphoreAssigner implements FlatMapFunction<String, Tuple2<String,Double>> {
 
-        private double[] latitudes = {30.0, 40.0, 90.0, 91.0};
-        private double[] longitudes = {70.0, 80.0, 92.0, 93.0};
+        private double[] latitudes;
+        private double[] longitudes;
         private double semaphoreActionRange = 0.2; //range of action of semaphore in kilometres
         private Harvesine harvesine = new Harvesine();
 
 
 
-        public semaphoreAssigner() {
+        public semaphoreAssigner(double[] latitudes, double[] longitudes) {
+            this.latitudes = latitudes;
+            this.longitudes = longitudes;
         }
 
         @Override
@@ -139,7 +161,8 @@ public class Query3Solver {
                     tp2.setField(semaphoreID,0);
                     tp2.setField(car.getSpeed(),1);
                     out.collect(tp2);
-                    System.out.println(out);                }
+                    System.out.println(out);
+            }
         }
     }
 
