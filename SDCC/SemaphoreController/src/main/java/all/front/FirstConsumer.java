@@ -133,7 +133,9 @@ public class FirstConsumer {
             twopc.updateVotes(message.getID());
         }
         else if (code == 312){
+/*
             Printer.getInstance().print("OK: " + message.getID(), "blue");
+*/
         }
         else if (code == -312){
             twopc.rollback();
@@ -146,7 +148,9 @@ public class FirstConsumer {
         //---------------------2PC-----------------------
 
         else if (code == 200) {
+/*
             Printer.getInstance().print("ARRIVATOOOO.---------------------", "red");
+*/
             String talpa = message.getSemaphoreTuple();
             JsonParser parser = new JsonParser();
             JsonElement element = parser.parse(talpa);

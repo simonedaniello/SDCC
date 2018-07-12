@@ -22,7 +22,7 @@ public class GPSJsonReader {
 
     public static ArrayList<IoTData> getIoTDatas(String jsonString) {
         ArrayList<IoTData> IoTDatas = new ArrayList();
-        System.out.println(jsonString);
+      //  System.out.println(jsonString);
         JsonParser parser = new JsonParser();
         JsonElement element = parser.parse(jsonString);
         if (element.isJsonObject()) {
@@ -47,7 +47,7 @@ public class GPSJsonReader {
 
 
     public static IoTData getIoTData(String jsonString) {
-        System.out.println(jsonString);
+      //  System.out.println(jsonString);
         JsonParser parser = new JsonParser();
         JsonElement element = parser.parse(jsonString);
         IoTData newcar = new IoTData();

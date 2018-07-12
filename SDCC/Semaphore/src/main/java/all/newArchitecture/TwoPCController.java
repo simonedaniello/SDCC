@@ -41,11 +41,15 @@ public class TwoPCController {
         fp.sendMessage("address", m, crossroad);
         if(isMe) {
             sc.changeSemaphoreLight(1);
+/*
             Printer.getInstance().print("I BECOME GREEN: " + sc.getSemaphoreID(), "blue");
+*/
         }
         else {
             sc.changeSemaphoreLight(0);
+/*
             Printer.getInstance().print("I BECOME RED", "green");
+*/
         }
     }
 
@@ -64,7 +68,9 @@ public class TwoPCController {
         Random rand = new Random();
         for (Semaphore s : sems) {
             if (rand.nextInt(100) < prob ) {
+/*
                 Printer.getInstance().print("invio messaggio di gossiping", "cyan");
+*/
                 currentPhase = "commit";
                 Message m = new Message(s.getID(), 301);
                 fp.sendMessage("address", m, s.getID());

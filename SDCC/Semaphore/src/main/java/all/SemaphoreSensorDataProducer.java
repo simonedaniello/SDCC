@@ -2,12 +2,11 @@ package all;
 
 import all.model.SemaphoreSensor;
 import all.front.FirstProducer;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import entities.Message;
 import entities.Semaphore;
 import entities.system.Printer;
-import org.springframework.boot.json.GsonJsonParser;
+import org.codehaus.jackson.JsonProcessingException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +17,7 @@ public class SemaphoreSensorDataProducer {
 
     private String OUTPUT_KAFKA_TOPIC;
 
-    public SemaphoreSensorDataProducer(FirstProducer fp, Semaphore sem) throws JsonProcessingException {
+    public SemaphoreSensorDataProducer(FirstProducer fp, Semaphore sem) throws JsonProcessingException, com.fasterxml.jackson.core.JsonProcessingException {
 
 
         Properties properties = new Properties();

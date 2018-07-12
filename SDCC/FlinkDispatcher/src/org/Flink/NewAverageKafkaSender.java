@@ -56,16 +56,18 @@ public class NewAverageKafkaSender {
         String topicname = properties.getProperty("topic_name");
         String BROKER_NAME = properties.getProperty("broker_name");
 
-        System.out.println(INPUT_KAFKA_TOPIC);
-        System.out.println(topicname);
-        System.out.println(BROKER_NAME);
+     //   System.out.println(INPUT_KAFKA_TOPIC);
+     //   System.out.println(topicname);
+     //   System.out.println(BROKER_NAME);
 
 
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         DataStreamSource<String> stream = env.addSource(new FlinkKafkaConsumer011(INPUT_KAFKA_TOPIC, new SimpleStringSchema(), properties));
 
         stream.print();
+/*
         System.out.println("got sources");
+*/
         DataStream<Tuple2<String, Double>> streamTuples = stream.flatMap(new SemaphoreJson2Tuple());
 
         streamTuples.print();
@@ -119,7 +121,9 @@ public class NewAverageKafkaSender {
 
         @Override
         public Tuple3<String, Double, Integer> getResult(Tuple3 <String, Double, Double> accumulator) {
+/*
             System.out.println("get result");
+*/
             return new Tuple3<>(accumulator.f0, accumulator.f1 / accumulator.f2, accumulator.f2.intValue());        }
 
         @Override

@@ -14,6 +14,8 @@ public class Handyman {
     }
 
     void printStatus(Semaphore s){
+/*
         Printer.getInstance().print("ID: " + s.getID() + "; Crossroad: " + s.getCrossroad() + "; Controller: " + s.getControllerIP() + "list other semaphores: " + s.getSemaphores() + ";", "green");
+*/
     }
 }

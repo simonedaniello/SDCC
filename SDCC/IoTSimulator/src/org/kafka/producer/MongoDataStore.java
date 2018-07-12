@@ -67,11 +67,15 @@ public class MongoDataStore implements DataStore {
 
 	public boolean storeRawEvent(String jsonData) {
 		DBObject rawEvent = (DBObject) JSON.parse(jsonData);
+/*
 		System.out.println("rawEvent: "+rawEvent);
+*/
 		boolean success = false;
 		
+/*
 		System.out.println(rawEventsColl);
-		
+*/
+
 		if (rawEventsColl.insert(rawEvent) != null) {
 			success = true;
 		}
@@ -88,12 +92,16 @@ public class MongoDataStore implements DataStore {
 		while (cursor.hasNext()) {
 			data = cursor.next();
 
+/*
 			System.out.println("PRINT data::" + data);
+*/
 			ServiceEventRequest request = new ServiceEventRequest();
 			request.setName((String) data.get("name"));
 			list.add(request);
 		}
+/*
 		System.out.println("PRINT data after while::" + list);
+*/
 		return list;
 	}
 

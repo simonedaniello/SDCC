@@ -112,10 +112,10 @@ public class FirstConsumer {
         try {
             Message message = mapper.readValue(record.value(), Message.class);
 
-            Printer.getInstance().print("Consumer Record:( " + record.key() +
+         /*   Printer.getInstance().print("Consumer Record:( " + record.key() +
                     ", Message: " + message.getID() +
                     ", Code: " + message.getCode() +
-                    " )", "cyan");
+                    " )", "cyan");*/
             workWithMessage(message);
 
         } catch (IOException e) {
@@ -132,7 +132,9 @@ public class FirstConsumer {
         }
         else if(code == 621){
             //add crossroad response from flinkDispatcher
+/*
             Printer.getInstance().print("arrivata response dal crossroad", "yellow");
+*/
             qs.sems = message.getListOfSemaphores();
             qs.controllerResponse = "OK";
         }

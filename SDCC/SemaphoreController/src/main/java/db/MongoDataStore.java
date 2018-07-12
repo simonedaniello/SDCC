@@ -44,8 +44,8 @@ public class MongoDataStore implements DataStore {
 		}
 		MONGO_HOST = properties.getProperty("MONGO_HOST");
 		MONGO_PORT = Integer.valueOf(properties.getProperty("MONGO_PORT"));
-		System.out.println(MONGO_HOST);
-		System.out.println(MONGO_PORT);
+		/*System.out.println(MONGO_HOST);
+		System.out.println(MONGO_PORT);*/
 
 	}
 
@@ -62,10 +62,14 @@ public class MongoDataStore implements DataStore {
 
 	public Boolean storeRawEvent(String jsonData) {
 		DBObject rawEvent = (DBObject) JSON.parse(jsonData);
+/*
 		System.out.println("rawEvent: "+rawEvent);
+*/
 		boolean success = false;
 
+/*
 		System.out.println(rawEventsColl);
+*/
 
 		if (rawEventsColl.insert(rawEvent) != null) {
 			success = true;
@@ -211,7 +215,9 @@ public class MongoDataStore implements DataStore {
 	public void printAllDocuments(DBCollection collection) {
         DBCursor cursor = collection.find();
         while (cursor.hasNext()) {
+/*
             Printer.getInstance().print(cursor.next().toString(), "green");
+*/
         }
     }
 

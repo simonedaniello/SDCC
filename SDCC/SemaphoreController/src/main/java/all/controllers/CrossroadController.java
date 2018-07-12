@@ -87,7 +87,9 @@ public class CrossroadController{
     }
 
     public void addSemaphore(Semaphore semaphore){
+/*
         Printer.getInstance().print("adding semapore: " + semaphore.getID(), "green");
+*/
         giveOrderingToSemaphore(semaphore);
         reinforcementLearningController.addSemaphore(semaphore);
         crossroad.getSemaphores().add(semaphore);
@@ -114,7 +116,9 @@ public class CrossroadController{
     public void removeSemaphore(Semaphore semaphore){
         for(Semaphore s : crossroad.getSemaphores()){
             if(s.getID().equals(semaphore.getID())){
+/*
                 System.out.println("removing semaphore " + s.getID());
+*/
                 crossroad.getSemaphores().remove(s);
                 monitorer.setNumberOfSemaphores(crossroad.getSemaphores().size());
                 break;
@@ -124,11 +128,15 @@ public class CrossroadController{
     }
 
     private void printSemaphores(){
-        if(crossroad.getSemaphores().size() != 0) {
+/*        if(crossroad.getSemaphores().size() != 0) {
+
             Printer.getInstance().print("semaphores binded: ", "green");
+
             for (Semaphore s : crossroad.getSemaphores())
+
                 Printer.getInstance().print(s.getID(), "green");
-        }
+
+        }*/
     }
 
     private void sendCurrentState(){
@@ -137,7 +145,9 @@ public class CrossroadController{
         m.setCurrentCycle(monitorer.getCurrentCycle());
         for(Semaphore s: crossroad.getSemaphores()) {
             fp.sendMessage("address", m, s.getID());
+/*
             Printer.getInstance().print("current state sent to " + s.getID(), "yellow");
+*/
         }
     }
 
@@ -154,11 +164,15 @@ public class CrossroadController{
             s.setOrder(0);
         else
             s.setOrder(crossroad.getSemaphores().get(crossroad.getSemaphores().size()-1).getOrder() + 1);
+/*
         System.out.println("imposto ordinamento a " + s.getOrder());
+*/
     }
 
     public void tellMonitorerToSendInfos(String ip, String id){
+/*
         Printer.getInstance().print("dico al monitorer di mandare le info: ip = " + ip + ", id = " + id, "yellow");
+*/
         monitorer.setCrossroad(crossroad);
         monitorer.sendCrossroadSituation(ip, id);
     }
@@ -174,7 +188,9 @@ public class CrossroadController{
             Message m = new Message(crossroad.getID(), 404);
             for(Semaphore s: crossroad.getSemaphores()) {
                 fp.sendMessage("address", m, s.getID());
+/*
                 Printer.getInstance().print("current state sent to " + s.getID(), "yellow");
+*/
             }
             MongoDataStore.getInstance().addMalfunctionToDB(mex.getID());
         } catch (UnknownHostException e) {

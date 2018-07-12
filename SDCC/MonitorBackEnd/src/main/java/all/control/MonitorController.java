@@ -144,7 +144,9 @@ public class MonitorController implements Runnable{
 
     public String getMongoCrossroads() {
         String toReturn = MongoDataStore.getInstance().getAllCrossroads().toString();
+/*
         Printer.getInstance().print(toReturn, "green");
+*/
         return toReturn;
     }
 

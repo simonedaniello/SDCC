@@ -35,11 +35,11 @@ public class QuantileEstimator {
         for (i=0; i<= 1000000; i++) {
             r = random.nextDouble();
            // System.out.println(r);
-            System.out.println(buffer.size());
+        //    System.out.println(buffer.size());
             quantileEstimator.add(r);
         }
 
-        System.out.println(quantileEstimator.getQuantiles());
+     //   System.out.println(quantileEstimator.getQuantiles());
     }
 
 

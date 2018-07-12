@@ -44,7 +44,9 @@ public class SemaphoreStateEP {
 
     @RequestMapping(value = "/getCrossroadInfo/{crossroad}", method = RequestMethod.GET)
     public String getCrossroadInfo(@PathVariable String crossroad){
+/*
         Printer.getInstance().print("richieste le informazioni per " + crossroad, "green");
+*/
         return MonitorController.getInstance().flinkGetCrossroadSituation(crossroad);
     }
 

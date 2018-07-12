@@ -87,9 +87,11 @@ public class FirstConsumer {
         createConsumer();
         subscribeToTopic(crossroadTopic);
         subscribeToTopic(selfTopic);
+/*
         System.out.println("started listening on kafka on topic:");
-        Printer.getInstance().print("\t" + crossroadTopic, "blue");
-        Printer.getInstance().print("\t" + selfTopic, "blue");
+*/
+      /*  Printer.getInstance().print("\t" + crossroadTopic, "blue");
+        Printer.getInstance().print("\t" + selfTopic, "blue");*/
 
         final int giveUp = 100;   int noRecordsCount = 0;
 

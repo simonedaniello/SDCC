@@ -3,10 +3,10 @@ package all.newArchitecture;
 import all.SemaphoreSensorDataProducer;
 import all.front.FirstConsumer;
 import all.front.FirstProducer;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import entities.Message;
 import entities.Semaphore;
 import entities.system.Printer;
+import org.codehaus.jackson.JsonProcessingException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -78,7 +78,7 @@ public class SemaphoreClass implements Runnable{
     private void sendSensorData(){
         try {
             new SemaphoreSensorDataProducer(this.fp, semaphore);
-        } catch (JsonProcessingException e) {
+        } catch (JsonProcessingException | com.fasterxml.jackson.core.JsonProcessingException e) {
             e.printStackTrace();
         }
     }
@@ -113,11 +113,15 @@ public class SemaphoreClass implements Runnable{
             long currentTimeCycle = (Calendar.getInstance().getTimeInMillis()/1000)%(emergencymodetimeseconds*semaphore.getSemaphores().size());
             if(currentTimeCycle < end && currentTimeCycle > start){
                 semaphore.setLight(1);
+/*
                 Printer.getInstance().print("I BECOME GREEN: " + semaphore.getID(), "green");
+*/
             }
             else {
                 semaphore.setLight(0);
+/*
                 Printer.getInstance().print("I BECOME RED: " + semaphore.getID(), "red");
+*/
             }
             try {
                 TimeUnit.SECONDS.sleep(2);
@@ -145,7 +149,9 @@ public class SemaphoreClass implements Runnable{
         Handyman.getInstance().printStatus(this.semaphore);
         for(Semaphore s: listOfSemaphores){
             if (s.getID().equals(semaphore.getID())) {
+/*
                 Printer.getInstance().print(semaphore.getID() + ": setto come ordinamento --- " + s.getOrder(), "yellow");
+*/
                 semaphore.setOrder(s.getOrder());
             }
         }
@@ -160,7 +166,9 @@ public class SemaphoreClass implements Runnable{
      */
     private String idGenerator(String latitude, String longitude){
         String id = org.apache.commons.codec.digest.DigestUtils.sha256Hex(latitude + longitude);
+/*
         Printer.getInstance().print("{latitude: " + latitude + ", longitude: " + longitude + ", id: " + id + " }", "green");
+*/
         return id;
     }
 
@@ -173,13 +181,17 @@ public class SemaphoreClass implements Runnable{
         Message m = new Message();
         m.setCode(1);
         m.setSemaphore(this.semaphore);
+/*
         Printer.getInstance().print("sending registration with id: " + this.semaphore.getID() + " to " + semaphore.getCrossroad(), "blue");
+*/
         fp.sendMessage(semaphore.getControllerIP(), m, semaphore.getCrossroad());
     }
 
     public void crossroadMalfunction() {
         emergencyModeOn = false;
+/*
         Printer.getInstance().print("entering in loop yellow mode (due to malfunction)", "yellow");
+*/
         semaphore.setLight(2);
     }
 

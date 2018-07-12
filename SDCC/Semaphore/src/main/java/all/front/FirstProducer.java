@@ -106,7 +106,9 @@ public class FirstProducer implements Serializer{
             ObjectMapper mapper = new ObjectMapper();
 
             String toSend =  mapper.writeValueAsString(s);
+/*
             System.out.println(toSend);
+*/
             final ProducerRecord<Long, String> record =
                     new ProducerRecord<>(topic, toSend);
 

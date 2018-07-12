@@ -85,7 +85,9 @@ public class Query3Solver {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         DataStreamSource<String> stream = env.addSource(new FlinkKafkaConsumer011(INPUT_KAFKA_TOPIC, new SimpleStringSchema(), properties));
 
+/*
         System.out.println("got sources");
+*/
         // DataStream<Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean>> streamTuples = stream.flatMap(new semaphoreAssigner());
         DataStream<Tuple2<String, Double>> streamTuples = stream.flatMap(new semaphoreAssigner(doubleLatitudes,doubleLongitudes));
         streamTuples.print();
@@ -161,7 +163,9 @@ public class Query3Solver {
                     tp2.setField(semaphoreID,0);
                     tp2.setField(car.getSpeed(),1);
                     out.collect(tp2);
+/*
                     System.out.println(out);
+*/
             }
         }
     }
@@ -184,7 +188,9 @@ public class Query3Solver {
 
         @Override
         public Tuple3<String, Double, Integer> getResult(Tuple3 <String, Double, Double> accumulator) {
+/*
             System.out.println("get result");
+*/
             return new Tuple3<>(accumulator.f0, accumulator.f1 / accumulator.f2, accumulator.f2.intValue());        }
 
         @Override

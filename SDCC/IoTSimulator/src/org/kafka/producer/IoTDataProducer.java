@@ -97,8 +97,8 @@ public class IoTDataProducer {
     private String getCoordinates() {
         Random rand = new Random();
 
-        int latPrefix = 33;
-        int longPrefix = -96;
+        int latPrefix = 30;
+        int longPrefix = 70;
         Float lati = (float)latPrefix + rand.nextFloat();
         Float longi = (float)longPrefix + rand.nextFloat();
         return lati + "," + longi;

@@ -87,7 +87,9 @@ public class MongoDataStore implements DataStore {
     public void printAllDocuments(DBCollection collection) {
         DBCursor cursor = collection.find();
         while (cursor.hasNext()) {
+/*
             Printer.getInstance().print(cursor.next().toString(), "green");
+*/
         }
     }
 
@@ -238,7 +240,9 @@ public class MongoDataStore implements DataStore {
         gi.setQuery224hours(query224);
 
 
+/*
         Printer.getInstance().print(gi.getQuery1().toString(), "yellow");
+*/
 		return gi;
 	}
 
