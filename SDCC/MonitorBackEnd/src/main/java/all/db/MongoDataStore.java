@@ -9,6 +9,7 @@ import entities.FlinkResult;
 import entities.Semaphore;
 import entities.system.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,8 +28,11 @@ public class MongoDataStore implements DataStore {
     private static String MONGO_HOST;
     private static int MONGO_PORT;
 
-	@Autowired
-	private MongoDataStore() {
+    private static MongoDataStore instance = new MongoDataStore();
+
+
+    private MongoDataStore() {
+        System.out.println("initializing mongoDataStore \n\n\n\n");
         Properties properties = new Properties();
         String filename = "monitorBackend.props";
         InputStream input = MongoDataStore.class.getClassLoader().getResourceAsStream(filename);
@@ -41,25 +45,24 @@ public class MongoDataStore implements DataStore {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         MONGO_HOST = properties.getProperty("MONGO_HOST");
         MONGO_PORT = Integer.valueOf(properties.getProperty("MONGO_PORT"));
 
+            DB db;
+            try {
+                db = new MongoClient(MONGO_HOST,MONGO_PORT).getDB("stream");
+                rawEventsColl = db.getCollection("events");
+                System.out.println("SUCCESS: connected to " + db.getName() + "\n\n\n\n");
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            }
 
-	}
+    }
 
-	public static DataStore getInstance()
-			throws UnknownHostException {
-		synchronized (MongoDataStore.class) {
-			if (mongoDataStore == null) {
-				DB db = new MongoClient(MONGO_HOST,MONGO_PORT).getDB("stream");
-				rawEventsColl = db.getCollection("events");
-				mongoDataStore = new MongoDataStore();
-			}
-		}
-		return mongoDataStore;
-	}
 
+    public static DataStore getInstance() {
+        return instance;
+    }
 
 
 	@Override
@@ -114,6 +117,8 @@ public class MongoDataStore implements DataStore {
     }
 
     public ArrayList<String> getAllCrossroads(){
+        System.out.println("raw events col state: ");
+        System.out.println(rawEventsColl.getFullName());
         ArrayList<String> toReturn = new ArrayList<>();
         BasicDBObject query = new BasicDBObject("type", "crossroad");
         DBCursor cursor = rawEventsColl.find(query);
@@ -126,7 +131,11 @@ public class MongoDataStore implements DataStore {
         return toReturn;
     }
 
+    @Transactional
     public GeneralInfo getGeneralInfo(){
+
+        System.out.println("calling getGeneralInfo\n\n\n\n");
+
 		GeneralInfo gi = new GeneralInfo();
 
 		int crossroadsCount = 0;
@@ -138,6 +147,9 @@ public class MongoDataStore implements DataStore {
 		//getting crossroads and semaphores
 		BasicDBObject query = new BasicDBObject("type", "crossroad");
         DBCursor cursor = rawEventsColl.find(query);
+        System.out.println("query: " + query.toString());
+        System.out.println("cursor: " + cursor.toString());
+
         DBObject data;
 		while (cursor.hasNext()) {
             crossroadsCount ++;

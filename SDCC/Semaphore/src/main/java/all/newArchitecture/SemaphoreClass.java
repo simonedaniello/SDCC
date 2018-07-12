@@ -24,6 +24,7 @@ public class SemaphoreClass implements Runnable{
     private Boolean emergencyModeOn = false;
     private Boolean isGossiping = false;
     private int emergencymodetimeseconds;
+    private String semaphoreID = "";
 
     public SemaphoreClass() {}
 
@@ -43,6 +44,7 @@ public class SemaphoreClass implements Runnable{
     public void registerSemaphore(Semaphore s){
         this.semaphore = s;
         this.semaphore.setID(idGenerator(this.semaphore.getLatitude(), this.semaphore.getLongitude()));
+        this.semaphoreID = s.getID();
         fc = new FirstConsumer();
         fp = new FirstProducer();
         twopc = new TwoPCController(this, fp);
@@ -189,5 +191,9 @@ public class SemaphoreClass implements Runnable{
     @Override
     public void run() {
         fc.runConsumer(this.semaphore.getID(), this.semaphore.getCrossroad());
+    }
+
+    public String getSemaphoreID() {
+        return semaphoreID;
     }
 }

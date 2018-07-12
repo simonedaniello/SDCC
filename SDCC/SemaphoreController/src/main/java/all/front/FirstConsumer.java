@@ -146,6 +146,7 @@ public class FirstConsumer {
         //---------------------2PC-----------------------
 
         else if (code == 200) {
+            Printer.getInstance().print("ARRIVATOOOO.---------------------", "red");
             String talpa = message.getSemaphoreTuple();
             JsonParser parser = new JsonParser();
             JsonElement element = parser.parse(talpa);
@@ -154,7 +155,6 @@ public class FirstConsumer {
                 crossroadController.addCarsInQueue(message.getID(),
                         record.get("carsInTimeUnit").getAsDouble(),
                         record.get("meanSpeed").getAsDouble());
-
             }
 
 

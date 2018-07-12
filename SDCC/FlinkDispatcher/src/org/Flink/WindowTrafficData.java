@@ -20,12 +20,8 @@ public class WindowTrafficData {
 
     public static void main(String[] args) throws Exception {
 
-        NewAverageKafkaSender avg = new NewAverageKafkaSender();
-        avg.calculateAvg();
 
-
-
-      /* try {
+       try {
             Thread thread1 = new Thread(() -> {
                 NewAverageKafkaSender avg = new NewAverageKafkaSender();
                 try {
@@ -44,22 +40,31 @@ public class WindowTrafficData {
                 }
             });
 
+           Thread thread3 = new Thread(() -> {
+               NewMedianKafkaSender newMedianKafkaSender= new NewMedianKafkaSender();
+               try {
+                   newMedianKafkaSender.calculateMedian();
+               } catch (Exception e) {
+                   e.printStackTrace();
+               }
+           });
+
             thread1.start();
             thread2.start();
+            thread3.start();
 
-        //   Timer timer = new Timer();
-        //   timer.schedule(new WindowTrafficData.TimerClass(), 0, TIME_CYCLE);
 
             thread1.join();
             thread2.join();
+            thread3.join();
 
         } catch (Exception e) {
             e.printStackTrace();
-        }*/
+        }
 
 
     }
-
+/*
     private static class TimerClass extends TimerTask {
         @Override
         public void run() {
@@ -67,7 +72,7 @@ public class WindowTrafficData {
 //            Message m = new Message(flinkDispatcherID, 2001);
 //            FirstProducer.getInstance().sendMessage("localhost", m, "monitorer");
         }
-    }
+    }*/
 
 
 }

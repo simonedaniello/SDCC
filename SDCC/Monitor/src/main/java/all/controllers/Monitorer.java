@@ -258,12 +258,8 @@ public class Monitorer {
         else
             oldQuantileList = (ArrayList<FlinkResult>) quantileList.subList(0, 39);
 
-        try {
-            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15averageSpeed", oldAverageSpeedList);
-            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15quantileSpeed", oldQuantileList);
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
+        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15averageSpeed", oldAverageSpeedList);
+        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15quantileSpeed", oldQuantileList);
 
     }
 
@@ -278,12 +274,8 @@ public class Monitorer {
         else
             oldQuantileList1hour = (ArrayList<FlinkResult>) quantileList1hour.subList(0, 39);
 
-        try {
-            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query1averageSpeed", oldAverageSpeedList1hour);
-            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query1quantileSpeed", oldQuantileList1hour);
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
+        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query1averageSpeed", oldAverageSpeedList1hour);
+        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query1quantileSpeed", oldQuantileList1hour);
     }
 
     private void saveDataOnMongo24hours(){
@@ -297,20 +289,20 @@ public class Monitorer {
         else
             oldQuantileList24hours = (ArrayList<FlinkResult>) quantileList24hours.subList(0, 39);
 
-        try {
-            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query24averageSpeed", oldAverageSpeedList24hours);
-            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query24quantileSpeed", oldQuantileList24hours);
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        }
+        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query24averageSpeed", oldAverageSpeedList24hours);
+        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query24quantileSpeed", oldQuantileList24hours);
     }
 
     private void calculateRanking(){
-        averageSpeedList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
-        quantileList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
-        saveDataOnMongo15min();
-        saveDataOnMongo1hour();
-        saveDataOnMongo24hours();
+        if(averageSpeedList.size() != 0){
+            if(quantileList.size() != 0){
+                averageSpeedList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
+                quantileList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
+                saveDataOnMongo15min();
+                saveDataOnMongo1hour();
+                saveDataOnMongo24hours();
+            }
+        }
     }
 
     private class TimerClass extends TimerTask{

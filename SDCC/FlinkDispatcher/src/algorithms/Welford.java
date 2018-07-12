@@ -1,6 +1,7 @@
 package algorithms;
 
-import main.java.FlinkResult;
+
+import Model.FlinkResult;
 
 public class Welford {
 

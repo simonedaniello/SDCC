@@ -34,6 +34,7 @@ public class CrossroadController{
     private ArrayList<Long> chatids = new ArrayList<>();
     private boolean thereIsaMalfunction = false;
     private ReinforcementLearningController reinforcementLearningController;
+    private String idToTurnOn = "";
 
 
     public CrossroadController(String ID, String address, TelegramBotStarter bot){
@@ -52,7 +53,7 @@ public class CrossroadController{
         }
         int slottimeinseconds = Integer.parseInt(properties.getProperty("slottimeinseconds"));
 
-        reinforcementLearningController = new ReinforcementLearningController();
+        reinforcementLearningController = new ReinforcementLearningController(this);
         this.telegramBot = bot;
         this.crossroad = new Crossroad(ID, address);
         this.fp = new FirstProducer();
@@ -103,8 +104,10 @@ public class CrossroadController{
     public void addCarsInQueue(String Id, double carsInTimeUnit, double meanSpeed){
 
         for (Semaphore s: reinforcementLearningController.getSemaphoreList()) {
-            if (s.getID().equals(Id))
-                s.setQueueSize(carsInTimeUnit/meanSpeed);
+            if (s.getID().equals(Id)) {
+                Printer.getInstance().print("cars in time unit: " + carsInTimeUnit + ", meanSpeed: " + meanSpeed + ", id: " + s.getID() + "\n\n", "blue");
+                s.setQueueSize(s.getQueueSize() + (meanSpeed / carsInTimeUnit));
+            }
         }
 
     }
@@ -147,7 +150,7 @@ public class CrossroadController{
         this.chatids.add(chat_id);
     }
 
-    private void giveOrderingToSemaphore(Semaphore s){
+    private void giveOrderingToSemaphore(Semaphore s){ //TODO mettere semafori accoppiati
         if(crossroad.getSemaphores().size() == 0)
             s.setOrder(0);
         else
@@ -180,9 +183,14 @@ public class CrossroadController{
         }
     }
 
+    public void setIdToTurnOn(String idToTurnOn) {
+        this.idToTurnOn = idToTurnOn;
+    }
+
     private class TimerClass extends TimerTask {
         @Override
         public void run() {
+            int i;
             sendCurrentState();
             printSemaphores();
             while(crossroad.getSemaphores().size() == 0){
@@ -193,8 +201,15 @@ public class CrossroadController{
                     e.printStackTrace();
                 }
             }
-            if(!thereIsaMalfunction)
-                twopc.votingPhase(crossroad.getSemaphores(), crossroad.getSemaphores().get(0).getID(), crossroad.getID());
+            if(!thereIsaMalfunction) {
+                i = 0;
+                for (Semaphore s : crossroad.getSemaphores()) {
+                    if (s.getID().equals(idToTurnOn)) {
+                        twopc.votingPhase(crossroad.getSemaphores(), crossroad.getSemaphores().get(i).getID(), crossroad.getID());
+                    }
+                    i ++;
+                }
+            }
         }
     }
 }

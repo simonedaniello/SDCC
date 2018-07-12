@@ -62,7 +62,6 @@ public class Coordinator {
         }
     }
 
-
     public void updateChatIdList(long chat_id) {
         for(CrossroadController c : crossroadControllerlist){
             c.addChatID(chat_id);

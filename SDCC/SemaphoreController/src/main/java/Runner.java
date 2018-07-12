@@ -1,9 +1,6 @@
 import all.master.Coordinator;
-import main.java.Semaphore;
-import main.java.system.Printer;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.PropertyConfigurator;
-import org.springframework.boot.SpringApplication;
+
+import entities.Semaphore;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;

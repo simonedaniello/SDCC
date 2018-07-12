@@ -13,3 +13,6 @@ session.timeout.ms=10000
 fetch.min.bytes=50000
 receive.buffer.bytes=262144
 max.partition.fetch.bytes=2097152
+
+MONGO_HOST=localhost
+MONGO_PORT=27017

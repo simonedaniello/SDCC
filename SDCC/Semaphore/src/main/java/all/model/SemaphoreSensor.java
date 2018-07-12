@@ -124,13 +124,13 @@ public class SemaphoreSensor {
         //semaphoreID = org.apache.commons.codec.digest.DigestUtils.sha256Hex(latitude+longitude);
 //        System.out.println(semaphoreID);
         crossroadID = sem.getCrossroad();
-        carsInTimeUnit = 0;
         meanSpeed = (double) (new Random().nextInt(80) + 20);
         timestamp = (new Date()).toString();
         greenDuration = 60;
 
         //Randomize broken bulb
         Random rand = new Random();
+        carsInTimeUnit = (double) (new Random().nextInt(17) + 20);
         rand.setSeed(System.currentTimeMillis());
         double g = rand.nextInt(1000);
         double y = rand.nextInt(1000);

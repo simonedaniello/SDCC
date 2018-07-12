@@ -3,8 +3,8 @@
  */
 package all.db;
 
-import main.java.FlinkResult;
-import main.java.Semaphore;
+
+import entities.FlinkResult;
 
 import java.util.ArrayList;
 

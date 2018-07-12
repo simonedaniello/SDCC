@@ -9,6 +9,7 @@ import entities.Semaphore;
 import entities.system.Printer;
 import org.bson.BasicBSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,16 +21,16 @@ import java.util.Properties;
 
 public class MongoDataStore implements DataStore {
 
-	private static DataStore mongoDataStore;
+	private static MongoDataStore instance = new MongoDataStore();
+
 	private static DBCollection rawEventsColl;
 	public static final String COLLECTION_NAME = "events";
-    private String controllerid = null;
 
     private static String MONGO_HOST;
     private static int MONGO_PORT;
 
-	@Autowired
 	private MongoDataStore() {
+        System.out.println("initializing mongoDataStore \n\n\n\n");
         Properties properties = new Properties();
         String filename = "consumer.props";
         InputStream input = MongoDataStore.class.getClassLoader().getResourceAsStream(filename);
@@ -44,17 +45,22 @@ public class MongoDataStore implements DataStore {
         }
         MONGO_HOST = properties.getProperty("MONGO_HOST");
         MONGO_PORT = Integer.valueOf(properties.getProperty("MONGO_PORT"));
+
+        synchronized (MongoDataStore.class) {
+            DB db;
+            try {
+                db = new MongoClient(MONGO_HOST,MONGO_PORT).getDB("stream");
+                rawEventsColl = db.getCollection(COLLECTION_NAME);
+                System.out.println("SUCCESS: connected to " + db.getName() + "\n\n\n\n");
+            } catch (UnknownHostException e) {
+                e.printStackTrace();
+            }
+        }
 	}
 
-	public static DataStore getInstance() throws UnknownHostException {
-		synchronized (MongoDataStore.class) {
-			if (mongoDataStore == null) {
-				DB db = new MongoClient(MONGO_HOST,MONGO_PORT).getDB("stream");
-				rawEventsColl = db.getCollection("events");
-				mongoDataStore = new MongoDataStore();
-			}
-		}
-		return mongoDataStore;
+
+	public static DataStore getInstance() {
+		return instance;
 	}
 
 	public Boolean storeRawEvent(String jsonData) {
@@ -95,6 +101,7 @@ public class MongoDataStore implements DataStore {
 	}
 
 	@Override
+    @Transactional
 	public void writeListOfFlinkResultsOnDB(String entryType, ArrayList resultList) {
 
 	    checkIfItExists(entryType);

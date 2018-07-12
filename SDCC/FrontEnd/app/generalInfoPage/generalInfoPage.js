@@ -9,7 +9,7 @@ angular.module('myApp.generalInfoPage', ['ngRoute'])
   });
 }])
 
-.controller('generalInfoPageCtrl', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
+.controller('generalInfoPageCtrl', ['$scope', '$http', '$interval', function($scope, $http) {
 
 
     var elemcontrollers = document.getElementById('targetncontrollers');
@@ -60,12 +60,6 @@ angular.module('myApp.generalInfoPage', ['ngRoute'])
         initializeMap(item.latitude, item.longitude)
         // initializeMap(47.31, 5.38)
     };
-
-
-
-    $scope.$on('$destroy', function() {
-        $interval.cancel(getGeneralInfos);
-    });
 
 
 

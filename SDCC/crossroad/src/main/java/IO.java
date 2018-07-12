@@ -14,7 +14,7 @@ public class IO {
     private static double gamma = 0.8;
     private static double [][] q = {{0,0},{0,0},{0,0},{0,0}};
     private ArrayList<Semaphore> semList = new ArrayList<>();
-    private static int quantoDura = 5400;
+    private static int quantoDura = 540;
 
     private  int f1 = 1;
     private  int f2 = 2;

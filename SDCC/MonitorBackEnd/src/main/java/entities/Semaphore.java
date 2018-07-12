@@ -2,7 +2,7 @@ package entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 /**
  * Author : Simone D'Aniello
@@ -20,17 +20,35 @@ public class Semaphore implements Serializable{
     private String controllerIP;
     private int light; // 0 for red, 1 for green, 2 for yellow
     private double trafficIntensity;
-    private List<Car> queue = new ArrayList<>();
-    private  ArrayList<Double> times = new ArrayList<>();
+    private ArrayList<Double> times = new ArrayList<>();
+    private Double queueSize;
+    private ArrayList<Double> values;
     private String latitude;
     private String longitude;
     private int order;
     private int malfunctions = 0;
 
 
-    public Semaphore(){}
+    public Semaphore(){
+        values = new ArrayList<>();
+        values.add(0.0);
+        values.add(0.0);
+        queueSize = 0.0;
+        this.light = 0;
+        this.street = street;
+        this.semaphores = new ArrayList<>();
+        this.greenTogether = new ArrayList<>();
+        times.add(8.0);
+        times.add(0.0);
+        times.add(0.0);
+        this.monitorCycle = 0;
+    }
 
     public Semaphore(String id, String street) {
+        values = new ArrayList<>();
+        values.add(0.0);
+        values.add(0.0);
+        queueSize = 0.0;
         this.ID = id;
         this.light = 0;
         this.street = street;
@@ -98,24 +116,12 @@ public class Semaphore implements Serializable{
         this.trafficIntensity = trafficIntensity;
     }
 
-    public List<Car> getQueue() {
-        return queue;
-    }
-
-    public void setQueue(List<Car> queue) {
-        this.queue = queue;
-    }
-
     public ArrayList<Double> getTimes() {
         return times;
     }
 
     public void setTimes(ArrayList<Double> times) {
         this.times = times;
-    }
-
-    public double maxQ(){
-        return Math.max(times.get(1),times.get(2));
     }
 
     public String getLatitude() {
@@ -147,6 +153,18 @@ public class Semaphore implements Serializable{
         return controllerIP;
     }
 
+    public void setQueueSize(Double queueSize) {
+        this.queueSize = queueSize;
+    }
+
+    public ArrayList<Double> getValues() {
+        return values;
+    }
+
+    public void setValues(ArrayList<Double> values) {
+        this.values = values;
+    }
+
     public void setControllerIP(String controllerIP) {
         this.controllerIP = controllerIP;
     }
@@ -173,6 +191,19 @@ public class Semaphore implements Serializable{
 
     public void setMalfunctions(int malfunctions) {
         this.malfunctions = malfunctions;
+    }
+
+    public Double getQueueSize() {
+        return queueSize;
+    }
+
+    public void setQueueSize(double queueSize) {
+        this.queueSize = queueSize;
+    }
+
+    public double maxQ() {
+
+        return values.get(0) - values.get(1);
     }
 }
 

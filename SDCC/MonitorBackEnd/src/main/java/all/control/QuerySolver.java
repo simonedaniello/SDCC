@@ -95,7 +95,7 @@ public class QuerySolver {
             GeneralInfo gi = MongoDataStore.getInstance().getGeneralInfo();
             ObjectMapper mapper = new ObjectMapper();
             return mapper.writeValueAsString(gi);
-        } catch (UnknownHostException | JsonProcessingException e) {
+        } catch (JsonProcessingException e) {
             e.printStackTrace();
             return "error";
         }

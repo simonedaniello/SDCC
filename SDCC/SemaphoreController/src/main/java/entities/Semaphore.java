@@ -140,7 +140,6 @@ public class Semaphore implements Serializable{
         this.longitude = longitude;
     }
 
-
     public String getCrossroad() {
         return crossroad;
     }

@@ -41,7 +41,7 @@ public class TwoPCController {
         fp.sendMessage("address", m, crossroad);
         if(isMe) {
             sc.changeSemaphoreLight(1);
-            Printer.getInstance().print("I BECOME GREEN", "blue");
+            Printer.getInstance().print("I BECOME GREEN: " + sc.getSemaphoreID(), "blue");
         }
         else {
             sc.changeSemaphoreLight(0);

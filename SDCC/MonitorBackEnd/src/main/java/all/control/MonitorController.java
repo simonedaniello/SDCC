@@ -77,13 +77,13 @@ public class MonitorController implements Runnable{
         int k = 0;
         for (Iterator<Crossroad> iter = crossroads.listIterator(); iter.hasNext(); ) {
             Crossroad c = iter.next();
-            Printer.getInstance().print("comparo " + c.getID() +" e " + cross.getID(), "red");
+//            Printer.getInstance().print("comparo " + c.getID() +" e " + cross.getID(), "red");
             if(c.getID().equals(cross.getID())){
                 k = 1;
             }
             if (k == 1) {
                 iter.remove();
-                Printer.getInstance().print("ho rimosso "+ c.getID(), "red");
+//                Printer.getInstance().print("ho rimosso "+ c.getID(), "red");
                 k = 0;
             }
         }
@@ -143,15 +143,9 @@ public class MonitorController implements Runnable{
     }
 
     public String getMongoCrossroads() {
-        ObjectMapper m = new ObjectMapper();
-        try {
-            String toReturn = MongoDataStore.getInstance().getAllCrossroads().toString();
-            Printer.getInstance().print(toReturn, "green");
-            return toReturn;
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-            return "NULL";
-        }
+        String toReturn = MongoDataStore.getInstance().getAllCrossroads().toString();
+        Printer.getInstance().print(toReturn, "green");
+        return toReturn;
     }
 
     public String getMongoControllers() {
