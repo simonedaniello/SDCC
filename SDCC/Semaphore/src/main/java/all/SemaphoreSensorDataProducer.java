@@ -17,7 +17,8 @@ public class SemaphoreSensorDataProducer {
 
     private String OUTPUT_KAFKA_TOPIC;
 
-    public SemaphoreSensorDataProducer(FirstProducer fp, Semaphore sem) throws JsonProcessingException, com.fasterxml.jackson.core.JsonProcessingException {
+    public SemaphoreSensorDataProducer(FirstProducer fp, Semaphore sem)
+            throws JsonProcessingException, com.fasterxml.jackson.core.JsonProcessingException {
 
 
         Properties properties = new Properties();

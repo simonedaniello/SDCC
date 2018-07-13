@@ -28,7 +28,7 @@ angular.module('myApp.createCrossroad', ['ngRoute'])
 
     };
 
-    var loadTime = 5000, //Load the data every 5 seconds
+    var loadTime = 10000, //Load the data every 5 seconds
         errorCount = 0, //Counter for the server errors
         loadPromise; //Pointer to the promise created by the Angular $timeout service
 
@@ -54,11 +54,14 @@ angular.module('myApp.createCrossroad', ['ngRoute'])
 
     $scope.sendSemaphore = function () {
         $scope.modalMessage = "Loading ...";
-        var parameter = JSON.stringify({id: $scope.semID, street: $scope.semStreet, crossroads:$scope.dataMultipleSelect});
+        var parameter = JSON.stringify({address: $scope.semStreet,
+                                        latitude: $scope.semLat,
+                                        longitude: $scope.semLong,
+                                        crossroad: $scope.dataMultipleSelect});
         console.log(parameter);
         $http.post('http://localhost:8098/addSemaphore', parameter)
             .success(function () {
-                $scope.modalMessage = "semaphore added with success. Note that input control is not been implemented yet"
+                $scope.modalMessage = "semaphore added with success"
             })
             .error(function (error, status) {
                 $scope.modalMessage = "Error in adding semaphore, error: " + error + ", status: " + status;
@@ -92,8 +95,8 @@ angular.module('myApp.createCrossroad', ['ngRoute'])
         $scope.modalMessage = "Loading ...";
         $http(req)
         // $http.post('http://localhost:8080/createCrossroad', parameter)
-            .success(function (response) {
-                $scope.modalMessage = response
+            .success(function () {
+                $scope.modalMessage = "crossroad added with success"
             })
             .error(function (error, status) {
                 $scope.modalMessage = "Error in adding crossroad, error: " + error + ", status: " + status;

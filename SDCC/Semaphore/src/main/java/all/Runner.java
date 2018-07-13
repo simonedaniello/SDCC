@@ -56,7 +56,12 @@ public class Runner {
 
         for(int i = 0; i < 40; i++){
             try {
-                new SemaphoreGenerator(crossroads[i], controllerips[i], latitudes[i], longitudes[i], flinkDispatchers[i], addresses[i]);
+                if(i % 2 == 0)
+                    new SemaphoreGenerator(crossroads[i], controllerips[i], latitudes[i], longitudes[i],
+                            flinkDispatchers[i], addresses[i], latitudes[i+1], longitudes[1+i]);
+                else
+                    new SemaphoreGenerator(crossroads[i], controllerips[i], latitudes[i], longitudes[i],
+                            flinkDispatchers[i], addresses[i], latitudes[i-1], longitudes[i-1]);
             } catch (IndexOutOfBoundsException e){
                 Printer.getInstance().print("\n\n\nERROR IN PROPERTY FILE (CHECK NUMBER OF INPUTS)\n\n\n", "red");
             }
@@ -72,14 +77,22 @@ public class Runner {
 	    private String longitude;
 	    private String address;
 	    private String flinkDispatcher;
+	    private String lat2;
+	    private String long2;
 
-	    private SemaphoreGenerator(String controllerName, String controllerIP, String latitude, String longitude, String flinkDispatcher, String address){
+
+	    private SemaphoreGenerator(String controllerName, String controllerIP,
+                                   String latitude, String longitude, String flinkDispatcher,
+                                   String address, String lat2, String long2){
 	        this.args1 = controllerName;
 	        this.args2 = controllerIP;
 	        this.latitude = latitude;
 	        this.longitude = longitude;
 	        this.address=address;
 	        this.flinkDispatcher=flinkDispatcher;
+	        this.lat2=lat2;
+	        this.long2=long2;
+
 
             (new Thread(this)).start();
         }
@@ -93,8 +106,9 @@ public class Runner {
             s.setLongitude(longitude);
             s.setStreet(address);
 
+
             SemaphoreClass sc = new SemaphoreClass();
-            sc.registerSemaphore(s);
+            sc.registerSemaphore(s, lat2, long2);
         }
     }
 }

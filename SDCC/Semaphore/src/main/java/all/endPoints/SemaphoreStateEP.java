@@ -4,8 +4,6 @@ import all.endPoints.dao.SemaphoreDao;
 import all.newArchitecture.SemaphoreClass;
 import entities.Semaphore;
 import entities.system.Printer;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.HttpStatus.OK;
@@ -30,7 +28,7 @@ public class SemaphoreStateEP {
 
         Thread t = new Thread(() -> {
             SemaphoreClass sc = new SemaphoreClass();
-            sc.registerSemaphore(sem);
+            sc.registerSemaphore(sem, "0", "0");
         });
         t.start();
     }

@@ -74,7 +74,7 @@ angular.module('myApp.generalInfoPage', ['ngRoute'])
             mymap = L.map('mapid').setView([latitude, longitude], 10);
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                maxZoom: 18,
+                maxZoom: 25,
                 id: 'mapbox.streets',
                 accessToken: 'your.mapbox.access.token'
             }).addTo(mymap);

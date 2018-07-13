@@ -54,7 +54,7 @@ public class TwoPCController {
         for (Semaphore s : semaphoreList){
             if(rand.nextInt(100) < 90) {
                 Message m = new Message(crossroadID, 301);
-                if (greenSemaphore.equals(s.getID()))
+                if (greenSemaphore.equals(s.getID()) || greenSemaphore.equals(s.getGreenTogether()))
                     m.setYouAreGreen(true);
                 else
                     m.setYouAreGreen(false);

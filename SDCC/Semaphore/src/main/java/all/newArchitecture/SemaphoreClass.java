@@ -5,7 +5,6 @@ import all.front.FirstConsumer;
 import all.front.FirstProducer;
 import entities.Message;
 import entities.Semaphore;
-import entities.system.Printer;
 import org.codehaus.jackson.JsonProcessingException;
 
 import java.io.IOException;
@@ -40,10 +39,13 @@ public class SemaphoreClass implements Runnable{
      *      String crossroad
      *      ArrayList(Car) carsDetected
      * @param s
+     * @param lat2
+     * @param long2
      */
-    public void registerSemaphore(Semaphore s){
+    public void registerSemaphore(Semaphore s, String lat2, String long2){
         this.semaphore = s;
         this.semaphore.setID(idGenerator(this.semaphore.getLatitude(), this.semaphore.getLongitude()));
+        this.semaphore.setGreenTogether(idGenerator(lat2, long2));
         this.semaphoreID = s.getID();
         fc = new FirstConsumer();
         fp = new FirstProducer();

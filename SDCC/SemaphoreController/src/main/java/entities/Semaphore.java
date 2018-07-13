@@ -15,7 +15,7 @@ public class Semaphore implements Serializable{
     private int monitorCycle;
     private int kafkaport;
     private ArrayList<Semaphore> semaphores;
-    private ArrayList<Semaphore> greenTogether;
+    private String greenTogether;
     private String crossroad;
     private String controllerIP;
     private int light; // 0 for red, 1 for green, 2 for yellow
@@ -37,7 +37,6 @@ public class Semaphore implements Serializable{
         this.light = 0;
         this.street = street;
         this.semaphores = new ArrayList<>();
-        this.greenTogether = new ArrayList<>();
         times.add(8.0);
         times.add(0.0);
         times.add(0.0);
@@ -53,7 +52,6 @@ public class Semaphore implements Serializable{
         this.light = 0;
         this.street = street;
         this.semaphores = new ArrayList<>();
-        this.greenTogether = new ArrayList<>();
         times.add(8.0);
         times.add(0.0);
         times.add(0.0);
@@ -84,11 +82,11 @@ public class Semaphore implements Serializable{
         this.semaphores = semaphores;
     }
 
-    public void setGreenTogether(ArrayList<Semaphore> greenTogether) {
+    public void setGreenTogether(String greenTogether) {
         this.greenTogether = greenTogether;
     }
 
-    public ArrayList<Semaphore> getGreenTogether() {
+    public String getGreenTogether() {
         return greenTogether;
     }
 
@@ -139,6 +137,7 @@ public class Semaphore implements Serializable{
     public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
+
 
     public String getCrossroad() {
         return crossroad;
