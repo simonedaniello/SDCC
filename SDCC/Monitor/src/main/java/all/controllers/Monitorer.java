@@ -1,21 +1,15 @@
 package all.controllers;
 
 
-
-// TODO MONITORER CLASS
-// TODO dato che il semaforo non fa nulla per la maggior parte del tempo, implementiamo sul semaforo una chiamata sema REST
-// TODO e facciamo comunicare il front direttamente con il semaforo in questione per sapere la situazione sul traffico
-
-
 import all.db.MongoDataStore;
 import all.front.FirstConsumer;
-import all.front.FirstProducer;
 import entities.FlinkResult;
-import entities.Message;
 import entities.system.Printer;
 
-import java.net.UnknownHostException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Author : Simone D'Aniello
@@ -44,6 +38,7 @@ public class Monitorer {
     private ArrayList<FlinkResult> averageSpeedList = new ArrayList<>();
     private ArrayList<FlinkResult> averageSpeedList1hour = new ArrayList<>();
     private ArrayList<FlinkResult> averageSpeedList24hours = new ArrayList<>();
+
     private List<FlinkResult> oldAverageSpeedList= new ArrayList<>();
     private ArrayList<FlinkResult> oldAverageSpeedList1hour= new ArrayList<>();
     private ArrayList<FlinkResult> oldAverageSpeedList24hours= new ArrayList<>();
@@ -51,10 +46,20 @@ public class Monitorer {
     private ArrayList<FlinkResult> quantileList = new ArrayList<>();
     private ArrayList<FlinkResult> quantileList1hour = new ArrayList<>();
     private ArrayList<FlinkResult> quantileList24hours = new ArrayList<>();
+
     private List<FlinkResult> oldQuantileList = new ArrayList<>();
     private ArrayList<FlinkResult> oldQuantileList1hour = new ArrayList<>();
     private ArrayList<FlinkResult> oldQuantileList24hours = new ArrayList<>();
-    private PSquared pSquared = new PSquared(0.5f);
+
+    private ArrayList<FlinkResult> IoTSpeedList = new ArrayList<>();
+    private ArrayList<FlinkResult> IoTSpeedList1hour = new ArrayList<>();
+    private ArrayList<FlinkResult> IoTSpeedList24hours = new ArrayList<>();
+
+    private List<FlinkResult> oldIoTList = new ArrayList<>();
+    private ArrayList<FlinkResult> oldIoTList1hour = new ArrayList<>();
+    private ArrayList<FlinkResult> oldIoTList24hours = new ArrayList<>();
+
+
 
     public Monitorer(){
 
@@ -94,19 +99,13 @@ public class Monitorer {
                     double fmultiplier = f.getNumberOfCars()/total;
                     inList.setValue(inList.getValue() * inListMultiplier + f.getValue() * fmultiplier);
                     inList.setNumberOfCars((int) total);
-//                    Printer.getInstance().print("ho settato value a " + inList.getValue() + " e numero macchine a " + inList.getNumberOfCars(), "yellow");
                     IhaveDoneSomething = true;
                     break;
                 }
             }
-            if (!IhaveDoneSomething) {
+            if (!IhaveDoneSomething)
                 averageSpeedList.add(f);
-//                Printer.getInstance().print("\n\naggiungo il semaforo "+ f.getKey() + " con valore " + f.getValue(), "yellow");
-            }
-
         }
-        else
-            Printer.getInstance().print("Non aggiungo perchè 0", "red");
     }
 
     public void addAvgFromKafka1(FlinkResult f){
@@ -120,19 +119,15 @@ public class Monitorer {
                     double fmultiplier = f.getNumberOfCars()/total;
                     inList.setValue(inList.getValue() * inListMultiplier + f.getValue() * fmultiplier);
                     inList.setNumberOfCars((int) total);
-//                    Printer.getInstance().print("ho settato value a " + inList.getValue() + " e numero macchine a " + inList.getNumberOfCars(), "yellow");
                     IhaveDoneSomething = true;
                     break;
                 }
             }
             if (!IhaveDoneSomething) {
                 averageSpeedList1hour.add(f);
-//                Printer.getInstance().print("\n\naggiungo il semaforo "+ f.getKey() + " con valore " + f.getValue(), "yellow");
             }
 
         }
-        else
-            Printer.getInstance().print("Non aggiungo perchè 0", "red");
     }
 
     public void addAvgFromKafka24(FlinkResult f){
@@ -157,9 +152,8 @@ public class Monitorer {
             }
 
         }
-        else
-            Printer.getInstance().print("Non aggiungo perchè 0", "red");
     }
+
 
     public void addQuantilFromKafka15(FlinkResult f){
         if(f.getNumberOfCars() != 0) {
@@ -215,33 +209,19 @@ public class Monitorer {
         }
     }
 
-    /**
-    * Work with data from query1
-    */
-    public void receivedQuery1(){
+
+    public void addQuery3FromKafka15(FlinkResult f){
 
     }
 
-    /**
-     * Work with data from query2
-     */
-    public void receivedQuery2(){
+    public void addQuery3FromKafka1(FlinkResult f){
 
     }
 
-    /**
-     * Work with data from query3
-     */
-    public void receivedQuery3(){
+    public void addQuery3FromKafka24(FlinkResult f){
 
     }
 
-    /**
-     * Signal a semaphore malfunction
-     */
-    public void receivedSemaphoresMalfunction(){
-
-    }
 
     /**
      * 0 : mode 15 minutes average speed list
@@ -249,82 +229,88 @@ public class Monitorer {
      * 2: mode 24 hours average speed list
      */
     private void saveDataOnMongo15min(){
-        if(averageSpeedList.size() < 40)
+        if(averageSpeedList.size() < 10)
             oldAverageSpeedList = averageSpeedList;
         else
-            oldAverageSpeedList =  averageSpeedList.subList(0, 39);
+            oldAverageSpeedList =  averageSpeedList.subList(0, 9);
 
-        if(quantileList.size()<40)
-            oldQuantileList = quantileList;
-        else
-            oldQuantileList = quantileList.subList(0, 39);
+        oldQuantileList = quantileList;
 
-        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15averageSpeed", oldAverageSpeedList);
-        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15quantileSpeed", oldQuantileList);
+        if(oldAverageSpeedList.size() != 0)
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15averageSpeed", oldAverageSpeedList);
+        if(oldQuantileList.size() != 0)
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query15quantileSpeed", oldQuantileList);
 
     }
 
     private void saveDataOnMongo1hour(){
-        if(averageSpeedList1hour.size() < 40)
+        if(averageSpeedList1hour.size() < 10)
             oldAverageSpeedList1hour = averageSpeedList1hour;
         else
-            oldAverageSpeedList1hour = (ArrayList<FlinkResult>) averageSpeedList1hour.subList(0, 39);
+            oldAverageSpeedList1hour = (ArrayList<FlinkResult>) averageSpeedList1hour.subList(0, 9);
 
-        if(quantileList1hour.size()<40)
+        if(quantileList1hour.size()<10)
             oldQuantileList1hour = quantileList1hour;
         else
-            oldQuantileList1hour = (ArrayList<FlinkResult>) quantileList1hour.subList(0, 39);
+            oldQuantileList1hour = (ArrayList<FlinkResult>) quantileList1hour.subList(0, 9);
 
-        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query1averageSpeed", oldAverageSpeedList1hour);
-        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query1quantileSpeed", oldQuantileList1hour);
+        if(oldAverageSpeedList1hour.size() != 0)
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query1averageSpeed", oldAverageSpeedList1hour);
+        if(oldQuantileList1hour.size() != 0)
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query1quantileSpeed", oldQuantileList1hour);
     }
 
     private void saveDataOnMongo24hours(){
-        if(averageSpeedList24hours.size() < 40)
+        if(averageSpeedList24hours.size() < 10)
             oldAverageSpeedList24hours = averageSpeedList24hours;
         else
-            oldAverageSpeedList24hours = (ArrayList<FlinkResult>) averageSpeedList24hours.subList(0, 39);
+            oldAverageSpeedList24hours = (ArrayList<FlinkResult>) averageSpeedList24hours.subList(0, 9);
 
-        if(quantileList24hours.size()<40)
+        if(quantileList24hours.size()<10)
             oldQuantileList24hours = quantileList24hours;
         else
-            oldQuantileList24hours = (ArrayList<FlinkResult>) quantileList24hours.subList(0, 39);
+            oldQuantileList24hours = (ArrayList<FlinkResult>) quantileList24hours.subList(0, 9);
 
-        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query24averageSpeed", oldAverageSpeedList24hours);
-        MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query24quantileSpeed", oldQuantileList24hours);
+        if(oldAverageSpeedList24hours.size() != 0)
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query24averageSpeed", oldAverageSpeedList24hours);
+        if(oldQuantileList24hours.size() != 0)
+            MongoDataStore.getInstance().writeListOfFlinkResultsOnDB("query24quantileSpeed", oldQuantileList24hours);
     }
 
     private void calculateRanking(){
+
+        PSquared pSquared = new PSquared(0.5f);
         if(averageSpeedList.size() != 0){
                 averageSpeedList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
-                saveDataOnMongo15min();
-                saveDataOnMongo1hour();
-                saveDataOnMongo24hours();
-            }
-
-            if(quantileList.size() != 0){
-
-                for (FlinkResult f: quantileList
-                     ) {
-                    pSquared.accept(f.getNumberOfCars());
-                }
-
-                float globalMedian = pSquared.getPValue();
-
-                for (FlinkResult f: quantileList
-                        ) {
-                    if (f.getNumberOfCars()<globalMedian)
-                        quantileList.remove(f);
-                }
-
-
-                quantileList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
-
-                saveDataOnMongo15min();
-                saveDataOnMongo1hour();
-                saveDataOnMongo24hours();
-            }
         }
+
+        if(quantileList.size() != 0){
+
+            for (FlinkResult f: quantileList
+                 ) {
+                pSquared.accept((float) f.getValue());
+            }
+
+            float globalMedian = pSquared.getPValue();
+            System.out.println("GLOBAL MEDIAN IS: " + globalMedian);
+
+            ArrayList<FlinkResult> toremove = new ArrayList<>();
+
+            for (FlinkResult f: quantileList
+                    ) {
+                System.out.println(f.getValue());
+                if (f.getValue() < globalMedian){
+                    toremove.add(f);
+                    }
+            }
+            quantileList.removeAll(toremove);
+            quantileList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
+        }
+
+        saveDataOnMongo15min();
+        saveDataOnMongo1hour();
+        saveDataOnMongo24hours();
+    }
 
     private class TimerClass extends TimerTask{
         @Override
@@ -338,17 +324,10 @@ public class Monitorer {
 
         printRankings();
 
-//        Message m1 = new Message("monitorer", 711);
-//        m1.setPartialRanking(averageSpeedList);
-//        FirstProducer.getInstance().sendMessage("address", m1, "ranking");
         averageSpeedList.clear();
         averageSpeedList1hour.clear();
         averageSpeedList24hours.clear();
 
-
-//        Message m2 = new Message("monitorer", 712);
-//        m2.setPartialRanking(quantileList);
-//        FirstProducer.getInstance().sendMessage("address", m2, "ranking");
         quantileList.clear();
         quantileList1hour.clear();
         quantileList24hours.clear();

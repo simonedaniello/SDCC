@@ -98,7 +98,7 @@ public class Query3Solver {
             double value = stringDoubleTuple3.f1;
             int count = stringDoubleTuple3.f2;
             FlinkResult flinkResult = new FlinkResult(key, value, count);
-            Message m = new Message(flinkDispatcherID, 70115);
+            Message m = new Message(flinkDispatcherID, 70315);
             m.setFlinkResult(flinkResult);
             String results = gson.toJson(m);
             return results.getBytes();

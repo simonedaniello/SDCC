@@ -70,7 +70,7 @@ public class NewMedianKafkaSender {
         DataStream<Tuple3<String, Double, Integer>> averageSpeedStream = streamTuples
                 .keyBy(new int[]{0})
                 .timeWindow(Time.seconds((long)TIME_WINDOW))
-                .aggregate((AggregateFunction<Tuple2<String, Double>, Tuple3 <String, PSquared, Integer>, Tuple3<String, Double, Integer>>) new MedianAggregate());
+                .aggregate(new MedianAggregate());
 
 
         //write to another kafka topic
@@ -137,7 +137,7 @@ public class NewMedianKafkaSender {
                 SemaphoreSensor record = (SemaphoreSensor) irecs.next();
                 Tuple2 tp2 = new Tuple2();
                 tp2.setField(record.getSemaphoreID(), 0);
-                tp2.setField(record.getMeanSpeed(), 1 );
+                tp2.setField(record.getCarsInTimeUnit(), 1 );
 
                 out.collect(tp2);
             }
