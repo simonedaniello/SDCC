@@ -38,17 +38,10 @@ public class NewMedianKafkaSender {
 
     public void calculateMedian() throws Exception {
 
-//        INPUT_KAFKA_TOPIC = "semaphoresensor";
-//        TIME_WINDOW = 10;
-//        Properties properties = new Properties();
-//        properties.setProperty("bootstrap.servers", "localhost:9092");
-//        properties.setProperty("zookeeper.connect", "localhost:2181");
-//        properties.setProperty("group.id", INPUT_KAFKA_TOPIC);
-
 
         Properties properties = new Properties();
         String filename = "org/Flink/consumer.props";
-        InputStream input = NewAverageKafkaSender.class.getClassLoader().getResourceAsStream(filename);
+        InputStream input = NewMedianKafkaSender.class.getClassLoader().getResourceAsStream(filename);
         if(input==null){
             System.out.println("\n\n\n\n\nSorry, unable to find " + filename);
             return;
@@ -57,9 +50,9 @@ public class NewMedianKafkaSender {
 
 
         TIME_WINDOW = 10;
-        INPUT_KAFKA_TOPIC = properties.getProperty("INPUT_KAFKA_TOPIC");
+        INPUT_KAFKA_TOPIC = properties.getProperty("query_2_input_topic");
         String flinkDispatcherID = properties.getProperty("flinkDispatcherID");
-        String topicname = properties.getProperty("topic_name");
+        String outputTopic = properties.getProperty("query_2_output_topic");
         String BROKER_NAME = properties.getProperty("broker_name");
 
 
@@ -81,7 +74,7 @@ public class NewMedianKafkaSender {
 
 
         //write to another kafka topic
-        averageSpeedStream.addSink(new FlinkKafkaProducer011<>(BROKER_NAME, topicname, (SerializationSchema<Tuple3<String, Double, Integer>>) stringDoubleTuple3 -> {
+        averageSpeedStream.addSink(new FlinkKafkaProducer011<>(BROKER_NAME, outputTopic, (SerializationSchema<Tuple3<String, Double, Integer>>) stringDoubleTuple3 -> {
             Gson gson = new Gson();
             String key = stringDoubleTuple3.f0;
             double value = stringDoubleTuple3.f1;

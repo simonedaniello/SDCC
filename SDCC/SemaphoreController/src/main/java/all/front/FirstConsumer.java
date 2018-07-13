@@ -5,7 +5,6 @@ import all.controllers.CrossroadController;
 import all.controllers.Monitorer;
 import all.controllers.TwoPCController;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -101,10 +100,6 @@ public class FirstConsumer {
         try {
             Message message = mapper.readValue(record.value(), Message.class);
 
-//            Printer.getInstance().print("Consumer Record:( " + record.key() +
-//                    ", Message: " + message.getID() +
-//                    ", Code: " + message.getCode() +
-//                    " )", "cyan");
             workWithMessage(message);
 
         } catch (IOException e) {
@@ -126,7 +121,7 @@ public class FirstConsumer {
         }
         else if (code == 404) {
             Printer.getInstance().print("\n\n\nARRIVATO MALFUNCTION dal semaforo " + message.getID() + "\n\n\n", "yellow");
-            crossroadController.sendMalfunctionToSemaphores(message);
+            crossroadController.sendMalfunctionToTelegramBot(message);
         }
         //---------------------2PC-----------------------
         else if (code == 311){

@@ -64,6 +64,7 @@ public class SemaphoreSensorDataProducer {
                     Message m = new Message(sem.getID(), 404);
                     m.setSemaphoreTuple(mapper.writeValueAsString(event));
                     m.setBrokenBulbs(event.getBrokenbulbs());
+                    m.setSemaphore(sem);
 
                     fp.sendSemaphoreSensorInfo("localhost", m , sem.getCrossroad());
                 }
@@ -77,7 +78,8 @@ public class SemaphoreSensorDataProducer {
 
                 }
 
-                fp.sendSemaphoreSensorInfo("localhost", event, OUTPUT_KAFKA_TOPIC);
+                fp.sendSemaphoreSensorInfo("localhost", event, OUTPUT_KAFKA_TOPIC + "_query_1");
+                fp.sendSemaphoreSensorInfo("localhost", event, OUTPUT_KAFKA_TOPIC + "_query_2");
 
                 try {
                     TimeUnit.MILLISECONDS.sleep(Long.parseLong(messageRateMillis));

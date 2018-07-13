@@ -57,50 +57,39 @@ public class IoTDataProducer {
 
 
         while(true) {
-            List<IoTData> eventList = new ArrayList();
 
-            for(int i = 0; i < 100; ++i) {
                 String vehicleId = UUID.randomUUID().toString();
                 String timestamp = (new Date()).toString();
-                double speed = (double)(rand.nextInt(80) + 20);
-
-                for(int j = 0; j < 5; ++j) {
-                    String coords = this.getCoordinates();
-                    String latitude = coords.substring(0, coords.indexOf(","));
-                    String longitude = coords.substring(coords.indexOf(",") + 1, coords.length());
-                    IoTData event = new IoTData(vehicleId, latitude, longitude, timestamp, speed);
-
-               /*     try {
-                        MongoDataStore.getInstance(MONGO_HOST, MONGO_PORT).storeRawEvent(mapper.writeValueAsString(event));
-                    } catch (UnknownHostException e) {
-                        e.printStackTrace();
-                    } catch (JsonProcessingException e) {
-                        e.printStackTrace();
-                    } */
-
-                    eventList.add(event);
-                }
-            }
-
-            Collections.shuffle(eventList);
-            Iterator var15 = eventList.iterator();
-
-            while(var15.hasNext()) {
-                IoTData event = (IoTData)var15.next();
+                double speed = (double)(rand.nextInt(80) + 20); String coords = this.getCoordinates();
+                String latitude = coords.substring(0, coords.indexOf(","));
+                String longitude = coords.substring(coords.indexOf(",") + 1, coords.length());
+                IoTData event = new IoTData(vehicleId, latitude, longitude, timestamp, speed);
                 KeyedMessage<String, IoTData> data = new KeyedMessage(topic, event);
                 producer.send(data);
-                Thread.sleep((long)(rand.nextInt(2000) + 1000));
-            }
+                Thread.sleep((long)(rand.nextInt(200)));
         }
     }
 
     private String getCoordinates() {
+
         Random rand = new Random();
 
-        int latPrefix = 30;
-        int longPrefix = 70;
-        Float lati = (float)latPrefix + rand.nextFloat();
-        Float longi = (float)longPrefix + rand.nextFloat();
+        double latPrefix = -37.80;
+        double longPrefix = 144.80;
+
+        double lati;
+        double longi;
+
+        if (rand.nextInt(100) <=50)
+            lati = latPrefix + ((double)rand.nextInt(200)/1000);
+        else
+            lati = latPrefix - ((double)rand.nextInt(200)/1000);
+
+        if (rand.nextInt(100) <=50)
+            longi = longPrefix + ((double)rand.nextInt(200)/1000);
+        else
+            longi = longPrefix - ((double)rand.nextInt(200)/1000);
+
         return lati + "," + longi;
     }
 }

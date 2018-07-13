@@ -177,9 +177,12 @@ public class CrossroadController{
         monitorer.sendCrossroadSituation(ip, id);
     }
 
-    public void sendMalfunctionToSemaphores(Message mex){
+    public void sendMalfunctionToTelegramBot(Message mex){
 
-        telegramBot.sendMessage("🚦" + "malfunction at semaphore: " +mex.getID() + "\n" +
+        telegramBot.sendMessage("🚦" + "malfunction at semaphore: " +mex.getID() + "\n\n" +
+                "At coordinates: " + "\n"+
+                "Latitude: " + mex.getSemaphore().getLatitude() + "," + "\n" +
+                "Longitude: " + mex.getSemaphore().getLongitude() + "\n\n" +
                 mex.getBrokenBulbs(), "@SDCChannel");
         thereIsaMalfunction = true;
         Printer.getInstance().print("\n\n\n è arrivato un malfunzionamento su "+ mex.getID() + "\n\n\n", "yellow");

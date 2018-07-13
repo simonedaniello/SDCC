@@ -54,6 +54,7 @@ public class Monitorer {
     private List<FlinkResult> oldQuantileList = new ArrayList<>();
     private ArrayList<FlinkResult> oldQuantileList1hour = new ArrayList<>();
     private ArrayList<FlinkResult> oldQuantileList24hours = new ArrayList<>();
+    private PSquared pSquared = new PSquared(0.5f);
 
     public Monitorer(){
 
@@ -295,15 +296,35 @@ public class Monitorer {
 
     private void calculateRanking(){
         if(averageSpeedList.size() != 0){
-            if(quantileList.size() != 0){
                 averageSpeedList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
+                saveDataOnMongo15min();
+                saveDataOnMongo1hour();
+                saveDataOnMongo24hours();
+            }
+
+            if(quantileList.size() != 0){
+
+                for (FlinkResult f: quantileList
+                     ) {
+                    pSquared.accept(f.getNumberOfCars());
+                }
+
+                float globalMedian = pSquared.getPValue();
+
+                for (FlinkResult f: quantileList
+                        ) {
+                    if (f.getNumberOfCars()<globalMedian)
+                        quantileList.remove(f);
+                }
+
+
                 quantileList.sort((e1, e2) -> (e2.getValue() > e1.getValue()) ? 1 : -1);
+
                 saveDataOnMongo15min();
                 saveDataOnMongo1hour();
                 saveDataOnMongo24hours();
             }
         }
-    }
 
     private class TimerClass extends TimerTask{
         @Override

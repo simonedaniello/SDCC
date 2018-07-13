@@ -37,9 +37,7 @@ public class Harvesine implements Serializable {
                                                           double venueLat, double venueLng){
 
 
-        long distance = (long) Math.sqrt((userLat-venueLat)*(userLat-venueLat) + (userLng-venueLng)*(userLng-venueLng));
-        return distance;
-
+        return Math.sqrt((userLat-venueLat)*(userLat-venueLat) + (userLng-venueLng)*(userLng-venueLng));
 
     }
 

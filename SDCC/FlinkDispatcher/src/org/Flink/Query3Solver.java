@@ -69,20 +69,11 @@ public class Query3Solver {
                 .mapToDouble(Double::parseDouble)
                 .toArray();
 
-   /*     int i =0;
-        for (i=0; i<doubleLatitudes.length; i++){
-            System.out.println("*****************************************************");
-            System.out.println("LATITUDINE " + doubleLatitudes[i]);
-            System.out.println("LONGITUDINE " + doubleLongitudes[i]);
-        }
-*/
-
-
 
         TIME_WINDOW = Integer.valueOf(properties.getProperty("QUERY3_TIME_WINDOW"));
         String flinkDispatcherID = properties.getProperty("flinkDispatcherID");
-        String topicname = properties.getProperty("topic_name");
-        String INPUT_KAFKA_TOPIC = properties.getProperty("SENSOR_INPUT");
+        String outputTopic = properties.getProperty("query_3_output_topic");
+        String INPUT_KAFKA_TOPIC = properties.getProperty("query_3_input_topic");
         String BROKER_NAME = properties.getProperty("broker_name");
 
 
@@ -91,9 +82,7 @@ public class Query3Solver {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         DataStreamSource<String> stream = env.addSource(new FlinkKafkaConsumer011(INPUT_KAFKA_TOPIC, new SimpleStringSchema(), properties));
 
-/*
-        System.out.println("got sources");
-*/
+
         // DataStream<Tuple11<String, String, String, String, String, Int, Double, Double ,Boolean,Boolean,Boolean>> streamTuples = stream.flatMap(new semaphoreAssigner());
         DataStream<Tuple2<String, Double>> streamTuples = stream.flatMap(new semaphoreAssigner(doubleLatitudes,doubleLongitudes));
         streamTuples.print();
@@ -103,7 +92,7 @@ public class Query3Solver {
                 .timeWindow(Time.seconds((long)TIME_WINDOW))
                 .aggregate(new mobileSensorAggregate());
 
-        result.addSink(new FlinkKafkaProducer011<>(BROKER_NAME, topicname, (SerializationSchema<Tuple3<String, Double, Integer>>) stringDoubleTuple3 -> {
+        result.addSink(new FlinkKafkaProducer011<>(BROKER_NAME, outputTopic, (SerializationSchema<Tuple3<String, Double, Integer>>) stringDoubleTuple3 -> {
             Gson gson = new Gson();
             String key = stringDoubleTuple3.f0;
             double value = stringDoubleTuple3.f1;
