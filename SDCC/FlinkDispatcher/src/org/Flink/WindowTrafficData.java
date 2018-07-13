@@ -22,16 +22,16 @@ public class WindowTrafficData {
 
 
        try {
-/*            Thread thread1 = new Thread(() -> {
+            Thread thread1 = new Thread(() -> {
                 NewAverageKafkaSender avg = new NewAverageKafkaSender();
                 try {
                     avg.calculateAvg();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            });*/
+            });
 
-            Thread thread2 = new Thread(() -> {
+            Thread thread3 = new Thread(() -> {
                 Query3Solver kafka = new Query3Solver();
                 try {
                     kafka.calculateMedian();
@@ -40,22 +40,22 @@ public class WindowTrafficData {
                 }
             });
 
-/*           Thread thread3 = new Thread(() -> {
+           Thread thread2 = new Thread(() -> {
                NewMedianKafkaSender newMedianKafkaSender= new NewMedianKafkaSender();
                try {
                    newMedianKafkaSender.calculateMedian();
                } catch (Exception e) {
                    e.printStackTrace();
                }
-           });*/
+           });
 
-          //  thread1.start();
+            thread1.start();
             thread2.start();
           //  thread3.start();
 
 
-         //   thread1.join();
-         //   thread2.join();
+            thread1.join();
+            thread2.join();
          //   thread3.join();
 
         } catch (Exception e) {

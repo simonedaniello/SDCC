@@ -1,11 +1,9 @@
 package all.endPoints.dao;
 
-import java.util.ArrayList;
-
 public class SemaphoreDao {
     private String latitude;
     private String longitude;
-    private String crossroad;
+    private String[] crossroad;
     private String address;
 
 
@@ -35,11 +33,11 @@ public class SemaphoreDao {
         this.longitude = longitude;
     }
 
-    public String getCrossroad() {
+    public String[] getCrossroad() {
         return crossroad;
     }
 
-    public void setCrossroad(String crossroad) {
+    public void setCrossroad(String[] crossroad) {
         this.crossroad = crossroad;
     }
 }

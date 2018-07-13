@@ -1,5 +1,6 @@
-import all.master.Coordinator;
+package all;
 
+import all.master.Coordinator;
 import entities.Semaphore;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

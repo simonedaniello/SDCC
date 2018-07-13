@@ -81,7 +81,7 @@ public class Monitorer {
     }
 
     private void printStatus(){
-        System.out.println("list of semaphores");
+        //System.out.println("list of semaphores");
         for(Semaphore s : semaphoresArrayList){}
 /*
             Printer.getInstance().print("\t" + s.getID(), "green");

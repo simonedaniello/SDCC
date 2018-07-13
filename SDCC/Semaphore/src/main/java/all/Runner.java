@@ -6,6 +6,7 @@ import entities.Semaphore;
 import entities.system.Printer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.IOException;
@@ -30,6 +31,11 @@ public class Runner {
 
     public static void main(String[] args) throws IOException {
 
+        Thread t = new Thread(() -> {
+            SpringApplication.run(Runner.class, args);
+        });
+        t.start();
+
 
         Properties properties = new Properties();
         String filename = "semaphoresConfig.props";
@@ -52,7 +58,7 @@ public class Runner {
             try {
                 new SemaphoreGenerator(crossroads[i], controllerips[i], latitudes[i], longitudes[i], flinkDispatchers[i], addresses[i]);
             } catch (IndexOutOfBoundsException e){
-                Printer.getInstance().print("\n\n\nERROR IN PROPERTIES FILE (CHECK NUMBER OF INPUTS)\n\n\n", "red");
+                Printer.getInstance().print("\n\n\nERROR IN PROPERTY FILE (CHECK NUMBER OF INPUTS)\n\n\n", "red");
             }
         }
 

@@ -37,16 +37,20 @@
         <div id="addSemaphoreCollapse" class="collapse container" style="padding-top: 15px">
             <form ng-submit="sendSemaphore()">
                 <div class="form-group">
-                    <label for="semid">Semaphore ID:</label>
-                    <input type="text" class="form-control" id="semid" ng-model="semID">
-                </div>
-                <div class="form-group">
                     <label for="semstreet">Semaphore Street:</label>
                     <input type="text" class="form-control" id="semstreet" ng-model="semStreet">
                 </div>
                 <div class="form-group">
                     <label for="semip">Semaphore IP:</label>
                     <input type="text" class="form-control" id="semip" ng-model="semIP">
+                </div>
+                <div class="form-group">
+                    <label for="semip">Semaphore latitude:</label>
+                    <input type="text" class="form-control" id="semlat" ng-model="semLat">
+                </div>
+                <div class="form-group">
+                    <label for="semip">Semaphore longitude:</label>
+                    <input type="text" class="form-control" id="semlong" ng-model="semLong">
                 </div>
 
                 <label for="multipleSelect"> Add to crossroads (CTRL+click to select more than one entry): </label><br>
