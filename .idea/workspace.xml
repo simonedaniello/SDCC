@@ -340,7 +340,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>threa</find>
       <find>kafkacross</find>
       <find>kafkacrossroad</find>
       <find>PropertyCon</find>
@@ -370,6 +369,7 @@
       <find>labelsbar</find>
       <find>test</find>
       <find>myip</find>
+      <find>eagle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -465,7 +465,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/SDCC/FrontEnd/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1" />
     <option name="y" value="-11" />
     <option name="width" value="1922" />
