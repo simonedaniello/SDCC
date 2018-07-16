@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 import java.util.Properties;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 
@@ -56,7 +57,7 @@ public class FirstProducer implements Serializer{
         Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 BOOTSTRAP_SERVERS);
-        props.put(ProducerConfig.CLIENT_ID_CONFIG, "KafkaMonitorProducer");
+        props.put(ProducerConfig.CLIENT_ID_CONFIG, UUID.randomUUID().toString());
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                 LongSerializer.class.getName());
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
@@ -65,7 +66,6 @@ public class FirstProducer implements Serializer{
     }
 
 
-    //GUARDA COME NON INVIARE SOLO IN LOCALHOST
     public void sendMessage(String address, Message m, String topic) {
 
 
@@ -85,8 +85,8 @@ public class FirstProducer implements Serializer{
         } catch (JsonProcessingException | InterruptedException | ExecutionException e) {
             e.printStackTrace();
         } finally {
-            producer.flush();
-            producer.close();
+//            producer.flush();
+//            producer.close();
         }
     }
 

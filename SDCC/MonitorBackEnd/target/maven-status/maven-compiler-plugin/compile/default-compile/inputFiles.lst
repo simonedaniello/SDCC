@@ -1,0 +1,17 @@
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/entities/system/Printer.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/db/ServiceEventRequest.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/endPoints/SemaphoreStateEP.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/front/FirstConsumer.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/entities/FlinkResult.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/entities/Semaphore.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/db/DataStore.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/SimpleCORSFilter.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/Runner.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/entity/GeneralInfo.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/entities/Crossroad.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/db/MongoDataStore.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/entities/Message.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/entities/Car.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/control/MonitorController.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/control/QuerySolver.java
+/home/simone/IdeaProjects/SDCC/SDCC/MonitorBackEnd/src/main/java/all/front/FirstProducer.java

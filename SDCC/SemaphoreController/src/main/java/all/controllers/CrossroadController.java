@@ -170,9 +170,9 @@ public class CrossroadController{
     }
 
     public void tellMonitorerToSendInfos(String ip, String id){
-/*
+
         Printer.getInstance().print("dico al monitorer di mandare le info: ip = " + ip + ", id = " + id, "yellow");
-*/
+
         monitorer.setCrossroad(crossroad);
         monitorer.sendCrossroadSituation(ip, id);
     }

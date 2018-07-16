@@ -116,7 +116,7 @@ public class ReinforcementLearningController {
                 s.setLight(0);
         }
 
-        System.out.println("Turned on semaphore " + id);
+        //System.out.println("Turned on semaphore " + id);
         crossroadController.setIdToTurnOn(id);
         return green;
 

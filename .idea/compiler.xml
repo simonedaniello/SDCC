@@ -11,7 +11,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CrossroadWR" />
-        <module name="entities" />
         <module name="entity" />
         <module name="FlinkDispatcher" />
         <module name="iot-traffic-monitor-flink" />
@@ -28,6 +27,7 @@
       <module name="CrossroadWR" target="1.8" />
       <module name="entities" target="1.8" />
       <module name="FlinkDispatcher" target="1.8" />
+      <module name="iot-traffic-monitor-flink" target="1.8" />
       <module name="IoTSimulator" target="1.8" />
       <module name="Monitor" target="1.8" />
       <module name="MonitorBackEnd" target="1.8" />

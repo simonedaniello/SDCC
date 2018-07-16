@@ -52,13 +52,13 @@ public class MonitorController implements Runnable{
     }
 
     private void printState(){
-        Printer.getInstance().print("current state: ", "cyan");
-        for(Crossroad c: crossroads){
-            Printer.getInstance().print("\t"+ c.getID(), "blue");
-            for(Semaphore s : c.getSemaphores()){
-                Printer.getInstance().print("\t\t"+ s.getID(), "yellow");
-            }
-        }
+//        Printer.getInstance().print("current state: ", "cyan");
+//        for(Crossroad c: crossroads){
+//            Printer.getInstance().print("\t"+ c.getID(), "blue");
+//            for(Semaphore s : c.getSemaphores()){
+//                Printer.getInstance().print("\t\t"+ s.getID(), "yellow");
+//            }
+//        }
     }
 
     public static MonitorController getInstance(){

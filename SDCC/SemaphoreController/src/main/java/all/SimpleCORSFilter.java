@@ -1,4 +1,5 @@
 package all;
+
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -20,7 +21,7 @@ public class SimpleCORSFilter implements Filter{
     private final Logger log = LoggerFactory.getLogger(SimpleCORSFilter.class);
 
     public SimpleCORSFilter() {
-        log.info("SimpleCORSFilter init");
+        log.info("all.SimpleCORSFilter init");
     }
 
     @Override

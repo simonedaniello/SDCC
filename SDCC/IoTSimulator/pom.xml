@@ -26,7 +26,7 @@ under the License.
     <version>0.1</version>
     <packaging>jar</packaging>
 
-    <name>Flink iot-trafic-monitor Job</name>
+    <name>IoTsimulator</name>
     <url>http://www.myorganization.org</url>
 
     <properties>
@@ -170,11 +170,6 @@ under the License.
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-all</artifactId>
             <version>5.16.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.eagle</groupId>
-            <artifactId>eagle-jpm-aggregation</artifactId>
-            <version>0.5.0-incubating-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

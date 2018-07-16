@@ -1,0 +1,17 @@
+entities/Car.class
+entities/Message.class
+all/control/MonitorController.class
+entities/Semaphore.class
+entities/FlinkResult.class
+all/SimpleCORSFilter.class
+all/Runner.class
+all/db/ServiceEventRequest.class
+entities/Crossroad.class
+all/db/MongoDataStore.class
+all/front/FirstProducer.class
+all/db/DataStore.class
+all/entity/GeneralInfo.class
+all/endPoints/SemaphoreStateEP.class
+entities/system/Printer.class
+all/control/QuerySolver.class
+all/front/FirstConsumer.class

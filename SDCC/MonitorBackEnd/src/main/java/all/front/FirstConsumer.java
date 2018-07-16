@@ -131,10 +131,8 @@ public class FirstConsumer {
             monitorController.addCrossroadToList(message.getCrossroad());
         }
         else if(code == 621){
-            //add crossroad response from flinkDispatcher
-/*
             Printer.getInstance().print("arrivata response dal crossroad", "yellow");
-*/
+
             qs.sems = message.getListOfSemaphores();
             qs.controllerResponse = "OK";
         }

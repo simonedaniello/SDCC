@@ -5,11 +5,9 @@ import all.front.FirstProducer;
 import entities.Message;
 import entities.Semaphore;
 import entities.system.Printer;
+import org.hibernate.annotations.Synchronize;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Commit request phase
@@ -38,7 +36,7 @@ import java.util.Random;
  */
 
 
-public class TwoPCController {
+public class TwoPCController{
 
     private FirstProducer fp;
     private Map<String, Boolean> semaphoresFor2pc = new HashMap<>();
@@ -50,7 +48,7 @@ public class TwoPCController {
     public void votingPhase(ArrayList<Semaphore> semaphoreList, String greenSemaphore, String crossroadID){
         Random rand = new Random();
 
-        Printer.getInstance().print("\n\nSTARTING VOTING PHASE\n\n", "yellow");
+//        Printer.getInstance().print("\n\nSTARTING VOTING PHASE\n\n", "yellow");
         for (Semaphore s : semaphoreList){
             if(rand.nextInt(100) < 90) {
                 Message m = new Message(crossroadID, 301);
@@ -60,20 +58,30 @@ public class TwoPCController {
                     m.setYouAreGreen(false);
                 fp.sendMessage("address", m, s.getID());
             }
-            else {
-                System.out.println("non invio il messaggio");
-            }
+//            else {
+//                System.out.println("non invio il messaggio");
+//            }
             semaphoresFor2pc.put(s.getID(), false);
         }
     }
 
     private void commitPhase(){
-        for (String s : semaphoresFor2pc.keySet()){
+
+//        for (Iterator<String> iterator = list.iterator(); iterator.hasNext(); ) {
+//    String value = iterator.next();
+//    if (value.length() > 5) {
+//        iterator.remove();
+//    }
+//}
+        for(Iterator<String> iterator = semaphoresFor2pc.keySet().iterator(); iterator.hasNext();){
+            String s = iterator.next();
             Message m = new Message("commit", 302);
-//            Printer.getInstance().print("ricorda che la commit phase sbaglia appositamente e rimanda al rollback mode", "red");
-//            Message m = new Message("wrong commit", -302);
             fp.sendMessage("address", m, s);
         }
+//        for (String s : semaphoresFor2pc.keySet()){
+//            Message m = new Message("commit", 302);
+//            fp.sendMessage("address", m, s);
+//        }
     }
 
     public void rollback(){
@@ -94,7 +102,7 @@ public class TwoPCController {
             if(!semaphoresFor2pc.get(key))
                 return false;
         }
-        Printer.getInstance().print("\n\n\nSono arrivati tutti\n\n\n", "yellow");
+//        Printer.getInstance().print("\n\n\nSono arrivati tutti\n\n\n", "yellow");
         return true;
     }
 

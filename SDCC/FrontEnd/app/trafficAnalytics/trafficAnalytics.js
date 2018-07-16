@@ -56,6 +56,7 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
                 $scope.semaphores = null;
                 console.log(response.data);
                 $scope.semaphores = response.data;
+                $scope.showSecondPanel();
             }, function errorCallback() {
                 $scope.semaphores = null;
                 console.log("error contacting server");
@@ -63,17 +64,16 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
             });
         };
 
-        $scope.showSecondPanel = function(){
-        console.log("data selected = " + $scope.dataSelected);
-        ($scope.crossroads).forEach(function secondPanelFunction(cross){
-            if((cross.id).localeCompare($scope.dataSelected) === 0){
-                // console.log("aggiungo i semafori :" + cross.semaphores);
-                $scope.semaphores = cross.semaphores;
-            }
-        });
+        $scope.showSecondPanel = function() {
+            console.log("data selected = " + $scope.dataSelected);
+            ($scope.crossroads).forEach(function secondPanelFunction(cross) {
+                if ((cross.id).localeCompare($scope.dataSelected) === 0) {
+                    // console.log("aggiungo i semafori :" + cross.semaphores);
+                    $scope.semaphores = cross.semaphores;
+                }
+            });
+        }
 
-        document.getElementById("secondForm").style.display = "block";
-        };
 
         var showCanvasses = function(semName){
             var crossroads = null;
@@ -89,18 +89,18 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
                 method: 'GET',
                 url: 'http://localhost:8080/semaphoreStatus'
             }).then(function successCallback(response) {
+                console.log(response);
                 crossroads = null;
                 crossroads = response.data;
 
-
                 crossroads.forEach(function forEachFunction(cross){
-                    // console.log(cross);
+                    console.log(cross);
                     (cross.semaphores).forEach(function forEachSemaphore(sem) {
                         // console.log(sem);
                         if(sem.id.localeCompare($scope.semaphoreSelectData) === 0){
                             // data = sem.queue;
-                            console.log("length = ", sem.queue.length);
-                            rotateArray(sem.queue.length);
+                            console.log("length = ", sem.queueSize);
+                            rotateArray(sem.queueSize);
                             console.log("array = ", intensity);
                         }
                     })
@@ -156,8 +156,8 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
                                 console.log("è verde " + sem.id);
                                 green = index;
                             }
-                            dataBar.push(sem.queue.length);
-                            labelsBar.push(sem.id);
+                            dataBar.push(sem.queueSize);
+                            labelsBar.push(sem.id.substring(1, 4));
                             // dataBar.push(sem.queue.length);
                             index = index + 1;
                         })
@@ -276,8 +276,8 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
                         // console.log(sem);
                         if(sem.id.localeCompare($scope.semaphoreSelectData) === 0){
                             // data = sem.queue;
-                            console.log("length = ", sem.queue.length);
-                            rotateArray(sem.queue.length);
+                            console.log("length = ", sem.queueSize);
+                            rotateArray(sem.queueSize);
                             console.log("array = ", intensity);
                         }
                     })
@@ -337,8 +337,8 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
                                 console.log("è verde " + sem.id);
                                 green = index;
                             }
-                            dataBar.push(sem.queue.length);
-                            labelsBar.push(sem.id);
+                            dataBar.push(sem.queueSize);
+                            labelsBar.push(sem.id.substring(1, 4));
                             // dataBar.push(sem.queue.length);
                             index = index + 1;
                         })
@@ -363,6 +363,7 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
                         labels: labelsBar,
                         datasets: [{
                             data: dataBar,
+                            label: "queue",
                             backgroundColor: 'rgba(50,205,50, 0.2)',
                             borderColor: 'rgba(0,100,0, 0.2), ',
                             borderWidth: 1
@@ -414,4 +415,5 @@ angular.module('myApp.trafficAnalytics', ['ngRoute'])
         }
 
     }]);
+
 

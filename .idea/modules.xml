@@ -9,7 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/SDCC/MonitorBackEnd/MonitorBackEnd.iml" filepath="$PROJECT_DIR$/SDCC/MonitorBackEnd/MonitorBackEnd.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml" filepath="$PROJECT_DIR$/SDCC/Semaphore/Semaphore.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDCC/SemaphoreController/SemaphoreController.iml" filepath="$PROJECT_DIR$/SDCC/SemaphoreController/SemaphoreController.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SDCC/entities/entities.iml" filepath="$PROJECT_DIR$/SDCC/entities/entities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDCC/IoTSimulator/iot-traffic-monitor-flink.iml" filepath="$PROJECT_DIR$/SDCC/IoTSimulator/iot-traffic-monitor-flink.iml" />
     </modules>
   </component>
 </project>

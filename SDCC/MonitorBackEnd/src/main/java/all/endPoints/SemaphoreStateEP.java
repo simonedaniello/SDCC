@@ -17,9 +17,7 @@ public class SemaphoreStateEP {
     public String returnSemaphoreState(){
         ObjectMapper mapper = new ObjectMapper();
         try {
-            String toReturn =  mapper.writeValueAsString(MonitorController.getInstance().getCrossroads());
-//            Printer.getInstance().print(toReturn, "cyan");
-            return toReturn;
+            return mapper.writeValueAsString(MonitorController.getInstance().getCrossroads());
         } catch (IOException e) {
             e.printStackTrace();
             return "error";
@@ -44,9 +42,7 @@ public class SemaphoreStateEP {
 
     @RequestMapping(value = "/getCrossroadInfo/{crossroad}", method = RequestMethod.GET)
     public String getCrossroadInfo(@PathVariable String crossroad){
-/*
-        Printer.getInstance().print("richieste le informazioni per " + crossroad, "green");
-*/
+        System.out.println("richiedo: " + crossroad);
         return MonitorController.getInstance().flinkGetCrossroadSituation(crossroad);
     }
 

@@ -1,6 +1,5 @@
 package all.control;
 
-import akka.dispatch.Mapper;
 import all.db.MongoDataStore;
 import all.entity.GeneralInfo;
 import all.front.FirstProducer;
@@ -109,24 +108,17 @@ public class QuerySolver {
     public String getCrossroadSituation(String crossroad){
 
 //        ArrayList<String> data = retrieveCrossroadFromMongo(crossroad);
-/*
-        Printer.getInstance().print("mi accingo a inviare il messaggio", "green");
-*/
+
+
         Message m = new Message("monitor", codeGetSituation);
         m.setIP(myIP);
         fp.sendMessage("address", m, crossroad);
-/*
-        Printer.getInstance().print("messaggio inviato a " + crossroad + ", attendo la risposta", "yellow");
-*/
-        String toReturn = waitForResponse();
+        waitForResponse();
         controllerResponse = null;
         ObjectMapper mapper = new ObjectMapper();
         String ritornare = null;
         try {
             ritornare = mapper.writeValueAsString(sems);
-/*
-            Printer.getInstance().print(ritornare, "blue");
-*/
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -144,24 +136,22 @@ public class QuerySolver {
 
     private String waitForResponse(){
         while(controllerResponse == null){}
+        System.out.println("controller response non più a null");
         return controllerResponse;
     }
 
-    //TODO
     private ArrayList<String> retrieveControllerFromMongo() {
         //data[0] = controller ip
         //data[1] = controller topic
         return null;
     }
 
-    //TODO
     private ArrayList<String> retrieveSemaphoreFromMongo(Semaphore semaphore) {
         //data[0] = controller ip
         //data[1] = controller topic
         return null;
     }
 
-    //TODO
     private ArrayList<String> retrieveCrossroadFromMongo(Crossroad crossroad) {
         //data[0] = controller ip
         //data[1] = controller topic

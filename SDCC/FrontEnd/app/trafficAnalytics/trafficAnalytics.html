@@ -16,15 +16,13 @@
             </form>
 
 
-            <div ng-repeat="sem in semaphores" >
-                <h3 style="padding-top: 30px; display: none" id="test_{{sem.id}}">Semaphore traffic history</h3>
-                <canvas id="camvas_{{sem.id}}" width="800" height="200"></canvas>
-            </div>
+            <!--<div ng-repeat="sem in semaphores" >-->
+                <!--<h3 style="padding-top: 30px; display: block" id="test_{{sem.id}}">Semaphore traffic history</h3>-->
+                <!--<canvas id="camvas_{{sem.id}}" width="800" height="200"></canvas>-->
+            <!--</div>-->
 
-
-
-
-            <form ng-submit="getSemaphoreStatistics()" style="text-align: center; display: none" id="secondForm">
+            <br>
+            <form ng-submit="getSemaphoreStatistics()" style="text-align: center; display: block" id="secondForm">
 
                 <label for="multipleSelect"> Select a Semaphore: </label><br>
                 <select class="form-control" name="semaphoreSelect" id="semaphoreSelect" ng-model="semaphoreSelectData">

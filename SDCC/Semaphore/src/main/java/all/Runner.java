@@ -1,6 +1,5 @@
 package all;
 
-
 import all.newArchitecture.SemaphoreClass;
 import entities.Semaphore;
 import entities.system.Printer;
@@ -54,7 +53,7 @@ public class Runner {
         String[] flinkDispatchers = properties.getProperty("flinkDispatcher").split(",");
         String[] controllerips = properties.getProperty("controllerip").split(",");
 
-        for(int i = 0; i < 40; i++){
+        for(int i = 0; i < 200; i++){
             try {
                 if(i % 2 == 0)
                     new SemaphoreGenerator(crossroads[i], controllerips[i], latitudes[i], longitudes[i],
